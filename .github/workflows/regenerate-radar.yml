@@ -1,0 +1,108 @@
+name: 🔄 Régénération automatique du radar
+
+on:
+  # Trigger manuel
+  workflow_dispatch:
+
+  # Trigger automatique tous les jours à 2h du matin
+  schedule:
+    - cron: '0 2 * * *'
+
+  # Trigger sur push vers branch main qui modifie le fichier Excel, les logos ou les workflows
+  push:
+    branches:
+      - main
+    paths:
+      - 'assets/solutions.xlsx'
+      - 'assets/logos/**'
+      - '.github/workflows/regenerate-radar.yml'
+      - '.github/workflows/generate-radar.yml'
+      - 'src/**'
+
+jobs:
+  regenerate:
+    # Ne pas se déclencher si le commit vient des autres workflows
+    if: |
+      github.actor != 'github-actions[bot]' &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcairo2-dev \
+            libjpeg-dev \
+            libpng-dev \
+            libfreetype6-dev \
+            pkg-config
+
+      - name: 📦 Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: 🚀 Generate radar
+        run: |
+          python3 src/main.py
+
+      - name: 📊 Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet assets/Panorama_cyber.svg; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 💾 Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Ajouter tous les fichiers générés
+          git add assets/**/*.svg assets/**/*.png 2>/dev/null || true
+          git add assets/**/*.csv 2>/dev/null || true
+
+          git commit -m "chore: Regenerate radar automatically [skip ci]
+
+          - Generated from pipeline
+          - Timestamp: $(date -u +%Y-%m-%d\ %H:%M:%S\ UTC)
+          - Triggered by: ${{ github.event_name }}"
+
+          # Pull avec rebase avant de pousser pour éviter les conflits
+          git pull --rebase origin ${{ github.ref_name }}
+          git push
+
+      - name: 📝 Create summary
+        if: always()
+        run: |
+          if [ "${{ steps.check_changes.outputs.changed }}" = "true" ]; then
+            echo "✅ Radar régénéré et mis à jour" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ Aucun changement détecté, pas de mise à jour nécessaire" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Statistiques" >> $GITHUB_STEP_SUMMARY
+          echo "- **Date:** $(date -u +%Y-%m-%d\ %H:%M:%S\ UTC)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+
+          # Compter les entreprises dans le fichier Excel
+          if command -v python3 &> /dev/null; then
+            COUNT=$(python3 -c "import pandas as pd; df = pd.read_excel('assets/solutions.xlsx'); print(len(df))" 2>/dev/null || echo "N/A")
+            echo "- **Entreprises:** $COUNT" >> $GITHUB_STEP_SUMMARY
+          fi

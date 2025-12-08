@@ -1,0 +1,167 @@
+name: 🤖 Traiter l'ajout d'une entreprise
+
+on:
+  issues:
+    types: [labeled]
+
+concurrency:
+  group: issue-${{ github.event.issue.number }}
+
+jobs:
+  process-new-company:
+    # S'exécute uniquement quand le label "approved" est ajouté sur une issue qui a déjà le label "radar:new-entry"
+    if: |
+      github.event.label.name == 'approved' &&
+      github.event.issue.state == 'open' &&
+      contains(github.event.issue.labels.*.name, 'radar:new-entry') &&
+      !contains(github.event.issue.labels.*.name, 'completed') &&
+      github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcairo2-dev \
+            libjpeg-dev \
+            libpng-dev \
+            libfreetype6-dev \
+            pkg-config
+
+      - name: 📦 Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: 📋 Parse issue and add company
+        id: parse_issue
+        run: |
+          python3 .github/scripts/parse_issue.py ${{ github.event.issue.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+
+      - name: 🚀 Generate new radar
+        run: |
+          python3 src/main.py
+
+      - name: 📊 Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Ajouter tous les fichiers modifiés dans assets/
+          git add assets/solutions.xlsx
+          git add assets/logos/ 2>/dev/null || true
+          git add assets/*.svg assets/*.png 2>/dev/null || true
+          git add assets/*.csv 2>/dev/null || true
+
+          # Vérifier s'il y a des changements à committer
+          if git diff --staged --quiet; then
+            echo "Aucun changement à committer"
+            exit 0
+          fi
+
+          COMPANY_NAME="${{ steps.parse_issue.outputs.company_name }}"
+          git commit -m "feat: Add company $COMPANY_NAME to radar [skip ci]
+
+          - Added from issue #${{ github.event.issue.number }}
+          - Fonction NIST: ${{ steps.parse_issue.outputs.fonction_nist }}
+          - Taille: ${{ steps.parse_issue.outputs.taille }}
+          - Radar regenerated automatically"
+
+      - name: 🔄 Push changes
+        run: |
+          # Vérifier s'il y a un commit à pousser
+          if git log origin/${{ github.event.repository.default_branch }}..HEAD --oneline | grep -q .; then
+            # Pull avec rebase avant de pousser pour éviter les conflits
+            git pull --rebase origin ${{ github.event.repository.default_branch }}
+            git push origin ${{ github.event.repository.default_branch }}
+          else
+            echo "Aucun changement à pousser"
+          fi
+
+      - name: 💬 Comment on issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const companyName = '${{ steps.parse_issue.outputs.company_name }}';
+            const fonctionNist = '${{ steps.parse_issue.outputs.fonction_nist }}';
+            const taille = '${{ steps.parse_issue.outputs.taille }}';
+            const issueNumber = context.issue.number;
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+            const commitSha = context.sha.substring(0, 7);
+
+            const message = `# ✅ Entreprise ajoutée avec succès
+
+            **Nouvelle entreprise :** ${companyName}
+
+            ---
+
+            ## Informations de l'entreprise
+
+            - **Fonction NIST :** ${fonctionNist}
+            - **Taille :** ${taille}
+
+            ## Détails techniques
+
+            - **Issue :** #${issueNumber}
+            - **Commit :** [\`${commitSha}\`](https://github.com/${repoOwner}/${repoName}/commit/${context.sha})
+            - **Date :** ${new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris', dateStyle: 'full', timeStyle: 'short' })}
+
+            ## Visualiser le radar
+
+            Vous pouvez consulter le radar mis à jour avec la nouvelle entreprise :
+            - **[Voir le radar SVG](https://github.com/${repoOwner}/${repoName}/blob/main/assets/Panorama_cyber.svg)** (haute qualité)
+            - **[Télécharger le radar PNG](https://github.com/${repoOwner}/${repoName}/blob/main/assets/Panorama_cyber.png)** (image)
+
+            ---
+
+            **Merci pour votre contribution au radar Hexatrust !**
+
+            *Cette notification a été générée automatiquement par GitHub Actions.*`;
+
+            github.rest.issues.createComment({
+              issue_number: issueNumber,
+              owner: repoOwner,
+              repo: repoName,
+              body: message
+            });
+
+      - name: 🏷️ Close and label issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Fermer l'issue
+            await github.rest.issues.update({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed'
+            });
+
+            // Ajouter le label 'completed' sans toucher aux autres labels
+            await github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['completed']
+            });

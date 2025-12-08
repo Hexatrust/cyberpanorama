@@ -1,0 +1,101 @@
+name: Generate Radar SVG
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "**/*.py"
+      - "assets/**"
+      - "solutions.xlsx"
+      - "requirements.txt"
+      - ".github/workflows/generate-radar.yml"
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "**/*.py"
+      - "assets/**"
+      - "solutions.xlsx"
+      - "requirements.txt"
+  workflow_dispatch: {}   # permet de lancer à la main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    # Ne pas se déclencher si le commit vient des autres workflows
+    if: |
+      github.actor != 'github-actions[bot]' &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install system packages (cairo, etc.)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcairo2-dev \
+            libjpeg-dev \
+            libpng-dev \
+            libfreetype6-dev \
+            pkg-config
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -U pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install pillow reportlab svglib lxml pandas openpyxl
+          fi
+
+      # Generate radar using the core script
+      - name: Generate radar assets
+        run: |
+          python3 src/main.py
+
+      # (optionnel) forcer un “stamp” pour qu’il y ait une diff même si le SVG identique
+      # - name: Stamp build time in SVG
+      #   run: |
+      #     echo "<!-- build $(date -u +'%Y-%m-%dT%H:%M:%SZ') -->" >> assets/Panorama_cyber.svg
+
+      - name: Upload generated assets (PRs & pushes)
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-output
+          path: |
+            assets/Panorama_cyber.svg
+            assets/Panorama_cyber.png
+            assets/Mask/Radar_mask_no_center.svg
+            assets/Mask/Radar_mask_no_center.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit generated files
+        if: ${{ github.event_name == 'push' && github.actor != 'github-actions[bot]' }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(radar): regenerate SVG/PNG [skip ci]"
+          file_pattern: |
+            assets/Panorama_cyber.svg
+            assets/Panorama_cyber.png
+            assets/Mask/Radar_mask_no_center.svg
+            assets/Mask/Radar_mask_no_center.png
+          pull: '--rebase --autostash'
