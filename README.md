@@ -128,16 +128,6 @@ Le radar est régénéré automatiquement dans les cas suivants :
 - `assets/Panorama_cyber.png`
 - `assets/Report/rapport_logos_places.csv`
 
-### 📚 Documentation Complète
-
-Pour plus de détails, consultez le **[Guide d'utilisation complet](docs/USAGE.md)** qui contient :
-- Utilisation du formulaire GitHub
-- Modification manuelle (développeurs)
-- Structure des fichiers
-- Configuration GitHub Actions
-- Résolution de problèmes
-- Architecture du système
-
 ---
 
 ## 🏗️ Structure du Projet
