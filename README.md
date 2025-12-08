@@ -1,9 +1,9 @@
-# Radar des Solutions de Cybersécurité Souveraines
+# Panorma des Solutions de Cybersécurité Souveraines
 *Un projet mené en collaboration avec le [CESIN](https://www.cesin.fr) et [Hexatrust](https://www.hexatrust.fr)*
 
 <div align="center">
 
-## 🚀 Gérer les Entreprises du Radar
+## 🚀 Gérer les Entreprises du panorama
 
 [![Ajouter une entreprise](https://img.shields.io/badge/➕_Ajouter_une_entreprise-Formulaire_GitHub-brightgreen?style=for-the-badge&logo=github)](../../issues/new?assignees=&labels=radar%3Anew-entry&template=add_company.yml)
 [![Modifier une entreprise](https://img.shields.io/badge/✏️_Modifier_une_entreprise-Formulaire_GitHub-blue?style=for-the-badge&logo=github)](../../issues/new?assignees=&labels=radar%3Aedit-entry&template=edit_company.yml)
@@ -12,15 +12,15 @@
 
 ---
 
-## 📊 Aperçu du Radar
+## 📊 Aperçu du Panorama
 
-![Radar des Solutions de Cybersécurité Souveraines](assets/Panorama_cyber.svg)
+![Panorama des Solutions de Cybersécurité Souveraines](assets/Panorama_cyber.svg)
 
 ---
 
 ## 📌 Contexte et objectifs
 
-### Pourquoi ce radar ?
+### Pourquoi ce panorama ?
 - **Enjeu stratégique** : La cybersécurité est un pilier de la souveraineté numérique, surtout dans un contexte de tensions géopolitiques et de dépendances technologiques.
 - **Besoins identifiés** :
   - Cartographier les solutions **françaises** pour réduire la dépendance aux acteurs extra-territoriaux.
@@ -61,10 +61,10 @@ Pour être considérée comme "souveraine", une solution doit :
 
 ---
 
-## 📊 Présentation du Radar
+## 📊 Présentation du Panorama
 
 ### Format
-- **Cartographie visuelle** : Radar interactif classant les solutions par fonction NIST et maturité.
+- **Cartographie visuelle** : Panorama interactif classant les solutions par fonction NIST et maturité.
 - **Fiches solutions** :
   - Solution
   - Editeur
@@ -111,11 +111,11 @@ Capacité à maîtriser ses **infrastructures, données et technologies critique
 
 ### 🤖 Automatisation Complète via GitHub Actions
 
-Ce projet utilise **GitHub Actions** pour automatiser complètement l'ajout d'entreprises et la régénération du radar. **Aucune exécution locale n'est nécessaire** pour l'utilisation normale.
+Ce projet utilise **GitHub Actions** pour automatiser complètement l'ajout d'entreprises et la régénération du Panorama. **Aucune exécution locale n'est nécessaire** pour l'utilisation normale.
 
 ### 🔄 Régénération Automatique
 
-Le radar est régénéré automatiquement dans les cas suivants :
+Le Panorama est régénéré automatiquement dans les cas suivants :
 
 1. **Ajout d'entreprise approuvée** : Après validation d'une issue GitHub
 2. **Modification du fichier Excel** : Quand `assets/solutions.xlsx` est modifié
@@ -133,7 +133,7 @@ Le radar est régénéré automatiquement dans les cas suivants :
 ## 🏗️ Structure du Projet
 
 ```
-RADAR_HEXATRUST/
+cyberpanorama/
 ├── 📁 .github/                      # Automatisation GitHub
 │   ├── ISSUE_TEMPLATE/
 │   │   └── add_company.yml          # Formulaire d'ajout
@@ -143,15 +143,15 @@ RADAR_HEXATRUST/
 │   └── scripts/
 │       └── parse_issue.py           # Parser d'issues
 ├── 📁 assets/
-│   ├── Mask/                       # Gabarits de masquage du radar (incl. Radar_Hexatrust_Cesin.svg)
+│   ├── Mask/                       # Gabarits de masquage du Panorama (incl. Radar_Hexatrust_Cesin.svg)
 │   ├── Report/                     # Rapports générés (CSV/XLSX)
 │   ├── logos/                      # Logos des entreprises
 │   ├── solutions.xlsx              # Base de données Excel
-│   ├── Panorama_cyber.svg          # Radar généré (SVG)
-│   └── Panorama_cyber.png          # Radar généré (PNG)
+│   ├── Panorama_cyber.svg          # Panorama généré (SVG)
+│   └── Panorama_cyber.png          # Panorama généré (PNG)
 ├── 📁 src/                          # Code source
 │   ├── config.py                    # Configuration centralisée
-│   ├── main.py                      # Génération du radar (core)
+│   ├── main.py                      # Génération du Panorama (core)
 │   └── read_solutions.py            # Lecture des données Excel
 ├── 📁 docs/                         # Documentation
 │   ├── USAGE.md                     # Guide d'utilisation complet
@@ -164,13 +164,13 @@ RADAR_HEXATRUST/
 
 ## 📦 Installation (Développeurs uniquement)
 
-L'installation locale n'est nécessaire que pour les développeurs souhaitant modifier le code ou générer le radar localement.
+L'installation locale n'est nécessaire que pour les développeurs souhaitant modifier le code ou générer le Panorama localement.
 
 ### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/RobinEY-prog/RADAR_HEXATRUST.git
-cd RADAR_HEXATRUST
+git clone https://github.com/Hexatrust/cyberpanorama
+cd cyberpanorama
 ```
 
 ### 2. Installer les dépendances
@@ -186,13 +186,13 @@ ls assets/solutions.xlsx  # Fichier Excel doit exister
 ls assets/logos/          # Dossier des logos
 ```
 
-### 4. Générer le radar localement (optionnel)
+### 4. Générer le Panorama localement (optionnel)
 
 ```bash
 python3 src/main.py
 ```
 
-Cette commande génère les fichiers SVG et PNG du radar.
+Cette commande génère les fichiers SVG et PNG du Panorama.
 
 ---
 
@@ -226,7 +226,7 @@ Cette commande génère les fichiers SVG et PNG du radar.
 5. **✨ Ajout automatique** : Une fois approuvée, GitHub Actions :
    - ✅ Télécharge le logo automatiquement
    - ✅ Ajoute l'entreprise au fichier Excel
-   - ✅ Régénère le radar (SVG + PNG)
+   - ✅ Régénère le Panorama (SVG + PNG)
    - ✅ Commit et push automatique
    - ✅ Vous notifie sur l'issue
 
@@ -261,7 +261,7 @@ Pour les développeurs souhaitant modifier directement les fichiers :
 2. Modifiez `assets/solutions.xlsx` et ajoutez les logos dans `assets/logos/`
 3. Testez localement : `python3 src/main.py`
 4. Committez et poussez vers `main`
-5. Le radar sera automatiquement régénéré par GitHub Actions
+5. Le Panorama sera automatiquement régénéré par GitHub Actions
 
 ---
 
@@ -293,4 +293,4 @@ Ce projet est open-source. Consultez le fichier LICENSE pour plus de détails.
 
 ---
 
-**Développé avec ❤️ par l'équipe Radar Hexatrust**
+**Développé avec ❤️ par l'équipe Panorama Hexatrust**
