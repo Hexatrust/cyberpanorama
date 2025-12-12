@@ -120,6 +120,10 @@ jobs:
                 echo "✅ Push réussi après $retry_count tentative(s)"
                 exit 0
               fi
+            else
+              echo "⚠️ Échec du rebase (conflits probables)"
+              # IMPORTANT : Annuler le rebase en cours avant de retenter pour éviter l'erreur "fatal: Cannot do a soft reset"
+              git rebase --abort 2>/dev/null || true
             fi
             
             # Si échec, reset et retry
