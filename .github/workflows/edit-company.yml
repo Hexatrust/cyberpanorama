@@ -4,10 +4,6 @@ on:
   issues:
     types: [labeled]
 
-concurrency:
-  group: radar-automation-queue
-  cancel-in-progress: false
-
 jobs:
   edit-company:
     # S'exécute uniquement quand le label "approved" est ajouté sur une issue qui a déjà le label "radar:edit-entry"
