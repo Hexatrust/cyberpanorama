@@ -27,11 +27,12 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: 📥 Checkout repository
+      - name: 🔥 Checkout repository
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.repository.default_branch }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: 🐍 Setup Python
         uses: actions/setup-python@v4
@@ -53,6 +54,12 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: 🔄 Synchronize with latest changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git pull origin ${{ github.event.repository.default_branch }}
+
       - name: 📋 Parse issue and add company
         id: parse_issue
         run: |
@@ -65,7 +72,8 @@ jobs:
         run: |
           python3 src/main.py
 
-      - name: 📊 Commit changes
+      - name: 📊 Commit and push changes with retry
+        id: commit_push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -79,29 +87,79 @@ jobs:
           # Vérifier s'il y a des changements à committer
           if git diff --staged --quiet; then
             echo "Aucun changement à committer"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
             exit 0
           fi
 
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          
           COMPANY_NAME="${{ steps.parse_issue.outputs.company_name }}"
-          git commit -m "feat: Add company $COMPANY_NAME to radar [skip ci]
+          
+          # Stratégie de retry avec pull-rebase-push
+          max_retries=10
+          retry_count=0
+          base_delay=5
+          
+          while [ $retry_count -lt $max_retries ]; do
+            # Créer le commit
+            git commit -m "feat: Add company $COMPANY_NAME to radar [skip ci]
 
-          - Added from issue #${{ github.event.issue.number }}
-          - Fonction NIST: ${{ steps.parse_issue.outputs.fonction_nist }}
-          - Taille: ${{ steps.parse_issue.outputs.taille }}
-          - Radar regenerated automatically"
-
-      - name: 🔄 Push changes
-        run: |
-          # Vérifier s'il y a un commit à pousser
-          if git log origin/${{ github.event.repository.default_branch }}..HEAD --oneline | grep -q .; then
-            # Pull avec rebase avant de pousser pour éviter les conflits
-            git pull --rebase origin ${{ github.event.repository.default_branch }}
-            git push origin ${{ github.event.repository.default_branch }}
-          else
-            echo "Aucun changement à pousser"
-          fi
+            - Added from issue #${{ github.event.issue.number }}
+            - Fonction NIST: ${{ steps.parse_issue.outputs.fonction_nist }}
+            - Taille: ${{ steps.parse_issue.outputs.taille }}
+            - Radar regenerated automatically" 2>/dev/null || git commit --amend --no-edit
+            
+            # Essayer de pull + push
+            if git pull --rebase origin ${{ github.event.repository.default_branch }}; then
+              # Si le pull réussit, vérifier s'il y a des conflits
+              if [ -n "$(git diff --name-only --diff-filter=U)" ]; then
+                echo "⚠️ Conflits détectés, résolution automatique..."
+                # Résoudre les conflits en favorisant nos changements
+                git checkout --ours assets/
+                git add assets/
+                git rebase --continue
+              fi
+              
+              # Essayer de pousser
+              if git push origin ${{ github.event.repository.default_branch }}; then
+                echo "✅ Push réussi après $retry_count tentative(s)"
+                exit 0
+              fi
+            fi
+            
+            # Si échec, reset et retry
+            retry_count=$((retry_count + 1))
+            delay=$((base_delay + RANDOM % 10))
+            
+            if [ $retry_count -lt $max_retries ]; then
+              echo "❌ Tentative $retry_count/$max_retries échouée"
+              echo "🔄 Réinitialisation et nouvelle tentative dans ${delay}s..."
+              
+              # Reset le commit pour le refaire
+              git reset --soft HEAD~1
+              
+              # Pull les derniers changements
+              git fetch origin ${{ github.event.repository.default_branch }}
+              git reset --hard origin/${{ github.event.repository.default_branch }}
+              
+              # Re-générer le radar avec les dernières données
+              python3 src/main.py
+              
+              # Re-ajouter les fichiers
+              git add assets/solutions.xlsx
+              git add assets/logos/ 2>/dev/null || true
+              git add assets/*.svg assets/*.png 2>/dev/null || true
+              git add assets/*.csv 2>/dev/null || true
+              
+              sleep $delay
+            fi
+          done
+          
+          echo "❌ Échec du push après $max_retries tentatives"
+          exit 1
 
       - name: 💬 Comment on issue
+        if: steps.commit_push.outputs.has_changes == 'true'
         uses: actions/github-script@v7
         with:
           script: |
