@@ -5,7 +5,8 @@ on:
     types: [labeled]
 
 concurrency:
-  group: issue-${{ github.event.issue.number }}
+  group: radar-automation-queue
+  cancel-in-progress: false
 
 jobs:
   process-new-company:
