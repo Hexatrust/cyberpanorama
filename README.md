@@ -1,5 +1,5 @@
-# Panorma des Solutions de Cybersécurité Souveraines
-*Un projet mené en collaboration avec le [CESIN](https://www.cesin.fr) et [Hexatrust](https://www.hexatrust.fr)*
+# Panorama des Solutions de Cybersécurité Souveraines
+*Un projet mené en collaboration avec le [CESIN](https://www.cesin.fr) et [Hexatrust](https://www.hexatrust.com)*
 
 <div align="center">
 
@@ -57,56 +57,6 @@ Pour être considérée comme "souveraine", une solution doit :
 - **Maîtriser ses briques technologiques** (pas de dépendance extra-européenne).
 - **Garantir la transparence** (accès aux codes sources, audits).
 
-*La notion de souveraineté est en cours de réflexion afin d'être préciser, en lien avec les travaux lancés par le Haut Comissariat à la Stratégie et au Plan*
-
----
-
-## 📊 Présentation du Panorama
-
-### Format
-- **Cartographie visuelle** : Panorama interactif classant les solutions par fonction NIST et maturité.
-- **Fiches solutions** :
-  - Solution
-  - Editeur
-  - Description de la solution
-  - FOnction et catégorie NIST
-  - Objectif NIS2 couverts
-  - Informations complémentaires
-
-### Exemple de classification
-
-| Fonction NIST (FR) | Solution Souveraine          | Acteur                     |
-|--------------------|-----------------------------|----------------------------|
-| Identifier         | Plateforme de gestion des actifs IT | [Nom de l’acteur](#) |
-| Protéger           | Chiffrement post-quantique   | [Nom de l’acteur](#) |
-| Détecter           | SIEM souverain               | [Nom de l’acteur](#) |
-
----
-
-## 💡 Réflexion sur la Souveraineté Numérique
-
-### Définition
-Capacité à maîtriser ses **infrastructures, données et technologies critiques** sans dépendre d’acteurs étrangers.
-
-### Enjeux
-- **Sécurité nationale** : Réduire les risques d’espionnage/sabotage.
-- **Autonomie** : Éviter les blocages technologiques (ex : restrictions d’exportation).
-- **Confiance** : Garantir la protection des données sensibles.
-
-### Défis
-- **Équilibre** : Souveraineté ≠ autarcie.
-- **Coûts** : Développement plus onéreux à court terme.
-- **Interopérabilité** : Compatibilité avec les standards internationaux.
-
----
-
-## 🚀 Prochaines étapes
-- [ ] Lancement officiel (événement CESIN/Hexatrust).
-- [ ] Mise à jour continue (intégration des nouvelles solutions).
-- [ ] Collaboration élargie (ANSSI, France Cyber, etc.).
-
----
-
 ## 🔧 Fonctionnement
 
 ### 🤖 Automatisation Complète via GitHub Actions
@@ -122,45 +72,6 @@ Le Panorama est régénéré automatiquement dans les cas suivants :
 3. **Modification des logos** : Quand des logos dans `assets/logos/` sont modifiés
 4. **Quotidien** : Tous les jours à 2h (UTC) pour assurer la cohérence
 5. **Manuel** : Via l'onglet Actions → "Run workflow"
-
-**Fichiers générés automatiquement :**
-- `assets/Panorama_cyber.svg`
-- `assets/Panorama_cyber.png`
-- `assets/Report/rapport_logos_places.csv`
-
----
-
-## 🏗️ Structure du Projet
-
-```
-cyberpanorama/
-├── 📁 .github/                      # Automatisation GitHub
-│   ├── ISSUE_TEMPLATE/
-│   │   └── add_company.yml          # Formulaire d'ajout
-│   ├── workflows/
-│   │   ├── process-new-company.yml  # Traitement des ajouts
-│   │   └── regenerate-radar.yml     # Régénération auto
-│   └── scripts/
-│       └── parse_issue.py           # Parser d'issues
-├── 📁 assets/
-│   ├── Mask/                       # Gabarits de masquage du Panorama (incl. Radar_Hexatrust_Cesin.svg)
-│   ├── Report/                     # Rapports générés (CSV/XLSX)
-│   ├── logos/                      # Logos des entreprises
-│   ├── solutions.xlsx              # Base de données Excel
-│   ├── Panorama_cyber.svg          # Panorama généré (SVG)
-│   └── Panorama_cyber.png          # Panorama généré (PNG)
-├── 📁 src/                          # Code source
-│   ├── config.py                    # Configuration centralisée
-│   ├── main.py                      # Génération du Panorama (core)
-│   └── read_solutions.py            # Lecture des données Excel
-├── 📁 docs/                         # Documentation
-│   ├── USAGE.md                     # Guide d'utilisation complet
-│   └── CHANGELOG.md                 # Historique des versions
-├── 📄 requirements.txt              # Dépendances Python
-└── 📄 README.md                     # Ce fichier
-```
-
----
 
 ## 📦 Installation (Développeurs uniquement)
 
@@ -179,14 +90,7 @@ cd cyberpanorama
 pip install -r requirements.txt
 ```
 
-### 3. Vérifier la structure
-
-```bash
-ls assets/solutions.xlsx  # Fichier Excel doit exister
-ls assets/logos/          # Dossier des logos
-```
-
-### 4. Générer le Panorama localement (optionnel)
+### 3. Générer le Panorama localement (optionnel)
 
 ```bash
 python3 src/main.py
@@ -271,26 +175,19 @@ Pour les développeurs souhaitant modifier directement les fichiers :
 - **🔧 Ajustements** : Proposez des modifications sur les solutions identifiées
 - **🐛 Bugs** : Signalez les problèmes techniques
 
-### Format des Contributions
-
-Les logos doivent respecter le format :
-- Nom : `NomEntreprise_01.png`
-- Format : PNG (fond transparent recommandé)
-- Taille : 500x500px minimum
-- Poids : < 5MB
 
 ---
 
 ## 📩 Contact
 - **CESIN** : [contact@cesin.fr](mailto:contact@cesin.fr)
-- **Hexatrust** : [contact@hexatrust.fr](mailto:contact@hexatrust.fr)
+- **Hexatrust** : [contact@hexatrust.com](mailto:contact@hexatrust.com)
 
 ---
 
 ## 📄 Licence
 
-Ce projet est open-source. Consultez le fichier LICENSE pour plus de détails.
+Ce projet est open-source, sous licence EUPL (European Union Public Licens). Consultez le fichier LICENSE pour plus de détails.
 
 ---
 
-**Développé avec ❤️ par l'équipe Panorama Hexatrust**
+**Développé avec ❤️ par l'équipe du Cyberpanorama (EY France / CESIN / Hexatrust)**
