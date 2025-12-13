@@ -186,7 +186,7 @@ Pour les développeurs souhaitant modifier directement les fichiers :
 
 ## 📄 Licence
 
-Ce projet est open-source, sous licence EUPL (European Union Public Licens). Consultez le fichier LICENSE pour plus de détails.
+Ce projet est open-source, sous licence EUPL (European Union Public Licence) version 1.2. Consultez le fichier LICENSE.md pour plus de détails.
 
 ---
 
