@@ -8,6 +8,8 @@ import sys
 import glob
 from pathlib import Path
 import math
+import re
+import unicodedata
 
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -131,7 +133,6 @@ viewBox = root.get("viewBox")
 if viewBox:
     vx, vy, vw, vh = [float(x) for x in viewBox.strip().split()]
 else:
-    import re
     def to_float(val, default=1000):
         if val is None: return default
         m = re.match(r"([\d.]+)", val)
@@ -139,8 +140,8 @@ else:
     vx, vy = 0.0 , 0.0
     vw, vh = to_float(root.get("width")), to_float(root.get("height"))
 
-# Collect shapes (paths, ellipses, cercles) WITH their class
-TARGET_SHAPE_TAGS = ["path", "circle", "ellipse"]
+# Collect shapes (paths, polygons, ellipses, cercles) WITH their class
+TARGET_SHAPE_TAGS = ["path", "polygon", "circle", "ellipse"]
 
 def build_shape_element(tag, attrib, fill_color):
     """Create an SVG element for a shape with the desired fill color."""
@@ -148,6 +149,8 @@ def build_shape_element(tag, attrib, fill_color):
 
     if tag == "path":
         base_attrib["d"] = attrib.get("d")
+    elif tag == "polygon":
+        base_attrib["points"] = attrib.get("points", "")
     elif tag == "circle":
         base_attrib.update({
             "cx": attrib.get("cx", "0"),
@@ -176,6 +179,186 @@ for tag in TARGET_SHAPE_TAGS:
         if matching_class:
             cls = list(matching_class)[0]
             shapes_with_class.append((tag, cls, dict(el.attrib)))
+
+if not shapes_with_class:
+    print("[!] Aucune forme de quartier detectee dans le SVG source")
+
+def extract_font_sizes_from_style(svg_root):
+    """Extract font-size by CSS class from <style> blocks."""
+    font_sizes = {}
+    for style in svg_root.findall(f".//{q('style')}"):
+        css_text = "".join(style.itertext())
+        for cls_name, body in re.findall(r"\.(st[\w-]+)\s*\{([^}]*)\}", css_text, flags=re.DOTALL):
+            match = re.search(r"font-size\s*:\s*([\d.]+)px", body)
+            if match:
+                font_sizes[cls_name] = float(match.group(1))
+    return font_sizes
+
+def parse_translate(transform):
+    """Parse translate(x y) from an SVG transform string."""
+    if not transform:
+        return None
+    match = re.search(r"translate\(\s*([-\d.]+)(?:[ ,]+([-\d.]+))?\s*\)", transform)
+    if not match:
+        return None
+    tx = float(match.group(1))
+    ty = float(match.group(2) or 0.0)
+    return tx, ty
+
+def collect_text_exclusion_rects(svg_root):
+    """Build keep-out rectangles around labels to avoid logo/text overlap."""
+    font_sizes = extract_font_sizes_from_style(svg_root)
+    exclusion_rects = []
+    category_labels = {
+        re.sub(r"\s+", " ", unicodedata.normalize("NFKD", info['nom']).encode("ascii", "ignore").decode("ascii")).strip().upper()
+        for info in QUARTIERS.values()
+    }
+
+    for text_el in svg_root.findall(f".//{q('text')}"):
+        classes = (text_el.get("class") or "").split()
+        font_size = 37.0
+        for cls in classes:
+            if cls in font_sizes:
+                font_size = font_sizes[cls]
+                break
+
+        position = parse_translate(text_el.get("transform"))
+        if position is None:
+            x_attr = text_el.get("x")
+            y_attr = text_el.get("y")
+            if x_attr is None or y_attr is None:
+                continue
+            try:
+                position = (float(x_attr), float(y_attr))
+            except ValueError:
+                continue
+
+        x, y = position
+
+        text_parts = []
+        tspans = text_el.findall(f".//{q('tspan')}")
+        if tspans:
+            for tspan in tspans:
+                value = "".join(tspan.itertext()).strip()
+                if value:
+                    text_parts.append(value)
+        else:
+            value = "".join(text_el.itertext()).strip()
+            if value:
+                text_parts.append(value)
+
+        if not text_parts:
+            continue
+
+        label = " ".join(text_parts)
+        normalized_label = re.sub(
+            r"\s+", " ",
+            unicodedata.normalize("NFKD", label).encode("ascii", "ignore").decode("ascii")
+        ).strip().upper()
+
+        # Les libelles de categories sont deja geres via la contrainte "sous le texte".
+        # On n'ajoute pas de zone blanche ici pour eviter de creer des "trous" dans les quartiers.
+        if normalized_label in category_labels:
+            continue
+
+        if normalized_label == "CYBERPANORAMA BY":
+            padding = max(8.0, font_size * 0.18)
+            estimated_width = (font_size * 0.58 * len(label)) + (padding * 2)
+            estimated_height = (font_size * 1.20) + (padding * 2)
+        else:
+            padding = max(22.0, font_size * 0.55)
+            estimated_width = (font_size * 0.82 * len(label)) + (padding * 2)
+            estimated_height = (font_size * 1.6) + (padding * 2)
+
+        exclusion_rects.append({
+            "x": x - padding,
+            "y": y - (font_size * 1.15) - padding,
+            "width": estimated_width,
+            "height": estimated_height,
+            "label": label,
+        })
+
+    return exclusion_rects
+
+def normalize_label_key(value):
+    """Normalise un libelle pour faire des comparaisons robustes."""
+    ascii_value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"\s+", " ", ascii_value).strip().upper()
+
+def collect_category_label_constraints(svg_root):
+    """Retourne, par quartier CSS, une contrainte locale autour du libelle de categorie."""
+    font_sizes = extract_font_sizes_from_style(svg_root)
+
+    normalized_quartiers = {
+        normalize_label_key(info['nom']): cls
+        for cls, info in QUARTIERS.items()
+    }
+
+    category_constraints = {}
+    for text_el in svg_root.findall(f".//{q('text')}"):
+        position = parse_translate(text_el.get("transform"))
+        if position is None:
+            continue
+
+        classes = (text_el.get("class") or "").split()
+        font_size = 37.0
+        for cls_name in classes:
+            if cls_name in font_sizes:
+                font_size = font_sizes[cls_name]
+                break
+
+        text_parts = []
+        tspans = text_el.findall(f".//{q('tspan')}")
+        if tspans:
+            for tspan in tspans:
+                value = "".join(tspan.itertext()).strip()
+                if value:
+                    text_parts.append(value)
+        else:
+            value = "".join(text_el.itertext()).strip()
+            if value:
+                text_parts.append(value)
+
+        if not text_parts:
+            continue
+
+        normalized_label = normalize_label_key(" ".join(text_parts))
+        matched_quartier_cls = None
+        for quartier_name, quartier_cls in normalized_quartiers.items():
+            if quartier_name and quartier_name in normalized_label:
+                matched_quartier_cls = quartier_cls
+                break
+
+        if matched_quartier_cls is None:
+            continue
+
+        label = " ".join(text_parts)
+        x, y = position
+
+        width_factor = 0.92
+        padding_factor = 0.26
+        min_y_factor = 0.68
+
+        text_width_svg = (font_size * width_factor * len(label))
+        padding_x_svg = max(2.0, font_size * padding_factor)
+
+        left_svg = x - padding_x_svg
+        right_svg = x + text_width_svg + padding_x_svg
+        min_y_svg = y + (font_size * min_y_factor) + 4.0
+
+        existing = category_constraints.get(matched_quartier_cls)
+        if existing is None:
+            category_constraints[matched_quartier_cls] = {
+                'x_left': left_svg,
+                'x_right': right_svg,
+                'min_y': min_y_svg,
+            }
+        else:
+            existing['x_left'] = min(existing['x_left'], left_svg)
+            existing['x_right'] = max(existing['x_right'], right_svg)
+            existing['min_y'] = max(existing['min_y'], min_y_svg)
+
+    return category_constraints
 
 # Detect center ellipse/circle (choose the smallest candidate)
 center_candidates = []
@@ -230,6 +413,19 @@ if center:
             "fill": "white", "stroke": "none"
         }))
 
+text_exclusion_rects = collect_text_exclusion_rects(root)
+for rect in text_exclusion_rects:
+    mask_svg.append(ET.Element(q("rect"), attrib={
+        "x": str(rect["x"]),
+        "y": str(rect["y"]),
+        "width": str(rect["width"]),
+        "height": str(rect["height"]),
+        "fill": "white",
+        "stroke": "none",
+    }))
+
+print(f"> Zones d'exclusion texte detectees: {len(text_exclusion_rects)}")
+
 mask_tree = ET.ElementTree(mask_svg)
 mask_tree.write(MASK_SVG, encoding="utf-8", xml_declaration=True)
 
@@ -272,10 +468,82 @@ for tag, cls, attrib in shapes_with_class:
 
     quartier_masks[cls] = Image.open(temp_png_path).convert("L")
 
+def compute_mask_black_area(mask_image):
+    """Compte le nombre de pixels noirs (zone autorisee)."""
+    pixels = mask_image.load()
+    width, height = mask_image.size
+    black_count = 0
+    for yy in range(height):
+        for xx in range(width):
+            if pixels[xx, yy] < 128:
+                black_count += 1
+    return black_count
+
+def compute_quartier_scale_factors():
+    """Calcule un facteur d'agrandissement par quartier selon la densite attendue."""
+    target_density = 0.55
+    max_scale = 3.20
+    scale_factors = {}
+
+    for cls in QUARTIERS.keys():
+        mask = quartier_masks.get(cls)
+        if mask is None:
+            scale_factors[cls] = 1.0
+            continue
+
+        quartier_area = compute_mask_black_area(mask)
+        if quartier_area <= 0:
+            scale_factors[cls] = 1.0
+            continue
+
+        planned_logo_area = 0
+        for size_name, size in RECTANGLE_SIZES.items():
+            logo_count = len(encoded_logos_by_quartier[cls][size_name])
+            planned_logo_area += logo_count * size['width'] * size['height']
+
+        if planned_logo_area <= 0:
+            scale_factors[cls] = 1.0
+            continue
+
+        density = planned_logo_area / quartier_area
+        if density < target_density:
+            scale = math.sqrt(target_density / max(density, 1e-9))
+            scale_factors[cls] = min(max_scale, max(1.0, scale))
+        else:
+            scale_factors[cls] = 1.0
+
+    return scale_factors
+
+QUARTIER_SCALE_FACTORS = compute_quartier_scale_factors()
+print("Facteurs d'agrandissement par quartier:")
+for cls, factor in QUARTIER_SCALE_FACTORS.items():
+    info = QUARTIERS[cls]
+    print(f"  - {info['nom']}: x{factor:.2f}")
+
 # Load mask and place rectangles
 mask_img = Image.open(MASK_PNG).convert("L")
 W, H = mask_img.size
 mask_pixels = mask_img.load()
+
+category_label_constraints_svg = collect_category_label_constraints(root)
+CATEGORY_LABEL_BLOCKS = {}
+for cls, constraint in category_label_constraints_svg.items():
+    left_px = int(round(((constraint['x_left'] - vx) / vw) * W)) if vw else 0
+    right_px = int(round(((constraint['x_right'] - vx) / vw) * W)) if vw else W - 1
+    min_y_px = int(round(((constraint['min_y'] - vy) / vh) * H)) if vh else 0
+
+    CATEGORY_LABEL_BLOCKS[cls] = {
+        'x_left_px': max(0, min(W - 1, left_px)),
+        'x_right_px': max(0, min(W - 1, right_px)),
+        'min_y_px': max(0, min(H - 1, min_y_px)),
+    }
+
+print("Contraintes locales sous libelles (pixels):")
+for cls in QUARTIERS.keys():
+    if cls in CATEGORY_LABEL_BLOCKS:
+        info = QUARTIERS[cls]
+        block = CATEGORY_LABEL_BLOCKS[cls]
+        print(f"  - {info['nom']}: x=[{block['x_left_px']},{block['x_right_px']}], y>={block['min_y_px']}")
 
 def is_rectangle_inside(x, y, width, height):
     """Vérifie si un rectangle rentre dans le masque (noir = autorisé)."""
@@ -297,7 +565,12 @@ def is_space_occupied(x, y, width, height, occupied_pixels):
 
 def rect_size_for_quartier(size_name, target_quartier_cls):
     """Renvoie la taille du rectangle pour un quartier donne."""
-    return RECTANGLE_SIZES[size_name]
+    base = RECTANGLE_SIZES[size_name]
+    factor = QUARTIER_SCALE_FACTORS.get(target_quartier_cls, 1.0)
+    return {
+        'width': max(1, int(round(base['width'] * factor))),
+        'height': max(1, int(round(base['height'] * factor))),
+    }
 
 
 def min_distance_to_existing(cx, cy, target_quartier_cls):
@@ -340,54 +613,74 @@ size_counts_by_quartier = {}
 for cls in QUARTIERS.keys():
     size_counts_by_quartier[cls] = {'very_large': 0, 'large': 0, 'medium': 0, 'small': 0}
 
-def try_place_logo(size_name, target_quartier_cls, logo_data, max_positions=2000):
+def try_place_logo(size_name, target_quartier_cls, logo_data, max_positions=3500):
     """Essaie de placer 1 logo d'une taille donnee dans un quartier specifique."""
-    rect_size = rect_size_for_quartier(size_name, target_quartier_cls)
-    width_px = rect_size['width']
-    height_px = rect_size['height']
+    base_size = RECTANGLE_SIZES[size_name]
+    requested_factor = QUARTIER_SCALE_FACTORS.get(target_quartier_cls, 1.0)
+    factor_steps = []
+    for ratio in [1.00, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64, 0.58, 0.52]:
+        candidate = max(1.0, requested_factor * ratio)
+        factor_steps.append(round(candidate, 3))
+    factor_steps.append(1.0)
+    factor_steps = list(dict.fromkeys(factor_steps))
 
-    # On parcourt la grille en ordre aleatoire (limite a max_positions pour plus de rapidite)
-    positions = grid_positions[:]
-    random.shuffle(positions)
-    positions = positions[:max_positions]  # Limiter le nombre de positions testees
+    label_block = CATEGORY_LABEL_BLOCKS.get(target_quartier_cls)
 
-    best_candidate = None
-    best_score = -1
+    search_budget = max_positions
+    if target_quartier_cls == 'st3':
+        search_budget = min(len(grid_positions), max_positions * 5)
 
-    for (x, y) in positions:
-        if not is_rectangle_inside(x, y, width_px, height_px):
-            continue
-        if is_space_occupied(x, y, width_px, height_px, occupied_pixels):
-            continue
+    for factor in factor_steps:
+        width_px = max(1, int(round(base_size['width'] * factor)))
+        height_px = max(1, int(round(base_size['height'] * factor)))
 
-        quartier_cls, quartier_info = get_quartier(x, y, width_px, height_px)
+        # On parcourt la grille en ordre aleatoire (limite a max_positions pour plus de rapidite)
+        positions = grid_positions[:]
+        random.shuffle(positions)
+        positions = positions[:search_budget]  # Limiter le nombre de positions testees
 
-        # CONTRAINTE : le logo doit etre place dans SON quartier
-        if quartier_cls != target_quartier_cls:
-            continue
+        best_candidate = None
+        best_score = -1
 
-        cx = x + width_px / 2
-        cy = y + height_px / 2
-        score = min_distance_to_existing(cx, cy, target_quartier_cls)
-        if score is None:
-            score = float("inf")
+        for (x, y) in positions:
+            if not is_rectangle_inside(x, y, width_px, height_px):
+                continue
+            if is_space_occupied(x, y, width_px, height_px, occupied_pixels):
+                continue
 
-        if score > best_score:
-            best_score = score
-            best_candidate = (x, y, quartier_cls, quartier_info)
+            quartier_cls, quartier_info = get_quartier(x, y, width_px, height_px)
 
-    if best_candidate:
-        x, y, quartier_cls, quartier_info = best_candidate
-        placed.append((x, y, size_name, width_px, height_px, quartier_cls, quartier_info, logo_data))
-        size_counts_by_quartier[quartier_cls][size_name] += 1
-        quartier_stats[quartier_cls] += 1
+            # CONTRAINTE : le logo doit etre place dans SON quartier
+            if quartier_cls != target_quartier_cls:
+                continue
 
-        # Marquer les pixels occupes (incluant le gap)
-        for yy in range(y, y + height_px + GAP_PX):
-            for xx in range(x, x + width_px + GAP_PX):
-                if 0 <= xx < W and 0 <= yy < H:
-                    occupied_pixels.add((xx, yy))
-        return True
+            # CONTRAINTE stricte : tous les logos du quartier doivent etre sous le libelle
+            if label_block is not None:
+                if y < label_block['min_y_px']:
+                    continue
+
+            cx = x + width_px / 2
+            cy = y + height_px / 2
+            score = min_distance_to_existing(cx, cy, target_quartier_cls)
+            if score is None:
+                score = float("inf")
+
+            if score > best_score:
+                best_score = score
+                best_candidate = (x, y, quartier_cls, quartier_info)
+
+        if best_candidate:
+            x, y, quartier_cls, quartier_info = best_candidate
+            placed.append((x, y, size_name, width_px, height_px, quartier_cls, quartier_info, logo_data))
+            size_counts_by_quartier[quartier_cls][size_name] += 1
+            quartier_stats[quartier_cls] += 1
+
+            # Marquer les pixels occupes (incluant le gap)
+            for yy in range(y, y + height_px + GAP_PX):
+                for xx in range(x, x + width_px + GAP_PX):
+                    if 0 <= xx < W and 0 <= yy < H:
+                        occupied_pixels.add((xx, yy))
+            return True
 
     return False
 
@@ -413,7 +706,7 @@ for quartier_cls, quartier_info in QUARTIERS.items():
             continue
 
         placed_count = 0
-        max_attempts_per_logo = 100  # Maximum de tentatives pour placer TOUS les logos
+        max_attempts_per_logo = 140  # Maximum de tentatives pour placer TOUS les logos
 
         for idx, logo_data in enumerate(logos_to_place):
             # Afficher le progres tous les 10 logos
@@ -474,8 +767,14 @@ for (px, py, size_name, width_px, height_px, quartier_cls, quartier_info, logo_d
 
     overlay_group.append(ET.Element(q("image"), attrib=attribs))
 
-# Append overlay and export
-root.append(overlay_group)
+# Insert overlay before labels so text remains above logos
+insert_index = len(root)
+for idx, child in enumerate(list(root)):
+    local_name = child.tag.split('}')[-1]
+    if local_name == "text":
+        insert_index = idx
+        break
+root.insert(insert_index, overlay_group)
 tree.write(OUTPUT_SVG_SQUARES, encoding="utf-8", xml_declaration=True)
 
 # Convert final SVG to PNG using svglib

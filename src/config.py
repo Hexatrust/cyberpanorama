@@ -17,19 +17,19 @@ RAPPORT_DIR = os.path.join(ASSETS_DIR, 'Report')
 
 # Fichiers principaux
 EXCEL_FILE = os.path.join(ASSETS_DIR, 'solutions.xlsx')
-INPUT_SVG = os.path.join(MASK_DIR, 'Radar_Hexatrust_Cesin.svg')
+INPUT_SVG = os.path.join(MASK_DIR, 'RADAR-HEXAGONE_V5-ombre.svg')
 OUTPUT_SVG = os.path.join(ASSETS_DIR, 'Panorama_cyber.svg')
 OUTPUT_PNG = os.path.join(ASSETS_DIR, 'Panorama_cyber.png')
 RAPPORT_CSV = os.path.join(RAPPORT_DIR, 'rapport_logos_places.csv')
 
-# Mapping des fonctions NIST vers les classes CSS du NOUVEAU SVG
+# Mapping des fonctions NIST vers les classes CSS du fond RADAR-HEXAGONE_V5-ombre.svg
 FONCTION_TO_CLASS = {
-    'Prot\u00e9ger':   'st3',
-    'Identifier': 'st11',
-    'Gouverner':  'st5',
-    'R\u00e9cup\u00e9rer':  'st12',
-    'R\u00e9pondre':   'st7',
-    'D\u00e9tecter':   'st10',
+    'Prot\u00e9ger':   'st11',
+    'Identifier': 'st3',
+    'Gouverner':  'st1',
+    'R\u00e9cup\u00e9rer':  'st6',
+    'R\u00e9pondre':   'st8',
+    'D\u00e9tecter':   'st0',
 }
 
 # Mapping des tailles (0=very_large, 1=large, 2=medium, 3=small)
@@ -42,12 +42,12 @@ TAILLE_TO_SIZE = {
 
 # Noms complets des quartiers
 QUARTIERS = {
-    'st3':  {'nom': 'Prot\u00e9ger',   'couleur': 'Violet'},
-    'st11': {'nom': 'Identifier', 'couleur': 'Bleu'},
-    'st5':  {'nom': 'Gouverner',  'couleur': 'Jaune'},
-    'st7':  {'nom': 'R\u00e9pondre',   'couleur': 'Rouge'},
-    'st10': {'nom': 'D\u00e9tecter',   'couleur': 'Orange'},
-    'st12': {'nom': 'R\u00e9cup\u00e9rer',  'couleur': 'Vert'},
+    'st11': {'nom': 'Prot\u00e9ger',   'couleur': 'Violet'},
+    'st3':  {'nom': 'Identifier', 'couleur': 'Bleu'},
+    'st1':  {'nom': 'Gouverner',  'couleur': 'Jaune'},
+    'st8':  {'nom': 'R\u00e9pondre',   'couleur': 'Rouge'},
+    'st0':  {'nom': 'D\u00e9tecter',   'couleur': 'Orange'},
+    'st6':  {'nom': 'R\u00e9cup\u00e9rer',  'couleur': 'Vert'},
 }
 
 # Tailles des rectangles sur le radar
