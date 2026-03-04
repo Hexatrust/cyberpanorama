@@ -627,7 +627,7 @@ def try_place_logo(size_name, target_quartier_cls, logo_data, max_positions=3500
     label_block = CATEGORY_LABEL_BLOCKS.get(target_quartier_cls)
 
     search_budget = max_positions
-    if target_quartier_cls == 'st3':
+    if target_quartier_cls == 'st7':
         search_budget = min(len(grid_positions), max_positions * 5)
 
     for factor in factor_steps:

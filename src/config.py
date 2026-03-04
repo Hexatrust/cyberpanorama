@@ -24,12 +24,12 @@ RAPPORT_CSV = os.path.join(RAPPORT_DIR, 'rapport_logos_places.csv')
 
 # Mapping des fonctions NIST vers les classes CSS du fond RADAR-HEXAGONE_V5-ombre.svg
 FONCTION_TO_CLASS = {
-    'Prot\u00e9ger':   'st11',
-    'Identifier': 'st3',
-    'Gouverner':  'st1',
-    'R\u00e9cup\u00e9rer':  'st6',
-    'R\u00e9pondre':   'st8',
-    'D\u00e9tecter':   'st0',
+    'Prot\u00e9ger':   'st12',
+    'Identifier': 'st7',
+    'Gouverner':  'st10',
+    'R\u00e9cup\u00e9rer':  'st11',
+    'R\u00e9pondre':   'st6',
+    'D\u00e9tecter':   'st1',
 }
 
 # Mapping des tailles (0=very_large, 1=large, 2=medium, 3=small)
@@ -42,12 +42,12 @@ TAILLE_TO_SIZE = {
 
 # Noms complets des quartiers
 QUARTIERS = {
-    'st11': {'nom': 'Prot\u00e9ger',   'couleur': 'Violet'},
-    'st3':  {'nom': 'Identifier', 'couleur': 'Bleu'},
-    'st1':  {'nom': 'Gouverner',  'couleur': 'Jaune'},
-    'st8':  {'nom': 'R\u00e9pondre',   'couleur': 'Rouge'},
-    'st0':  {'nom': 'D\u00e9tecter',   'couleur': 'Orange'},
-    'st6':  {'nom': 'R\u00e9cup\u00e9rer',  'couleur': 'Vert'},
+    'st12': {'nom': 'Prot\u00e9ger',   'couleur': 'Violet'},
+    'st7':  {'nom': 'Identifier', 'couleur': 'Bleu'},
+    'st10': {'nom': 'Gouverner',  'couleur': 'Jaune'},
+    'st6':  {'nom': 'R\u00e9pondre',   'couleur': 'Rouge'},
+    'st1':  {'nom': 'D\u00e9tecter',   'couleur': 'Orange'},
+    'st11': {'nom': 'R\u00e9cup\u00e9rer',  'couleur': 'Vert'},
 }
 
 # Tailles des rectangles sur le radar
