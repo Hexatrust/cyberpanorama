@@ -627,7 +627,7 @@ def try_place_logo(size_name, target_quartier_cls, logo_data, max_positions=3500
     label_block = CATEGORY_LABEL_BLOCKS.get(target_quartier_cls)
 
     search_budget = max_positions
-    if target_quartier_cls == 'st7':
+    if target_quartier_cls == 'st2':
         search_budget = min(len(grid_positions), max_positions * 5)
 
     for factor in factor_steps:
@@ -767,14 +767,8 @@ for (px, py, size_name, width_px, height_px, quartier_cls, quartier_info, logo_d
 
     overlay_group.append(ET.Element(q("image"), attrib=attribs))
 
-# Insert overlay before labels so text remains above logos
-insert_index = len(root)
-for idx, child in enumerate(list(root)):
-    local_name = child.tag.split('}')[-1]
-    if local_name == "text":
-        insert_index = idx
-        break
-root.insert(insert_index, overlay_group)
+# Insert overlay at end so logos render on top of white-fill hexagons
+root.append(overlay_group)
 tree.write(OUTPUT_SVG_SQUARES, encoding="utf-8", xml_declaration=True)
 
 # Convert final SVG to PNG using svglib

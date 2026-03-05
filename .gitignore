@@ -30,3 +30,4 @@ temp_quartier_*.png
 dist/
 build/
 *.egg-info/
+.claude
