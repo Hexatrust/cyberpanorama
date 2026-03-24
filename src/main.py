@@ -28,8 +28,8 @@ OUTPUT_SVG_SQUARES = config.OUTPUT_SVG
 OUTPUT_PNG_SQUARES = config.OUTPUT_PNG
 SVG_NS = "http://www.w3.org/2000/svg"
 MASK_DIR = config.MASK_DIR
-MASK_SVG = os.path.join(MASK_DIR, "Radar_mask_no_center.svg")
-MASK_PNG = os.path.join(MASK_DIR, "Radar_mask_no_center.png")
+MASK_SVG = os.path.join(MASK_DIR, f"{config.MASK_PREFIX}.svg")
+MASK_PNG = os.path.join(MASK_DIR, f"{config.MASK_PREFIX}.png")
 os.makedirs(MASK_DIR, exist_ok=True)
 
 # Optionnel : graine pour reproductibilité
@@ -38,9 +38,11 @@ random.seed(42)
 ET.register_namespace("", SVG_NS)
 ET.register_namespace("xlink", "http://www.w3.org/1999/xlink")
 
-# ======= Charger les logos par quartier et taille depuis solutions.xlsx =======
+# ======= Charger les logos par quartier et taille depuis le fichier Excel =======
 print("\n" + "="*60)
-print("Chargement des solutions depuis solutions.xlsx...")
+print(f"Chargement des solutions depuis {os.path.basename(config.EXCEL_FILE)}...")
+if config.HEXATRUST_ONLY:
+    print("  [Mode HEXATRUST_ONLY actif]")
 print("="*60)
 solutions_by_quartier = load_solutions_mapping()
 
@@ -143,26 +145,55 @@ else:
 # Collect shapes (paths, polygons, ellipses, cercles) WITH their class
 TARGET_SHAPE_TAGS = ["path", "polygon", "circle", "ellipse"]
 
-def build_shape_element(tag, attrib, fill_color):
+MASK_INSET = 10  # Pixels to shrink mask polygons inward (avoids placing logos on hexagon borders)
+
+def shrink_polygon_points(points_str, inset):
+    """Shrink a polygon inward by moving each vertex toward the centroid."""
+    coords = points_str.strip().split()
+    vertices = []
+    for i in range(0, len(coords), 2):
+        vertices.append((float(coords[i]), float(coords[i+1])))
+    if not vertices:
+        return points_str
+    cx = sum(v[0] for v in vertices) / len(vertices)
+    cy = sum(v[1] for v in vertices) / len(vertices)
+    shrunk = []
+    for x, y in vertices:
+        dx, dy = x - cx, y - cy
+        dist = math.sqrt(dx*dx + dy*dy)
+        if dist > 0:
+            factor = max(0, (dist - inset)) / dist
+            shrunk.append((cx + dx * factor, cy + dy * factor))
+        else:
+            shrunk.append((x, y))
+    return " ".join(f"{x} {y}" for x, y in shrunk)
+
+def build_shape_element(tag, attrib, fill_color, inset=0):
     """Create an SVG element for a shape with the desired fill color."""
     base_attrib = {"fill": fill_color, "stroke": "none"}
 
     if tag == "path":
         base_attrib["d"] = attrib.get("d")
     elif tag == "polygon":
-        base_attrib["points"] = attrib.get("points", "")
+        points = attrib.get("points", "")
+        if inset > 0:
+            points = shrink_polygon_points(points, inset)
+        base_attrib["points"] = points
     elif tag == "circle":
+        r = float(attrib.get("r", "0"))
         base_attrib.update({
             "cx": attrib.get("cx", "0"),
             "cy": attrib.get("cy", "0"),
-            "r": attrib.get("r", "0"),
+            "r": str(max(0, r - inset)),
         })
     elif tag == "ellipse":
+        rx = float(attrib.get("rx", "0"))
+        ry = float(attrib.get("ry", "0"))
         base_attrib.update({
             "cx": attrib.get("cx", "0"),
             "cy": attrib.get("cy", "0"),
-            "rx": attrib.get("rx", "0"),
-            "ry": attrib.get("ry", "0"),
+            "rx": str(max(0, rx - inset)),
+            "ry": str(max(0, ry - inset)),
         })
 
     if "transform" in attrib:
@@ -397,7 +428,7 @@ mask_svg.append(ET.Element(q("rect"), attrib={
     "fill": "white"
 }))
 for tag, cls, attrib in shapes_with_class:
-    mask_svg.append(build_shape_element(tag, attrib, "black"))
+    mask_svg.append(build_shape_element(tag, attrib, "black", inset=MASK_INSET))
 
 # Add white hole for center
 if center:
@@ -455,8 +486,7 @@ for tag, cls, attrib in shapes_with_class:
         "x": str(vx), "y": str(vy), "width": str(vw), "height": str(vh),
         "fill": "white"
     }))
-    temp_svg.append(build_shape_element(tag, attrib, "black"))
-
+    temp_svg.append(build_shape_element(tag, attrib, "black", inset=MASK_INSET))
 
     # Sauvegarder et rasteriser
     temp_svg_path = f"temp_quartier_{cls}.svg"
