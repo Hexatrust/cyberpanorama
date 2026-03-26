@@ -14,7 +14,7 @@
 
 ## 📊 Aperçu du Panorama
 
-![Panorama des Solutions de Cybersécurité Souveraines](assets/Panorama_cyber.svg)
+![Panorama des Solutions de Cybersécurité Souveraines](assets/Panorama_cyber.png)
 
 ---
 
