@@ -65,6 +65,7 @@ jobs:
           else
             pip install pillow reportlab svglib lxml pandas openpyxl
           fi
+          playwright install --with-deps chromium
 
       # Generate radar using the core script
       - name: Generate radar assets

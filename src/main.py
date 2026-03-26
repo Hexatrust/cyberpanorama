@@ -48,13 +48,39 @@ solutions_by_quartier = load_solutions_mapping()
 
 # Encoder tous les logos en base64
 def encode_logo_to_base64(logo_path):
-    """Encode un logo en base64 data URI."""
+    """Encode un logo en base64 data URI, en convertissant SVG/WebP en PNG pour compatibilité Inkscape."""
     try:
-        with open(logo_path, 'rb') as f:
-            logo_bytes = f.read()
-        mime_type = mimetypes.guess_type(logo_path)[0] or 'image/png'
-        base64_data = base64.b64encode(logo_bytes).decode('utf-8')
-        return f"data:{mime_type};base64,{base64_data}"
+        ext = os.path.splitext(logo_path)[1].lower()
+        if ext in ('.svg', '.webp'):
+            # Convert SVG/WebP to PNG bytes via Pillow/cairosvg for Inkscape compatibility
+            from PIL import Image as PILImage
+            import io
+            if ext == '.svg':
+                try:
+                    import cairosvg
+                    png_bytes = cairosvg.svg2png(url=logo_path)
+                except ImportError:
+                    # Fallback: use svglib + reportlab
+                    from svglib.svglib import svg2rlg
+                    from reportlab.graphics import renderPM
+                    drawing = svg2rlg(logo_path)
+                    buf = io.BytesIO()
+                    renderPM.drawToFile(drawing, buf, fmt="PNG")
+                    png_bytes = buf.getvalue()
+            else:
+                # WebP -> PNG via Pillow
+                img = PILImage.open(logo_path)
+                buf = io.BytesIO()
+                img.save(buf, format='PNG')
+                png_bytes = buf.getvalue()
+            base64_data = base64.b64encode(png_bytes).decode('utf-8')
+            return f"data:image/png;base64,{base64_data}"
+        else:
+            with open(logo_path, 'rb') as f:
+                logo_bytes = f.read()
+            mime_type = mimetypes.guess_type(logo_path)[0] or 'image/png'
+            base64_data = base64.b64encode(logo_bytes).decode('utf-8')
+            return f"data:{mime_type};base64,{base64_data}"
     except Exception as e:
         print(f"Erreur lors de l'encodage de {logo_path}: {e}")
         return None
@@ -245,13 +271,28 @@ def collect_text_exclusion_rects(svg_root):
         for info in QUARTIERS.values()
     }
 
+    # Collect both <text> elements and <path> elements with aria-label
+    # (text converted to outlines by Inkscape)
+    label_elements = []
     for text_el in svg_root.findall(f".//{q('text')}"):
+        label_elements.append(text_el)
+    for path_el in svg_root.findall(f".//{q('path')}"):
+        if path_el.get("aria-label"):
+            label_elements.append(path_el)
+
+    for text_el in label_elements:
         classes = (text_el.get("class") or "").split()
         font_size = 37.0
-        for cls in classes:
-            if cls in font_sizes:
-                font_size = font_sizes[cls]
-                break
+        # Check inline style first (Inkscape outlines), then CSS classes
+        inline_style = text_el.get("style") or ""
+        style_fs = re.search(r"font-size\s*:\s*([\d.]+)px", inline_style)
+        if style_fs:
+            font_size = float(style_fs.group(1))
+        else:
+            for cls in classes:
+                if cls in font_sizes:
+                    font_size = font_sizes[cls]
+                    break
 
         position = parse_translate(text_el.get("transform"))
         if position is None:
@@ -266,22 +307,27 @@ def collect_text_exclusion_rects(svg_root):
 
         x, y = position
 
-        text_parts = []
-        tspans = text_el.findall(f".//{q('tspan')}")
-        if tspans:
-            for tspan in tspans:
-                value = "".join(tspan.itertext()).strip()
+        # For path elements with aria-label, use the aria-label as the text
+        aria_label = text_el.get("aria-label")
+        if aria_label:
+            label = aria_label
+        else:
+            text_parts = []
+            tspans = text_el.findall(f".//{q('tspan')}")
+            if tspans:
+                for tspan in tspans:
+                    value = "".join(tspan.itertext()).strip()
+                    if value:
+                        text_parts.append(value)
+            else:
+                value = "".join(text_el.itertext()).strip()
                 if value:
                     text_parts.append(value)
-        else:
-            value = "".join(text_el.itertext()).strip()
-            if value:
-                text_parts.append(value)
 
-        if not text_parts:
-            continue
+            if not text_parts:
+                continue
 
-        label = " ".join(text_parts)
+            label = " ".join(text_parts)
         normalized_label = re.sub(
             r"\s+", " ",
             unicodedata.normalize("NFKD", label).encode("ascii", "ignore").decode("ascii")
@@ -326,34 +372,53 @@ def collect_category_label_constraints(svg_root):
     }
 
     category_constraints = {}
+
+    # Collect both <text> elements and <path> elements with aria-label
+    label_elements = []
     for text_el in svg_root.findall(f".//{q('text')}"):
+        label_elements.append(text_el)
+    for path_el in svg_root.findall(f".//{q('path')}"):
+        if path_el.get("aria-label"):
+            label_elements.append(path_el)
+
+    for text_el in label_elements:
         position = parse_translate(text_el.get("transform"))
         if position is None:
             continue
 
         classes = (text_el.get("class") or "").split()
         font_size = 37.0
-        for cls_name in classes:
-            if cls_name in font_sizes:
-                font_size = font_sizes[cls_name]
-                break
+        inline_style = text_el.get("style") or ""
+        style_fs = re.search(r"font-size\s*:\s*([\d.]+)px", inline_style)
+        if style_fs:
+            font_size = float(style_fs.group(1))
+        else:
+            for cls_name in classes:
+                if cls_name in font_sizes:
+                    font_size = font_sizes[cls_name]
+                    break
 
-        text_parts = []
-        tspans = text_el.findall(f".//{q('tspan')}")
-        if tspans:
-            for tspan in tspans:
-                value = "".join(tspan.itertext()).strip()
+        aria_label = text_el.get("aria-label")
+        if aria_label:
+            label_text = aria_label
+        else:
+            text_parts = []
+            tspans = text_el.findall(f".//{q('tspan')}")
+            if tspans:
+                for tspan in tspans:
+                    value = "".join(tspan.itertext()).strip()
+                    if value:
+                        text_parts.append(value)
+            else:
+                value = "".join(text_el.itertext()).strip()
                 if value:
                     text_parts.append(value)
-        else:
-            value = "".join(text_el.itertext()).strip()
-            if value:
-                text_parts.append(value)
 
-        if not text_parts:
-            continue
+            if not text_parts:
+                continue
+            label_text = " ".join(text_parts)
 
-        normalized_label = normalize_label_key(" ".join(text_parts))
+        normalized_label = normalize_label_key(label_text)
         matched_quartier_cls = None
         for quartier_name, quartier_cls in normalized_quartiers.items():
             if quartier_name and quartier_name in normalized_label:
@@ -363,7 +428,7 @@ def collect_category_label_constraints(svg_root):
         if matched_quartier_cls is None:
             continue
 
-        label = " ".join(text_parts)
+        label = label_text
         x, y = position
 
         width_factor = 0.92
@@ -801,13 +866,41 @@ for (px, py, size_name, width_px, height_px, quartier_cls, quartier_info, logo_d
 root.append(overlay_group)
 tree.write(OUTPUT_SVG_SQUARES, encoding="utf-8", xml_declaration=True)
 
-# Convert final SVG to PNG using svglib
+# Convert final SVG to PNG using Playwright (headless Chromium)
 try:
-    drawing_final = svg2rlg(OUTPUT_SVG_SQUARES)
-    renderPM.drawToFile(drawing_final, OUTPUT_PNG_SQUARES, fmt="PNG", dpi=72*SCALE)
+    from playwright.sync_api import sync_playwright
+    import tempfile
+
+    svg_abs_path = os.path.abspath(OUTPUT_SVG_SQUARES)
+    png_width = int(vw * SCALE)
+    png_height = int(vh * SCALE)
+
+    # Create an HTML wrapper that renders the SVG at exact dimensions
+    html_content = f"""<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+html, body {{ margin: 0; padding: 0; overflow: hidden; background: transparent; }}
+img {{ display: block; width: {png_width}px; height: {png_height}px; }}
+</style></head>
+<body><img src="file:///{svg_abs_path.replace(os.sep, '/')}"></body></html>"""
+
+    html_path = os.path.join(os.path.dirname(OUTPUT_SVG_SQUARES), "_render_tmp.html")
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write(html_content)
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport={"width": png_width, "height": png_height})
+        page.goto(f"file:///{os.path.abspath(html_path).replace(os.sep, '/')}")
+        page.wait_for_load_state("networkidle")
+        # Wait for the image to fully render
+        page.wait_for_selector("img", state="visible")
+        page.screenshot(path=OUTPUT_PNG_SQUARES, omit_background=True)
+        browser.close()
+
+    os.remove(html_path)
     print(f"PNG généré: {OUTPUT_PNG_SQUARES}")
 except Exception as e:
-    print(f"Avertissement: Impossible de générer le PNG: {e}")
+    print(f"Avertissement: Impossible de générer le PNG via Playwright: {e}")
     print(f"Le fichier SVG avec les logos est disponible: {OUTPUT_SVG_SQUARES}")
 
 # ======= Récap =======
