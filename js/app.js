@@ -12,8 +12,21 @@
   // ("0 solutions" + hexagone vide). On recharge alors AUTOMATIQUEMENT (au plus 2 fois) pour
   // s'auto reparer, au lieu de peindre une page incomplete.
   const ns = namespace || {};
-  const REQUIRED = ["config", "utils", "searchIndex", "layout", "filters", "search",
-                    "panorama", "zoom", "list", "drawer", "modal", "sectorModal", "mobileMenu"];
+  const REQUIRED = [
+    "config",
+    "utils",
+    "searchIndex",
+    "layout",
+    "filters",
+    "search",
+    "panorama",
+    "zoom",
+    "list",
+    "drawer",
+    "modal",
+    "sectorModal",
+    "mobileMenu",
+  ];
   const missing = REQUIRED.filter((m) => !ns[m]);
   if (!window.CYBERPANORAMA_DATA) missing.push("data");
   if (missing.length) {
@@ -23,7 +36,10 @@
       location.reload();
       return;
     }
-    console.error("CyberPanorama : modules non charges apres rechargement:", missing.join(", "));
+    console.error(
+      "CyberPanorama : modules non charges apres rechargement:",
+      missing.join(", "),
+    );
     return;
   }
   sessionStorage.removeItem("cp_boot_retry");
@@ -68,6 +84,8 @@
     modalCompany: document.getElementById("modalCompany"),
     modalTitle: document.getElementById("modalTitle"),
     modalFunction: document.getElementById("modalFunction"),
+    modalSize: document.getElementById("modalSize"),
+    sizeFilters: document.getElementById("sizeFilters"),
     modalBody: document.getElementById("modalBody"),
   };
 
@@ -75,19 +93,22 @@
     activeLevel1: new Set(level1Order),
     activeLevel2: new Set(),
     activeLevel3: new Set(),
+    activeSizes: new Set(), // tailles d'entreprise selectionnees (vide = toutes)
     search: "",
     searchNormalized: "",
-    searchIds: null,            // Set d'IDs renvoyes par Typesense (null = pas de recherche / repli)
+    searchIds: null, // Set d'IDs renvoyes par Typesense (null = pas de recherche / repli)
     modalSolutionId: null,
     zoom: 1,
-    zoomSector: null,           // part sur laquelle on a zoome (clic) ; null = vue complete
+    zoomSector: null, // part sur laquelle on a zoome (clic) ; null = vue complete
   };
 
   const context = {
     data,
     elements,
     state,
-    solutionsById: new Map(data.solutions.map((solution) => [solution.id, solution])),
+    solutionsById: new Map(
+      data.solutions.map((solution) => [solution.id, solution]),
+    ),
     render,
   };
 
@@ -95,11 +116,27 @@
     const q = state.searchNormalized;
     return data.solutions.filter((solution) => {
       if (!state.activeLevel1.has(solution.nist.level1)) return false;
-      if (!namespace.utils.hasIntersection(solution.nist.level2, state.activeLevel2)) return false;
-      if (!namespace.utils.hasIntersection(solution.nist.level3, state.activeLevel3)) return false;
+      if (
+        !namespace.utils.hasIntersection(
+          solution.nist.level2,
+          state.activeLevel2,
+        )
+      )
+        return false;
+      if (
+        !namespace.utils.hasIntersection(
+          solution.nist.level3,
+          state.activeLevel3,
+        )
+      )
+        return false;
+      // Type d'entreprise : si des tailles sont cochees, ne garder que celles-la.
+      if (state.activeSizes.size && !state.activeSizes.has(solution.size))
+        return false;
       // Recherche : Typesense (state.searchIds = Set) si dispo, sinon repli client-side.
       if (!q) return true;
-      if (state.searchIds instanceof Set) return state.searchIds.has(solution.id);
+      if (state.searchIds instanceof Set)
+        return state.searchIds.has(solution.id);
       return namespace.utils.matchesQuery(solution, q);
     });
   }
@@ -131,6 +168,7 @@
     }
     count += state.activeLevel2.size;
     count += state.activeLevel3.size;
+    count += state.activeSizes.size;
     if (state.search) count += 1;
     return count;
   }
@@ -144,13 +182,19 @@
     // sont grises (updateSectorState) ; seuls ceux qui contiennent des entreprises visibles restent en
     // couleur. Les logos non visibles ne sont pas dessines.
     namespace.layout.computeSectorGeometry(data.solutions);
-    namespace.panorama.renderPanoramaBase(elements.hexPanorama, toggleSector, resetFilters);
+    namespace.panorama.renderPanoramaBase(
+      elements.hexPanorama,
+      toggleSector,
+      resetFilters,
+    );
     namespace.panorama.fitViewBox(elements.hexPanorama);
     namespace.panorama.updateSectorState(counts, state.activeLevel1, allActive);
 
     const layout = namespace.layout.computeLayout();
     const visibleIds = new Set(visible.map((s) => s.id));
-    namespace.panorama.renderLogos(elements.hexPanorama, { placed: layout.placed.filter((p) => visibleIds.has(p.solution.id)) });
+    namespace.panorama.renderLogos(elements.hexPanorama, {
+      placed: layout.placed.filter((p) => visibleIds.has(p.solution.id)),
+    });
 
     namespace.list.renderList(visible, context, openModal);
 
@@ -164,10 +208,11 @@
   }
 
   function resetFilters() {
-    state.zoomSector = null;                     // clic CyberPanorama / reset = retour vue complete (dezoom)
+    state.zoomSector = null; // clic CyberPanorama / reset = retour vue complete (dezoom)
     state.activeLevel1 = new Set(level1Order);
     state.activeLevel2.clear();
     state.activeLevel3.clear();
+    state.activeSizes.clear();
     state.search = "";
     state.searchNormalized = "";
     state.searchIds = null;
@@ -175,15 +220,19 @@
     elements.searchClear.hidden = true;
     namespace.filters.renderFunctionFilters(context);
     namespace.filters.renderLevelFilters(context);
+    namespace.filters.renderSizeFilters(context);
     render();
-    if (namespace.zoom && namespace.zoom.fitToScreen) namespace.zoom.fitToScreen(context);
+    if (namespace.zoom && namespace.zoom.fitToScreen)
+      namespace.zoom.fitToScreen(context);
   }
 
   function hideSkeleton() {
     const skeleton = document.getElementById("appSkeleton");
     if (!skeleton) return;
     skeleton.classList.add("is-hidden");
-    skeleton.addEventListener("transitionend", () => skeleton.remove(), { once: true });
+    skeleton.addEventListener("transitionend", () => skeleton.remove(), {
+      once: true,
+    });
     setTimeout(() => skeleton.remove(), 700);
   }
 
@@ -196,6 +245,7 @@
     namespace.panorama.renderPanoramaBase(elements.hexPanorama, toggleSector);
     namespace.filters.renderFunctionFilters(context);
     namespace.filters.renderLevelFilters(context);
+    namespace.filters.renderSizeFilters(context);
     namespace.search.bind(context);
     namespace.zoom.bind(context);
     namespace.drawer.bind(context);
@@ -208,9 +258,13 @@
     //    pour que le skeleton et la base du panorama s'affichent sans blocage.
     let heavyDone = false;
     const heavy = () => {
-      if (heavyDone) return;          // ne s'execute qu'une fois (rAF OU timeout, le premier)
+      if (heavyDone) return; // ne s'execute qu'une fois (rAF OU timeout, le premier)
       heavyDone = true;
-      namespace.panorama.ensureLogos(elements.hexPanorama, data.solutions, openModal);
+      namespace.panorama.ensureLogos(
+        elements.hexPanorama,
+        data.solutions,
+        openModal,
+      );
       render();
       // Zoom auto : tout le panorama tient dans la fenetre au premier affichage.
       if (namespace.zoom.fitToScreen) namespace.zoom.fitToScreen(context);

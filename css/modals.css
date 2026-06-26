@@ -72,6 +72,15 @@
   letter-spacing: -0.02em;
   overflow-wrap: anywhere;
 }
+/* La ligne des pastilles sous le titre : fonction NIST (colorée) + taille (neutre), côte à côte */
+.modal-pillrow-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+/* La pastille de la fonction NIST (couleur de la fonction via data-sector -> --tag-bg) */
 .modal-pillrow {
   display: inline-flex;
   align-items: center;
@@ -84,6 +93,23 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+/* La pastille de la taille d'entreprise (ETI / Scale-up, PME...), neutre. Masquée si vide */
+.modal-sizepill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.modal-sizepill:empty {
+  display: none;
 }
 .modal-close {
   width: 34px;
