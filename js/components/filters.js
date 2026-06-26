@@ -11,7 +11,9 @@
 
   function renderFunctionFilters(context) {
     const { data, elements, render, state } = context;
-    const counts = buildCounts(data.solutions, (solution) => [solution.nist.level1]);
+    const counts = buildCounts(data.solutions, (solution) => [
+      solution.nist.level1,
+    ]);
     const fragment = document.createDocumentFragment();
 
     level1Order.forEach((level1) => {
@@ -85,7 +87,9 @@
 
       const text = document.createElement("span");
       // Format : "Full Name (CODE)" si on a un nom, sinon juste le code
-      text.textContent = item.label ? `${item.label} (${item.code})` : item.code;
+      text.textContent = item.label
+        ? `${item.label} (${item.code})`
+        : item.code;
       text.title = item.label ? `${item.code} — ${item.label}` : item.code;
 
       const count = document.createElement("span");
@@ -101,24 +105,100 @@
 
   function renderLevelFilters(context) {
     const { data, elements, render, state } = context;
-    const level2Counts = buildCounts(data.solutions, (solution) => solution.nist.level2);
+    const level2Counts = buildCounts(
+      data.solutions,
+      (solution) => solution.nist.level2,
+    );
     const level2Items = Object.entries(data.level2_catalog)
       .filter(([code]) => level2Counts.has(code))
-      .map(([code, info]) => ({ code, label: info.label, count: level2Counts.get(code) }))
+      .map(([code, info]) => ({
+        code,
+        label: info.label,
+        count: level2Counts.get(code),
+      }))
       .sort((a, b) => a.code.localeCompare(b.code));
 
-    const level3Counts = buildCounts(data.solutions, (solution) => solution.nist.level3);
+    const level3Counts = buildCounts(
+      data.solutions,
+      (solution) => solution.nist.level3,
+    );
     const level3Catalog = data.level3_catalog || {};
     const level3Items = Array.from(level3Counts.entries())
-      .map(([code, count]) => ({ code, label: level3Catalog[code] || "", count }))
+      .map(([code, count]) => ({
+        code,
+        label: level3Catalog[code] || "",
+        count,
+      }))
       .sort((a, b) => a.code.localeCompare(b.code));
 
-    renderCheckboxFilters(elements.level2Filters, level2Items, state.activeLevel2, "level2", render);
-    renderCheckboxFilters(elements.level3Filters, level3Items, state.activeLevel3, "level3", render);
+    renderCheckboxFilters(
+      elements.level2Filters,
+      level2Items,
+      state.activeLevel2,
+      "level2",
+      render,
+    );
+    renderCheckboxFilters(
+      elements.level3Filters,
+      level3Items,
+      state.activeLevel3,
+      "level3",
+      render,
+    );
+  }
+
+  // Filtre par taille d'entreprise (du plus grand au plus petit). Memes libelles que la fiche.
+  const SIZE_ORDER = ["very_large", "large", "medium", "small"];
+  const SIZE_LABELS = {
+    very_large: "Grand groupe",
+    large: "ETI / Scale-up",
+    medium: "PME",
+    small: "Startup / TPME",
+  };
+
+  function renderSizeFilters(context) {
+    const { data, elements, render, state } = context;
+    const counts = buildCounts(data.solutions, (solution) => [solution.size]);
+    const fragment = document.createDocumentFragment();
+
+    SIZE_ORDER.forEach((code) => {
+      const n = counts.get(code) || 0;
+      if (!n) return; // on n'affiche pas une taille sans acteur
+      const id = `size-${code}`;
+      const label = document.createElement("label");
+      label.className = "check-row";
+      label.setAttribute("for", id);
+
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.id = id;
+      input.checked = state.activeSizes.has(code);
+      input.addEventListener("change", () => {
+        if (input.checked) {
+          state.activeSizes.add(code);
+        } else {
+          state.activeSizes.delete(code);
+        }
+        render();
+      });
+
+      const text = document.createElement("span");
+      text.textContent = SIZE_LABELS[code] || code;
+
+      const count = document.createElement("span");
+      count.className = "check-count";
+      count.textContent = String(n);
+
+      label.append(input, text, count);
+      fragment.appendChild(label);
+    });
+
+    elements.sizeFilters.replaceChildren(fragment);
   }
 
   namespace.filters = {
     renderFunctionFilters,
     renderLevelFilters,
+    renderSizeFilters,
   };
 })(window.CP);

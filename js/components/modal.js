@@ -7,6 +7,14 @@
 (function attachModal(namespace) {
   const { assetPath, initials, tagLightLogo } = namespace.utils;
 
+  // Libelle de taille affiche a cote de la fonction NIST (meme grille que l'Excel).
+  const SIZE_LABELS = {
+    small: "Startup / TPME",
+    medium: "PME",
+    large: "ETI / Scale-up",
+    very_large: "Grand groupe",
+  };
+
   function setLogo(solution, elements) {
     elements.modalLogo.replaceChildren();
     elements.modalLogo.classList.remove("logo-on-dark");
@@ -116,10 +124,12 @@
     elements.modalCompany.hidden = !company;
     elements.modalTitle.textContent = solution.solution_name;
     elements.modalFunction.textContent = solution.nist.level1;
+    // Taille de l'entreprise, en pastille a cote de la fonction (vide -> pastille masquee par le CSS).
+    elements.modalSize.textContent = SIZE_LABELS[solution.size] || "";
 
     const modalEl = elements.modal.querySelector(".modal");
     modalEl.dataset.sector = solution.nist.level1;
-    elements.modalFunction.parentElement.dataset.sector = solution.nist.level1;
+    elements.modalFunction.dataset.sector = solution.nist.level1;
 
     setLogo(solution, elements);
 
