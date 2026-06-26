@@ -1,33 +1,17 @@
+# OS
+.DS_Store
+
 # Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.Python
-*.so
 
-# Logs
-*.log
-logs/
+# Fichiers temporaires / hors perimetre
+*.bak
+~$*
+*.zip
+data/size_review/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Temporary files
-*.tmp
-temp_quartier_*.svg
-temp_quartier_*.png
-
-# Build
-dist/
-build/
-*.egg-info/
-.claude
+# Rapport QA genere par build_master_xlsx.py
+data/master_qa_report.json
+_ts/
+_site/

@@ -1,0 +1,91 @@
+name: Reindex Typesense
+
+# Reconstruit l'index de recherche Typesense (schema + 276 documents) sur le serveur, via SSH.
+#
+# ACTIVATION (rien ne s'execute tant que ce n'est pas fait, donc aucun risque pour les autres sites) :
+#   1. Variable de depot  TYPESENSE_AUTODEPLOY = true   (Settings > Secrets and variables > Actions > Variables)
+#   2. Secrets de depot (Settings > Secrets and variables > Actions > Secrets) :
+#        TS_SSH_HOST   IP/host PUBLIC du serveur qui heberge le conteneur Typesense
+#        TS_SSH_USER   utilisateur SSH (dedie de preference)
+#        TS_SSH_KEY    cle privee SSH correspondante
+#        TS_ADMIN_KEY  cle API admin Typesense
+#   3. Variables optionnelles : TS_SSH_PORT (defaut 22), TS_PORT (defaut 40000), TS_CONTAINER (defaut typesense)
+#
+# Le job ne tourne QUE si TYPESENSE_AUTODEPLOY == 'true'. Le script serveur ne touche que le conteneur
+# Typesense (cf. scripts/typesense/deploy_server.sh) : nginx-proxy et les autres sites ne sont jamais modifies.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/solutions.generated.js"
+      - "data/solutions.json"
+      - "scripts/typesense/**"
+      - ".github/workflows/typesense-reindex.yml"
+  workflow_dispatch:
+
+# Moindre privilege : ce workflow ne fait que lire le code et pousser vers le serveur via SSH.
+permissions:
+  contents: read
+
+concurrency:
+  group: typesense-reindex
+  cancel-in-progress: false
+
+jobs:
+  reindex:
+    # Tant que la variable n'est pas a 'true', le job est ignore (aucune action sur le serveur).
+    if: vars.TYPESENSE_AUTODEPLOY == 'true'
+    runs-on: ubuntu-latest
+    # Les secrets (TS_SSH_HOST/USER/KEY, TS_ADMIN_KEY) sont definis dans l'environnement github-pages.
+    environment: github-pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Regenerer les donnees + le JSONL d'import
+        run: |
+          python3 scripts/build_app_data.py
+          python3 scripts/typesense/build_import.py _ts/solutions.jsonl
+          ls -l _ts/solutions.jsonl
+
+      - name: Copier les fichiers sur le serveur
+        uses: appleboy/scp-action@917f8b81dfc1ccd331fef9e2d61bdc6c8be94634 # v0.1.7
+        with:
+          host: ${{ secrets.TS_SSH_HOST }}
+          username: ${{ secrets.TS_SSH_USER }}
+          key: ${{ secrets.TS_SSH_KEY }}
+          port: ${{ vars.TS_SSH_PORT || '22' }}
+          source: "_ts/solutions.jsonl,scripts/typesense/schema.json,scripts/typesense/deploy_server.sh"
+          target: "/tmp/cyberpanorama-ts"
+          overwrite: true
+
+      - name: Deployer / reindexer Typesense
+        uses: appleboy/ssh-action@7eaf76671a0d7eec5d98ee897acda4f968735a17 # v1.2.0
+        with:
+          host: ${{ secrets.TS_SSH_HOST }}
+          username: ${{ secrets.TS_SSH_USER }}
+          key: ${{ secrets.TS_SSH_KEY }}
+          port: ${{ vars.TS_SSH_PORT || '22' }}
+          script: |
+            set -e
+            cd /tmp/cyberpanorama-ts
+            chmod +x scripts/typesense/deploy_server.sh
+            export TS_KEY='${{ secrets.TS_ADMIN_KEY }}'
+            # TS_URL : l'API Typesense vue depuis l'hote SSH (souvent http://localhost:40000).
+            export TS_URL='${{ vars.TS_URL || 'http://localhost:40000' }}'
+            # MANAGE_CONTAINER=0 (defaut) : on ne touche PAS Docker, reindex via API seulement (sans risque).
+            export MANAGE_CONTAINER='${{ vars.TS_MANAGE_CONTAINER || '0' }}'
+            export TS_PORT='${{ vars.TS_PORT || '40000' }}'
+            export TS_CONTAINER='${{ vars.TS_CONTAINER || 'typesense' }}'
+            export IMPORT_FILE="$PWD/_ts/solutions.jsonl"
+            export SCHEMA_FILE="$PWD/scripts/typesense/schema.json"
+            bash scripts/typesense/deploy_server.sh
+            rm -rf /tmp/cyberpanorama-ts

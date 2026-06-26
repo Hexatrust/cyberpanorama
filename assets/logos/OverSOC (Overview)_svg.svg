@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="903.2703999999999" height="256" viewBox="0 0 903.2703999999999 256">
+  <rect x="0" y="0" width="903.2703999999999" height="256" fill="#EFF1F0"></rect>
+  <text x="76.8" y="172.8" font-family="Geist, system-ui, sans-serif" font-size="128" font-weight="600" letter-spacing="-2.816" fill="#2F2F31">Over</text>
+  <g transform="translate(357.37600000000003 64)">
+    <rect x="0" y="0" width="128" height="128" fill="#F4F85B"></rect>
+    <polyline points="28.16,64 57.6,92.16 83.52586355726717,60.73471083967617" fill="none" stroke="#2F2F31" stroke-width="14.080000000000002" stroke-linejoin="miter" stroke-linecap="square"></polyline>
+    <rect x="-7.359999999999999" y="-7.359999999999999" width="14.719999999999999" height="14.719999999999999" fill="#2F2F31" transform="translate(101.24276501877567 39.25967876512042) rotate(-50.47736872882888)"></rect>
+  </g>
+  <text x="490.49600000000004" y="172.8" font-family="Geist, system-ui, sans-serif" font-size="128" font-weight="600" letter-spacing="-2.816" fill="#2F2F31">iew</text>
+  <line x1="715.0079999999999" y1="104.32000000000001" x2="715.0079999999999" y2="172.8" stroke="rgba(47,47,49,0.40)" stroke-width="1"></line>
+  <text x="732.9279999999999" y="123.90400000000001" font-family="Geist Mono, ui-monospace, monospace" font-size="23.04" font-weight="500" letter-spacing="1.3823999999999999" fill="#2F2F31" fill-opacity="0.65">BY</text>
+  <text x="732.9279999999999" y="170.496" font-family="Geist Mono, ui-monospace, monospace" font-size="23.04" font-weight="500" letter-spacing="1.3823999999999999" fill="#2F2F31" fill-opacity="0.65">OVERSOC</text>
+</svg>

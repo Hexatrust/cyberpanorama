@@ -1,163 +1,152 @@
-name: 🏢 Ajouter une entreprise au Radar
-description: Proposez l'ajout d'une solution de cybersécurité souveraine au radar Hexatrust
+name: Ajouter une entreprise au panorama
+description: Proposer l'ajout d'une solution de cybersecurite francaise ou europeenne au CyberPanorama
 title: "[NOUVELLE ENTREPRISE] : "
-labels: ["radar:new-entry"]
-assignees: []
-
+labels: ["panorama:new-entry"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## 🎯 Ajouter une nouvelle solution au Radar Hexatrust
-
-        Merci de contribuer au radar ! Remplissez ce formulaire pour proposer l'ajout d'une solution de cybersécurité souveraine.
-
-        **Note :** Les informations seront vérifiées avant l'ajout au radar.
+        ## Ajouter une solution au CyberPanorama
+        Cette soumission ne sera pas publiee directement : elle prepare une Pull Request qu'un mainteneur
+        valide avant la mise en ligne.
 
   - type: input
     id: company_name
     attributes:
-      label: 🏢 Nom de l'entreprise/solution
-      description: Nom officiel de l'entreprise ou de la solution
-      placeholder: "Ex: CyberCompany"
+      label: Nom de l'entreprise ou de la solution
+      description: Nom officiel
+      placeholder: "Ex : CyberCompany"
     validations:
       required: true
 
   - type: dropdown
     id: fonction_nist
     attributes:
-      label: 🎯 Fonction NIST principale
-      description: Sélectionnez la fonction NIST correspondant à votre solution
-      options:
-        - Identifier
-        - Protéger
-        - Détecter
-        - Répondre
-        - Récupérer
-        - Gouverner
+      label: Fonction NIST CSF 2.0 principale
+      options: [Gouverner, Identifier, Proteger, Detecter, Repondre, Recuperer]
     validations:
       required: true
 
   - type: checkboxes
     id: sous_fonctions_nist
     attributes:
-      label: 🔍 Sous-fonctions NIST CSF 2.0 (optionnel, max 3)
-      description: Sélectionnez jusqu'à 3 sous-catégories spécifiques du NIST CSF 2.0
+      label: Sous-categories NIST CSF 2.0 (optionnel, 3 maximum)
+      description: Cochez jusqu'a 3 categories de niveau 2
       options:
-        - label: "GV.OC - Organizational Context"
-        - label: "GV.RM - Risk Management Strategy"
-        - label: "GV.SC - Cybersecurity Supply Chain Risk Management"
-        - label: "GV.RR - Roles, Responsibilities, and Authorities"
-        - label: "GV.PO - Policies, Processes, and Procedures"
-        - label: "GV.OV - Oversight"
-        - label: "ID.AM - Asset Management"
-        - label: "ID.RA - Risk Assessment"
-        - label: "ID.IM - Improvement"
-        - label: "PR.AA - Identity Management, Authentication, and Access Control"
-        - label: "PR.AT - Awareness and Training"
-        - label: "PR.DS - Data Security"
-        - label: "PR.PS - Platform Security"
-        - label: "PR.IR - Technology Infrastructure Resilience"
-        - label: "DE.CM - Continuous Monitoring"
-        - label: "DE.AE - Adverse Event Analysis"
-        - label: "RS.MA - Incident Management"
-        - label: "RS.AN - Incident Analysis"
-        - label: "RS.CO - Incident Response Reporting and Communication"
-        - label: "RS.MI - Incident Mitigation"
-        - label: "RC.RP - Incident Recovery Plan Execution"
-        - label: "RC.CO - Incident Recovery Communication"
-
-  - type: dropdown
-    id: objectif_nis2
-    attributes:
-      label: 🛡️ Objectif NIS2 principal (optionnel)
-      description: Sélectionnez l'objectif NIS2 principal couvert par votre solution
-      options:
-        - (Aucun)
-        - Recensement des SI
-        - Mise en oeuvre d'un cadre de gouvernance
-        - Maitrise de l'écosystème
-        - Prise en compte de la sécurité numérique dans la gestion des RH
-        - Maitrise des SI
-        - Maitrise des accès physiques aux locaux
-        - Sécurisation de l'architecture des SI
-        - Sécurisation des accès distants aux SI
-        - Protection des SI contre les codes malveillants
-        - Gestion des identités et des accès aux SI
-        - Maitrise de l'administration des SI
-        - Identification et réaction aux incidents de sécurité
-        - Continuité et reprise d'activité
-        - Réaction aux crises d'origine cyber
-        - Exercices, tests, et entrainements
-        - Mise en oeuvre d'une approche par les risques
-        - Audit de la sécurité des SI
-        - Sécurisation de la configuration des ressources des SI
-        - Administration des SI depuis des ressources dédiées
+        - label: "GV.OC : Contexte organisationnel"
+        - label: "GV.RM : Strategie de gestion des risques"
+        - label: "GV.SC : Gestion des risques de la chaine d'approvisionnement"
+        - label: "GV.RR : Roles, responsabilites et autorites"
+        - label: "GV.PO : Politiques"
+        - label: "GV.OV : Supervision"
+        - label: "ID.AM : Gestion des actifs"
+        - label: "ID.RA : Evaluation des risques"
+        - label: "ID.IM : Amelioration"
+        - label: "PR.AA : Identite, authentification et controle d'acces"
+        - label: "PR.AT : Sensibilisation et formation"
+        - label: "PR.DS : Securite des donnees"
+        - label: "PR.PS : Securite des plateformes"
+        - label: "PR.IR : Resilience de l'infrastructure technologique"
+        - label: "DE.CM : Surveillance continue"
+        - label: "DE.AE : Analyse des evenements indesirables"
+        - label: "RS.MA : Gestion des incidents"
+        - label: "RS.AN : Analyse des incidents"
+        - label: "RS.CO : Communication sur la reponse"
+        - label: "RS.MI : Attenuation des incidents"
+        - label: "RC.RP : Execution du plan de retablissement"
+        - label: "RC.CO : Communication sur le retablissement"
 
   - type: dropdown
     id: taille
     attributes:
-      label: 📏 Taille de l'entreprise
-      description: Taille relative de l'entreprise pour l'affichage sur le radar
+      label: Taille de l'entreprise
+      description: >
+        Grille INSEE et Scale Up du panorama. Startup ou TPME : moins de 15 salaries et CA inferieur a 2 M EUR.
+        PME : 15 a 250 salaries ou CA de 2 a 50 M EUR. ETI ou Scale Up : categorie INSEE ETI ou levee superieure
+        a 12 M EUR. Grand groupe : 5000 salaries ou plus, CA superieur a 1,5 Md EUR, ou filiale d'un grand groupe.
       options:
-        - "0 - Very Large (grand groupe)"
-        - "1 - Large (ETI, solution mature, scale up)"
-        - "2 - Medium (PME)"
-        - "3 - Small (petite entreprise, startup)"
+        - "Grand groupe"
+        - "ETI / Scale Up"
+        - "PME"
+        - "Startup / TPME"
     validations:
       required: true
 
   - type: textarea
     id: description
     attributes:
-      label: 📝 Description de la solution
-      description: Décrivez brièvement la solution (objectifs, fonctionnalités principales)
-      placeholder: |
-        Ex: Solution de détection des menaces en temps réel basée sur l'IA,
-        destinée aux entreprises de taille moyenne. Conforme RGPD et NIS2.
+      label: Description courte
+      description: Une a deux phrases (objectif et fonctionnalites principales)
     validations:
       required: true
+
+  - type: textarea
+    id: description_detaillee
+    attributes:
+      label: Description detaillee (optionnel)
+      description: Description plus complete (produits, cibles, differenciateurs)
+
+  - type: input
+    id: mots_cles
+    attributes:
+      label: Mots-cles (optionnel)
+      description: Mots-cles separes par des virgules, utilises pour la recherche
+      placeholder: "EDR, XDR, detection, SOC"
+
+  - type: dropdown
+    id: objectif_nis2
+    attributes:
+      label: Objectif NIS2 principal (optionnel)
+      options:
+        - (Aucun)
+        - Recensement des SI
+        - Mise en oeuvre d'un cadre de gouvernance
+        - Maitrise de l'ecosysteme
+        - Maitrise des SI
+        - Securisation de l'architecture des SI
+        - Securisation des acces distants aux SI
+        - Protection des SI contre les codes malveillants
+        - Gestion des identites et des acces aux SI
+        - Identification et reaction aux incidents de securite
+        - Continuite et reprise d'activite
+        - Mise en oeuvre d'une approche par les risques
 
   - type: input
     id: website
     attributes:
-      label: 🌐 Site web
-      description: URL du site web officiel de l'entreprise
+      label: Site web
       placeholder: "https://exemple.fr"
     validations:
-      required: false
+      required: true
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (email ou page contact)
+      placeholder: "contact@exemple.fr"
+
+  - type: textarea
+    id: logo_upload
+    attributes:
+      label: Logo (glissez ou collez une image PNG, GIF, JPG, SVG)
+      description: Deposez le fichier ici, GitHub l'heberge tout seul. Sinon laissez vide et mettez l'URL ci-dessous.
+      placeholder: "Glissez l'image ici, ou collez-la (Ctrl/Cmd + V)."
 
   - type: input
     id: logo_url
     attributes:
-      label: 🖼️ URL du logo
-      description: |
-        Lien direct vers le logo de l'entreprise (format PNG, SVG, JPG ou WebP)
-        **Important :** Le logo doit être accessible publiquement
-      placeholder: "https://exemple.fr/logo.png"
-    validations:
-      required: true
-
-  - type: checkboxes
-    id: criteres_souverainete
-    attributes:
-      label: ✅ Critères de souveraineté
-      description: Cochez les critères de souveraineté que votre solution respecte
-      options:
-        - label: Données hébergées en France/Europe
-        - label: Soumis au droit français (RGPD, NIS2)
-        - label: Indépendance technologique
-        - label: Transparence (code source accessible ou audits)
+      label: URL du logo (si pas d'upload ci-dessus)
+      description: Lien direct public vers le logo (PNG, GIF, JPG, SVG ou WebP)
+      placeholder: "https://exemple.fr/logo.svg"
 
   - type: checkboxes
     id: agreement
     attributes:
-      label: 📜 Engagement
-      description: En soumettant ce formulaire, vous certifiez que
+      label: Engagement
       options:
         - label: Les informations fournies sont exactes
           required: true
-        - label: Vous avez les droits sur le logo fourni
+        - label: J'ai les droits sur le logo fourni
           required: true
-        - label: Vous acceptez la publication sur le radar
+        - label: J'accepte la publication sur le panorama
           required: true

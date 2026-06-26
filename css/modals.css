@@ -1,0 +1,342 @@
+/* Modale fiche solution + popup secteur (slice) */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 12, 35, 0.5);
+  backdrop-filter: blur(6px);
+}
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+/* Modale fiche solution */
+.modal {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(85vh, 720px);
+  overflow: auto;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+.modal-head {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 22px 22px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.modal-logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+  overflow: hidden;
+}
+.modal-logo img {
+  max-width: 78%;
+  max-height: 78%;
+  object-fit: contain;
+}
+/* logo blanc détecté en JS -> fond foncé pour rester visible dans la fiche */
+.modal-logo.logo-on-dark {
+  background: #21232f;
+  border-color: #21232f;
+}
+.modal-titles {
+  min-width: 0;
+}
+.modal-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.modal-titles h2 {
+  margin: 4px 0 6px;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+.modal-pillrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--tag-bg, var(--accent-soft));
+  color: var(--tag-ink, var(--accent));
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--ink-soft);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+}
+.modal-close svg {
+  display: block;
+}
+.modal-close:hover {
+  background: #ececf1;
+  color: var(--ink);
+}
+.modal-eyebrow[hidden] {
+  display: none;
+}
+.modal-body {
+  padding: 20px 22px 24px;
+  display: grid;
+  gap: 18px;
+}
+.modal-description {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.modal-cell {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+}
+/* Liens fiche : site web en bleu, contact en noir comme le reste */
+.modal-cell-value a {
+  font-weight: 700;
+}
+.modal-cell-value a.lnk-web {
+  color: #2b7fd0;
+  text-decoration: none;
+}
+.modal-cell-value a.lnk-web:hover {
+  text-decoration: underline;
+}
+.modal-cell-value a.lnk-plain {
+  color: var(--ink);
+  text-decoration: none;
+}
+.modal-cell-value a.lnk-plain:hover {
+  text-decoration: underline;
+}
+.modal-cell-label {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.modal-cell-value {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.modal-tag {
+  padding: 3px 9px;
+  border-radius: 7px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.modal-tag.empty {
+  color: var(--muted);
+  font-style: italic;
+}
+.modal-section h3 {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+/* Sector popup (slice de camembert plein écran) — fond clair comme la vue principale */
+#sectorModal {
+  background: rgba(250, 250, 252, 0.95);
+  backdrop-filter: blur(4px);
+  transition: opacity 200ms ease;
+  opacity: 0;
+  pointer-events: none;
+  padding: 16px;
+}
+#sectorModal:not([hidden]) {
+  pointer-events: auto;
+}
+#sectorModal.is-open {
+  opacity: 1;
+}
+
+.sector-popup-slice {
+  position: relative;
+  width: 97vw;
+  height: 95vh;
+  height: 95dvh; /* hauteur visible (barre d'URL Safari comprise) */
+  display: grid;
+  place-items: center;
+}
+
+.sector-popup-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 9px 20px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+  transition:
+    background 120ms ease,
+    color 120ms ease,
+    transform 120ms ease;
+}
+.sector-popup-close-btn:hover {
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.sector-popup-info {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.78rem;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+.sector-popup-info strong {
+  font-weight: 800;
+}
+.sector-popup-info > strong {
+  font-size: 1rem;
+  color: var(--sector-accent, var(--accent));
+}
+
+/* Le frame respecte l'aspect-ratio du secteur (défini inline par JS) et tient dans le slice */
+.sector-popup-frame {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  /* aspect-ratio défini inline en JS selon bbox */
+}
+#sectorPopupSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 16px 40px rgba(30, 27, 58, 0.28));
+}
+#sectorPopupFrame .logo-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+/* Popup logos : chip + aspect dimensionnés dynamiquement par le JS selon le secteur */
+.popup-logo {
+  width: var(--chip-w, 5%);
+  aspect-ratio: var(--chip-aspect, 50 / 40);
+}
+.popup-logo:hover,
+.popup-logo:focus-visible {
+  transform: translate(-50%, -50%) scale(1.8);
+}
+
+/* Mobile : fiche solution plus compacte, Site web et Contact empiles l'un sous l'autre */
+@media (max-width: 760px) {
+  .modal {
+    width: 100%;
+    max-height: 90dvh;
+    border-radius: var(--radius-lg);
+  }
+  .modal-head {
+    grid-template-columns: 52px 1fr auto;
+    padding: 14px 14px 12px;
+    gap: 10px;
+  }
+  .modal-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+  }
+  .modal-eyebrow {
+    font-size: 0.62rem;
+  }
+  .modal-titles h2 {
+    font-size: 1.1rem;
+  }
+  .modal-pillrow {
+    font-size: 0.64rem;
+    padding: 3px 8px;
+  }
+  .modal-body {
+    padding: 14px 14px 18px;
+    gap: 14px;
+  }
+  .modal-description {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  /* Site web et Contact l'un en dessous de l'autre */
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-cell-value {
+    font-size: 0.82rem;
+  }
+  .modal-tag {
+    font-size: 0.68rem;
+  }
+  .modal-section h3 {
+    font-size: 0.68rem;
+  }
+}

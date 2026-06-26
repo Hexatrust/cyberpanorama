@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Carte de partage (Open Graph) CyberPanorama : fond clair, accroche a gauche, hexagone camembert a droite -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+  <defs>
+    <radialGradient id="bgGlow" cx="78%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f5f6f9"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Bloc texte -->
+  <text x="80" y="196" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="3" fill="#ff6a3d">PANORAMA DE LA CYBERSÉCURITÉ FRANÇAISE</text>
+  <text x="78" y="290" font-family="Helvetica, Arial, sans-serif" font-size="82" font-weight="700" letter-spacing="-2" fill="#16151f">CyberPanorama</text>
+  <text x="80" y="358" font-family="Helvetica, Arial, sans-serif" font-size="33" font-weight="500" fill="#50506a">276 acteurs classés par fonction</text>
+  <text x="80" y="404" font-family="Helvetica, Arial, sans-serif" font-size="33" font-weight="500" fill="#50506a">NIST CSF 2.0</text>
+  <text x="80" y="478" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2" fill="#9a9ab0">BY HEXATRUST &amp; CESIN</text>
+
+  <!-- Hexagone camembert (6 secteurs NIST) -->
+  <g stroke="#ffffff" stroke-width="6" stroke-linejoin="round">
+    <polygon points="905,315 1012.5,128.8 1120,315" fill="#4ab2df"/>
+    <polygon points="905,315 1120,315 1012.5,501.2" fill="#9190c6"/>
+    <polygon points="905,315 1012.5,501.2 797.5,501.2" fill="#fab746"/>
+    <polygon points="905,315 797.5,501.2 690,315" fill="#ed7368"/>
+    <polygon points="905,315 690,315 797.5,128.8" fill="#92c78f"/>
+    <polygon points="905,315 797.5,128.8 1012.5,128.8" fill="#f7f19e"/>
+  </g>
+
+  <!-- Coeur blanc (hexagone) + pastille de marque -->
+  <polygon points="1001,315 953,398.1 857,398.1 809,315 857,231.9 953,231.9" fill="#ffffff" stroke="#ececf1" stroke-width="2" stroke-linejoin="round"/>
+  <g>
+    <rect x="878" y="298" width="14" height="14" rx="3" fill="#f7f19e"/>
+    <rect x="898" y="298" width="14" height="14" rx="3" fill="#4ab2df"/>
+    <rect x="918" y="298" width="14" height="14" rx="3" fill="#9190c6"/>
+    <rect x="878" y="318" width="14" height="14" rx="3" fill="#92c78f"/>
+    <rect x="898" y="318" width="14" height="14" rx="3" fill="#ed7368"/>
+    <rect x="918" y="318" width="14" height="14" rx="3" fill="#fab746"/>
+  </g>
+</svg>

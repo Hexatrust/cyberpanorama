@@ -1,193 +1,87 @@
-# Panorama des Solutions de Cybersécurité Souveraines
-*Un projet mené en collaboration avec le [CESIN](https://www.cesin.fr) et [Hexatrust](https://www.hexatrust.com)*
+# CyberPanorama
 
-<div align="center">
+Panorama interactif des solutions de cybersecurite francaises et europeennes, classees selon le
+NIST CSF 2.0. Projet mene avec [Hexatrust](https://www.hexatrust.com) et le [CESIN](https://www.cesin.fr).
+Site statique (HTML, CSS, JavaScript), sans framework, deploye sur GitHub Pages.
 
-## 🚀 Gérer les Entreprises du panorama
+Voir le panorama en ligne : https://cyberpanorama.fr
 
-[![Ajouter une entreprise](https://img.shields.io/badge/➕_Ajouter_une_entreprise-Formulaire_GitHub-brightgreen?style=for-the-badge&logo=github)](../../issues/new?assignees=&labels=radar%3Anew-entry&template=add_company.yml)
-[![Modifier une entreprise](https://img.shields.io/badge/✏️_Modifier_une_entreprise-Formulaire_GitHub-blue?style=for-the-badge&logo=github)](../../issues/new?assignees=&labels=radar%3Aedit-entry&template=edit_company.yml)
+## Gerer les entreprises du panorama
 
-</div>
+[![Ajouter une entreprise](https://img.shields.io/badge/Ajouter_une_entreprise-Formulaire_GitHub-2ea44f?style=for-the-badge&logo=github)](../../issues/new?template=add_company.yml)
+[![Modifier une entreprise](https://img.shields.io/badge/Modifier_une_entreprise-Formulaire_GitHub-1f6feb?style=for-the-badge&logo=github)](../../issues/new?template=edit_company.yml)
 
----
+Aucune connaissance technique requise : on remplit un formulaire, le reste est automatise.
 
-## 📊 Aperçu du Panorama
+## Contexte et objectifs
 
-![Panorama des Solutions de Cybersécurité Souveraines](assets/Panorama_cyber.png)
+- Cartographier les solutions de cybersecurite francaises et europeennes pour reduire la dependance
+  aux acteurs extra-territoriaux.
+- Faciliter le choix des entreprises et administrations en quete de solutions fiables et souveraines.
+- Promouvoir la visibilite de l'ecosysteme local.
 
----
+La classification suit le cadre de reference [NIST CSF 2.0](https://www.nist.gov/cyberframework),
+structure en 6 fonctions.
 
-## 📌 Contexte et objectifs
+| Fonction   | Description                                                            |
+|------------|-----------------------------------------------------------------------|
+| Gouverner  | Integrer la cybersecurite dans la gouvernance globale.                |
+| Identifier | Comprendre et gerer les risques sur les systemes, actifs et donnees.  |
+| Proteger   | Mettre en place des protections pour limiter l'impact des incidents.  |
+| Detecter   | Identifier les evenements de securite.                                |
+| Repondre   | Reagir efficacement aux incidents detectes.                           |
+| Recuperer  | Restaurer les capacites et services apres un incident.                |
 
-### Pourquoi ce panorama ?
-- **Enjeu stratégique** : La cybersécurité est un pilier de la souveraineté numérique, surtout dans un contexte de tensions géopolitiques et de dépendances technologiques.
-- **Besoins identifiés** :
-  - Cartographier les solutions **françaises** pour réduire la dépendance aux acteurs extra-territoriaux.
-  - Faciliter le choix des entreprises et administrations en quête de solutions **fiables et souveraines**.
-  - Promouvoir l’écosystème **français** de la cybersécurité.
+### Grille de taille (INSEE et Scale Up)
 
-### Objectifs
-- **Identifier** les solutions souveraines par fonction NIST (basé sur le [NIST CSF v2](https://www.nist.gov/cyberframework)).
-- **Classer** leur maturité, conformité et adéquation aux besoins.
-- **Promouvoir** les acteurs locaux pour renforcer leur visibilité.
+| Categorie       | Criteres                                                                       |
+|-----------------|--------------------------------------------------------------------------------|
+| Startup / TPME  | Moins de 15 salaries et CA inferieur a 2 M EUR.                                |
+| PME             | 15 a 250 salaries ou CA de 2 a 50 M EUR.                                       |
+| ETI / Scale Up  | Categorie INSEE ETI, ou levee de fonds superieure a environ 12 M EUR.          |
+| Grand groupe    | 5000 salaries ou plus, CA superieur a 1,5 Md EUR, ou filiale d'un grand groupe.|
 
----
+## Proposer un ajout ou une modification
 
-## 🛠 Méthodologie
+1. Cliquer sur un des deux boutons ci-dessus pour ouvrir le formulaire.
+2. Renseigner les champs (nom, fonction NIST, taille, description, site, URL du logo, etc.).
+3. A la soumission, un workflow parse le formulaire, telecharge le logo, prepare les donnees et ouvre
+   une Pull Request.
+4. Un mainteneur verifie la PR (logo, classification, taille, description) puis la fusionne.
+5. La fusion sur `main` regenere les donnees et redeploie le panorama.
 
-### Cadre de référence : NIST CSF v2 (version française)
-Le **NIST Cybersecurity Framework v2** est structuré autour de **6 fonctions** :
+Rien n'est publie sans la validation manuelle de la Pull Request.
 
-| Fonction       | Description                                                                 |
-|----------------|-----------------------------------------------------------------------------|
-| **Gouverner**  | Intégrer la cybersécurité dans la gouvernance globale.                     |
-| **Identifier** | Comprendre et gérer les risques liés aux systèmes, actifs et données.      |
-| **Protéger**   | Mettre en place des sauvegardes pour limiter l’impact des incidents.        |
-| **Détecter**   | Identifier les événements de sécurité en temps réel.                       |
-| **Répondre**   | Réagir efficacement aux incidents détectés.                                |
-| **Récupérer**  | Restaurer les capacités et services après un incident.                    |
+## Structure
 
-*Source : [NIST](https://www.nist.gov/cyberframework)/[ANSSI](https://www.ssi.gouv.fr)*
-
-### Critères de souveraineté
-Pour être considérée comme "souveraine", une solution doit :
-- **Localiser les données** en France.
-- **Être soumise au droit français** (RGPD, NIS2).
-- **Maîtriser ses briques technologiques** (pas de dépendance extra-européenne).
-- **Garantir la transparence** (accès aux codes sources, audits).
-
-## 🔧 Fonctionnement
-
-### 🤖 Automatisation Complète via GitHub Actions
-
-Ce projet utilise **GitHub Actions** pour automatiser complètement l'ajout d'entreprises et la régénération du Panorama. **Aucune exécution locale n'est nécessaire** pour l'utilisation normale.
-
-### 🔄 Régénération Automatique
-
-Le Panorama est régénéré automatiquement dans les cas suivants :
-
-1. **Ajout d'entreprise approuvée** : Après validation d'une issue GitHub
-2. **Modification du fichier Excel** : Quand `assets/solutions.xlsx` est modifié
-3. **Modification des logos** : Quand des logos dans `assets/logos/` sont modifiés
-4. **Quotidien** : Tous les jours à 2h (UTC) pour assurer la cohérence
-5. **Manuel** : Via l'onglet Actions → "Run workflow"
-
-## 📦 Installation (Développeurs uniquement)
-
-L'installation locale n'est nécessaire que pour les développeurs souhaitant modifier le code ou générer le Panorama localement.
-
-### 1. Cloner le dépôt
-
-```bash
-git clone https://github.com/Hexatrust/cyberpanorama
-cd cyberpanorama
+```
+index.html                   page de l'app (racine du site)
+css/  js/                    interface et rendu du panorama
+assets/                      logos (assets/logos/) et branding (Hexatrust, CESIN)
+data/
+  solutions.generated.js     donnees consommees par l'app (generees)
+  solutions.json             le fichier unique de donnee (276 acteurs publies)
+  size_review.json           tailles re-verifiees (registre INSEE et web) et leur justification
+  nist_labels_fr.json        referentiel NIST en francais
+  search_synonyms.json       synonymes pour la recherche
+scripts/build_app_data.py    regenere data/solutions.generated.js
+.github/
+  ISSUE_TEMPLATE/            formulaires d'ajout et de modification
+  scripts/parse_submission.py parsing des soumissions
+  workflows/                 deploiement Pages et traitement des soumissions
 ```
 
-### 2. Installer les dépendances
+## Developpement local
 
 ```bash
-pip install -r requirements.txt
+python3 scripts/build_app_data.py
+# puis ouvrir index.html, ou servir le dossier en HTTP
 ```
 
-### 3. Générer le Panorama localement (optionnel)
+La recherche utilise Typesense quand il est joignable, avec un repli local tolerant (tokens et synonymes)
+embarque dans le site.
 
-```bash
-python3 src/main.py
-```
+## Deploiement
 
-Cette commande génère les fichiers SVG et PNG du Panorama.
-
----
-
-## 🤝 Comment contribuer ?
-
-### Pour les Éditeurs de Solutions
-
-**⭐ Méthode Recommandée : Formulaire GitHub (100% automatique)**
-
-#### Option 1 : Ajouter une nouvelle entreprise
-
-[![Ajouter une entreprise](https://img.shields.io/badge/➕_Ajouter_une_entreprise-Formulaire_GitHub-success?style=for-the-badge)](../../issues/new?assignees=&labels=radar%3Anew-entry&template=add_company.yml)
-
-**Comment ça marche ?**
-
-1. **📝 Cliquez sur le bouton** pour ouvrir le formulaire d'ajout
-2. **✍️ Remplissez les informations** :
-   - Nom de l'entreprise/solution
-   - Fonction NIST (Identifier, Protéger, Détecter, Répondre, Récupérer, Gouverner)
-   - Sous-fonctions NIST CSF 2.0 (optionnel, max 3 catégories)
-   - Objectif NIS2 principal (optionnel)
-   - Taille de l'entreprise (0-Very Large, 1-Large, 2-Medium, 3-Small)
-   - Description de la solution
-   - **🖼️ URL du logo** (lien direct accessible publiquement)
-   - Critères de souveraineté
-
-3. **🚀 Soumettez** : Votre demande est créée automatiquement
-
-4. **🔍 Validation** : L'équipe CESIN/Hexatrust examine (3-5 jours)
-
-5. **✨ Ajout automatique** : Une fois approuvée, GitHub Actions :
-   - ✅ Télécharge le logo automatiquement
-   - ✅ Ajoute l'entreprise au fichier Excel
-   - ✅ Régénère le Panorama (SVG + PNG)
-   - ✅ Commit et push automatique
-   - ✅ Vous notifie sur l'issue
-
-#### Option 2 : Modifier une entreprise existante
-
-[![Modifier une entreprise](https://img.shields.io/badge/✏️_Modifier_une_entreprise-Formulaire_GitHub-blue?style=for-the-badge)](../../issues/new?assignees=&labels=radar%3Aedit-entry&template=edit_company.yml)
-
-**Quand l'utiliser ?**
-
-- Mettre à jour le logo de votre entreprise
-- Modifier la fonction NIST principale
-- Changer la taille de l'entreprise
-- Mettre à jour la description ou le site web
-
-**Processus :**
-
-1. **📝 Ouvrez le formulaire** de modification
-2. **🔍 Indiquez le nom exact** de l'entreprise à modifier
-3. **✏️ Remplissez uniquement** les champs que vous souhaitez modifier
-4. **💬 Expliquez** la raison de la modification
-5. **🚀 Validation automatique** une fois approuvée
-
-**🎯 Processus 100% automatisé, vous n'avez rien d'autre à faire !**
-
----
-
-**Méthode Alternative : Modification Manuelle**
-
-Pour les développeurs souhaitant modifier directement les fichiers :
-
-1. Clonez le repository
-2. Modifiez `assets/solutions.xlsx` et ajoutez les logos dans `assets/logos/`
-3. Testez localement : `python3 src/main.py`
-4. Committez et poussez vers `main`
-5. Le Panorama sera automatiquement régénéré par GitHub Actions
-
----
-
-### Pour les Utilisateurs
-
-- **💬 Retours d'expérience** : Partagez vos retours via une [Issue GitHub](../../issues/new)
-- **🔧 Ajustements** : Proposez des modifications sur les solutions identifiées
-- **🐛 Bugs** : Signalez les problèmes techniques
-
-
----
-
-## 📩 Contact
-- **CESIN** : [contact@cesin.fr](mailto:contact@cesin.fr)
-- **Hexatrust** : [contact@hexatrust.com](mailto:contact@hexatrust.com)
-
----
-
-## 📄 Licence
-
-Ce projet est open-source, sous licence EUPL (European Union Public Licence) version 1.2. Consultez le fichier LICENSE.md pour plus de détails.
-
----
-
-**Développé avec ❤️ par l'équipe du Cyberpanorama (EY France / CESIN / Hexatrust)**
+Tout push sur `main` regenere les donnees et redeploie le site via GitHub Actions
+(`.github/workflows/deploy-pages.yml`).
