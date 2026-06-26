@@ -1,0 +1,380 @@
+/* Panorama : stage, hex-frame (SVG + overlay), secteurs, bannières, core, logos, hover focus */
+
+.stage {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.hex-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow: auto;
+  padding: 4px;
+  --zoom: 1;
+}
+
+.hex-frame {
+  position: relative;
+  /* Centrage cross navigateur : `margin:auto` dans un flex centre l'element sur les 2 axes ET
+     reste scrollable quand il deborde (contrairement a `justify-content: safe center`, mal
+     supporte par Safari). */
+  margin: auto;
+  /* TAILLE FIXE (reglable) : dimensions en px = unites viewBox x echelle (posees par fitViewBox
+     dans --frame-w / --frame-h), multipliees par le zoom. Le rayon des hexagones controle donc
+     la taille REELLE a l'ecran ; si ca depasse, on scrolle/pan, et "Ajuster" fait le fit ecran.
+     Le cadre garde l'aspect du contenu (SVG en meet) -> pas de deformation, overlay aligne. */
+  width: calc(var(--frame-w, 1400px) * var(--zoom));
+  height: calc(var(--frame-h, 1100px) * var(--zoom));
+}
+.hex-panorama {
+  /* Dimensions EXPLICITES en px (pas de %) : Safari calcule mal la taille d'un SVG a viewBox
+     dimensionne en pourcentage (bug WebKit connu) et le rend ~10-15% plus grand que Chrome.
+     On reutilise les memes variables que le cadre (elles heritent) -> identique sur tous navigateurs. */
+  width: calc(var(--frame-w, 1400px) * var(--zoom, 1));
+  height: calc(var(--frame-h, 1100px) * var(--zoom, 1));
+  display: block;
+}
+.logo-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.logo-overlay > .logo {
+  pointer-events: auto;
+}
+
+/* Sectors */
+.sector {
+  cursor: pointer;
+  transition: opacity 150ms ease;
+}
+.sector[data-dimmed="true"] {
+  opacity: 0.18;
+}
+.sector[data-selected="true"] .sector-fill {
+  stroke-width: 4;
+}
+.sector-fill {
+  stroke-linejoin: round;
+  transition: stroke-width 150ms ease;
+}
+
+/* Pas de rectangle de focus bleu au clic souris (secteurs, bannières, logos), mais on garde un
+   contour net au clavier (accessibilité) via :focus-visible. */
+.sector,
+.banner,
+.logo,
+.hex-panorama :focus {
+  outline: none;
+}
+.sector:focus:not(:focus-visible),
+.banner:focus:not(:focus-visible),
+.logo:focus:not(:focus-visible) {
+  outline: none;
+}
+.sector:focus-visible,
+.banner:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid var(--accent, #2b7fd0);
+  outline-offset: 2px;
+}
+/* Évite la surbrillance de sélection de texte/élément lors d'un clic ou d'un glissé. */
+.hex-wrapper,
+.hex-frame,
+.hex-panorama,
+.logo-overlay {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Banners */
+.banner {
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+.banner:hover .banner-fill {
+  filter: brightness(1.06);
+}
+.banner[data-dimmed="true"] {
+  opacity: 0.35;
+}
+.banner-fill {
+  transition: filter 150ms ease;
+}
+.banner-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  fill: #181821;
+  pointer-events: none;
+}
+
+/* Core CESIN/Hexatrust */
+.core-outer {
+  fill: #ffffff;
+  stroke: rgba(30, 27, 58, 0.12);
+  stroke-width: 2;
+  filter: drop-shadow(0 8px 18px rgba(30, 27, 58, 0.08));
+}
+.core-inner {
+  fill: none;
+  stroke: rgba(30, 27, 58, 0.06);
+  stroke-width: 1;
+}
+.core-hexatrust,
+.core-cesin {
+  pointer-events: none;
+}
+
+/* Logos HTML overlay — GPU-friendly, pas de fond par défaut */
+/* --chip-w est set par JS selon le secteur (chip size adaptatif), default fallback */
+.logo {
+  position: absolute;
+  width: var(--chip-w, 3.57%);
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  background: transparent;
+  contain: layout paint style;
+  will-change: transform;
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    box-shadow 140ms ease;
+}
+.logo > img {
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  opacity: 1;
+  transition: opacity 180ms ease;
+}
+
+/* Skeleton par logo : shimmer tant que l'image n'est pas chargée */
+.logo.is-loading {
+  background: linear-gradient(100deg, #edeef2 25%, #f7f8fb 45%, #edeef2 65%) 0
+    0 / 220% 100%;
+  border: 1px solid var(--line);
+  animation: logoShimmer 1.15s ease-in-out infinite;
+}
+.logo.is-loading > img {
+  opacity: 0;
+}
+@keyframes logoShimmer {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo.is-loading {
+    animation: none;
+  }
+}
+.logo.logo-missing {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.45rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
+.logo:hover,
+.logo:focus-visible {
+  transform: translate(-50%, -50%) scale(2.4);
+  z-index: 10;
+}
+
+/* Hover : fond couleur du secteur */
+.logo:hover,
+.logo:focus-visible {
+  background: #ffffff;
+  box-shadow:
+    0 2px 10px rgba(20, 20, 40, 0.16),
+    0 0 0 1px var(--line);
+}
+
+/* Logos blancs détectés automatiquement (JS) : dans le camembert on NE met PAS de fond
+   en permanence (le logo reste posé sur la couleur du secteur). Mais AU SURVOL, le fond
+   deviendrait blanc -> un logo tout blanc serait invisible. Donc au survol on passe en
+   fond foncé pour qu'il reste lisible (ex. YesWeHack). */
+.logo.logo-on-dark:hover,
+.logo.logo-on-dark:focus-visible {
+  background: #21232f;
+  box-shadow:
+    0 3px 14px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+/* Hover focus secteur : dim les autres */
+.hex-frame[data-hovered-sector] .sector,
+.hex-frame[data-hovered-sector] .banner,
+.hex-frame[data-hovered-sector] .logo {
+  opacity: 0.18;
+}
+.hex-frame[data-hovered-sector="Détecter"] [data-sector="Détecter"],
+.hex-frame[data-hovered-sector="Répondre"] [data-sector="Répondre"],
+.hex-frame[data-hovered-sector="Récupérer"] [data-sector="Récupérer"],
+.hex-frame[data-hovered-sector="Gouverner"] [data-sector="Gouverner"],
+.hex-frame[data-hovered-sector="Identifier"] [data-sector="Identifier"],
+.hex-frame[data-hovered-sector="Protéger"] [data-sector="Protéger"] {
+  opacity: 1;
+}
+
+/* Hover d'un logo : dim TOUS les autres logos */
+.logo-overlay:has(.logo:hover) .logo:not(:hover) {
+  opacity: 0.14;
+}
+
+/* Hexagone blanc central (camembert) */
+.center-hex {
+  fill: #ffffff;
+  stroke: rgba(26, 26, 46, 0.14);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+/* Trait reliant l'onglet de libelle a sa part */
+.banner-link {
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+/* Branding bas : CYBERPANORAMA BY + logos */
+.brand-title {
+  fill: #1a1a2e;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+  letter-spacing: 0.16em;
+}
+.brand-by {
+  fill: #6b6b86;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.24em;
+}
+
+/* Onglet de libelle d'une part (texte sombre sur pastel) */
+.banner-fill {
+  transition: filter 150ms ease;
+}
+.banner:hover .banner-fill {
+  filter: brightness(1.05);
+}
+
+/* Floating controls (zoom) */
+.floating-controls {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(8px);
+  z-index: 5;
+}
+.zoom-btn {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  border: 1px solid transparent;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.zoom-btn.zoom-icon {
+  width: 30px;
+  min-width: 30px;
+  padding: 0;
+}
+.zoom-btn svg {
+  display: block;
+}
+.zoom-btn:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.zoom-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.zoom-btn.zoom-reset {
+  font-size: 0.74rem;
+  padding: 0 12px;
+  font-weight: 700;
+}
+.zoom-btn.zoom-hand {
+  width: 30px;
+  min-width: 30px;
+  padding: 0;
+}
+.zoom-btn.zoom-hand.is-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.zoom-sep {
+  width: 1px;
+  height: 18px;
+  background: var(--line);
+  margin: 0 1px;
+}
+.zoom-value {
+  width: 52px;
+  text-align: center;
+  color: var(--ink-soft);
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.78rem;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  padding: 3px 2px;
+  cursor: text;
+}
+.zoom-value:hover {
+  background: var(--surface-soft);
+}
+.zoom-value:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 0;
+  background: #fff;
+  color: var(--ink);
+}
+
+/* Mode main actif : on indique qu'on peut saisir et déplacer le panorama. */
+.hex-wrapper.pan-mode {
+  cursor: grab;
+}
+.hex-wrapper.pan-mode.panning {
+  cursor: grabbing;
+}
+.hex-wrapper.pan-mode .sector,
+.hex-wrapper.pan-mode .banner,
+.hex-wrapper.pan-mode .logo {
+  cursor: grab;
+}

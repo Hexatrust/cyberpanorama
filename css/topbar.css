@@ -1,0 +1,273 @@
+/* Topbar : brand, titre, search box, bouton solutions */
+
+.topbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 0 16px;
+  height: var(--topbar-h);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar-center {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: grid;
+  grid-template-columns: repeat(3, 8px);
+  grid-template-rows: repeat(2, 8px);
+  gap: 2px;
+  padding: 4px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fff, #f0e5d2);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.brand-mark span {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+.brand-mark span:nth-child(1) {
+  background: var(--c-gv);
+}
+.brand-mark span:nth-child(2) {
+  background: var(--c-id);
+}
+.brand-mark span:nth-child(3) {
+  background: var(--c-pr);
+}
+.brand-mark span:nth-child(4) {
+  background: var(--c-rc);
+}
+.brand-mark span:nth-child(5) {
+  background: var(--c-rs);
+}
+.brand-mark span:nth-child(6) {
+  background: var(--c-de);
+}
+
+.topbar-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.topbar-version {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+.topbar-sep {
+  width: 1px;
+  height: 22px;
+  background: var(--line);
+  margin: 0 4px;
+}
+
+.topbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 11px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.topbar-btn:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.topbar-btn-count {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 800;
+}
+
+.topbar-btn-list {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  padding: 0 12px 0 16px;
+}
+.topbar-btn-list:hover {
+  background: #2b2848;
+  color: #fff;
+}
+.topbar-btn-list strong {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: clamp(280px, 36vw, 480px);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 1px 10px 1px 12px;
+  transition:
+    box-shadow 150ms ease,
+    border-color 150ms ease,
+    background 150ms ease;
+}
+.search-box:focus-within {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 106, 61, 0.15);
+}
+.search-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 6px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--ink);
+  font-size: 0.88rem;
+}
+.search-box input::placeholder {
+  color: var(--muted);
+  font-weight: 500;
+}
+/* Masque la croix NATIVE du champ type=search (Chrome/Safari) : on garde uniquement notre bouton .search-clear */
+.search-box input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+.search-clear {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+}
+.search-clear svg {
+  display: block;
+}
+.search-clear:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--ink);
+}
+
+/* Branding « by Hexatrust · CESIN » dans la barre du haut */
+.topbar-brandby {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 2px;
+}
+.topbar-brand-logo {
+  display: block;
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Bouton hamburger : masque sur desktop, visible sous 760px */
+.topbar-burger {
+  display: none;
+}
+
+/* Mobile : recherche + Filtres + Solutions passent dans le menu hamburger */
+@media (max-width: 760px) {
+  .topbar {
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    padding: 0 12px;
+  }
+  .topbar-sep {
+    display: none;
+  }
+
+  .topbar-burger {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    transition:
+      background 120ms ease,
+      color 120ms ease;
+  }
+  .topbar-burger:hover,
+  .topbar-burger[aria-expanded="true"] {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .topbar-burger svg {
+    display: block;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: var(--topbar-h);
+    left: 0;
+    right: 0;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-lg);
+  }
+  .mobile-menu[hidden] {
+    display: none;
+  }
+
+  /* Dans le menu : la recherche et les boutons occupent toute la largeur, empiles */
+  .mobile-menu .topbar-center {
+    display: block;
+    width: 100%;
+  }
+  .mobile-menu .search-box {
+    width: 100%;
+  }
+  .mobile-menu .topbar-btn {
+    width: 100%;
+    height: 42px;
+    justify-content: center;
+    font-size: 0.92rem;
+  }
+}

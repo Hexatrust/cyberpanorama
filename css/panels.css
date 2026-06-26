@@ -1,0 +1,143 @@
+/* Tiroirs lateraux (Filtres a gauche, Solutions a droite) : conteneur, redimensionnement, entete */
+
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  /* Largeur redimensionnable au drag (poignee .drawer-resize), memorisee dans localStorage.
+     Sur mobile, la media query plus bas force 100vw (plein ecran). */
+  width: var(--drawer-w, min(360px, 92vw));
+  background: var(--surface);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 14px 14px;
+  transition: transform 220ms ease;
+}
+/* Tiroir de GAUCHE = panneau Filtres (caché à gauche, glisse vers la droite à l'ouverture) */
+.drawer-left {
+  left: 0;
+  border-right: 1px solid var(--line);
+  box-shadow: 16px 0 40px rgba(30, 27, 58, 0.18);
+  transform: translateX(-110%);
+}
+/* Tiroir de DROITE = liste des Solutions (caché à droite, glisse vers la gauche à l'ouverture) */
+.drawer-right {
+  right: 0;
+  border-left: 1px solid var(--line);
+  box-shadow: -16px 0 40px rgba(30, 27, 58, 0.18);
+  transform: translateX(110%);
+}
+/* Tiroir ouvert : remis à sa place (translation à 0) */
+.drawer.is-open {
+  transform: translateX(0);
+}
+.drawer[hidden] {
+  display: flex;
+}
+.drawer[hidden]:not(.is-open) {
+  display: none;
+}
+
+/* Poignee de redimensionnement (bord interieur du tiroir) */
+.drawer-resize {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 11px;
+  z-index: 6;
+  cursor: ew-resize;
+  touch-action: none;
+}
+.drawer-left .drawer-resize {
+  right: -5px;
+} /* tiroir gauche : poignee sur son bord droit */
+.drawer-right .drawer-resize {
+  left: -5px;
+} /* tiroir droit : poignee sur son bord gauche */
+.drawer-resize::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: transparent;
+  transition: background 120ms ease;
+}
+.drawer-resize:hover::after,
+body.is-resizing .drawer-resize::after {
+  background: var(--accent);
+}
+body.is-resizing {
+  cursor: ew-resize;
+  user-select: none;
+}
+
+/* Mobile : les tiroirs Filtres / Solutions s'ouvrent en plein ecran (pas de redimensionnement) */
+@media (max-width: 760px) {
+  .drawer {
+    width: 100vw;
+    max-width: 100%;
+    padding: 14px 14px 16px;
+  }
+  .drawer-resize {
+    display: none;
+  }
+}
+
+/* L'en-tête d'un tiroir : titre à gauche, bouton fermer à droite */
+.drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+/* Le bloc titre (ex. "Solutions" + "276 visibles", ou "Filtres NIST" + "Réinitialiser") */
+.drawer-head > div {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+/* Le titre du tiroir ("Solutions" / "Filtres NIST") */
+.drawer-head h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+/* Le sous-texte ("X visibles") */
+.drawer-head p {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+/* Le compteur en gras dans "X visibles" (petite marge a droite pour ne pas coller a "visibles") */
+.drawer-head p strong {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 800;
+  margin-right: 4px;
+}
+/* La croix de fermeture (en haut à droite du tiroir) */
+.drawer-close {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--ink-soft);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+}
+.drawer-close svg {
+  display: block;
+}
+.drawer-close:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}

@@ -1,0 +1,78 @@
+name: Deploy GitHub Pages
+
+# Publie le site (racine = l app) sur GitHub Pages, depuis la branche dev.
+# Build : regenere data/solutions.generated.js depuis les sources + soumissions validees.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissions minimales par job (principe du moindre privilege) : seul le job deploy a besoin des
+# droits Pages / OIDC ; le build ne lit que le code.
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write # configure-pages (enablement) cree/lit le site Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Regenerer les donnees de l app
+        run: python3 scripts/build_app_data.py
+
+      - name: Generer la config runtime (host Typesense depuis la variable GitHub)
+        env:
+          TS_HOST: ${{ vars.TYPESENSE_HOST }}
+        run: |
+          printf 'window.CP_RUNTIME = { typesenseHost: "%s" };\n' "$TS_HOST" > js/runtime-config.js
+          cat js/runtime-config.js
+
+      - name: Assembler le site (fichiers necessaires UNIQUEMENT)
+        run: |
+          rm -rf _site && mkdir -p _site/data
+          cp index.html sw.js _site/
+          cp -r css js assets _site/
+          cp data/solutions.generated.js _site/data/
+          [ -f CNAME ] && cp CNAME _site/ || true   # domaine custom (si present dans le depot)
+          echo "Contenu publie :"; (cd _site && find . -maxdepth 2 -type d | sort)
+
+      - name: Configurer Pages
+        uses: actions/configure-pages@v6
+        with:
+          enablement: true
+
+      - name: Uploader l artefact (site assemble)
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deployer sur Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

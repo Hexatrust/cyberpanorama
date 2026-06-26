@@ -1,0 +1,73 @@
+name: Traiter une soumission (issue vers PR)
+
+# Quand une issue de formulaire est ouverte ou etiquetee (panorama:new-entry ou panorama:edit),
+# on parse le formulaire, on prepare les changements de donnees, et on ouvre une Pull Request
+# vers main pour validation manuelle. Rien n'est publie automatiquement.
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  process:
+    if: contains(github.event.issue.labels.*.name, 'panorama:new-entry') || contains(github.event.issue.labels.*.name, 'panorama:edit')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Determiner le mode
+        id: mode
+        run: |
+          if [ "${{ contains(github.event.issue.labels.*.name, 'panorama:edit') }}" = "true" ]; then
+            echo "value=edit" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=add" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Parser le formulaire et preparer les changements
+        id: parse
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          # On passe les valeurs par l'environnement (jamais interpolees dans la ligne de commande)
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          MODE: ${{ steps.mode.outputs.value }}
+        run: python3 .github/scripts/parse_submission.py "$ISSUE_NUMBER" "$MODE"
+
+      - name: Ouvrir la Pull Request
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        with:
+          base: main
+          branch: submission/issue-${{ github.event.issue.number }}
+          commit-message: "Soumission #${{ github.event.issue.number }} : ${{ steps.parse.outputs.company_name }}"
+          title: "[Soumission #${{ github.event.issue.number }}] ${{ steps.parse.outputs.company_name }}"
+          body: |
+            Soumission automatique a valider, issue de #${{ github.event.issue.number }} (mode : ${{ steps.mode.outputs.value }}).
+
+            Verifier le logo, la classification NIST, la taille et la description avant de fusionner.
+            La fusion sur main declenche le redeploiement du panorama.
+
+            Closes #${{ github.event.issue.number }}
+          labels: |
+            soumission
+            ${{ steps.mode.outputs.value == 'edit' && 'panorama:edit' || 'panorama:new-entry' }}
+
+      - name: Commenter l'issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment "${{ github.event.issue.number }}" --repo "${{ github.repository }}" \
+            --body "Merci pour la soumission. Une Pull Request a ete preparee pour validation par un mainteneur. Elle ne sera publiee qu'apres fusion."

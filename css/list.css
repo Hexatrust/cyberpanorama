@@ -1,0 +1,159 @@
+/* Liste des solutions (tiroir de droite) : rappel des filtres en cours, puis les cartes, puis l'état vide */
+
+/* La rangée des "chips" rappelant les filtres actifs, au-dessus de la liste (cachée si aucun filtre) */
+.results-active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.results-active:empty {
+  display: none;
+}
+/* Un chip de filtre actif (ex. « firewall », ou une catégorie) */
+.active-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 4px 3px 9px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+/* La croix orange pour retirer ce filtre. Meme centrage que la croix de la fiche (.modal-close) :
+   grid + place-items center, en neutralisant le padding/bordure par defaut du <button> (sinon la
+   croix est decalee horizontalement). Bords peu arrondis (carre franc). */
+.active-chip button {
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #fff;
+}
+.active-chip button svg {
+  display: block;
+}
+
+/* La liste défilante des résultats */
+.results-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: auto;
+  padding-right: 4px;
+}
+.results-list::-webkit-scrollbar {
+  width: 6px;
+}
+.results-list::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 8px;
+}
+
+/* Une carte de solution dans la liste : [logo] [nom + codes NIST] [badge fonction]. Cliquable -> ouvre la fiche */
+.sol-card {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+  border: 1px solid transparent;
+  text-align: left;
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    border-color 120ms ease;
+}
+.sol-card:hover {
+  background: #fff;
+  border-color: var(--line);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+/* Le logo de la carte (carré à gauche) */
+.sol-card-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.sol-card-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+/* logo blanc détecté en JS -> fond foncé pour rester visible dans la liste */
+.sol-card-logo.logo-on-dark {
+  background: #21232f;
+  border-color: #21232f;
+}
+.sol-card-text {
+  min-width: 0;
+}
+/* Le nom de l'entreprise/solution (1re ligne) */
+.sol-card-name {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* La 2e ligne, discrète : les codes NIST (ex. "PR.DS") */
+.sol-card-meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Le badge de la fonction NIST à droite (PROTÉGER, DÉTECTER...), couleur de la fonction */
+.sol-card-tag {
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--tag-bg, var(--accent-soft));
+  color: var(--tag-ink, var(--accent));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Le message "Aucune solution" quand la recherche/les filtres ne donnent rien */
+.results-empty {
+  padding: 16px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface-soft);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--line);
+  font-size: 0.85rem;
+}
+.results-empty strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+}

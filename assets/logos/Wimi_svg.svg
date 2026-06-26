@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 646.99 152.79">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Dégradé_sans_nom_39);
+      }
+
+      .cls-2 {
+        fill: url(#Dégradé_sans_nom_26);
+      }
+
+      .cls-3 {
+        fill: url(#Dégradé_sans_nom_75);
+      }
+
+      .cls-4 {
+        fill: url(#Dégradé_sans_nom_53);
+      }
+
+      .cls-5 {
+        fill: url(#Dégradé_sans_nom_83);
+      }
+
+      .cls-6 {
+        fill: url(#Dégradé_sans_nom_22);
+      }
+
+      .cls-7 {
+        fill: url(#Dégradé_sans_nom_65);
+      }
+
+      .cls-8 {
+        fill: url(#Dégradé_sans_nom_10);
+      }
+
+      .cls-9 {
+        fill: url(#Dégradé_sans_nom_30);
+      }
+
+      .cls-10 {
+        fill: url(#Dégradé_sans_nom_17);
+      }
+    </style>
+    <linearGradient id="Dégradé_sans_nom_83" data-name="Dégradé sans nom 83" x1="277.28" y1="405.45" x2="223.18" y2="268.13" gradientTransform="translate(-64.93 483.16) rotate(-21.95) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e2cd00"/>
+      <stop offset="1" stop-color="#ef8e00"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_10" data-name="Dégradé sans nom 10" x1="633.64" y1="144.27" x2="579.53" y2="6.95" gradientTransform="translate(72.56 -221.33) rotate(21.95)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e2cd00"/>
+      <stop offset="1" stop-color="#64c423"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_39" data-name="Dégradé sans nom 39" x1="449.78" y1="242.17" x2="395.67" y2="104.85" gradientTransform="translate(-48.53 -243.4) rotate(21.95)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e51e18"/>
+      <stop offset="1" stop-color="#b31171"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_75" data-name="Dégradé sans nom 75" x1="774.52" y1="-91.78" x2="720.41" y2="-229.1" gradientTransform="translate(-660.39 -55.06) rotate(21.95)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ee7502"/>
+      <stop offset="1" stop-color="#ef8e00"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_65" data-name="Dégradé sans nom 65" x1="278.99" y1="403.74" x2="224.89" y2="266.42" gradientTransform="translate(36.37 482.21) rotate(-21.95) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ee7502"/>
+      <stop offset="1" stop-color="#eb4104"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_53" data-name="Dégradé sans nom 53" x1="222.75" y1="137.75" x2="168.64" y2=".44" gradientTransform="translate(40.33 214.48) rotate(-21.95) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e51e18"/>
+      <stop offset="1" stop-color="#eb4104"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_30" data-name="Dégradé sans nom 30" x1="512.38" y1="179.57" x2="458.27" y2="42.25" gradientTransform="translate(-41.46 -208.75) rotate(21.95)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#19acc1"/>
+      <stop offset="1" stop-color="#1596a8"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_26" data-name="Dégradé sans nom 26" x1="548.4" y1="143.55" x2="494.29" y2="6.23" gradientTransform="translate(-36.39 341.59) rotate(-21.95) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#24cac0"/>
+      <stop offset="1" stop-color="#1596a8"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_22" data-name="Dégradé sans nom 22" x1="514.26" y1="177.68" x2="460.16" y2="40.37" gradientTransform="translate(59.86 -207.7) rotate(21.95)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#24cac0"/>
+      <stop offset="1" stop-color="#1c9964"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_17" data-name="Dégradé sans nom 17" x1="548.65" y1="144.27" x2="494.55" y2="6.95" gradientTransform="translate(66.4 -189.56) rotate(21.95)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#64c423"/>
+      <stop offset="1" stop-color="#1c9964"/>
+    </linearGradient>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <rect class="cls-5" x="25.68" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(-26.62 22.25) rotate(-23.05)"/>
+    <rect class="cls-8" x="591.32" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(15.44 232.41) rotate(-21.95)"/>
+    <rect class="cls-1" x="263.11" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(52.16 -103.01) rotate(23.05)"/>
+    <rect class="cls-3" x="77.28" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(148.39 183.05) rotate(-156.95)"/>
+    <rect class="cls-7" x="129.2" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(-18.35 62.78) rotate(-23.05)"/>
+    <rect class="cls-4" x="180.43" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(42.77 -67.73) rotate(21.95)"/>
+    <rect class="cls-9" x="351.63" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(59.22 -137.67) rotate(23.05)"/>
+    <rect class="cls-2" x="403.58" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(834.75 -17.41) rotate(156.95)"/>
+    <rect class="cls-6" x="455.41" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(67.51 -178.29) rotate(23.05)"/>
+    <rect class="cls-10" x="506.34" y="-4.75" width="31.15" height="162.29" rx="15.57" ry="15.57" transform="translate(9.28 200.64) rotate(-21.95)"/>
+  </g>
+</svg>

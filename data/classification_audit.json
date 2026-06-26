@@ -1,0 +1,2245 @@
+{
+ "totalChecked": 274,
+ "mismatchCount": 24,
+ "mismatches": [
+  {
+   "id": "apitech",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": false,
+   "justification": "Reclassement proposé en faible confiance : conservé tel quel, à revoir manuellement.",
+   "confidence": "low"
+  },
+  {
+   "id": "cybercape",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": false,
+   "justification": "Reclassement proposé en faible confiance (offre MSSP très large) : conservé tel quel, à revoir manuellement.",
+   "confidence": "low"
+  }
+ ],
+ "all": [
+  {
+   "id": "6cure",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "6cure protege les infrastructures contre les attaques DDoS et securise les services DNS afin de maintenir la disponibilite des reseaux face aux attaques volumetriques. Cela releve de la resilience de l'infrastructure technologique (PR.IR), qui vise a garantir la disponibilite et la resistance des reseaux en situation adverse.",
+   "confidence": "high"
+  },
+  {
+   "id": "aais-armageddon-ai-security-aais-ai",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "AAIS edite une plateforme de sensibilisation a la cybersecurite centree sur le facteur humain : simulations de phishing/vishing/smishing, modules deepfakes, escape games et CTF. C'est exactement la sensibilisation et la formation du personnel (PR.AT), meme si elle ajoute un volet secondaire de surveillance des fuites.",
+   "confidence": "high"
+  },
+  {
+   "id": "adacis-agrios",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Adacis realise des audits et de l'analyse de risques, et son logiciel Agrios pilote les risques operationnels et strategiques en visualisant les ecarts de conformite, s'interfacant avec son outil d'analyse de risques Arimes. Le coeur de metier est l'evaluation et le pilotage des risques cyber, ce qui correspond a ID.RA (Evaluation des risques).",
+   "confidence": "medium"
+  },
+  {
+   "id": "advanced-track-trace",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Advanced Track & Trace developpe des technologies d'authentification et de tracabilite securisee des produits physiques pour lutter contre la contrefacon, garantissant l'integrite et l'authenticite des objets et de leurs donnees associees. Cela se rapproche de la securite des donnees (PR.DS), bien que l'activite soit a la marge du perimetre cyber classique.",
+   "confidence": "low"
+  },
+  {
+   "id": "ags-cloud",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "AGS Cloud est un hebergeur exploitant un datacenter Tier III et fournissant cloud IaaS, stockage et sauvegarde, avec des briques de securite integrees. L'offre vise la disponibilite et la resilience de l'infrastructure technologique hebergee (PR.IR), avec protection environnementale et continuite de service.",
+   "confidence": "medium"
+  },
+  {
+   "id": "akidaia",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Akidaia propose un systeme de controle d'acces physique avec gestion des accreditations et jetons cryptographiques sur badge ou smartphone pour authentifier les utilisateurs sur des ouvrants. C'est de la gestion des identites, de l'authentification et du controle d'acces (PR.AA), notamment le controle d'acces physique aux actifs.",
+   "confidence": "high"
+  },
+  {
+   "id": "aleph-networks",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Aleph Networks indexe et surveille en continu toutes les couches du web et le dark web, avec alertes temps reel pour detecter les donnees strategiques exposees. Cette surveillance continue de sources externes pour reperer des evenements indesirables (fuites, exposition) correspond a DE.CM (Surveillance continue).",
+   "confidence": "medium"
+  },
+  {
+   "id": "algosecure-algolighthouse",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "AlgoLightHouse est une plateforme de gestion de la surface d'attaque externe qui decouvre les actifs exposes, le shadow IT, les vulnerabilites et fuites d'identifiants pour les qualifier et prioriser. Cela correspond a Identifier car l'organisation comprend son exposition et evalue les risques cyber associes. La priorisation des vulnerabilites et menaces d'exposition releve de l'evaluation des risques ID.RA.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "alinto",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Alinto edite des messageries securisees, du filtrage anti-spam et des passerelles de securite protegeant la confidentialite et l'integrite des echanges email. Cela correspond a Proteger car ce sont des mesures de sauvegarde des donnees. PR.DS s'applique car le coeur est la protection des donnees au repos et en transit dans les communications.",
+   "confidence": "medium"
+  },
+  {
+   "id": "all4tec-agile-risk-manager",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Agile Risk Manager est un logiciel d'analyse de risques cyber base sur EBIOS RM et ISO 27005, identifiant menaces, vulnerabilites, impacts et probabilites. Cela correspond a Identifier car l'organisation evalue ses risques cyber. ID.RA (Evaluation des risques) est la categorie exacte pour une demarche d'analyse de risque structuree.",
+   "confidence": "high"
+  },
+  {
+   "id": "anozr-way",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Anozr Way mesure l'exposition des personnes via les fuites de donnees et le dark web, et donne aux RSSI une vision consolidee du risque humain. Cela correspond a Identifier car il s'agit de comprendre et evaluer un risque cyber (ici d'origine humaine). ID.RA s'applique car le coeur est l'evaluation et la priorisation de l'exposition au risque.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "antemeta",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "AntemetA propose des services manages de sauvegarde et de DRaaS (Disaster Recovery as a Service) orientes restauration apres sinistre. Cela correspond a Recuperer car le coeur de l'offre cyber est la restauration des actifs et operations apres incident. RC.RP (Execution du plan de reprise) est la categorie adaptee pour le DRaaS et la sauvegarde orientee reprise.",
+   "confidence": "medium"
+  },
+  {
+   "id": "apicem-apicrypt",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "APICRYPT est une messagerie securisee qui chiffre les echanges entre professionnels de sante. Cela correspond a Proteger car le chiffrement est une mesure de sauvegarde des donnees. PR.DS (Securite des donnees) s'applique car le produit protege la confidentialite et l'integrite des donnees en transit.",
+   "confidence": "high"
+  },
+  {
+   "id": "apitech",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": false,
+   "justification": "Reclassement proposé en faible confiance : conservé tel quel, à revoir manuellement.",
+   "confidence": "low"
+  },
+  {
+   "id": "arc-data-shield",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "ARC Data Shield fabrique des passerelles reseau materielles a rupture protocolaire qui s'integrent entre IT et OT pour bloquer les attaques et proteger les actifs critiques. C'est une mesure de sauvegarde preventive au niveau de l'infrastructure reseau, qui releve de la resilience et de la protection de l'infrastructure technologique (PR.IR).",
+   "confidence": "high"
+  },
+  {
+   "id": "arcad-software-arcad",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Arcad Software edite des outils DevSecOps integrant des pratiques de developpement logiciel securise, d'orchestration de release et de gestion du cycle de vie applicatif. Cela correspond a la securite des plateformes et applications (PR.PS), notamment PR.PS-06 sur le developpement securise.",
+   "confidence": "high"
+  },
+  {
+   "id": "armony-system-cyfence",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "CyFENCE est une DMZ industrielle qui regroupe les services de securite protegeant un systeme OT et etend les protections IT vers l'OT, avec versions redondantes haute disponibilite. C'est une mesure de protection et de resilience de l'infrastructure reseau industrielle (PR.IR). La detection d'intrusion CyPRES reste secondaire face au coeur de metier de protection reseau.",
+   "confidence": "high"
+  },
+  {
+   "id": "ars-nova-systems-tinymdm",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "TinyMDM est une plateforme de gestion de flotte d'appareils mobiles (MDM/EMM) qui pilote la configuration, le deploiement d'applications, le verrouillage et le chiffrement a distance des terminaux. La gestion de configuration et le durcissement des plateformes (terminaux) relevent de la securite des plateformes (PR.PS).",
+   "confidence": "high"
+  },
+  {
+   "id": "arsen",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "Arsen propose une plateforme de sensibilisation et de formation des collaborateurs aux attaques d'ingenierie sociale via des simulations de phishing, vishing et smishing. C'est exactement la fonction Proteger, categorie Sensibilisation et formation (PR.AT).",
+   "confidence": "high"
+  },
+  {
+   "id": "arx-one",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "Arx One edite une solution de sauvegarde et de restauration de donnees multiplateforme, centralisee, externalisee sur cloud souverain ou locale. La sauvegarde orientee restauration apres sinistre releve de la fonction Recuperer, categorie execution du plan de reprise (RC.RP).",
+   "confidence": "high"
+  },
+  {
+   "id": "astran-alwaysready",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "AlwaysReady maintient les activites critiques lors d'une defaillance des systemes IT en identifiant les processus vitaux, en synchronisant les donnees critiques stockees a part et en permettant une activation guidee en cas de crise. Cette restauration des operations affectees et l'execution d'un plan de continuite/reprise relevent de Recuperer (RC.RP).",
+   "confidence": "high"
+  },
+  {
+   "id": "atempo",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "Atempo edite des logiciels de sauvegarde (Tina, Lina) et de gestion/migration de gros volumes de donnees (Miria). La sauvegarde orientee restauration des serveurs, postes et donnees releve de la fonction Recuperer, categorie RC.RP (execution du plan de reprise via restauration des actifs).",
+   "confidence": "high"
+  },
+  {
+   "id": "aucae",
+   "recommendedL1": "Repondre",
+   "recommendedL2": "RS.MA",
+   "currentOk": true,
+   "justification": "AUCAE est specialise dans la gestion et la coordination des crises cyber (Digital Crisis Response) et l'entrainement aux exercices de crise. La coordination de la reponse pendant un incident releve de la fonction Repondre, categorie RS.MA (gestion des incidents).",
+   "confidence": "high"
+  },
+  {
+   "id": "avanoo",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.SC",
+   "currentOk": true,
+   "justification": "Avanoo offre une plateforme de gouvernance et de cartographie des ecosystemes SaaS et IA avec un focus sur les risques fournisseurs et la supply chain (module Supply Chain, priorisation et suivi des tiers). Cela correspond a Gouverner, categorie GV.SC (gestion des risques de la chaine d'approvisionnement cyber).",
+   "confidence": "medium"
+  },
+  {
+   "id": "avant-de-cliquer",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "Hucency centre son offre sur l'humain via des simulations d'attaques (phishing, smishing, vishing) et des parcours de formation et sensibilisation. La sensibilisation et formation du personnel releve de Proteger, categorie PR.AT.",
+   "confidence": "high"
+  },
+  {
+   "id": "axbx",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "AxBx edite des logiciels de protection des postes de travail (antivirus, pare-feu, protection endpoint, boucliers anti-arnaque/ransomware). Le durcissement et la securite des plateformes endpoint, empechant l'execution de logiciels malveillants, releve de Proteger, categorie PR.PS (securite des plateformes).",
+   "confidence": "high"
+  },
+  {
+   "id": "bebackup",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "BeBackup edite une solution de sauvegarde SaaS chiffree avec versioning et verification des donnees, couvrant la restauration. La sauvegarde orientee restauration des donnees releve de la fonction Recuperer, categorie RC.RP.",
+   "confidence": "high"
+  },
+  {
+   "id": "beemo-technologie-data-safe-restore",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "Beemo Technologie propose de la sauvegarde hybride (local et datacenters distants) couvrant sauvegarde et restauration via ses gammes Beemo2Cloud, BeeHive et appliances BeeBox. Cette sauvegarde orientee restauration des donnees releve de Recuperer, categorie RC.RP.",
+   "confidence": "high"
+  },
+  {
+   "id": "beys-cloud",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "BeYs Cloud est un operateur d'hebergement et de cloud souverain dont le coeur de metier est de fournir une infrastructure technologique securisee et resiliente (datacenter avec bunker, cages de Faraday, disponibilite). Cela releve de Proteger et de la categorie PR.IR (Resilience de l'infrastructure technologique), qui couvre la protection des actifs technologiques et le maintien de la disponibilite.",
+   "confidence": "high"
+  },
+  {
+   "id": "bkube",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "BKube edite une solution de sauvegarde automatisee pensee pour resister aux ransomwares et permettre la restauration des donnees apres sinistre. L'orientation restauration/reprise apres incident place le produit dans Recuperer, categorie RC.RP (Execution du plan de reprise), qui couvre la restauration des actifs affectes a partir des sauvegardes.",
+   "confidence": "high"
+  },
+  {
+   "id": "bleckwen",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Bleckwen fournit une plateforme de detection de fraude en temps reel par apprentissage automatique qui surveille en continu les transactions pour reperer les comportements suspects. Cette surveillance continue d'evenements potentiellement indesirables releve de Detecter, categorie DE.CM (Surveillance continue).",
+   "confidence": "medium"
+  },
+  {
+   "id": "blokkus",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Blokkus analyse en continu les e-mails entrants, les domaines et les liens pour identifier les tentatives de phishing et rediriger les liens douteux. Cette surveillance et analyse continue des flux de messagerie pour detecter des evenements indesirables releve de Detecter, categorie DE.CM (Surveillance continue).",
+   "confidence": "medium"
+  },
+  {
+   "id": "bluesecure",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "BlueSecure propose une plateforme de sensibilisation et de formation a la cybersecurite combinant simulations de phishing et e-learning pour former le personnel. C'est une mesure de sauvegarde preventive qui releve de Proteger, categorie PR.AT (Sensibilisation et formation).",
+   "confidence": "high"
+  },
+  {
+   "id": "board-of-cyber",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Board of Cyber edite une plateforme de notation cyber qui analyse en continu la surface d'attaque externe (vulnerabilites, patchs, certificats, threat intelligence) et evalue le risque fournisseurs. Cette evaluation du risque et des vulnerabilites de l'exposition releve d'Identifier, categorie ID.RA (Evaluation des risques).",
+   "confidence": "high"
+  },
+  {
+   "id": "bonjourcyber-bonjourphishing",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Le coeur de metier de BonjourCyber est la cybersecurite offensive : tests d'intrusion externes/internes, audits d'applications et d'infrastructures, operations red team. Ces activites d'identification et de validation des vulnerabilites relevent d'Identifier, categorie ID.RA (Evaluation des risques), meme si l'offre comporte aussi du phishing et de la sauvegarde en secondaire.",
+   "confidence": "high"
+  },
+  {
+   "id": "brain-networks",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "Brain Networks est un integrateur reseau et cybersecurite qui concoit et deploie des infrastructures securisees (SD-WAN, WAF, SASE, ZTNA, durcissement reseau OT/IoT). Le coeur de metier est la protection et la resilience de l'infrastructure technologique, ce qui correspond a PR.IR. Bien qu'il propose aussi du SOC/MDR/XDR, son activite dominante reste l'integration et la securisation des reseaux et environnements.",
+   "confidence": "medium"
+  },
+  {
+   "id": "brain-security",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "Brain Security edite une plateforme SaaS de sensibilisation a la cybersecurite par gamification, avec micro-exercices, simulations de phishing et formation du personnel. C'est exactement le coeur de la categorie Sensibilisation et formation (PR.AT) de la fonction Proteger. La formation est ici operationnelle et comportementale, non strategique.",
+   "confidence": "high"
+  },
+  {
+   "id": "cartographit",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.AM",
+   "currentOk": true,
+   "justification": "CartographIT est un outil de cartographie du systeme d'information qui inventorie et represente reseaux, serveurs, applications, donnees et actifs. Cette activite d'inventaire et de cartographie d'actifs releve directement de la gestion des actifs (ID.AM) au sein de la fonction Identifier. L'aide a la conformite est secondaire par rapport a la cartographie d'actifs.",
+   "confidence": "high"
+  },
+  {
+   "id": "cegedim-cegnumcloud-secured-iaas",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "CegNumCloud est un service d'infrastructure cloud (IaaS) souverain certifie SecNumCloud, fournissant calcul, stockage, sauvegarde immuable et protection anti-DDoS pour assurer la disponibilite. Le coeur de metier est la fourniture d'une infrastructure technologique resiliente et disponible, ce qui correspond a PR.IR (notamment PR.IR-04 sur la capacite de ressources et la disponibilite).",
+   "confidence": "medium"
+  },
+  {
+   "id": "certigna",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Certigna est un prestataire de services de confiance emettant certificats electroniques, signature, horodatage qualifie et SSL, garantissant la confidentialite, l'integrite et l'authenticite des donnees et documents. Ces mecanismes cryptographiques protegent les donnees au repos et en transit, ce qui releve de la securite des donnees (PR.DS) dans la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "chapsvision-argonoos",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.AE",
+   "currentOk": true,
+   "justification": "ChapsVision edite Argonos, une plateforme de donnees et d'IA agregant et analysant de grands volumes d'informations pour le renseignement, l'investigation, l'OSINT et la gestion de crise. La correlation multi-sources et l'analyse d'evenements et de renseignement correspondent a l'analyse des evenements indesirables (DE.AE) de la fonction Detecter. Le produit est centre sur l'analyse et la correlation, non sur la reponse operationnelle a incident.",
+   "confidence": "medium"
+  },
+  {
+   "id": "chimere-cyber-chimere",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Chimere developpe une solution d'acces distant Zero Trust Network Access qui rend les applications accessibles uniquement aux utilisateurs autorises sans les exposer sur Internet. Le ZTNA repose sur l'authentification et le controle d'acces au moindre privilege, coeur de la categorie PR.AA de la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "citalid",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Citalid quantifie le risque cyber en traduisant les menaces en impacts financiers via des scenarios modelises et une veille sur les acteurs malveillants. Cette activite releve de l'evaluation des risques (ID.RA) : identification des menaces, estimation des impacts et probabilites, priorisation. Le coeur de metier est la comprehension du risque, pas une mesure de protection.",
+   "confidence": "high"
+  },
+  {
+   "id": "clever-cloud",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Clever Cloud est une plateforme PaaS qui deploie et heberge des applications avec des services et bases de donnees manages. Securiser et maintenir une plateforme applicative (gestion de configuration, maintenance logicielle, journalisation) correspond a la securite des plateformes (PR.PS), fonction Proteger. Son metier est de fournir un environnement applicatif gere et durci.",
+   "confidence": "medium"
+  },
+  {
+   "id": "cloud-iam",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Cloud-IAM fournit un Keycloak manage couvrant SSO, MFA, rattachement LDAP/AD, CIAM et courtage d'identites. Il s'agit clairement de gestion des identites, authentification et controle d'acces (PR.AA), une mesure de sauvegarde preventive relevant de Proteger. IAM/MFA/SSO sont par definition rattaches a PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "cloud-temple-iaas-secure-temple-et-paas-openshift",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "Cloud Temple est un operateur de cloud souverain (IaaS, PaaS, stockage, sauvegarde) avec resilience, disponibilite et protection DDoS. Le coeur de metier est de fournir une infrastructure technologique protegee et resiliente, ce qui correspond a PR.IR (resilience de l'infrastructure), fonction Proteger. Les reseaux et environnements sont proteges et la disponibilite des ressources est assuree.",
+   "confidence": "medium"
+  },
+  {
+   "id": "conscio-technolo-sensiwave",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "Conscio Technologies (Sensiwave) concoit des campagnes de sensibilisation, des simulations de phishing et des scenarios d'attaque pour former les collaborateurs. C'est la sensibilisation et formation du personnel (PR.AT), une mesure de sauvegarde humaine de la fonction Proteger. Le produit vise a outiller la sensibilisation operationnelle, pas la strategie de gouvernance.",
+   "confidence": "high"
+  },
+  {
+   "id": "continus-io",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Continus.io est une plateforme DevSecOps reunissant SAST, DAST, SCA et securite IaC integree aux pipelines CI/CD. Identifier et enregistrer les vulnerabilites des actifs (code, dependances, conteneurs) releve de l'evaluation des risques (ID.RA), fonction Identifier. L'analyse de vulnerabilites et de surface d'attaque est un piege a classer en Identifier, pas en AppSec/Proteger.",
+   "confidence": "medium"
+  },
+  {
+   "id": "cosmian",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Cosmian developpe des outils de chiffrement (KMS, VM confidentielle, recherche sur donnees chiffrees, chiffrement post-quantique) pour proteger les donnees dans le cloud. Le chiffrement et la gestion des cles protegent la confidentialite et l'integrite des donnees au repos, en transit et en cours d'utilisation, ce qui correspond a PR.DS, fonction Proteger. Chiffrement = piege classique a classer en PR.DS.",
+   "confidence": "high"
+  },
+  {
+   "id": "crisebox-com-crisebox",
+   "recommendedL1": "Repondre",
+   "recommendedL2": "RS.MA",
+   "currentOk": true,
+   "justification": "CriseBox outille la gestion de crise cyber (cellules de crise, pilotage DSI, plan de continuite, volet reglementaire) : il s'agit d'orchestrer la reponse face a un incident avere. Cela releve de Repondre, et plus precisement de la gestion des incidents (RS.MA) qui couvre l'execution coordonnee du plan de reponse et le pilotage de la cellule de crise.",
+   "confidence": "high"
+  },
+  {
+   "id": "crowdsec",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "CrowdSec exploite un moteur qui surveille en continu le trafic et les comportements pour reperer et bloquer les IP malveillantes, alimente par du renseignement collaboratif sur les menaces. Le coeur de metier est la surveillance continue du reseau et des services pour detecter les evenements indesirables, ce qui correspond a Detecter / DE.CM.",
+   "confidence": "high"
+  },
+  {
+   "id": "cryptonext-security",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "CryptoNext concoit des outils de cryptographie post-quantique pour securiser les donnees face a la menace quantique. La cryptographie protege la confidentialite et l'integrite des donnees au repos et en transit, ce qui releve de Proteger / securite des donnees (PR.DS). Le module d'inventaire cryptographique reste secondaire par rapport au coeur chiffrement.",
+   "confidence": "high"
+  },
+  {
+   "id": "cryptr",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Cryptr edite une plateforme d'authentification (SSO SAML/OpenID, synchronisation d'annuaires SCIM/LDAP) pour gerer les identites et les acces des utilisateurs B2B. La gestion des identites et le controle d'acces relevent de Proteger / PR.AA, conformement a la regle IAM/SSO = PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "custocy",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Custocy developpe une plateforme NDR de detection des menaces reseau par IA, integree aux SIEM/XDR/EDR. Le NDR consiste a surveiller le reseau en continu pour detecter attaques zero-day et APT, ce qui correspond exactement a Detecter / surveillance continue (DE.CM).",
+   "confidence": "high"
+  },
+  {
+   "id": "cybelangel",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "CybelAngel cartographie la surface d'attaque externe et detecte les fuites de donnees et identifiants exposes sur le web et le dark web. Cette comprehension de l'exposition et des risques externes releve d'Identifier, categorie Evaluation des risques (ID.RA), qui couvre l'identification des menaces et vulnerabilites et le renseignement sur les menaces d'exposition.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "cybercape",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": false,
+   "justification": "Reclassement proposé en faible confiance (offre MSSP très large) : conservé tel quel, à revoir manuellement.",
+   "confidence": "low"
+  },
+  {
+   "id": "cyberium",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "Cyberium fabrique des appliances de segmentation reseau et des diodes data (transfert unidirectionnel) qui protegent les infrastructures critiques contre les acces logiques non autorises. C'est une mesure de sauvegarde preventive sur l'infrastructure reseau, ce qui releve de Proteger / PR.IR (resilience et protection de l'infrastructure technologique contre les acces non autorises).",
+   "confidence": "high"
+  },
+  {
+   "id": "cybervadis",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.SC",
+   "currentOk": true,
+   "justification": "CyberVadis evalue et note le risque cyber des tiers et fournisseurs avec revue de preuves et cartographie de la chaine de sous-traitance. C'est exactement la gestion des risques de la chaine d'approvisionnement cyber, donc Gouverner / GV.SC.",
+   "confidence": "high"
+  },
+  {
+   "id": "cyberwatch",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Cyberwatch decouvre les actifs, scanne et priorise les vulnerabilites et controle la conformite. Le coeur de metier est l'identification et l'evaluation des vulnerabilites des actifs, ce qui correspond a Identifier / ID.RA (evaluation des risques).",
+   "confidence": "high"
+  },
+  {
+   "id": "cybi-scuba",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Cybi (Scuba) analyse les vulnerabilites, predit les chemins d'attaque et priorise les remediations et correctifs. C'est de l'evaluation et priorisation du risque base sur menaces et vulnerabilites, soit Identifier / ID.RA.",
+   "confidence": "high"
+  },
+  {
+   "id": "cyferall-qrshield",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "CyferAll chiffre les donnees au repos et en transit avec gestion des cles et principes Zero-Trust resistant au quantique. La protection de la confidentialite et integrite des donnees par chiffrement releve de Proteger / PR.DS (securite des donnees).",
+   "confidence": "high"
+  },
+  {
+   "id": "dassault-systems-outscale",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "OUTSCALE exploite une infrastructure cloud souveraine qualifiee SecNumCloud (IaaS, Kubernetes manage, LLMaaS) assurant disponibilite, resilience et protection de l'environnement d'execution. C'est de la resilience de l'infrastructure technologique, soit Proteger / PR.IR.",
+   "confidence": "high"
+  },
+  {
+   "id": "dastra",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.OC",
+   "currentOk": true,
+   "justification": "Dastra gere la conformite reglementaire RGPD (registre des traitements, DPIA, violations, demandes des personnes, gestion des risques) a destination des DPO et directions. C'est un outil de gouvernance de la conformite et des exigences legales/reglementaires, ce qui correspond mieux a Gouverner / GV.OC (contexte organisationnel : comprehension et integration des exigences legales et reglementaires de cybersecurite).",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "databack",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "Databack recupere les donnees sur supports defaillants et restaure les systemes apres une attaque par rancongiciel. Le coeur de metier est la restauration des actifs et operations affectes apres sinistre, ce qui correspond exactement a la fonction Recuperer et a l'execution du plan de reprise (RC.RP).",
+   "confidence": "high"
+  },
+  {
+   "id": "datadome",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "DataDome analyse en temps reel le trafic web, mobile et API pour detecter et bloquer bots, scraping, credential stuffing et prises de controle de comptes. La surveillance continue du trafic pour trouver les activites malveillantes releve de Detecter, categorie Surveillance continue (DE.CM).",
+   "confidence": "high"
+  },
+  {
+   "id": "datasure",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Datasure edite des briques de signature, cachet et horodatage electroniques ainsi qu'un coffre d'archivage probatoire, garantissant l'integrite et l'authenticite des donnees. Ces mesures cryptographiques protegent la confidentialite et l'integrite des donnees, ce qui correspond a Proteger / Securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "deepfrauds-ai",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "DeepFrauds.ai detecte la fraude et repere deepfakes, documents falsifies et anomalies dans factures, paie et ecritures comptables via une IA d'audit. L'identification d'activites frauduleuses par analyse continue releve de Detecter, categorie Surveillance continue (DE.CM).",
+   "confidence": "medium"
+  },
+  {
+   "id": "diateam-hybrid-cyber-range",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "Diateam concoit un Cyber Range d'entrainement et propose formations sur scenarios realistes et exercices de gestion de crise. La montee en competence et l'entrainement des equipes cyber relevent de Proteger / Sensibilisation et formation (PR.AT), notamment les roles specialises (PR.AT-02).",
+   "confidence": "high"
+  },
+  {
+   "id": "difenso",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Difenso edite une solution de chiffrement de donnees applicatives et cloud, avec protection contre la menace quantique. Le chiffrement protege la confidentialite et l'integrite des donnees au repos et en transit, ce qui correspond a Proteger / Securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "digitalberry",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Digitalberry gere le cycle de vie des certificats numeriques (BerryCert) ainsi que les cles et tokens de securite (BerryTMS). La gestion des identites machines, identifiants et credentials d'authentification releve de Proteger / Gestion des identites, authentification et controle d'acces (PR.AA).",
+   "confidence": "high"
+  },
+  {
+   "id": "dmarc-expert",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "DMARC Expert protege un domaine d'envoi contre l'usurpation en mettant en place des protocoles d'authentification des e-mails et en surveillant les flux de messagerie. Il s'agit d'une mesure de sauvegarde preventive (fonction Proteger) garantissant l'authenticite et l'integrite des donnees echangees par e-mail, soit PR.DS Securite des donnees. La surveillance des rapports DMARC reste un moyen au service de cette protection.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "docaposte-arkhineo-docaposte-sae",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Arkhineo fournit un archivage electronique a valeur probante qui garantit la confidentialite, l'integrite et la disponibilite des donnees archivees dans le temps. C'est une mesure de sauvegarde des donnees au repos (fonction Proteger), donc PR.DS Securite des donnees. Le classement actuel est correct.",
+   "confidence": "high"
+  },
+  {
+   "id": "dropcloud",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "DropCloud propose le transfert, le partage securise et la sauvegarde de fichiers, protegeant les donnees en transit et au repos. Ces fonctions de chiffrement, de gestion des droits et de sauvegarde relevent de la fonction Proteger et de la categorie PR.DS Securite des donnees. Le classement actuel est correct.",
+   "confidence": "high"
+  },
+  {
+   "id": "easylience",
+   "recommendedL1": "Repondre",
+   "recommendedL2": "RS.MA",
+   "currentOk": true,
+   "justification": "Easylience digitalise la gestion de crise de la detection a l'alerte, l'activation des equipes et le pilotage de la reponse operationnelle. Le coeur de metier est l'orchestration et la gestion des incidents et crises, ce qui correspond a la fonction Repondre et a la categorie RS.MA Gestion des incidents. Le classement actuel est correct.",
+   "confidence": "high"
+  },
+  {
+   "id": "egerie",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Egerie edite une plateforme de gestion des risques et de conformite cyber couvrant de nombreux referentiels, avec analyse, cartographie et quantification financiere des risques. Cette strategie d'evaluation et de pilotage du risque cyber releve de la fonction Gouverner et de la categorie GV.RM Strategie de gestion des risques. Le classement actuel est correct.",
+   "confidence": "high"
+  },
+  {
+   "id": "elba",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Elba surveille et controle l'usage des outils d'IA par les salaries avec du DLP dans les LLM, le controle d'acces aux modeles et la detection du Shadow AI. Le coeur de metier est la prevention de fuite de donnees (DLP) vers les outils d'IA, mesure preventive de la fonction Proteger, donc PR.DS Securite des donnees. Le classement actuel est correct.",
+   "confidence": "medium"
+  },
+  {
+   "id": "elysium-security",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Elysium Security developpe la gamme NEMESIS pour la detection et la centralisation des evenements (xDR, Secure Log) et opere des SOC. La surveillance continue des reseaux, equipements et journaux pour reperer les evenements indesirables releve de la fonction Detecter et de la categorie DE.CM Surveillance continue. Le classement actuel est correct.",
+   "confidence": "high"
+  },
+  {
+   "id": "enovacom",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Enovacom édite des logiciels de santé numérique dont le coeur cyber-pertinent est l'échange et la messagerie sécurisés de données patients (Secure Messaging, Integration Engine), ainsi que la protection de l'intégrité et de la confidentialité des données de santé en transit et au repos. Cela relève de la fonction Protéger et de la catégorie Sécurité des données (PR.DS).",
+   "confidence": "medium"
+  },
+  {
+   "id": "epieos",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Epieos est un moteur OSINT de reverse lookup qui identifie l'exposition d'une cible (comptes, profils, fuites via Have I Been Pwned) à partir d'un email ou téléphone. Cette identification des menaces et de la surface d'exposition relève de la fonction Identifier et de l'évaluation des risques (ID.RA), notamment le renseignement sur les menaces et l'identification des menaces externes.",
+   "confidence": "high"
+  },
+  {
+   "id": "equisign",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Equisign fournit un transfert sécurisé de fichiers volumineux (MFT) et l'envoi de courriers recommandés électroniques. Le coeur de métier est la protection de la confidentialité et de l'intégrité des données échangées, notamment en transit, ce qui relève de Protéger et de la Sécurité des données (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "evertrust-sas",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "EVERTRUST édite une plateforme PKI et de gestion du cycle de vie des certificats (autorité de certification Stream, gouvernance Horizon). L'émission et la gestion d'identités machines et d'authentifiants par certificats relèvent de la gestion des identités et de l'authentification, soit Protéger et PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "eviden-atos-idnomic",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Eviden (gamme IDnomic) couvre l'identité numérique et la PKI pour l'émission et la gestion de certificats et d'identités d'utilisateurs, machines et objets. Cette gestion des identités et de l'authentification relève de la fonction Protéger et de la catégorie PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "excelsior-safety",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "eXcelsior Safety intervient en cybersécurité OT/ICS centrée sur l'analyse de risque (SRA, Risk Assessment selon IEC 62443), l'inventaire et la cartographie des systèmes industriels. Comprendre les actifs et évaluer les risques associés relève de la fonction Identifier; l'accent sur l'évaluation des vulnérabilités et des risques justifie ID.RA.",
+   "confidence": "high"
+  },
+  {
+   "id": "extern-sn-sentinelle-rgpd",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.OC",
+   "currentOk": true,
+   "justification": "La Sentinelle RGPD surveille en continu la conformité réglementaire des données stockées au RGPD, une exigence légale et organisationnelle. Cette gestion de la conformité aux obligations légales et réglementaires relève de la fonction Gouverner, et plus précisément du contexte organisationnel (GV.OC) qui traite des exigences légales et réglementaires de cybersécurité.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "eyst",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Eyst est une plateforme de paiement instantane des sinistres pour assureurs dont la composante cyber pertinente est le controle de fraude en temps reel et le scoring de risque sur les transactions. Cette surveillance continue des operations pour reperer des activites frauduleuses releve de la fonction Detecter, categorie DE.CM (surveillance continue). Le coeur metier reste le paiement, mais la dimension securite retenue est la detection de fraude transactionnelle.",
+   "confidence": "low"
+  },
+  {
+   "id": "fairtrust",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "FairTrust edite des modules de coffre-fort de mots de passe, SSO avec MFA et IAM pour le provisioning et la gestion des droits. La gestion des identites, l'authentification et le controle d'acces sont exactement la definition de PR.AA dans la fonction Proteger. Classement actuel correct.",
+   "confidence": "high"
+  },
+  {
+   "id": "feel-agile",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Feel Agile est un cabinet GRC et conformite qui accompagne les certifications ISO 27001, HDS, SecNumCloud, NIS2, DORA et edite la plateforme GRC Oversecur. Son coeur metier est la gouvernance et la gestion organisationnelle du risque cyber, relevant de la fonction Gouverner. GV.RM (strategie de gestion des risques) convient car l'activite tourne autour de l'evaluation, la priorisation et le pilotage du risque via une plateforme GRC.",
+   "confidence": "medium"
+  },
+  {
+   "id": "filigran",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Filigran edite OpenCTI pour le renseignement sur la menace cyber et OpenAEV pour la validation d'exposition adversariale. Le renseignement sur les menaces et l'identification des risques d'exposition relevent de la fonction Identifier, categorie ID.RA (evaluation des risques, notamment la reception de threat intelligence ID.RA-02). Classement actuel correct.",
+   "confidence": "high"
+  },
+  {
+   "id": "finovox",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Finovox detecte la fraude documentaire en analysant l'alteration de documents, la coherence du contenu et l'empreinte numerique sur des flux KYC/AML. Cette analyse continue de documents pour reperer des falsifications releve de la fonction Detecter et de la surveillance continue DE.CM. Classement actuel coherent avec son coeur metier de detection de fraude.",
+   "confidence": "medium"
+  },
+  {
+   "id": "forecomm-bluefiles",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "BlueFiles assure le transfert et le partage chiffre de fichiers et de donnees sensibles sans exposer leur contenu. Le chiffrement et la protection de la confidentialite des donnees en transit et au repos relevent de la fonction Proteger, categorie PR.DS (securite des donnees). Classement actuel correct.",
+   "confidence": "high"
+  },
+  {
+   "id": "france-verif",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "France Verif est un outil grand public qui verifie la fiabilite des boutiques en ligne et surveille en continu le phishing, les virus et les SMS frauduleux. Cette surveillance permanente pour reperer arnaques et menaces releve de la fonction Detecter, categorie DE.CM (surveillance continue). Classement actuel correct.",
+   "confidence": "medium"
+  },
+  {
+   "id": "galeax",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Galeax edite CoreUpdate, un outil qui automatise le deploiement des mises a jour logicielles et des correctifs de securite sur les postes et serveurs. Le patch management et la maintenance des logiciels relevent de la securite des plateformes (PR.PS), notamment PR.PS-02 sur la maintenance des logiciels. C'est une mesure de sauvegarde preventive, donc fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "gatewatcher-ndr-gatewatcher",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Gatewatcher concoit une plateforme NDR (Network Detection and Response) qui surveille en continu les flux et actifs reseau pour reperer les menaces. La surveillance continue du reseau pour detecter des evenements indesirables correspond exactement a DE.CM-01. Le coeur de metier est la detection.",
+   "confidence": "high"
+  },
+  {
+   "id": "giskard",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Giskard fournit une plateforme d'evaluation et de red teaming des modeles d'IA et agents LLM, testant les systemes pour detecter hallucinations, injections de prompt et fuites avant mise en production. Cette identification et validation de vulnerabilites des actifs (ici les modeles d'IA) correspond a l'evaluation des risques ID.RA-01. C'est une activite d'identification du risque, pas de protection.",
+   "confidence": "high"
+  },
+  {
+   "id": "gitguardian",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "GitGuardian edite une plateforme de detection de secrets exposes (cles API, tokens) dans les depots de code publics et prives et surveille les identites non humaines. La surveillance continue des environnements logiciels pour detecter des fuites et evenements indesirables correspond a DE.CM-09. Le coeur de metier est la detection de secrets.",
+   "confidence": "high"
+  },
+  {
+   "id": "glimps",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "GLIMPS analyse les fichiers pour detecter les codes malveillants via des modeles d'IA et de multiples moteurs de detection, y compris sur la messagerie. Cette analyse pour identifier des malwares releve de la surveillance continue des environnements d'execution et logiciels (DE.CM-09). Le coeur de metier est la detection de menaces.",
+   "confidence": "high"
+  },
+  {
+   "id": "gottaphish",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "GottaPhish edite une plateforme de simulation d'hameconnage et de sensibilisation des collaborateurs combinant campagnes de phishing et modules de formation e-learning. La sensibilisation et formation du personnel a la cybersecurite correspond exactement a PR.AT-01. C'est une mesure de protection par le facteur humain.",
+   "confidence": "high"
+  },
+  {
+   "id": "hackuity-vulnerability-management-platform",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Hackuity developpe une plateforme de gestion des vulnerabilites qui agrege, deduplique et priorise les failles selon un score de risque contextuel. L'identification, la validation et la priorisation des vulnerabilites des actifs correspond a l'evaluation des risques ID.RA-01 et ID.RA-05. La gestion de vulnerabilites releve de la fonction Identifier.",
+   "confidence": "high"
+  },
+  {
+   "id": "harfanglab",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "HarfangLab edite un EDR souverain qui surveille en continu les comportements des terminaux, qualifie les evenements suspects et detecte les menaces. C'est le coeur meme de la fonction Detecter, et la surveillance continue des endpoints releve de DE.CM.",
+   "confidence": "high"
+  },
+  {
+   "id": "hiasecure",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "HIAsecure fournit une authentification forte (MFA) et la certification de transaction via un code a usage unique genere par l'utilisateur. L'authentification et le controle d'acces relevent de Proteger, categorie PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "holding-benoit-set-in-stone",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Set in Stone scanne les vulnerabilites des smart contracts Solidity et produit un rapport de failles avec score de securite. L'identification et l'evaluation des vulnerabilites d'un actif logiciel relevent d'Identifier, categorie ID.RA.",
+   "confidence": "high"
+  },
+  {
+   "id": "hornswaggle",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Hornswaggle edite un jeton d'identite numerique permettant a un utilisateur de prouver son identite sans transmettre de documents, pour securiser l'acces a des comptes et plateformes. La verification d'identite et le controle d'acces relevent de Proteger, categorie PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "idactis",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "IDactis edite une suite de securite des acces (verrouillage de poste, gestion des mots de passe applicatifs, cartes a puce, tokens, LDAP). La gestion des identites, de l'authentification et du controle d'acces releve de Proteger, categorie PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "idecsi",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "IDECSI securise les donnees hebergees dans Microsoft 365 via du DSPM et de la gouvernance des acces aux donnees. La protection de la confidentialite et de l'integrite des donnees releve de Proteger, categorie PR.DS.",
+   "confidence": "medium"
+  },
+  {
+   "id": "idemia-secure-transactions",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "IDEMIA Secure Transactions produit des moyens de paiement securises, des HSM et des briques de cryptographie (y compris post-quantique) qui protegent donnees et transactions. Le chiffrement et la protection des donnees relevent de Proteger, categorie PR.DS.",
+   "confidence": "high"
+  },
+  {
+   "id": "ignimission",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Le coeur de Maestro est l'automatisation de la conformite reglementaire (DORA, NIS 2, ISO) et de la gestion des risques tiers pour les equipes GRC, ce qui releve de Gouverner. La categorie GV.RM (Strategie de gestion des risques) correspond a l'orchestration et a la priorisation du risque cyber, meme si la brique Identity touche PR.AA de facon secondaire.",
+   "confidence": "medium"
+  },
+  {
+   "id": "in-groupe",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "IN Groupe edite des solutions d'identite numerique (enrolement, verification d'identite, biometrie, authentification forte) conformes eIDAS et PSD2. Cela correspond exactement a PR.AA (gestion des identites, authentification et controle d'acces) sous la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "inspeere",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "DATIS est une infrastructure de sauvegarde immuable et distribuee orientee restauration apres sinistre (architecture 3-2-1, immuabilite ZFS, integration Veeam/Commvault). La sauvegarde immuable orientee restauration releve de Recuperer et de la categorie RC.RP (execution du plan de reprise).",
+   "confidence": "high"
+  },
+  {
+   "id": "intuitem-ciso-assistant",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "CISO Assistant est une plateforme GRC reunissant gestion des audits multi-referentiels, evaluation des risques (EBIOS RM), conformite, quantification du risque cyber et analyse d'impact metier. Le coeur est l'evaluation et la priorisation du risque organisationnel, ce qui correspond a Gouverner et a GV.RM (strategie de gestion des risques).",
+   "confidence": "high"
+  },
+  {
+   "id": "is-decisions",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "UserLock ajoute MFA, SSO, controle des sessions et politiques d'acces contextuelles sur Active Directory et Windows. Ce coeur de metier de securisation des acces et d'authentification correspond a PR.AA sous la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "ise-systems",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.OC",
+   "currentOk": true,
+   "justification": "ISE Systems est un cabinet de conseil centre sur la mise en conformite RGPD avec DPO externalise, la gouvernance et l'archivage de donnees. Ces prestations relevent du contexte organisationnel et reglementaire (exigences legales et de conformite) plus que d'une methode de calcul du risque, d'ou GV.OC.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "itrust-reveelium",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.AE",
+   "currentOk": true,
+   "justification": "Reveelium combine SIEM, UEBA, CTI et SOAR pour analyser les comportements et correler les evenements afin de detecter les menaces. L'accent sur l'analyse comportementale et la correlation d'evenements issus de sources multiples correspond a Detecter et a DE.AE (analyse des evenements indesirables).",
+   "confidence": "medium"
+  },
+  {
+   "id": "june-factory",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.OC",
+   "currentOk": true,
+   "justification": "Auditool suit et mesure la conformité (NIS2, DORA, ISO 27001) : surveillance de la performance du programme, soit GV.OV (code CSF 2.0 valide). Classement d'origine conservé.",
+   "confidence": "medium",
+   "applied": false
+  },
+  {
+   "id": "keeex",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "KeeeX injecte des metadonnees de confiance (integrite, source, horodatage) dans les fichiers avec ancrage blockchain et signature/horodatage, ce qui protege l'integrite et l'authenticite des donnees. Cela correspond a la fonction Proteger et a la categorie PR.DS (securite des donnees), notamment l'integrite des donnees au repos et en transit.",
+   "confidence": "high"
+  },
+  {
+   "id": "keopass",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Keopass fournit une cle d'authentification biometrique generant des mots de passe forts et servant aux acces SSO, Active Directory, VPN et metiers. C'est un dispositif d'authentification et de controle d'acces, donc Proteger / PR.AA (gestion des identites, authentification et controle d'acces).",
+   "confidence": "high"
+  },
+  {
+   "id": "kerys-software-ys-desktop-ys-cloud",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Kerys edite une solution de virtualisation securisee (hyperviseur de type 1) qui cloisonne et isole plusieurs environnements de travail sur un poste pour reduire la surface d'attaque et durcir la plateforme. Cela releve de Proteger / PR.PS (securite des plateformes), via la gestion de configuration et le durcissement des postes.",
+   "confidence": "high"
+  },
+  {
+   "id": "kiwi-backup",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "Kiwi Backup propose de la sauvegarde de donnees (cloud souverain, on-premise, multi-plateformes) chiffree et hebergee en France, orientee restauration apres sinistre. Cela releve de Recuperer / RC.RP (execution du plan de reprise), la sauvegarde servant a restaurer les actifs affectes.",
+   "confidence": "high"
+  },
+  {
+   "id": "kleer",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.OC",
+   "currentOk": true,
+   "justification": "Kleer digitalise l'entree en relation et les questionnaires KYC pour la mise en conformite LCB-FT et SAPIN II des professionnels assujettis. C'est un outil de conformite reglementaire relevant de Gouverner / GV.OC, qui couvre la comprehension et la gestion des exigences legales et reglementaires.",
+   "confidence": "high"
+  },
+  {
+   "id": "layerops",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "LayerOps exploite une plateforme Container-as-a-Service multi-cloud orchestrant des conteneurs Docker, avec gestion de configuration, deploiement, certificats SSL, load balancers et CI/CD. Le coeur est la gestion securisee des plateformes applicatives conteneurisees, donc Proteger / PR.PS (securite des plateformes, gestion de configuration et maintenance logicielle).",
+   "confidence": "medium"
+  },
+  {
+   "id": "ledger",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Ledger fabrique des portefeuilles materiels qui securisent les cles privees et actifs cryptographiques de l'utilisateur. Le coeur de metier est la protection de la confidentialite et de l'integrite de donnees sensibles au repos, ce qui releve de la fonction Proteger et de la categorie Securite des donnees (PR.DS).",
+   "confidence": "high",
+   "whyChange": ""
+  },
+  {
+   "id": "legapass",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Legapass exploite un coffre-fort numerique chiffre et hors-ligne preservant la confidentialite et l'integrite d'actifs dematerialises (cryptos, codes, comptes). Son produit principal est la securisation cryptographique de donnees stockees, ce qui correspond directement a Proteger / Securite des donnees (PR.DS).",
+   "confidence": "high",
+   "whyChange": ""
+  },
+  {
+   "id": "leviaa",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Leviia est un operateur cloud souverain dont l'offre (stockage objet S3, sauvegardes externalisees, partage de fichiers) vise a garantir la confidentialite et l'integrite des donnees au repos et en transit. Bien que la sauvegarde soit presente, le coeur de metier est la securisation et l'hebergement des donnees plutot qu'un PRA oriente restauration, ce qui place l'activite sous Proteger / Securite des donnees (PR.DS).",
+   "confidence": "medium",
+   "whyChange": ""
+  },
+  {
+   "id": "lex-persona",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Goodflag est un prestataire de confiance qualifie eIDAS de signature et cachet electroniques, qui garantit l'integrite, l'authenticite et l'horodatage des documents. La protection de l'integrite des donnees releve de la fonction Proteger et de la categorie Securite des donnees (PR.DS).",
+   "confidence": "high",
+   "whyChange": ""
+  },
+  {
+   "id": "linphone",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Linphone fournit des communications temps reel chiffrees (ZRTP, post-quantique) avec softphone, serveur SIP et SDK. Le coeur de metier est la protection de la confidentialite des donnees en transit par le chiffrement des communications, ce qui correspond a Proteger / Securite des donnees (PR.DS).",
+   "confidence": "high",
+   "whyChange": ""
+  },
+  {
+   "id": "lockself",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Le produit central de LockSelf est LockPass, un gestionnaire centralise de mots de passe, complete par du transfert et de l'archivage securises. La gestion centralisee des identifiants et des acces releve de Proteger et de la categorie Gestion des identites, authentification et controle d'acces (PR.AA).",
+   "confidence": "high",
+   "whyChange": ""
+  },
+  {
+   "id": "mailinblack-protect",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Mailinblack Protect est une passerelle de sécurité de la messagerie (filtrage spam, phishing, malwares, ransomwares, authentification email) : il protège les données échangées par e-mail, soit PR.DS. Confirmé par le contrôle indépendant.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "make-it-safe",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Make IT Safe edite une plateforme GRC pour RSSI et DPO couvrant l'analyse de risque, l'audit interne, l'evaluation des tiers et le pilotage de la conformite (ISO 27001, NIS 2, NIST CSF, DORA, RGPD). Ce coeur de metier releve de la fonction Gouverner, dont la categorie GV.RM (Strategie de gestion des risques) decrit l'etablissement et le suivi d'une demarche structuree de gestion du risque cyber a l'echelle de l'organisation.",
+   "confidence": "high"
+  },
+  {
+   "id": "malizen",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.AE",
+   "currentOk": true,
+   "justification": "Malizen developpe une technologie d'analyse de donnees de cybersecurite fondee sur l'IA pour investiguer et detecter des comportements anormaux au sein des SOC. Cette correlation et analyse d'evenements potentiellement indesirables correspond a la fonction Detecter et a la categorie DE.AE (Analyse des evenements indesirables), qui couvre la comprehension des activites suspectes a partir de sources multiples.",
+   "confidence": "high"
+  },
+  {
+   "id": "mapreuve",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "MaPreuve fournit une preuve d'anteriorite et d'integrite sur des fichiers via horodatage certifie et signature electronique qualifiee, tout en preservant la confidentialite du document. Garantir l'integrite et la confidentialite des donnees releve de la fonction Proteger et de la categorie PR.DS (Securite des donnees), qui protege la confidentialite, l'integrite et la disponibilite des donnees.",
+   "confidence": "high"
+  },
+  {
+   "id": "memority",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Memority edite une plateforme IAM SaaS gerant le cycle de vie des identites, le SSO, l'authentification adaptative et les facteurs MFA. La gestion des identites, l'authentification et le controle d'acces correspondent directement a la fonction Proteger et a la categorie PR.AA (Gestion des identites, authentification et controle d'acces).",
+   "confidence": "high"
+  },
+  {
+   "id": "merox",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "MEROX sécurise l'authentification email (DMARC, DKIM, MTA-STS, DNSSEC, BIMI) contre l'usurpation de domaine et le phishing : protection des données échangées, soit PR.DS. Contrôle indépendant unanime (haute confiance).",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "mindflow",
+   "recommendedL1": "Repondre",
+   "recommendedL2": "RS.MA",
+   "currentOk": true,
+   "justification": "Mindflow edite une plateforme d'hyperautomatisation no-code de type SOAR pour les equipes SecOps et MSSP, orchestrant le traitement des incidents via un moteur d'automatisation, des agents IA et des integrations. Cette orchestration et automatisation de la reponse aux incidents releve de la fonction Repondre et de la categorie RS.MA (Gestion des incidents).",
+   "confidence": "high"
+  },
+  {
+   "id": "moabi-solutions",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Moabi Solutions analyse la securite d'applications, firmwares et systemes d'exploitation sans acces au code source, mesurant via execution symbolique les vulnerabilites, la cryptographie et la conformite. Cette identification et evaluation des vulnerabilites des actifs logiciels releve de la fonction Identifier et de la categorie ID.RA (Evaluation des risques).",
+   "confidence": "high"
+  },
+  {
+   "id": "mokn",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "MokN repose sur la deception (faux portails VPN/webmail) pour pieger et detecter les attaquants utilisant des identifiants compromis, et gere la surface d'attaque externe. Le coeur de metier est la mise en evidence d'une activite malveillante, ce qui releve de la surveillance continue pour reperer les evenements indesirables (DE.CM).",
+   "confidence": "high"
+  },
+  {
+   "id": "mr-suricate",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Mr Suricate surveille en continu les parcours utilisateurs et la disponibilite des sites, applications et API pour detecter les anomalies (monitoring synthetique). Son activite, plus proche du test/QA que de la cybersecurite pure, correspond le mieux a la surveillance continue (DE.CM) qui detecte les evenements indesirables sur les services.",
+   "confidence": "low"
+  },
+  {
+   "id": "nameshield",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Nameshield securise les actifs numeriques via le DNS (Bastion DNS, Registry Lock, certificats SSL/TLS, DMARC) et la configuration de domaines. Il s'agit de mesures de sauvegarde durcissant la securite des plateformes et services (configuration, integrite des domaines et certificats), ce qui releve de PR.PS.",
+   "confidence": "medium"
+  },
+  {
+   "id": "nefture",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Nefture surveille en continu les risques on-chain en DeFi et emet des alertes (depeg, liquidation, vulnerabilites de protocoles) sur les portefeuilles multi-chaines. Cette surveillance permanente d'evenements indesirables sur des actifs et services tiers correspond a DE.CM.",
+   "confidence": "medium"
+  },
+  {
+   "id": "neowave",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Neowave fabrique des dispositifs d'authentification forte et de signature (cles/cartes FIDO2, QSCD eIDAS, lecteurs de cartes). Ce sont des mesures de gestion des identites, d'authentification et de controle d'acces, coeur de la categorie PR.AA dans la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "netexplorer-netexplorer-share",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "NetExplorer fournit du stockage et partage de fichiers securises heberges en France (envoi chiffre, DataRoom confidentielle, coffre Vault, HDS). Le coeur de metier est la protection de la confidentialite, integrite et disponibilite des donnees au repos et en transit, soit PR.DS.",
+   "confidence": "high"
+  },
+  {
+   "id": "netiful",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Netiful developpe du filtrage et de la surveillance (filtrage d'acces Internet, veille sur la surface d'exposition externe CRP, detection de fuites sur web/deep web/dark web SEAUROND). L'activite dominante est la surveillance continue pour detecter expositions et evenements indesirables, ce qui correspond a DE.CM.",
+   "confidence": "medium"
+  },
+  {
+   "id": "nexplublica",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Nexpublica edite Ilex IAM, une plateforme complete de gestion des identites et des acces (cycle de vie des comptes, MFA, SSO, federation, CIAM, gestion de cartes/jetons). C'est le coeur meme de la fonction Proteger, categorie PR.AA qui couvre la gestion des identites, l'authentification et le controle d'acces.",
+   "confidence": "high"
+  },
+  {
+   "id": "nijta",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Nijta anonymise la voix pour retirer les caracteristiques biometriques identifiables tout en preservant le contenu, avec un argument RGPD. Il s'agit d'une mesure de protection de la confidentialite des donnees (donnees vocales), ce qui releve de Proteger et de la categorie PR.DS Securite des donnees.",
+   "confidence": "high"
+  },
+  {
+   "id": "normation-rudder",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Rudder automatise la gestion de configuration de securite, le patch management et la conformite des infrastructures (CIS, NIST, ISO 27001). Le coeur de l'outil est le durcissement et la gestion de configuration des plateformes, ce qui correspond a Proteger et a PR.PS Securite des plateformes (PR.PS-01 configuration, PR.PS-02 maintenance logicielle).",
+   "confidence": "high"
+  },
+  {
+   "id": "novalys-visual-guard",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Visual Guard est une brique de securite applicative centree sur le controle d'acces aux donnees sensibles, l'administration des utilisateurs et des roles, et l'authentification multifacteur. Bien qu'integree au cycle applicatif, sa fonction principale est la gestion des identites et des acces, donc Proteger PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "numspot",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "Numspot opere un cloud public souverain (IaaS/PaaS) qualifie SecNumCloud et HDS pour des operateurs critiques. Son metier est de fournir une infrastructure technologique securisee et resiliente, ce qui correspond a Proteger et a PR.IR Resilience de l'infrastructure technologique (protection des reseaux/environnements et disponibilite des ressources).",
+   "confidence": "medium"
+  },
+  {
+   "id": "ogo-security",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "OGO Security edite une plateforme WAAP qui filtre et protege les applications web et les API exposees, avec analyse comportementale et CDN. Cette protection applicative en amont releve de Proteger ; la securisation des applications/plateformes exposees correspond a PR.PS Securite des plateformes.",
+   "confidence": "medium"
+  },
+  {
+   "id": "olfeo",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "Olfeo conçoit des passerelles de securite web (SWG, filtrage URL, CASB, filtrage DNS) qui controlent et securisent le trafic web sortant des utilisateurs. Il s'agit de proteger les reseaux et environnements contre les usages logiques non autorises, ce qui releve de Proteger et de PR.IR Resilience de l'infrastructure technologique (PR.IR-01). La composante DLP releve aussi de Proteger sans changer la fonction L1.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "olvid",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Olvid edite une messagerie chiffree de bout en bout : son coeur de metier est la protection de la confidentialite et de l'integrite des donnees en transit et au repos par chiffrement. Cela releve de Proteger / PR.DS (Securite des donnees), qui couvre la protection des donnees par chiffrement.",
+   "confidence": "high"
+  },
+  {
+   "id": "onyphe",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "ONYPHE scanne l'Internet et le dark web pour la decouverte et la gestion de surface d'attaque ainsi que le renseignement sur les menaces. Cela correspond a Identifier / ID.RA (Evaluation des risques), qui inclut la reception de renseignement sur les cybermenaces (ID.RA-02) et la comprehension de l'exposition externe de l'organisation.",
+   "confidence": "high",
+   "applied": true
+  },
+  {
+   "id": "oodrive",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Oodrive propose une suite collaborative securisee (partage, signature, sauvegarde) hebergee en France et qualifiee SecNumCloud, centree sur la confidentialite et l'integrite des donnees echangees et stockees. Le coeur de metier est la protection des donnees, soit Proteger / PR.DS (Securite des donnees), incluant la sauvegarde des donnees.",
+   "confidence": "high"
+  },
+  {
+   "id": "opencve",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "OpenCVE est une plateforme de suivi et de notification des vulnerabilites CVE, qui indexe les vulnerabilites pour les equipes de securite. Cela releve d'Identifier / ID.RA (Evaluation des risques), dont ID.RA-01 (les vulnerabilites des actifs sont identifiees, validees et enregistrees).",
+   "confidence": "high"
+  },
+  {
+   "id": "opensezam-authsezam",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Open Sezam edite des solutions d'authentification multifacteur sans mot de passe et de controle d'acces zero trust centrees sur l'identite. C'est typiquement de la gestion des identites et des acces, soit Proteger / PR.AA (Gestion des identites, authentification et controle d'acces).",
+   "confidence": "high"
+  },
+  {
+   "id": "orange-business-service-cloud-avenue",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Orange Cyberdefense opere comme MSSP avec des CyberSOC assurant la detection et la reponse managees (MDR) via supervision SIEM, endpoint et reseau. Le coeur de metier produit est la surveillance continue pour detecter les compromissions, soit Detecter / DE.CM (Surveillance continue), meme si des activites de reponse et de pentest existent en complement.",
+   "confidence": "medium"
+  },
+  {
+   "id": "orsec-technologies-sas",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "ORSEC Technologies concoit des sondes de surveillance reseau passives basees sur le Deep Packet Inspection qui enregistrent et analysent le trafic pour detecter les evenements indesirables. C'est de la surveillance reseau continue (NDR), soit Detecter / DE.CM (Surveillance continue), notamment DE.CM-01 (les reseaux sont surveilles).",
+   "confidence": "high"
+  },
+  {
+   "id": "oversoc-overview",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.AM",
+   "currentOk": true,
+   "justification": "OverSOC agrege les donnees d'outils IT et cyber via plus de soixante connecteurs pour construire un inventaire unifie et dedoublonne des actifs (materiels, logiciels, systemes, fournisseurs). Cette comprehension et cartographie des actifs de l'organisation est le coeur d'Identifier, categorie ID.AM Gestion des actifs. Les indicateurs de conformite sont une fonction secondaire.",
+   "confidence": "high"
+  },
+  {
+   "id": "ovhcloud",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "OVHcloud exploite une infrastructure cloud sur 46 datacenters et fournit calcul, stockage, reseau et hebergement avec resilience et disponibilite. Le coeur de metier est la mise a disposition et la protection d'une infrastructure technologique resiliente, ce qui releve de Proteger et de PR.IR Resilience de l'infrastructure technologique.",
+   "confidence": "medium"
+  },
+  {
+   "id": "oxibox",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "Oxibox est specialisee dans la sauvegarde securisee orientee restauration et la protection contre les rancongiciels, avec restauration instantanee sur environnements physiques, virtuels et Bare Metal. Une sauvegarde dont la finalite est la restauration apres sinistre releve de Recuperer et de RC.RP Execution du plan de reprise.",
+   "confidence": "high"
+  },
+  {
+   "id": "p4s",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "P4S concoit des equipements reseau souverains de cybersecurite (pare-feu chiffrant, controleur, sonde) pour le filtrage et la protection du trafic. Il s'agit de mesures de sauvegarde de l'infrastructure reseau, qui relevent de Proteger et de PR.IR (protection des reseaux et environnements contre les acces et usages logiques non autorises).",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "parcoor",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Parcoor edite des briques embarquees realisant la detection en temps reel de menaces et malwares ainsi que la detection d'anomalies materielles via machine learning embarque sur les objets connectes. Cette surveillance continue du materiel et des environnements d'execution pour reperer les evenements indesirables est le coeur de Detecter et de DE.CM.",
+   "confidence": "high"
+  },
+  {
+   "id": "parsec",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Parsec propose un logiciel de chiffrement et de partage de fichiers Zero Trust et Zero Knowledge assurant le stockage chiffre, la protection contre les fuites et la defense anti-ransomware. Le chiffrement et la protection de la confidentialite et de l'integrite des donnees au repos et en transit relevent de Proteger et de PR.DS Securite des donnees.",
+   "confidence": "high"
+  },
+  {
+   "id": "patrowl",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Patrowl exploite une plateforme de gestion de la surface d'attaque externe couplee a du test d'intrusion automatise, cartographiant les actifs exposes, le shadow IT et le suivi des CVE. La decouverte et la validation des vulnerabilites et de l'exposition relevent d'Identifier et de ID.RA Evaluation des risques (identification et validation des vulnerabilites des actifs).",
+   "confidence": "high"
+  },
+  {
+   "id": "phinasoft",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Phinasoft edite une plateforme GRC de pilotage des risques et de la conformite cyber (analyses de risques, homologations, RGPD/PIA, risques tiers, referentiels), avec label EBIOS RM. Le coeur de metier est la strategie et la gestion organisationnelle du risque, ce qui releve de Gouverner et de la categorie Strategie de gestion des risques (GV.RM).",
+   "confidence": "high"
+  },
+  {
+   "id": "portyq",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Portyq travaille sur la cryptographie post-quantique (PQC) et la distribution quantique de cles (QKD), c'est-a-dire des mecanismes de chiffrement et de protection des cles. Le chiffrement protege la confidentialite et l'integrite des donnees au repos et en transit, ce qui correspond a Proteger et a la Securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "pradeo",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Pradeo securise les terminaux et applications mobiles (Android/iOS) avec gestion de configuration, app store prive et controle des applications non autorisees, en plus de la detection. Le coeur produit est la securisation et le durcissement de la plateforme mobile, soit Proteger et la Securite des plateformes (PR.PS). Bien que MTD comporte une dimension Detecter, l'offre est centree sur la protection du parc mobile.",
+   "confidence": "medium"
+  },
+  {
+   "id": "pradeo-yagaan",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Yagaan est la branche AppSec de Pradeo: test statique (SAST), test mobile (MAST), durcissement applicatif et autoprotection a l'execution (RASP). Ces mesures protegent et durcissent le code et les applications tout au long du cycle de vie, ce qui correspond a Proteger et a la Securite des plateformes (PR.PS, qui inclut le developpement logiciel securise).",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "pragmable",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Le produit principal Whocan est un moteur d'autorisation pour fournisseurs cloud, evaluant les chaines de decision d'acces via un langage de requete. La gestion des permissions et des autorisations d'acces (moindre privilege) releve de Proteger et de la categorie Gestion des identites, authentification et controle d'acces (PR.AA).",
+   "confidence": "high"
+  },
+  {
+   "id": "predictalab",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Predicta Lab applique l'IA a l'OSINT pour reconstituer l'empreinte numerique d'une personne, correler les donnees et noter le niveau d'exposition d'une organisation. Cela revient a comprendre et evaluer la surface d'attaque et le risque d'exposition externe, ce qui releve d'Identifier et de l'Evaluation des risques (ID.RA), incluant la threat intelligence d'exposition.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "presentid",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "PresentID fournit la verification d'identite a distance par biometrie (liveness, biometrie vocale, OCR de pieces, anti-deepfake) pour l'enrolement et l'authentification. La verification d'identite et l'authentification des utilisateurs relevent de Proteger et de la categorie Gestion des identites, authentification et controle d'acces (PR.AA).",
+   "confidence": "high"
+  },
+  {
+   "id": "preventeo",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Preventeo edite une plateforme SaaS de gestion des conformites, des risques et des processus metier (audits, veille reglementaire, controles periodiques, retour d'experience). C'est un outil GRC organisationnel qui structure et pilote la gestion du risque, ce qui releve du coeur de la fonction Gouverner et de la categorie Strategie de gestion des risques.",
+   "confidence": "high"
+  },
+  {
+   "id": "primx",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "PRIM'X edite des logiciels de chiffrement (fichiers, disque integral, conteneurs, messagerie) pour proteger la confidentialite des donnees. Le chiffrement de donnees au repos et en transit est une mesure de sauvegarde typique de la fonction Proteger, categorie Securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "private-discuss",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Private Discuss fournit une plateforme de communication et de collaboration chiffree (messagerie, appels, visio, partage de fichiers) pour entites sensibles. Le coeur de metier est la protection de la confidentialite des donnees echangees par chiffrement, ce qui correspond a Proteger et a la Securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "provenrun",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "ProvenRun concoit des briques logicielles de confiance securisees par conception pour systemes embarques critiques (OS certifie EAL7, microcontroleurs, HSM, developpement securise). Il s'agit de securisation des plateformes et du cycle de developpement logiciel, ce qui correspond a la fonction Proteger et a la categorie Securite des plateformes (PR.PS).",
+   "confidence": "high"
+  },
+  {
+   "id": "psc-france-cyber-detect-gorille",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "PSC France commercialise Gorille, un moteur de detection de logiciels malveillants par analyse morphologique du code. La detection de malwares sur le materiel et les environnements d'execution releve de la fonction Detecter et de la Surveillance continue (DE.CM), notamment DE.CM-09 sur la surveillance des logiciels.",
+   "confidence": "high"
+  },
+  {
+   "id": "purplemet",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Purplemet gere la surface d'attaque web : decouverte des actifs exposes et suivi continu de leurs vulnerabilites (ASM, security analyzer, domain assessment). L'identification et le suivi des vulnerabilites et de la surface d'attaque relevent de la fonction Identifier et de l'Evaluation des risques (ID.RA-01).",
+   "confidence": "high"
+  },
+  {
+   "id": "pydio",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Pydio edite une plateforme souveraine auto-hebergee de partage et de gestion de contenu d'entreprise, positionnee comme alternative securisee aux solutions SaaS. Le coeur de metier est la protection et le controle des donnees documentaires partagees, ce qui correspond a la fonction Proteger et a la Securite des donnees (PR.DS).",
+   "confidence": "medium"
+  },
+  {
+   "id": "qevlarai",
+   "recommendedL1": "Repondre",
+   "recommendedL2": "RS.MA",
+   "currentOk": true,
+   "justification": "Qevlar AI edite un SOC autonome a base d'IA agentique qui mene les investigations d'alertes et les correle en incidents complets, avec investigation et reponse. Ce coeur de metier (trier, categoriser, investiguer et repondre aux incidents detectes) releve de la fonction Repondre. La categorie RS.MA (Gestion des incidents) couvre exactement l'execution et la coordination du traitement des incidents.",
+   "confidence": "high"
+  },
+  {
+   "id": "qontrol",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Qontrol est une plateforme de pilotage de la conformite et des risques cyber pour vCISO et cabinets GRC, avec diagnostics multi-referentiels (ISO 27001, NIS2, DORA) et priorisation des risques. Ce metier de gestion organisationnelle du risque et de la conformite releve de Gouverner. GV.RM (Strategie de gestion des risques) correspond a l'etablissement et a la priorisation standardisee des risques cyber a l'echelle de l'organisation.",
+   "confidence": "medium"
+  },
+  {
+   "id": "ravel-technologies",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Ravel Technologies developpe un chiffrement entierement homomorphe permettant de traiter des donnees sensibles tout en les gardant chiffrees de bout en bout. Le coeur de metier est la protection cryptographique de la confidentialite des donnees, au repos comme en traitement, ce qui releve de Proteger. PR.DS (Securite des donnees) couvre la protection de la confidentialite et de l'integrite des donnees.",
+   "confidence": "high"
+  },
+  {
+   "id": "rebop",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "reBop gere le cycle de vie des certificats numeriques SSL/TLS et x509 (surveillance, expiration, revocation, conformite x509, CT Logs, CRL). La gestion des certificats cryptographiques protege la confidentialite et l'integrite des communications et des donnees en transit, ce qui releve de Proteger et de PR.DS (Securite des donnees), categorie qui inclut la gestion des mecanismes cryptographiques.",
+   "confidence": "medium"
+  },
+  {
+   "id": "reciproc-it-oligo-risk-manager",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Oligo Risk Manager est un logiciel d'analyse de risques implementant la methode EBIOS Risk Manager labellisee ANSSI, qui identifie menaces, vulnerabilites, impacts et probabilites. Cette evaluation des risques pour comprendre l'exposition de l'organisation releve d'Identifier. ID.RA (Evaluation des risques) correspond precisement a l'enregistrement et a la priorisation des risques a partir des menaces et vulnerabilites.",
+   "confidence": "high"
+  },
+  {
+   "id": "reemo",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Reemo fournit un acces a distance sans agent fonde sur le Zero Trust Network Access et la securisation des acces tiers (bureau a distance, VDI, isolation de navigateur). Le coeur de metier est le controle d'acces et l'authentification selon le moindre privilege, ce qui releve de Proteger. PR.AA (Gestion des identites, authentification et controle d'acces) couvre exactement la gestion des acces autorises.",
+   "confidence": "high"
+  },
+  {
+   "id": "resosafe-box2cloud",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "ResoSafe et Box2Cloud sont des solutions de dematerialisation et de partage securise de fichiers (GED, cloud) protegeant les documents au repos et en partage. Le coeur de metier porte sur la protection de la confidentialite et de la disponibilite des donnees, ce qui releve de Proteger et de PR.DS (Securite des donnees). Le perimetre de l'editeur reste toutefois large (impression, telephonie, reseau) d'ou une confiance moderee.",
+   "confidence": "medium"
+  },
+  {
+   "id": "reversense-dexcalibur",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Reversense edite des outils d'ingenierie inverse et d'analyse binaire qui servent a identifier les vulnerabilites et evaluer la conformite (RGPD, CRA, PCI) d'applications mobiles. Cette activite vise a comprendre et evaluer les risques et faiblesses des actifs logiciels, coeur de la fonction Identifier et de la categorie Evaluation des risques (ID.RA).",
+   "confidence": "high"
+  },
+  {
+   "id": "riot",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "Riot edite une plateforme de gestion du risque humain centree sur la sensibilisation, la formation et la simulation de phishing pour les collaborateurs. C'est une mesure de sauvegarde preventive visant a former le personnel aux bons reflexes, ce qui correspond exactement a Proteger et a la categorie Sensibilisation et formation (PR.AT).",
+   "confidence": "high"
+  },
+  {
+   "id": "risk-hunter",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Risk Hunter est une plateforme GRC qui structure l'analyse des risques, les audits et les plans d'action pour des organisations soumises a NIS2, DORA ou ISO 27001. La gestion du risque cyber organisationnel et la production de decisions auditables relevent de la fonction Gouverner et de la Strategie de gestion des risques (GV.RM).",
+   "confidence": "high"
+  },
+  {
+   "id": "rubycat",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Rubycat developpe PROVE IT, un bastion d'administration certifie ANSSI qui controle, authentifie et trace les acces privilegies au systeme d'information. Le PAM est une mesure de protection du controle d'acces selon le moindre privilege, coeur de Proteger et de la categorie Gestion des identites et controle d'acces (PR.AA).",
+   "confidence": "high"
+  },
+  {
+   "id": "safeo",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "Safeo fournit de l'externalisation informatique depuis des data centers Tier 3+ avec infrastructure cloud, connectivite et continuite. Le coeur du metier est la fourniture et la protection d'infrastructures technologiques resilientes (hebergement, reseau, multi-cloud), ce qui correspond a Proteger et a la Resilience de l'infrastructure technologique (PR.IR).",
+   "confidence": "medium"
+  },
+  {
+   "id": "sarus-technologies-sarus",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Sarus developpe une couche de confidentialite (confidentialite differentielle, donnees synthetiques, reecriture de requetes) pour traiter des donnees sensibles sans y acceder. Cette protection de la confidentialite et de l'integrite des donnees releve de Proteger et de la Securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "scalair",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "Scalair est un MSSP operant des data centers ISO 27001/HDS et offrant protection des infrastructures, reseau via SASE, sauvegardes souveraines et postes proteges. L'orientation principale est la protection et la resilience d'infrastructures et de reseaux geres, ce qui correspond a Proteger et a la Resilience de l'infrastructure technologique (PR.IR).",
+   "confidence": "medium"
+  },
+  {
+   "id": "scality",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Scality edite du stockage objet avec immuabilite (S3 Object Lock) et protection anti-rancongiciel (CORE5), garantissant confidentialite, integrite et disponibilite des donnees au repos. Cette protection des donnees stockees releve de la fonction Proteger, categorie PR.DS (Securite des donnees).",
+   "confidence": "high"
+  },
+  {
+   "id": "scovery",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Scovery mesure en continu l'exposition au risque cyber, cartographie la surface d'attaque, identifie les vulnerabilites et evalue les tiers. Cette notation et evaluation du risque cyber externe correspondent a Identifier, categorie ID.RA (Evaluation des risques).",
+   "confidence": "high"
+  },
+  {
+   "id": "seald",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Seald fournit un SDK de chiffrement de bout en bout pour proteger les donnees au repos et en transit dans les applications, avec gestion des droits d'acces. Le chiffrement des donnees est une mesure de sauvegarde relevant de Proteger, categorie PR.DS (Securite des donnees).",
+   "confidence": "high"
+  },
+  {
+   "id": "secdojo",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "SecDojo opere une plateforme de formation et d'entrainement cyber (cours, labs, CTF, sensibilisation) pour profils SOC, pentester ou architecte. La formation et la sensibilisation du personnel relevent de la fonction Proteger, categorie PR.AT (Sensibilisation et formation).",
+   "confidence": "high"
+  },
+  {
+   "id": "seckiot",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "SeckIOT assure la detection de menaces en temps reel et la supervision continue des infrastructures OT/industrielles (reseaux, equipements). Cette surveillance continue des reseaux pour detecter les evenements indesirables correspond a Detecter, categorie DE.CM (Surveillance continue).",
+   "confidence": "high"
+  },
+  {
+   "id": "seclab",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "Seclab isole physiquement les reseaux OT via une technologie brevetee d'Electronic AirGap et filtre les transferts de fichiers, protegeant les infrastructures critiques contre les acces non autorises. Cette protection et resilience de l'infrastructure reseau relevent de Proteger, categorie PR.IR (Resilience de l'infrastructure technologique).",
+   "confidence": "high"
+  },
+  {
+   "id": "securas-technologies",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Securas Technologies propose une offre mixte mais son produit identifiable est un pare-feu applicatif web (CyberShield) qui protege les applications. La protection applicative releve de Proteger, categorie PR.PS (Securite des plateformes). Les prestations de pentest et de reponse a incident sont des services secondaires.",
+   "confidence": "low"
+  },
+  {
+   "id": "secure-ic",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Secure-IC conçoit des technologies de sécurité matérielle embarquée (Securyzr iSSP, secure element, cryptographie post-quantique) intégrées aux puces et systèmes embarqués. Il s'agit de mesures de sauvegarde renforçant la sécurité des plateformes matérielles et de leur cycle de développement, ce qui relève de Protéger / PR.PS.",
+   "confidence": "high"
+  },
+  {
+   "id": "secuserve",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Secuserve édite une passerelle SaaS de filtrage de messagerie (antivirus, antispam, anti-phishing) qui protège la plateforme de communication en bloquant les menaces. C'est une mesure de prévention/sauvegarde au niveau de la plateforme applicative, donc Protéger / PR.PS.",
+   "confidence": "medium"
+  },
+  {
+   "id": "seedfence",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "SeedFence édite une plateforme XDR qui surveille en continu terminaux, objets connectés et environnements OT pour détecter les cyberattaques. La surveillance continue de matériels et d'environnements d'exécution afin de trouver des événements indésirables relève de Détecter / DE.CM.",
+   "confidence": "high"
+  },
+  {
+   "id": "seela",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AT",
+   "currentOk": true,
+   "justification": "Seela exploite une plateforme de formation et d'entraînement en cybersécurité (CyberTraining, CyberRange, parcours certifiants SOC/RSSI/DevSecOps). La sensibilisation et la formation du personnel et des rôles spécialisés constituent une mesure de sauvegarde relevant de Protéger / PR.AT.",
+   "confidence": "high"
+  },
+  {
+   "id": "sekoia-io-xdr-platform",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "SEKOIA.IO édite une plateforme XDR/SIEM nouvelle génération avec CTI et règles de détection pour les équipes SOC et MSSP. Le coeur du produit est la détection des menaces via surveillance continue des réseaux, hôtes et activités, ce qui relève de Détecter / DE.CM.",
+   "confidence": "high"
+  },
+  {
+   "id": "sekost-yeswehack",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Sekost réalise des audits à distance qui cartographient l'exposition et détectent les vulnérabilités d'une organisation à partir d'un domaine ou d'une IP, avec note de maturité et recommandations priorisées. L'identification et l'évaluation des vulnérabilités et risques d'exposition relèvent d'Identifier / ID.RA.",
+   "confidence": "high"
+  },
+  {
+   "id": "sekrata",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Sekrata édite des solutions de gestion et sécurisation des identités numériques (IAM/SSO basé sur Keycloak, validation d'actions sensibles par appel). La gestion des identités, l'authentification et le contrôle d'accès sont des mesures de sauvegarde relevant de Protéger / PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "serenicity",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "La sonde Detoxio analyse les flux réseau et bloque les menaces, et la plateforme Control assure la supervision continue avec cartographies et alertes. Le coeur de métier est la surveillance réseau et la détection de menaces, ce qui correspond à la fonction Détecter et à la catégorie DE.CM (surveillance continue des réseaux).",
+   "confidence": "high"
+  },
+  {
+   "id": "sesame-it",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Sesame IT édite une solution de détection et réponse réseau (NDR) qualifiée ANSSI qui surveille les réseaux IT et OT pour repérer les menaces via signatures, analyse de malwares et IA. C'est un produit de surveillance continue du réseau, donc Détecter / DE.CM.",
+   "confidence": "high"
+  },
+  {
+   "id": "shadline",
+   "recommendedL1": "Recuperer",
+   "recommendedL2": "RC.RP",
+   "currentOk": true,
+   "justification": "Plan B Numérique est une plateforme de gestion de crise et de continuité d'activité permettant de faire tourner les cellules de crise en mode dégradé et de reconstruire le système d'information après incident. La reconstruction du SI et la continuité relèvent de Récupérer et de l'exécution du plan de reprise (RC.RP).",
+   "confidence": "medium"
+  },
+  {
+   "id": "shareid",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "ShareID vérifie l'identité (Doc IDV, Liveness) et fournit l'authentification forte (MFA 3.0) conforme à eIDAS 2.0. La vérification d'identité et l'authentification correspondent exactement à Protéger / PR.AA (gestion des identités, authentification et contrôle d'accès).",
+   "confidence": "high"
+  },
+  {
+   "id": "shindan",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Shindan supervise les terminaux mobiles (smartphones, tablettes) pour repérer compromissions et vulnérabilités (mobile threat defense), assimilable à une surveillance continue des terminaux, soit Détecter / DE.CM. Contrôle indépendant unanime.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "situation",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.AM",
+   "currentOk": true,
+   "justification": "Situation propose une cartographie automatisée des systèmes d'information avec inventaire des couches techniques, flux réseau et écosystème pour préparer NIS2. La cartographie et l'inventaire d'actifs relèvent de la fonction Identifier et de la catégorie ID.AM (gestion des actifs).",
+   "confidence": "high"
+  },
+  {
+   "id": "skyld-labs",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Skyld protège les modèles d'IA embarqués contre le vol et la rétro-ingénierie (AI Protection, AI Licensing). Protéger la confidentialité et l'intégrité de ces modèles (qui sont des données/actifs informationnels) au repos relève de Protéger et de PR.DS (sécurité des données).",
+   "confidence": "medium"
+  },
+  {
+   "id": "skypher",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.SC",
+   "currentOk": true,
+   "confidence": "medium",
+   "justification": "Skypher automatise les reponses aux questionnaires de securite et offre un Trust Center pour partager sa posture (SOC2) avec ses clients et partenaires. Cette activite releve de la gestion de la relation de confiance et d'evaluation entre une organisation et ses tiers/fournisseurs, coeur de GV.SC (gestion des risques de la chaine d'approvisionnement cyber). Le produit sert a documenter et echanger l'assurance de securite entre parties, ce qui est une fonction de gouvernance et non technique."
+  },
+  {
+   "id": "smart-global-governance",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "confidence": "high",
+   "justification": "Smart Global Governance est une plateforme GRC (gouvernance, risques, conformite) couvrant plus de 200 normes avec des modules Audit, Controle Interne, Enterprise Risk Management et Third Party Risk Management. Le coeur de metier est la gestion organisationnelle du risque et de la conformite, ce qui correspond a la fonction Gouverner. GV.RM (strategie de gestion des risques) est la categorie centrale car l'outil structure et pilote le programme de risque de l'entreprise."
+  },
+  {
+   "id": "snowpack",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "confidence": "medium",
+   "justification": "Snowpack propose une technologie VIPN qui fragmente et anonymise les communications pour masquer utilisateurs, services et infrastructures. Il s'agit d'une mesure de sauvegarde preventive protegeant la confidentialite des donnees et des flux en transit, ce qui releve de Proteger. PR.DS (securite des donnees) couvre la protection de la confidentialite des donnees en transit, coeur de la solution. PR.IR serait defendable pour la resilience reseau, mais l'objectif principal d'anonymisation/confidentialite oriente vers PR.DS."
+  },
+  {
+   "id": "stormshield-airbus-cybersecurity-stormshield-network-security",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "confidence": "medium",
+   "justification": "Stormshield edite avant tout des pare-feux (Stormshield Network Security) qui protegent les reseaux et environnements, y compris OT, contre les acces logiques non autorises. Cette protection peripherique et la resilience de l'infrastructure reseau correspondent a Proteger et a PR.IR (resilience de l'infrastructure technologique). Le produit phare etant le firewall reseau, PR.IR est plus juste que PR.DS malgre la presence d'une offre de chiffrement secondaire."
+  },
+  {
+   "id": "strangebee-thehive",
+   "recommendedL1": "Repondre",
+   "recommendedL2": "RS.MA",
+   "currentOk": true,
+   "confidence": "high",
+   "justification": "StrangeBee developpe TheHive, plateforme collaborative de gestion des cas de reponse a incident utilisee par les SOC, CERT, CSIRT et MSSP, avec le moteur d'analyse Cortex. Le coeur de metier est l'orchestration et la gestion du cycle de vie des incidents detectes, ce qui releve de la fonction Repondre. RS.MA (gestion des incidents) est la categorie exacte car l'outil trie, categorise et coordonne le traitement des incidents."
+  },
+  {
+   "id": "straton-it-corrium",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "confidence": "medium",
+   "justification": "Corrium automatise l'audit et le controle technique des infrastructures, analyse les configurations, controle la securite des postes et evalue l'obsolescence et les vulnerabilites via Diaggy. Cette demarche d'evaluation de l'exposition et des faiblesses correspond a Identifier et a ID.RA (evaluation des risques). Il s'agit de comprendre l'etat et les risques du parc, non de detecter en continu des compromissions actives.",
+   "applied": true
+  },
+  {
+   "id": "suzan-ai",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "confidence": "high",
+   "justification": "Suzan edite un \"Compliance OS\" de gouvernance, conformite et gestion des risques qui automatise le suivi reglementaire et l'analyse de risque pour de grandes organisations. Le coeur de metier est le pilotage strategique du risque et de la conformite, ce qui releve de la fonction Gouverner. GV.RM (strategie de gestion des risques) est la categorie adaptee car l'outil structure le calcul, la priorisation et la reponse au risque."
+  },
+  {
+   "id": "sylink-technologie",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "SYLink regroupe plusieurs briques mais son coeur operationnel est la supervision SOC 24/7 couplee aux fonctions de detection (boitier pare-feu/IDS/IPS, EDR, veille fuites darkweb). Cette surveillance continue des reseaux, postes et environnements pour reperer les evenements indesirables correspond a la fonction Detecter et a la categorie DE.CM.",
+   "confidence": "medium"
+  },
+  {
+   "id": "symbiotic-security-symbiotic",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Symbiotic securise le code genere par IA en integrant des garde-fous dans l'IDE, en scannant les pull requests et la CI/CD et en remediant automatiquement, soit des pratiques de developpement logiciel securise. Cela releve de Proteger et de PR.PS, en particulier PR.PS-06 sur le developpement securise tout au long du cycle de vie.",
+   "confidence": "high"
+  },
+  {
+   "id": "syspertec-group",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Cas ambigu (double activité : sécurisation des accès mainframe z/OS et RegTech) ; classement d'origine PR.PS conservé faute de consensus du contrôle.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "systancia",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Systancia construit une plateforme Zero Trust d'acces distant, de PAM (Cleanroom), de gestion des identites (Identity) et d'authentification unique (Access). Ces capacites de gestion des identites, d'authentification et de controle d'acces selon le moindre privilege relevent de Proteger et de la categorie PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "tehtris-tehtris-xdr-ai-platform",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "TEHTRIS edite une plateforme XDR reunissant EDR, MTD, SIEM, NTA et honeypots avec un service MDR de supervision. Cette surveillance continue des reseaux, postes et environnements pour detecter les compromissions correspond a la fonction Detecter et a la categorie DE.CM.",
+   "confidence": "high"
+  },
+  {
+   "id": "tenacy",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "Tenacy est une plateforme SaaS de pilotage de la cybersecurite (GRC) qui centralise la gouvernance, gere plus de cinquante referentiels (ISO 27001, DORA, NIS 2), automatise les workflows et produit tableaux de bord et rapports de risque. Ce pilotage strategique et la priorisation des risques cyber relevent de Gouverner et de la categorie GV.RM (strategie de gestion des risques).",
+   "confidence": "high"
+  },
+  {
+   "id": "tendercrunch",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.OC",
+   "currentOk": true,
+   "justification": "TenderCrunch automatise la redaction des reponses aux appels d'offres (RFP, RFI, DDQ) avec hebergement SecNumCloud en France. Bien que peu typiquement cyber, son apport se rattache a la comprehension et gestion des exigences contractuelles et reglementaires, ce qui correspond a Gouverner et a la categorie GV.OC (GV.OC-03).",
+   "confidence": "low"
+  },
+  {
+   "id": "texplained",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Texplained fait de la retro-ingenierie et de l'extraction de donnees de circuits integres pour valider la chaine d'approvisionnement, detecter des portes derobees materielles et identifier des contrefacons. C'est une activite d'analyse et de validation de vulnerabilites/menaces sur les actifs materiels, coeur de la fonction Identifier et de l'evaluation des risques (ID.RA).",
+   "confidence": "high"
+  },
+  {
+   "id": "thales-luna-hsm",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Le Luna HSM protege les cles cryptographiques sur leur cycle de vie et assure chiffrement, dechiffrement, authentification et signature. Il s'agit avant tout de securiser la confidentialite et l'integrite des donnees au repos et en transit, ce qui releve de Proteger et de la securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "thegreenbow",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "TheGreenBow edite des clients VPN IPsec qui chiffrent les communications reseau pour garantir la confidentialite et l'integrite des donnees en transit. Cette protection des donnees en transit correspond a la fonction Proteger et a la categorie securite des donnees (PR.DS-02).",
+   "confidence": "high"
+  },
+  {
+   "id": "thidesoft-by-potech",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Thidesoft propose Darkivore (veille sur les menaces, surveillance du dark web et de l'empreinte numerique) et Tacivoar, une plateforme SIEM++ de surveillance. Le coeur de metier est la surveillance continue pour detecter les evenements indesirables, ce qui releve de Detecter et de DE.CM. Le SOAR de reponse reste une fonction secondaire.",
+   "confidence": "high"
+  },
+  {
+   "id": "timeref-digital-vault-data-room",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Timeref est un coffre-fort numerique et data room qui chiffre, horodate, filigrane et authentifie des documents sensibles heberges en France. Le produit protege la confidentialite et l'integrite des donnees stockees, ce qui correspond a Proteger et a la securite des donnees (PR.DS-01).",
+   "confidence": "high"
+  },
+  {
+   "id": "tixeo",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Tixeo offre une visioconference securisee avec chiffrement de bout en bout, messagerie chiffree et partage de fichiers pour environnements sensibles. La protection de la confidentialite des communications et des donnees en transit releve de Proteger et de la securite des donnees (PR.DS-02).",
+   "confidence": "high"
+  },
+  {
+   "id": "tranquil-it",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Tranquil IT edite WAPT, un outil de deploiement de logiciels et de gestion de parc qui maintient et met a jour les logiciels sur Windows, Linux et macOS. La gestion de configuration et le maintien securise des plateformes correspond a Proteger et a la securite des plateformes (PR.PS). Samba-AD est ici un module secondaire de gestion d'annuaire.",
+   "confidence": "high"
+  },
+  {
+   "id": "trapster",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Trapster deploie des leurres (honeypots SSH, RDP, SMB) et honeytokens dont le but est de reperer les intrusions et de remonter des alertes via dashboard et SOC. C'est de la surveillance continue du reseau pour detecter des evenements indesirables, soit le coeur de la fonction Detecter (DE.CM).",
+   "confidence": "high"
+  },
+  {
+   "id": "trax-solutions",
+   "recommendedL1": "Gouverner",
+   "recommendedL2": "GV.RM",
+   "currentOk": true,
+   "justification": "TRAX Solutions accompagne la conformite reglementaire et la gestion strategique des risques de securite de l'information via vSUITE, audits, formation et certifications ISO 27001/HDS. Cette demarche GRC organisationnelle correspond a la fonction Gouverner et a la categorie strategie de gestion des risques (GV.RM).",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "treebal",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Treebal est une messagerie securisee mettant en avant le chiffrement des echanges et l'hebergement europeen pour proteger la confidentialite des donnees en transit et au repos. Cette protection cryptographique des donnees correspond a Proteger et a la securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "trout-software",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Trout Software fournit une approche Zero Trust avec micro-segmentation et controle d'acces base sur l'identite (Access Gate, proxy) pour les reseaux IT/OT/IoT. Le coeur de metier est le controle d'acces et la gestion des autorisations, soit Proteger et PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "trustinsoft",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "TrustInSoft analyse le code source par methodes formelles pour detecter erreurs memoire, defauts d'execution et failles de securite (C, C++, Rust). Identifier et valider les vulnerabilites des actifs logiciels releve de la fonction Identifier et de l'evaluation des risques (ID.RA-01).",
+   "confidence": "high"
+  },
+  {
+   "id": "trustpair",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Trustpair valide et surveille en continu les coordonnees bancaires des fournisseurs dans les processus de paiement afin de detecter la fraude au virement. Ce monitoring continu des activites de tiers correspond a Detecter et a la surveillance continue (DE.CM-06).",
+   "confidence": "high"
+  },
+  {
+   "id": "tsplus",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "TSplus edite des solutions d'acces a distance aux serveurs Windows avec portail d'applications, controle d'acces et durcissement RDP (Advanced Security). Le coeur de metier est l'acces distant securise et la gestion des acces, soit Proteger et PR.AA.",
+   "confidence": "high"
+  },
+  {
+   "id": "tyrex",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Tyrex fournit des stations blanches de decontamination des supports amovibles (cles USB) et des agents de protection des postes, empechant l'introduction de menaces via les peripheriques externes. Il s'agit d'une mesure de sauvegarde preventive securisant les plateformes et postes de travail, ce qui releve de Proteger et de la categorie PR.PS (securite des plateformes, controle des logiciels et media autorises).",
+   "confidence": "high"
+  },
+  {
+   "id": "ubika",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Ubika edite une technologie WAAP (pare-feu applicatif et protection d'API) qui filtre le trafic et bloque les attaques applicatives. C'est une mesure de sauvegarde applicative relevant de la securite des plateformes et applications, soit Proteger et la categorie PR.PS.",
+   "confidence": "high"
+  },
+  {
+   "id": "ugloo",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Ugloo est une sauvegarde fragmentée, chiffrée et immuable orientée restauration après sinistre : finalité de reprise, soit RC.RP. Contrôle indépendant unanime ; classement d'origine conservé.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "uncovai",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "UncovAI detecte les contenus generes par IA (texte, image, audio, video) pour identifier fraude et desinformation. Cette analyse d'authenticite et detection d'evenements indesirables (deepfakes, contenus synthetiques) releve de Detecter et de la surveillance continue DE.CM.",
+   "confidence": "medium"
+  },
+  {
+   "id": "uncovery",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.AM",
+   "currentOk": true,
+   "justification": "Uncovery exploite une plateforme EASM qui decouvre, cartographie et surveille les actifs exposes sur Internet, en evaluant et priorisant les vulnerabilites. La decouverte et l'inventaire des actifs exposes constituent le coeur du produit, relevant d'Identifier et de ID.AM (gestion des actifs). Le volet evaluation des vulnerabilites est secondaire au mapping d'actifs.",
+   "confidence": "medium"
+  },
+  {
+   "id": "v6protect",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "V6Protect securise les applications web et API exposees via un module WAAP (pare-feu applicatif et protection d'API), complete d'un volet EASM. Le coeur de metier est la protection applicative active du trafic, ce qui releve de Proteger et de PR.PS (securite des plateformes et applications).",
+   "confidence": "medium"
+  },
+  {
+   "id": "valmido",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Valmido concoit une carte d'authentification sans mot de passe FIDO2 avec biometrie pour supprimer le phishing et la reutilisation de mots de passe. L'authentification forte et la gestion des identites relevent directement de Proteger et de PR.AA (gestion des identites, authentification et controle d'acces).",
+   "confidence": "high"
+  },
+  {
+   "id": "vaultys",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Vaultys edite des solutions d'identite numerique (VaultysID), d'IAM/SSO (SmartLink) et d'authentification post-quantique, qui sont des mesures de controle d'acces preventives. Cela releve de Proteger et de la categorie PR.AA (gestion des identites, authentification et controle d'acces), pilier IAM/SSO/MFA.",
+   "confidence": "high"
+  },
+  {
+   "id": "vigilan-solutions",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Le coeur de metier est l'exploitation d'un EDR (Nucleon) et d'un SOC avec surveillance quotidienne 24h/24 pour detecter les menaces. Cela correspond a Detecter et a DE.CM (surveillance continue des reseaux, postes et environnements), conformement au piege SOC/EDR = Detecter.",
+   "confidence": "high"
+  },
+  {
+   "id": "virtualbrowser",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "VirtualBrowser fournit une isolation de navigation a distance (RBI) qui execute les acces internet sur un serveur distant et controle telechargements, copier-coller et impression, empechant l'execution de contenu non maitrise sur le poste. C'est une mesure de protection des plateformes (durcissement, prevention d'execution non autorisee) relevant de Proteger et PR.PS.",
+   "confidence": "high"
+  },
+  {
+   "id": "wallix-bastion",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "WALLIX edite des solutions de gestion des acces a privileges (PAM Bastion), IDaaS, gouvernance des identites et Zero Trust, toutes axees sur le controle d'acces et le moindre privilege. Cela releve de Proteger et de PR.AA (gestion des identites, authentification, controle d'acces), PAM = Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "watoo",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "WaToo marque de maniere invisible documents et donnees sensibles pour tracer l'origine d'une fuite, une mesure de protection de la confidentialite des donnees apparentee au DLP/watermarking. Cela releve de Proteger et de PR.DS (securite des donnees au repos et en transit).",
+   "confidence": "high"
+  },
+  {
+   "id": "whaller",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Whaller fournit une plateforme collaborative et documentaire securisee qualifiee SecNumCloud, dont la valeur est de proteger la confidentialite et l'integrite des donnees echangees et stockees. Le coeur de metier est la securite des donnees collaboratives, soit Proteger et PR.DS.",
+   "confidence": "medium"
+  },
+  {
+   "id": "whispeak",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Whispeak propose une authentification biometrique vocale sans mot de passe avec detection du vivant, mecanisme de verification d'identite et d'authentification des utilisateurs. Cela releve de Proteger et de PR.AA (gestion des identites et authentification). La detection de deepfakes vocaux reste un controle au service de cette authentification.",
+   "confidence": "high"
+  },
+  {
+   "id": "wimi",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Wimi est une suite collaborative SaaS dont la proposition de valeur securite repose sur le partage de fichiers, un chat chiffre, la signature et la qualification SecNumCloud, c'est-a-dire la protection de la confidentialite et de l'integrite des donnees au repos et en transit. Cela releve de Proteger et de la categorie Securite des donnees (PR.DS).",
+   "confidence": "medium"
+  },
+  {
+   "id": "woleet",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Woleet fournit signature electronique, horodatage et cachet numerique adosses a la blockchain pour prouver l'integrite et l'authenticite des documents. La garantie d'integrite des donnees est au coeur du produit, ce qui correspond a Proteger et a la Securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "wordline-wordline-cloud-services-secured-iaas",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.IR",
+   "currentOk": true,
+   "justification": "L'entree porte sur l'offre Worldline Cloud Services Secured IaaS, une infrastructure cloud securisee garantissant disponibilite et protection des environnements et reseaux. Cela correspond a Proteger et a la Resilience de l'infrastructure technologique (PR.IR), qui couvre la protection logique des reseaux et la capacite de ressources pour la disponibilite.",
+   "confidence": "medium"
+  },
+  {
+   "id": "worteks",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Worteks edite W'IDaaS, une offre de gestion des identites et des acces (annuaire, portail d'authentification, WebSSO SAML/OIDC, MFA) basee sur LemonLDAP::NG. Le coeur de metier est donc l'IAM, qui releve de Proteger et de la categorie Gestion des identites, authentification et controle d'acces (PR.AA).",
+   "confidence": "high",
+   "applied": true
+  },
+  {
+   "id": "wybot-cybersecurite-wybot",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Wybot s'appuie sur une sonde de detection des menaces et un service de cyberdefense managee surveillant en continu reseaux et environnements pour reperer les evenements indesirables. Cette surveillance continue est le coeur du produit, ce qui place l'editeur sous Detecter et la categorie Surveillance continue (DE.CM).",
+   "confidence": "high"
+  },
+  {
+   "id": "wysam",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Wysam propose le partage securise de documents et informations sensibles via des liens chiffres de bout en bout, une authentification par code SMS et une tracabilite. La protection de la confidentialite et de l'integrite des donnees echangees releve de Proteger et de la Securite des donnees (PR.DS).",
+   "confidence": "high"
+  },
+  {
+   "id": "yeswehack",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "YesWeHack exploite une plateforme de securite offensive (Bug Bounty, pentest continu, VDP, Attack Surface Management) visant a identifier et faire valider les vulnerabilites des actifs. Cette decouverte et gestion des expositions correspond a Identifier et a l'Evaluation des risques (ID.RA-01 sur les vulnerabilites).",
+   "confidence": "high"
+  },
+  {
+   "id": "yneos-malva-re",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.AE",
+   "currentOk": true,
+   "justification": "Malva.RE est une plateforme d'analyse statique de malwares qui decompile, disseque et extrait IOCs et configurations pour comprendre des fichiers potentiellement malveillants. Cette analyse approfondie d'artefacts suspects pour caracteriser une menace releve de l'analyse des evenements indesirables (DE.AE), coeur de la fonction Detecter.",
+   "confidence": "high"
+  },
+  {
+   "id": "yogosha",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Yogosha opere une plateforme de tests offensifs (pentest as a service, bug bounty, VDP, red teaming) visant a decouvrir et valider des vulnerabilites. La recherche et la divulgation de vulnerabilites relevent de l'evaluation des risques (ID.RA-01, ID.RA-08) au sein de la fonction Identifier.",
+   "confidence": "high"
+  },
+  {
+   "id": "youzer",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "Youzer edite une plateforme de gouvernance des identites et des acces (IGA) automatisant le cycle de vie des comptes, l'onboarding/offboarding et les revues d'habilitations. La gestion des identites et des autorisations est exactement la categorie PR.AA de la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "zama",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Zama developpe du chiffrement entierement homomorphe (FHE) preservant la confidentialite des donnees au repos, en transit et en cours d'utilisation, notamment pour la blockchain. Le chiffrement assurant la protection des donnees releve directement de la securite des donnees (PR.DS) de la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "ziwit",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Ziwit realise des audits manuels, des tests d'intrusion et commercialise HTTPCS pour scanner les vulnerabilites des applications web. L'identification et la validation des vulnerabilites via pentest et scan d'exposition relevent de l'evaluation des risques (ID.RA) au sein d'Identifier. La certification SSL et la formation sont secondaires.",
+   "confidence": "high"
+  },
+  {
+   "id": "trustbuilder",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.AA",
+   "currentOk": true,
+   "justification": "TrustBuilder propose une plateforme de gestion des acces combinant MFA adaptative, authentification sans mot de passe et gestion d'identite client. L'authentification et le controle d'acces correspondent precisement a PR.AA dans la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "cyberdetect",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Cyber-Detect developpe la suite GORILLE qui surveille et detecte des variants 0-day et malwares dormants contournant les antivirus, notamment via GORILLE Patrol traquant les menaces dormantes. Cette surveillance continue de fichiers et environnements pour reperer des menaces releve de DE.CM, coeur de la fonction Detecter.",
+   "confidence": "high"
+  },
+  {
+   "id": "ercom",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.DS",
+   "currentOk": true,
+   "justification": "Ercom securise les communications, fichiers et terminaux par chiffrement (Citadel, Cryptobox, Cryptosmart, VPN). Le coeur de metier est la confidentialite des donnees au repos, en transit et en usage, ce qui correspond directement a la securite des donnees (PR.DS) dans la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "n-cyp",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "N-CyP opere un SOC avec plateforme de supervision, XDR et EDR pour surveiller en continu reseaux, systemes et postes. La surveillance continue pour detecter les evenements indesirables releve de Detecter, categorie DE.CM, meme si l'equipe CSIRT ajoute une composante reponse secondaire.",
+   "confidence": "high"
+  },
+  {
+   "id": "suricate",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "Suricate assure le patch management (deploiement des correctifs OS, applications, BIOS, pilotes) en tant que mesure de maintien de la securite des plateformes. Maintenir et mettre a jour les logiciels en coherence avec le risque correspond exactement a PR.PS dans la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "nucleon-security",
+   "recommendedL1": "Detecter",
+   "recommendedL2": "DE.CM",
+   "currentOk": true,
+   "justification": "Nucleon edite une plateforme EDR pour la detection sur postes et serveurs avec threat hunting et couverture MITRE ATT&CK. Un EDR releve par defaut de Detecter (DE.CM) pour la surveillance continue des environnements d'execution, malgre des fonctions de reponse et remediation associees.",
+   "confidence": "high"
+  },
+  {
+   "id": "erium",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Erium realise de la validation de securite par simulation d'attaques (BAS) sur cloud, reseaux et endpoints pour mesurer l'efficacite des defenses et identifier les failles exploitables. Cette identification et validation des vulnerabilites correspond a ID.RA dans la fonction Identifier. La sensibilisation est une offre secondaire.",
+   "confidence": "medium",
+   "applied": true
+  },
+  {
+   "id": "cogiceo",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Cogiceo est un cabinet de pentest et d'audit (intrusion, architecture, code, configuration, AD) qualifie PASSI. L'identification, validation et enregistrement des vulnerabilites des actifs releve de l'evaluation des risques (ID.RA) dans la fonction Identifier.",
+   "confidence": "high"
+  },
+  {
+   "id": "pushmanager",
+   "recommendedL1": "Proteger",
+   "recommendedL2": "PR.PS",
+   "currentOk": true,
+   "justification": "PushManager est une solution EMM qui deploie et configure a distance applications et parametres de securite sur les flottes mobiles, avec gestion de configuration et actions de verrouillage. La gestion de configuration et la securite des plateformes mobiles correspond a PR.PS dans la fonction Proteger.",
+   "confidence": "high"
+  },
+  {
+   "id": "stackered",
+   "recommendedL1": "Identifier",
+   "recommendedL2": "ID.RA",
+   "currentOk": true,
+   "justification": "Le coeur de metier de Stackered est la recherche de vulnerabilites applicatives, l'audit de code boite blanche et les tests d'intrusion web/mobile, c'est-a-dire l'identification et l'evaluation des failles d'actifs critiques. Cela correspond a la fonction Identifier, dont la categorie ID.RA (Evaluation des risques) couvre l'identification et la validation des vulnerabilites pour prioriser le risque. Le classement actuel est donc correct.",
+   "confidence": "high"
+  }
+ ],
+ "appliedCount": 22
+}

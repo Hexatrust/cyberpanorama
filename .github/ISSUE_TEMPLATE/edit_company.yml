@@ -1,167 +1,75 @@
-name: ✏️ Modifier une entreprise du Radar
-description: Modifier les informations d'une entreprise existante (logo, description, etc.)
-title: "[EDIT] "
-labels: ["radar:edit-entry"]
+name: Modifier une entreprise du panorama
+description: Proposer une correction sur une solution deja presente dans le CyberPanorama
+title: "[MODIFICATION] : "
+labels: ["panorama:edit"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## ✏️ Modification d'une entreprise
-
-        Utilisez ce formulaire pour mettre à jour les informations d'une entreprise déjà présente sur le radar.
-
-        **Important :** Seuls les mainteneurs du projet peuvent valider ces modifications en ajoutant le label `approved`.
+        ## Modifier une solution existante
+        Indiquez le nom exact de l'entreprise telle qu'affichee dans le panorama, puis seulement les champs
+        a changer (laissez vide ce qui ne change pas). Une Pull Request sera preparee pour validation.
 
   - type: input
     id: company_name
     attributes:
-      label: 🏢 Nom de l'entreprise à modifier
-      description: Nom exact de l'entreprise tel qu'il apparaît actuellement dans le radar
-      placeholder: ex. CyberCompany
+      label: Nom exact de l'entreprise ou de la solution a modifier
+      placeholder: "Ex : CyberCompany"
     validations:
       required: true
 
   - type: dropdown
-    id: modification_type
+    id: fonction_nist
     attributes:
-      label: 🔧 Type de modification
-      description: Que souhaitez-vous modifier ?
-      options:
-        - Logo uniquement
-        - Fonction NIST
-        - Taille de l'entreprise
-        - Description
-        - Plusieurs éléments
-    validations:
-      required: true
-
-  - type: input
-    id: new_logo_url
-    attributes:
-      label: 🖼️ Nouvelle URL du logo (optionnel)
-      description: |
-        Laisser vide si vous ne souhaitez pas changer le logo.
-        URL publique vers l'image (PNG, JPG, SVG, WebP recommandé).
-      placeholder: https://example.com/logo.png
+      label: Nouvelle fonction NIST (si changement)
+      options: ["(inchange)", Gouverner, Identifier, Proteger, Detecter, Repondre, Recuperer]
 
   - type: dropdown
-    id: new_fonction_nist
+    id: taille
     attributes:
-      label: 🎯 Nouvelle Fonction NIST (optionnel)
-      description: Laisser vide si vous ne souhaitez pas changer la fonction NIST
-      options:
-        - (Ne pas modifier)
-        - Protéger
-        - Identifier
-        - Gouverner
-        - Récupérer
-        - Répondre
-        - Détecter
-
-  - type: checkboxes
-    id: new_sous_fonctions_nist
-    attributes:
-      label: 🔍 Nouvelles sous-fonctions NIST CSF 2.0 (optionnel, max 3)
-      description: Sélectionnez jusqu'à 3 sous-catégories. Laisser vide pour ne pas modifier.
-      options:
-        - label: "GV.OC - Organizational Context"
-        - label: "GV.RM - Risk Management Strategy"
-        - label: "GV.SC - Cybersecurity Supply Chain Risk Management"
-        - label: "GV.RR - Roles, Responsibilities, and Authorities"
-        - label: "GV.PO - Policies, Processes, and Procedures"
-        - label: "GV.OV - Oversight"
-        - label: "ID.AM - Asset Management"
-        - label: "ID.RA - Risk Assessment"
-        - label: "ID.IM - Improvement"
-        - label: "PR.AA - Identity Management, Authentication, and Access Control"
-        - label: "PR.AT - Awareness and Training"
-        - label: "PR.DS - Data Security"
-        - label: "PR.PS - Platform Security"
-        - label: "PR.IR - Technology Infrastructure Resilience"
-        - label: "DE.CM - Continuous Monitoring"
-        - label: "DE.AE - Adverse Event Analysis"
-        - label: "RS.MA - Incident Management"
-        - label: "RS.AN - Incident Analysis"
-        - label: "RS.CO - Incident Response Reporting and Communication"
-        - label: "RS.MI - Incident Mitigation"
-        - label: "RC.RP - Incident Recovery Plan Execution"
-        - label: "RC.CO - Incident Recovery Communication"
-
-  - type: dropdown
-    id: new_objectif_nis2
-    attributes:
-      label: 🛡️ Nouvel objectif NIS2 (optionnel)
-      description: Laisser vide si vous ne souhaitez pas changer l'objectif NIS2
-      options:
-        - (Ne pas modifier)
-        - (Aucun)
-        - Recensement des SI
-        - Mise en oeuvre d'un cadre de gouvernance
-        - Maitrise de l'écosystème
-        - Prise en compte de la sécurité numérique dans la gestion des RH
-        - Maitrise des SI
-        - Maitrise des accès physiques aux locaux
-        - Sécurisation de l'architecture des SI
-        - Sécurisation des accès distants aux SI
-        - Protection des SI contre les codes malveillants
-        - Gestion des identités et des accès aux SI
-        - Maitrise de l'administration des SI
-        - Identification et réaction aux incidents de sécurité
-        - Continuité et reprise d'activité
-        - Réaction aux crises d'origine cyber
-        - Exercices, tests, et entrainements
-        - Mise en oeuvre d'une approche par les risques
-        - Audit de la sécurité des SI
-        - Sécurisation de la configuration des ressources des SI
-        - Administration des SI depuis des ressources dédiées
-
-  - type: dropdown
-    id: new_taille
-    attributes:
-      label: 📏 Nouvelle taille de l'entreprise (optionnel)
-      description: Laisser vide si vous ne souhaitez pas changer la taille
-      options:
-        - (Ne pas modifier)
-        - "0 - Very Large (grand groupe)"
-        - "1 - Large (ETI, solution mature, scale up)"
-        - "2 - Medium (PME)"
-        - "3 - Small (petite entreprise, startup)"
+      label: Nouvelle taille (si changement)
+      options: ["(inchange)", "Grand groupe", "ETI / Scale Up", "PME", "Startup / TPME"]
 
   - type: textarea
-    id: new_description
+    id: description
     attributes:
-      label: 📝 Nouvelle description (optionnel)
-      description: |
-        Laisser vide si vous ne souhaitez pas changer la description.
-        Description courte de la solution (2-3 phrases maximum).
-      placeholder: |
-        Cette solution offre...
+      label: Nouvelle description (si changement)
 
   - type: input
-    id: new_website
+    id: website
     attributes:
-      label: 🌐 Nouveau site web (optionnel)
-      description: Laisser vide si vous ne souhaitez pas changer le site web
-      placeholder: https://www.example.com
+      label: Nouveau site web (si changement)
+
+  - type: input
+    id: contact
+    attributes:
+      label: Nouveau contact (si changement)
 
   - type: textarea
-    id: reason
+    id: logo_upload
     attributes:
-      label: 💬 Raison de la modification
-      description: Expliquez brièvement pourquoi cette modification est nécessaire
-      placeholder: |
-        Le logo a changé suite à un rebranding...
-        La fonction NIST principale a évolué...
+      label: Logo (glissez ou collez une image PNG, GIF, JPG, SVG)
+      description: Deposez le fichier ici si vous changez le logo. Sinon laissez vide (ou mettez l'URL ci-dessous).
+      placeholder: "Glissez l'image ici, ou collez-la (Ctrl/Cmd + V)."
+
+  - type: input
+    id: logo_url
+    attributes:
+      label: Nouvelle URL de logo (si changement)
+      description: Lien direct public (PNG, GIF, JPG, SVG ou WebP)
+
+  - type: textarea
+    id: raison
+    attributes:
+      label: Raison de la modification
+      description: Expliquez brievement (rebrand, rachat, erreur, mise a jour)
     validations:
       required: true
 
   - type: checkboxes
-    id: terms
+    id: agreement
     attributes:
-      label: ✅ Confirmation
-      description: En soumettant ce formulaire, je confirme que
+      label: Engagement
       options:
-        - label: Les informations fournies sont exactes et à jour
-          required: true
-        - label: J'ai vérifié que l'entreprise existe bien dans le radar actuel
+        - label: Les informations fournies sont exactes
           required: true

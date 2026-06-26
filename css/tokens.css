@@ -1,0 +1,135 @@
+/* Design tokens, reset, base, responsive */
+
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #f5f6f9;
+  --ink: #16151f;
+  --ink-soft: #50506a;
+  --muted: #9a9ab0;
+  --line: #ececf1;
+  --line-strong: #dededf;
+  --accent: #ff6a3d;
+  --accent-soft: #ffe8e1;
+  --shadow-sm: 0 1px 3px rgba(20, 20, 40, 0.05);
+  --shadow-md: 0 8px 24px rgba(20, 20, 40, 0.08);
+  --shadow-lg: 0 18px 48px rgba(20, 20, 40, 0.12);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --topbar-h: 52px;
+
+  --c-gv: #f7f19e;
+  --c-gv-ink: #5c5300;
+  --c-id: #4ab2df;
+  --c-id-ink: #06384f;
+  --c-pr: #9190c6;
+  --c-pr-ink: #232158;
+  --c-de: #fab746;
+  --c-de-ink: #5a3700;
+  --c-rs: #ed7368;
+  --c-rs-ink: #6e120b;
+  --c-rc: #92c78f;
+  --c-rc-ink: #154019;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  /* Pas de scroll du body : l'app gere ses propres zones scrollables (pan du panorama, tiroirs,
+     modales). Evite le rebond iOS Safari qui faisait "fuir" la barre du haut sous le menu fixe. */
+  overflow: hidden;
+  font-family:
+    "Plus Jakarta Sans",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dd {
+  margin: 0;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+input {
+  font: inherit;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover {
+  text-decoration: underline;
+}
+:focus-visible {
+  outline: 3px solid rgba(255, 106, 61, 0.45);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: var(--topbar-h) 1fr;
+  height: 100vh;
+  /* dvh = hauteur du viewport VISIBLE (barre d'URL Safari comprise) : la barre du haut reste
+     collee en haut, pas de zone qui depasse sous le pli. Repli sur 100vh si dvh non supporte. */
+  height: 100dvh;
+  min-height: 0;
+}
+
+/* Tokens couleur par secteur (utilisés par tags, cards, modal pill) */
+[data-sector="Gouverner"] {
+  --tag-bg: #faf6d3;
+  --tag-ink: var(--c-gv-ink);
+}
+[data-sector="Identifier"] {
+  --tag-bg: #dcf0f9;
+  --tag-ink: var(--c-id-ink);
+}
+[data-sector="Protéger"] {
+  --tag-bg: #e8e7f5;
+  --tag-ink: var(--c-pr-ink);
+}
+[data-sector="Détecter"] {
+  --tag-bg: #fdeccc;
+  --tag-ink: var(--c-de-ink);
+}
+[data-sector="Répondre"] {
+  --tag-bg: #fbe0dd;
+  --tag-ink: var(--c-rs-ink);
+}
+[data-sector="Récupérer"] {
+  --tag-bg: #e2f1e1;
+  --tag-ink: var(--c-rc-ink);
+}
+
+/* Responsive (barre du haut dans topbar.css ; modale/popup dans modals.css ; tiroirs dans panels.css) */
+@media (max-width: 480px) {
+  .chip-grid {
+    grid-template-columns: 1fr;
+  }
+}

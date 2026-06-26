@@ -1,0 +1,18 @@
+{
+  "name": "solutions",
+  "fields": [
+    { "name": "solution_name", "type": "string" },
+    { "name": "company_name", "type": "string" },
+    { "name": "description", "type": "string", "optional": true },
+    { "name": "indexation", "type": "string[]", "optional": true },
+    { "name": "nis2_objective", "type": "string", "optional": true },
+    { "name": "nist_l1", "type": "string", "facet": true, "optional": true },
+    { "name": "nist_l2", "type": "string[]", "facet": true, "optional": true },
+    { "name": "nist_l3", "type": "string[]", "facet": true, "optional": true },
+    { "name": "country", "type": "string", "facet": true, "optional": true },
+    { "name": "size", "type": "string", "facet": true, "optional": true },
+    { "name": "is_french", "type": "bool", "facet": true, "optional": true },
+    { "name": "website", "type": "string", "optional": true, "index": false },
+    { "name": "logo_path", "type": "string", "optional": true, "index": false }
+  ]
+}
