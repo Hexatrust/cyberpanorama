@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-06-25T23:10:15+00:00",
+  "generated_at": "2026-06-26T17:07:39+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
