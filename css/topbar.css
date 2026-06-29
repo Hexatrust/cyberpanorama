@@ -168,14 +168,22 @@
   display: none;
 }
 .search-clear {
+  box-sizing: border-box;
   width: 22px;
   height: 22px;
+  padding: 0;
+  border: 0;
   border-radius: 50%;
   display: grid;
   place-items: center;
   color: var(--muted);
   background: rgba(0, 0, 0, 0.04);
   flex-shrink: 0;
+}
+/* N'apparaît qu'avec du texte : le JS bascule l'attribut [hidden]. Sans cette règle, le display
+   ci-dessus écraserait le display:none par défaut de [hidden] et la croix resterait visible. */
+.search-clear[hidden] {
+  display: none;
 }
 .search-clear svg {
   display: block;
