@@ -8,10 +8,16 @@ et les couleurs NIST exactes.
 """
 from __future__ import annotations
 
+import html
 import json
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+
+# URL canonique de production (pour le SEO : canonical, sitemap, llms.txt). Meme depuis test3, on pointe
+# la version de reference vers la prod pour ne pas indexer les copies de test.
+SITE_BASE = "https://cyberpanorama.fr"
+SIZE_FR_SEO = {"very_large": "Grand groupe", "large": "ETI / Scale-up", "medium": "PME", "small": "Startup / TPME"}
 
 DATA = Path(__file__).resolve().parents[1] / "data"
 OUT = DATA / "solutions.generated.js"
@@ -74,6 +80,105 @@ def combined_index(m):
             seen.add(k)
             out.append(t.strip())
     return out
+
+
+def write_seo(solutions, root):
+    """Genere les fichiers lisibles par les crawlers et les agents LLM (qui n'executent pas le JS) :
+    une page texte (directory.html) avec JSON-LD, un llms.txt, un sitemap.xml et un robots.txt."""
+    esc = html.escape
+    by_fn = {name: [] for name in CODES}
+    for s in solutions:
+        by_fn.setdefault(s["nist"]["level1"], []).append(s)
+    total = len(solutions)
+
+    # Page texte : un acteur = un <article> en HTML semantique, groupe par fonction NIST.
+    sections = []
+    for fn in CODES:
+        lst = sorted(by_fn.get(fn) or [], key=lambda x: x["solution_name"].lower())
+        if not lst:
+            continue
+        rows = []
+        for s in lst:
+            codes = " · ".join(c for c in [", ".join(s["nist"].get("level2") or []),
+                                           ", ".join(s["nist"].get("level3") or [])] if c)
+            meta = " · ".join(p for p in [SIZE_FR_SEO.get(s.get("size", ""), ""), fn, codes] if p)
+            web = (s.get("website") or "").strip()
+            # On n'autorise que http(s) : une URL javascript:/data: en donnee ne doit pas devenir un lien.
+            web_ok = web.lower().startswith(("http://", "https://"))
+            link = f'<p><a href="{esc(web)}" rel="noopener noreferrer nofollow">{esc(web)}</a></p>' if web_ok else ""
+            rows.append(f'<article><h3>{esc(s["solution_name"])}</h3>'
+                        f'<p class="meta">{esc(meta)}</p>'
+                        f'<p>{esc(s.get("description") or "")}</p>{link}</article>')
+        sections.append(f"<section><h2>{esc(fn)} ({len(lst)})</h2>\n" + "\n".join(rows) + "\n</section>")
+
+    items = []
+    for i, s in enumerate(sorted(solutions, key=lambda x: x["solution_name"].lower()), 1):
+        org = {"@type": "Organization", "name": s["solution_name"]}
+        if s.get("website"):
+            org["url"] = s["website"]
+        if s.get("description"):
+            org["description"] = s["description"]
+        items.append({"@type": "ListItem", "position": i, "item": org})
+    jsonld = json.dumps({"@context": "https://schema.org", "@type": "ItemList",
+                         "name": "Acteurs de la cybersecurite francaise (CyberPanorama)",
+                         "numberOfItems": total, "itemListElement": items}, ensure_ascii=False)
+    # json.dumps n'echappe pas "</script>" : une description malveillante pourrait fermer le <script>
+    # ld+json et injecter du HTML. On echappe < > & (et les separateurs de ligne JS) en \uXXXX (JSON valide).
+    jsonld = jsonld.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+
+    intro = (f"Panorama des {total} acteurs de la cybersecurite francaise et europeenne, classes selon le "
+             "referentiel NIST CSF 2.0 (Gouverner, Identifier, Proteger, Detecter, Repondre, Recuperer). "
+             "Projet mene avec Hexatrust et le CESIN.")
+    (root / "directory.html").write_text(
+        f"""<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CyberPanorama : {total} acteurs de la cybersecurite francaise (NIST CSF 2.0)</title>
+<meta name="description" content="Liste textuelle des {total} acteurs de la cybersecurite francaise classes par fonction NIST CSF 2.0. Par Hexatrust et le CESIN.">
+<link rel="canonical" href="{SITE_BASE}/directory.html">
+<script type="application/ld+json">{jsonld}</script>
+</head>
+<body>
+<h1>CyberPanorama : {total} acteurs de la cybersecurite francaise</h1>
+<p>{intro}</p>
+<p><a href="./">Voir le panorama interactif</a></p>
+{chr(10).join(sections)}
+</body>
+</html>
+""", encoding="utf-8")
+
+    # llms.txt : resume markdown + liste des acteurs (convention pour les agents LLM).
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    llms = ["# CyberPanorama", "", f"> {intro}", "",
+            f"Derniere mise a jour : {today}", "", "## Pages",
+            f"- [Panorama interactif]({SITE_BASE}/) : l'application (hexagone NIST, recherche, filtres).",
+            f"- [Liste texte des acteurs]({SITE_BASE}/directory.html) : les {total} acteurs en HTML lisible.",
+            "", "## Acteurs par fonction NIST CSF 2.0", ""]
+    for fn in CODES:
+        lst = sorted(by_fn.get(fn) or [], key=lambda x: x["solution_name"].lower())
+        if not lst:
+            continue
+        llms.append(f"### {fn} ({len(lst)})")
+        for s in lst:
+            web = (s.get("website") or "").strip()
+            desc = (s.get("description") or "").replace("\n", " ").strip()
+            line = f"- {s['solution_name']}" + (f" ({web})" if web else "") + (f" : {desc}" if desc else "")
+            llms.append(line)
+        llms.append("")
+    (root / "llms.txt").write_text("\n".join(llms) + "\n", encoding="utf-8")
+
+    # robots.txt + sitemap.xml
+    (root / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\nSitemap: {SITE_BASE}/sitemap.xml\n", encoding="utf-8")
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for path in ("", "directory.html"):
+        sm.append(f"  <url><loc>{SITE_BASE}/{path}</loc><lastmod>{today}</lastmod></url>")
+    sm.append("</urlset>")
+    (root / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")
+    print(f"écrit SEO : directory.html ({total}), llms.txt, sitemap.xml, robots.txt")
 
 
 def main():
@@ -152,6 +257,8 @@ def main():
     OUT.write_text(body, encoding="utf-8")
     svg = sum(1 for s in solutions if (s["logo_path"] or "").lower().endswith(".svg"))
     print(f"écrit {OUT.name} : {len(solutions)} solutions | {svg} logos SVG")
+
+    write_seo(solutions, DATA.parent)  # directory.html, llms.txt, sitemap.xml, robots.txt a la racine
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 name: Modifier une entreprise du panorama
-description: Proposer une correction sur une solution deja presente dans le CyberPanorama
+description: Proposer une correction sur une solution déjà présente dans le CyberPanorama
 title: "[MODIFICATION] : "
 labels: ["panorama:edit"]
 body:
@@ -7,13 +7,14 @@ body:
     attributes:
       value: |
         ## Modifier une solution existante
-        Indiquez le nom exact de l'entreprise telle qu'affichee dans le panorama, puis seulement les champs
-        a changer (laissez vide ce qui ne change pas). Une Pull Request sera preparee pour validation.
+        Indiquez le nom exact de l'entreprise telle qu'affichée dans le panorama, puis seulement les champs
+        à changer (laissez vide ce qui ne change pas). Un mainteneur relit et applique la modification via
+        le label `approved`.
 
   - type: input
     id: company_name
     attributes:
-      label: Nom exact de l'entreprise ou de la solution a modifier
+      label: Nom exact de l'entreprise ou de la solution à modifier
       placeholder: "Ex : CyberCompany"
     validations:
       required: true
@@ -22,13 +23,27 @@ body:
     id: fonction_nist
     attributes:
       label: Nouvelle fonction NIST (si changement)
-      options: ["(inchange)", Gouverner, Identifier, Proteger, Detecter, Repondre, Recuperer]
+      options: ["(inchangé)", Gouverner, Identifier, Protéger, Détecter, Répondre, Récupérer]
+
+  - type: input
+    id: categories_nist
+    attributes:
+      label: Nouvelles catégories NIST N2 (si changement)
+      description: Codes N2 séparés par des virgules (laissez vide pour ne pas changer).
+      placeholder: "PR.DS, DE.CM"
+
+  - type: input
+    id: sous_categories_nist
+    attributes:
+      label: Nouvelles sous-catégories NIST N3 (si changement)
+      description: Codes N3 séparés par des virgules (laissez vide pour ne pas changer).
+      placeholder: "PR.DS-01, DE.CM-02"
 
   - type: dropdown
     id: taille
     attributes:
       label: Nouvelle taille (si changement)
-      options: ["(inchange)", "Grand groupe", "ETI / Scale Up", "PME", "Startup / TPME"]
+      options: ["(inchangé)", "Grand groupe", "ETI / Scale Up", "PME", "Startup / TPME"]
 
   - type: textarea
     id: description
@@ -48,21 +63,15 @@ body:
   - type: textarea
     id: logo_upload
     attributes:
-      label: Logo (glissez ou collez une image PNG, GIF, JPG, SVG)
-      description: Deposez le fichier ici si vous changez le logo. Sinon laissez vide (ou mettez l'URL ci-dessous).
-      placeholder: "Glissez l'image ici, ou collez-la (Ctrl/Cmd + V)."
-
-  - type: input
-    id: logo_url
-    attributes:
-      label: Nouvelle URL de logo (si changement)
-      description: Lien direct public (PNG, GIF, JPG, SVG ou WebP)
+      label: Nouveau logo (fichier ou URL, si changement)
+      description: Glissez/collez une image (PNG, GIF, JPG, SVG, WebP) que GitHub héberge, OU collez l'URL publique directe du logo. Laissez vide pour ne pas changer le logo.
+      placeholder: "Glissez l'image ici, collez-la (Ctrl/Cmd + V), ou collez une URL https://exemple.fr/logo.svg"
 
   - type: textarea
     id: raison
     attributes:
       label: Raison de la modification
-      description: Expliquez brievement (rebrand, rachat, erreur, mise a jour)
+      description: Expliquez brièvement (rebrand, rachat, erreur, mise à jour)
     validations:
       required: true
 
