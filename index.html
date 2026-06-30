@@ -48,6 +48,25 @@
       name="twitter:image"
       content="https://rustaddict.github.io/test-3/assets/og-preview.png"
     />
+
+    <!-- SEO / agents : page texte alternative (lisible sans JS) + donnees structurees -->
+    <link
+      rel="alternate"
+      type="text/html"
+      href="directory.html"
+      title="Liste texte des acteurs"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CyberPanorama",
+        "url": "https://cyberpanorama.fr/",
+        "description": "Panorama des acteurs de la cybersecurite francaise et europeenne, classes selon le referentiel NIST CSF 2.0. Par Hexatrust et le CESIN.",
+        "publisher": { "@type": "Organization", "name": "Hexatrust" }
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -255,6 +274,14 @@
     </script>
   </head>
   <body>
+    <noscript>
+      <p>
+        Le panorama interactif necessite JavaScript. Consultez la
+        <a href="directory.html"
+          >liste texte des acteurs de la cybersecurite francaise</a
+        >.
+      </p>
+    </noscript>
     <div class="app">
       <header class="topbar">
         <div class="topbar-left">
@@ -326,6 +353,23 @@
         </div>
 
         <div class="topbar-right">
+          <a
+            class="topbar-btn topbar-btn-contrib"
+            href="https://github.com/Hexatrust/cyberpanorama"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Proposer un ajout ou une modification sur GitHub"
+          >
+            <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+              <path
+                d="M12 5v14M5 12h14"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span>Contribuer</span>
+          </a>
           <button
             class="topbar-btn topbar-btn-list"
             id="drawerToggle"

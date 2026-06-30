@@ -98,6 +98,18 @@
   background: var(--accent-soft);
   color: var(--accent);
 }
+/* Bouton d'appel a l'action : proposer un ajout/modif sur GitHub (accent plein, lien sans soulignement) */
+.topbar-btn-contrib {
+  text-decoration: none;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.topbar-btn-contrib:hover {
+  background: var(--accent);
+  color: #fff;
+  filter: brightness(1.06);
+}
 .topbar-btn-count {
   padding: 1px 6px;
   border-radius: 999px;

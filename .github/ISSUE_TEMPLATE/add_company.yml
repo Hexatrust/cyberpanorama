@@ -1,5 +1,5 @@
 name: Ajouter une entreprise au panorama
-description: Proposer l'ajout d'une solution de cybersecurite francaise ou europeenne au CyberPanorama
+description: Proposer l'ajout d'une solution de cybersécurité française ou européenne au CyberPanorama
 title: "[NOUVELLE ENTREPRISE] : "
 labels: ["panorama:new-entry"]
 body:
@@ -7,8 +7,8 @@ body:
     attributes:
       value: |
         ## Ajouter une solution au CyberPanorama
-        Cette soumission ne sera pas publiee directement : elle prepare une Pull Request qu'un mainteneur
-        valide avant la mise en ligne.
+        Cette soumission n'est pas publiée directement : un mainteneur la relit, et quand c'est bon il pose
+        le label `approved` pour l'appliquer et la mettre en ligne.
 
   - type: input
     id: company_name
@@ -23,47 +23,59 @@ body:
     id: fonction_nist
     attributes:
       label: Fonction NIST CSF 2.0 principale
-      options: [Gouverner, Identifier, Proteger, Detecter, Repondre, Recuperer]
+      options: [Gouverner, Identifier, Protéger, Détecter, Répondre, Récupérer]
     validations:
       required: true
 
-  - type: checkboxes
-    id: sous_fonctions_nist
+  - type: dropdown
+    id: categories_nist
     attributes:
-      label: Sous-categories NIST CSF 2.0 (optionnel, 3 maximum)
-      description: Cochez jusqu'a 3 categories de niveau 2
+      label: Catégories NIST CSF 2.0 - N2 (1 à 3)
+      description: Choisissez 1 à 3 catégories de niveau 2 (N2). Obligatoire.
+      multiple: true
       options:
-        - label: "GV.OC : Contexte organisationnel"
-        - label: "GV.RM : Strategie de gestion des risques"
-        - label: "GV.SC : Gestion des risques de la chaine d'approvisionnement"
-        - label: "GV.RR : Roles, responsabilites et autorites"
-        - label: "GV.PO : Politiques"
-        - label: "GV.OV : Supervision"
-        - label: "ID.AM : Gestion des actifs"
-        - label: "ID.RA : Evaluation des risques"
-        - label: "ID.IM : Amelioration"
-        - label: "PR.AA : Identite, authentification et controle d'acces"
-        - label: "PR.AT : Sensibilisation et formation"
-        - label: "PR.DS : Securite des donnees"
-        - label: "PR.PS : Securite des plateformes"
-        - label: "PR.IR : Resilience de l'infrastructure technologique"
-        - label: "DE.CM : Surveillance continue"
-        - label: "DE.AE : Analyse des evenements indesirables"
-        - label: "RS.MA : Gestion des incidents"
-        - label: "RS.AN : Analyse des incidents"
-        - label: "RS.CO : Communication sur la reponse"
-        - label: "RS.MI : Attenuation des incidents"
-        - label: "RC.RP : Execution du plan de retablissement"
-        - label: "RC.CO : Communication sur le retablissement"
+        - "GV.OC : Contexte organisationnel"
+        - "GV.RM : Stratégie de gestion des risques"
+        - "GV.SC : Gestion des risques de la chaîne d'approvisionnement"
+        - "GV.RR : Rôles, responsabilités et autorités"
+        - "GV.PO : Politiques"
+        - "GV.OV : Supervision"
+        - "ID.AM : Gestion des actifs"
+        - "ID.RA : Évaluation des risques"
+        - "ID.IM : Amélioration"
+        - "PR.AA : Identité, authentification et contrôle d'accès"
+        - "PR.AT : Sensibilisation et formation"
+        - "PR.DS : Sécurité des données"
+        - "PR.PS : Sécurité des plateformes"
+        - "PR.IR : Résilience de l'infrastructure technologique"
+        - "DE.CM : Surveillance continue"
+        - "DE.AE : Analyse des événements indésirables"
+        - "RS.MA : Gestion des incidents"
+        - "RS.AN : Analyse des incidents"
+        - "RS.CO : Communication sur la réponse"
+        - "RS.MI : Atténuation des incidents"
+        - "RC.RP : Exécution du plan de rétablissement"
+        - "RC.CO : Communication sur le rétablissement"
+    validations:
+      required: true
+
+  - type: input
+    id: sous_categories_nist
+    attributes:
+      label: Sous-catégories NIST CSF 2.0 - N3
+      description: Codes de niveau 3 séparés par des virgules, rattachés aux catégories N2 choisies. Obligatoire.
+      placeholder: "PR.DS-01, DE.CM-02"
+    validations:
+      required: true
 
   - type: dropdown
     id: taille
     attributes:
       label: Taille de l'entreprise
       description: >
-        Grille INSEE et Scale Up du panorama. Startup ou TPME : moins de 15 salaries et CA inferieur a 2 M EUR.
-        PME : 15 a 250 salaries ou CA de 2 a 50 M EUR. ETI ou Scale Up : categorie INSEE ETI ou levee superieure
-        a 12 M EUR. Grand groupe : 5000 salaries ou plus, CA superieur a 1,5 Md EUR, ou filiale d'un grand groupe.
+        Grille INSEE et Scale Up du panorama. Startup ou TPME : moins de 15 salariés et CA inférieur à 2 M EUR.
+        PME : 15 à 250 salariés ou CA de 2 à 50 M EUR. ETI ou Scale Up : catégorie INSEE ETI ou levée supérieure
+        à 12 M EUR. Grand groupe : 5000 salariés ou plus, CA supérieur à 1,5 Md EUR, ou filiale d'un grand groupe.
       options:
         - "Grand groupe"
         - "ETI / Scale Up"
@@ -76,22 +88,22 @@ body:
     id: description
     attributes:
       label: Description courte
-      description: Une a deux phrases (objectif et fonctionnalites principales)
+      description: Une à deux phrases (objectif et fonctionnalités principales)
     validations:
       required: true
 
   - type: textarea
     id: description_detaillee
     attributes:
-      label: Description detaillee (optionnel)
-      description: Description plus complete (produits, cibles, differenciateurs)
+      label: Description détaillée (optionnel)
+      description: Description plus complète (produits, cibles, différenciateurs)
 
   - type: input
     id: mots_cles
     attributes:
-      label: Mots-cles (optionnel)
-      description: Mots-cles separes par des virgules, utilises pour la recherche
-      placeholder: "EDR, XDR, detection, SOC"
+      label: Mots-clés (optionnel)
+      description: Mots-clés séparés par des virgules, utilisés pour la recherche
+      placeholder: "EDR, XDR, détection, SOC"
 
   - type: dropdown
     id: objectif_nis2
@@ -100,16 +112,16 @@ body:
       options:
         - (Aucun)
         - Recensement des SI
-        - Mise en oeuvre d'un cadre de gouvernance
-        - Maitrise de l'ecosysteme
-        - Maitrise des SI
-        - Securisation de l'architecture des SI
-        - Securisation des acces distants aux SI
+        - Mise en œuvre d'un cadre de gouvernance
+        - Maîtrise de l'écosystème
+        - Maîtrise des SI
+        - Sécurisation de l'architecture des SI
+        - Sécurisation des accès distants aux SI
         - Protection des SI contre les codes malveillants
-        - Gestion des identites et des acces aux SI
-        - Identification et reaction aux incidents de securite
-        - Continuite et reprise d'activite
-        - Mise en oeuvre d'une approche par les risques
+        - Gestion des identités et des accès aux SI
+        - Identification et réaction aux incidents de sécurité
+        - Continuité et reprise d'activité
+        - Mise en œuvre d'une approche par les risques
 
   - type: input
     id: website
@@ -128,16 +140,9 @@ body:
   - type: textarea
     id: logo_upload
     attributes:
-      label: Logo (glissez ou collez une image PNG, GIF, JPG, SVG)
-      description: Deposez le fichier ici, GitHub l'heberge tout seul. Sinon laissez vide et mettez l'URL ci-dessous.
-      placeholder: "Glissez l'image ici, ou collez-la (Ctrl/Cmd + V)."
-
-  - type: input
-    id: logo_url
-    attributes:
-      label: URL du logo (si pas d'upload ci-dessus)
-      description: Lien direct public vers le logo (PNG, GIF, JPG, SVG ou WebP)
-      placeholder: "https://exemple.fr/logo.svg"
+      label: Logo (fichier ou URL)
+      description: Glissez/collez une image (PNG, GIF, JPG, SVG, WebP) que GitHub héberge tout seul, OU collez l'URL publique directe du logo. L'un ou l'autre suffit.
+      placeholder: "Glissez l'image ici, collez-la (Ctrl/Cmd + V), ou collez une URL https://exemple.fr/logo.svg"
 
   - type: checkboxes
     id: agreement

@@ -50,6 +50,7 @@ jobs:
           cp index.html sw.js _site/
           cp -r css js assets _site/
           cp data/solutions.generated.js _site/data/
+          cp directory.html llms.txt sitemap.xml robots.txt _site/   # SEO + agents (page texte, llms.txt, sitemap)
           [ -f CNAME ] && cp CNAME _site/ || true   # domaine custom (si present dans le depot)
           echo "Contenu publie :"; (cd _site && find . -maxdepth 2 -type d | sort)
 

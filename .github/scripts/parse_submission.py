@@ -5,7 +5,7 @@
 Mode "add"  : ajoute une entree dans data/solutions.json (le fichier unique de donnee).
 Mode "edit" : modifie l'entree ciblee dans data/solutions.json.
 Dans les deux cas le logo fourni est telecharge dans assets/logos/, puis build_app_data.py regenere
-data/solutions.generated.js. Le workflow ouvre ensuite une Pull Request pour validation manuelle.
+data/solutions.generated.js. Lance par le workflow quand un mainteneur pose le label approved.
 
 Usage : python3 .github/scripts/parse_submission.py <issue_number> <add|edit>
 Stdlib uniquement. Variables d'env : GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_OUTPUT (optionnel).
@@ -61,13 +61,15 @@ def fetch_issue(number):
 
 
 def field(body, label):
-    """Valeur sous un titre de section '### <label>' jusqu'au prochain titre."""
-    pat = r"###\s*" + re.escape(label) + r"\s*\n+(.+?)(?=\n###|\Z)"
-    m = re.search(pat, body, re.DOTALL)
-    if not m:
-        return ""
-    val = m.group(1).strip()
-    return "" if val.lower() in EMPTY else val
+    """Valeur sous un titre de section '### <label>'. Le titre est compare SANS accents ni casse
+    (les libelles du formulaire peuvent en avoir), mais la valeur est renvoyee telle quelle (accents
+    preserves). Ainsi on peut accentuer les libelles du formulaire sans toucher a ce script."""
+    target = strip_accents(label).strip().lower()
+    for m in re.finditer(r"###[ \t]*([^\n]+?)[ \t]*\n+(.*?)(?=\n###|\Z)", body, re.DOTALL):
+        if strip_accents(m.group(1)).strip().lower() == target:
+            val = m.group(2).strip()
+            return "" if strip_accents(val).lower() in EMPTY else val
+    return ""
 
 
 def checked_codes(body, label, limit=3):
@@ -77,6 +79,19 @@ def checked_codes(body, label, limit=3):
         return []
     items = re.findall(r"-\s*\[x\]\s*([^\n:]+)", sec.group(1), re.IGNORECASE)
     return [it.split(":")[0].strip() for it in items][:limit]
+
+
+def codes_from_text(text, limit=12):
+    """Codes NIST depuis un champ texte libre : 'PR.DS-01, DE.CM' -> ['PR.DS-01', 'DE.CM'].
+    On ne garde que les jetons qui ressemblent a un code (XX.XX ou XX.XX-NN)."""
+    if not text:
+        return []
+    out = []
+    for tok in re.split(r"[,;\s]+", text.strip()):
+        c = tok.strip().upper()
+        if re.fullmatch(r"[A-Z]{2}\.[A-Z]{2}(?:-\d{2})?", c):
+            out.append(c)
+    return out[:limit]
 
 
 def image_url_from(text):
@@ -91,7 +106,10 @@ def image_url_from(text):
     if m:
         return m.group(0).rstrip(").,")
     m = re.search(r"https?://\S+\.(?:png|gif|jpe?g|svg|webp)", text, re.I)  # URL d'image nue
-    return m.group(0) if m else ""
+    if m:
+        return m.group(0)
+    m = re.search(r"https?://\S+", text)  # toute URL en dernier recours (download_logo valide que c'est bien une image)
+    return m.group(0).rstrip(").,") if m else ""
 
 
 def ensure_public_url(url):
@@ -99,17 +117,17 @@ def ensure_public_url(url):
     169.254.169.254 metadata, etc.). Leve une erreur sinon. Resout le DNS et verifie chaque IP."""
     p = urlparse(url)
     if p.scheme not in ("http", "https") or not p.hostname:
-        raise ValueError(f"URL refusee (schema/hote) : {url!r}")
+        raise ValueError(f"URL refusée (schéma/hôte) : {url!r}")
     port = p.port or (443 if p.scheme == "https" else 80)
     try:
         infos = socket.getaddrinfo(p.hostname, port, proto=socket.IPPROTO_TCP)
     except socket.gaierror as exc:
-        raise ValueError(f"resolution DNS impossible pour {p.hostname!r}") from exc
+        raise ValueError(f"résolution DNS impossible pour {p.hostname!r}") from exc
     for *_, sockaddr in infos:
         ip = ipaddress.ip_address(sockaddr[0])
         if (ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved
                 or ip.is_multicast or ip.is_unspecified):
-            raise ValueError(f"IP non publique bloquee ({ip}) pour {p.hostname!r}")
+            raise ValueError(f"IP non publique bloquée ({ip}) pour {p.hostname!r}")
 
 
 class _SafeRedirect(urllib.request.HTTPRedirectHandler):
@@ -141,7 +159,7 @@ def download_logo(url, slug):
     is_svg = data[:300].lstrip().lower().startswith(b"<svg") or b"<svg" in data[:300]
     ext = IMG_EXT.get(ctype)
     if not ext and not (is_svg or ctype.startswith("image/")):
-        raise ValueError(f"contenu non-image refuse (Content-Type={ctype!r}) pour {url!r}")
+        raise ValueError(f"contenu non-image refusé (Content-Type={ctype!r}) pour {url!r}")
     if not ext:
         tail = url.lower().split("?")[0].rsplit(".", 1)[-1]
         ext = tail if tail in ("png", "jpg", "jpeg", "gif", "svg", "webp") else "png"
@@ -167,6 +185,43 @@ def emit(key, value):
             f.write(f"{key}={value}\n")
 
 
+FUNC_BY_PREFIX = {"GV": "Gouverner", "ID": "Identifier", "PR": "Protéger",
+                  "DE": "Détecter", "RS": "Répondre", "RC": "Récupérer"}
+
+
+def validate_nist(nist):
+    """Verifie la classification finale : les codes N2/N3 existent dans le referentiel
+    (data/nist_labels_fr.json), le N2 appartient bien a la fonction N1, et le N3 a une N2 choisie.
+    Retourne la liste des erreurs (vide = OK)."""
+    labels = load(DATA / "nist_labels_fr.json", {})
+    valid_l2 = set(labels.get("level2", {}))
+    valid_l3 = set(labels.get("level3", {}))
+    l1 = nist.get("level1") or ""
+    l2 = nist.get("level2") or []
+    l3 = nist.get("level3") or []
+    errs = []
+    for c in l2:
+        if c not in valid_l2:
+            errs.append(f"catégorie N2 inconnue : {c}")
+        elif l1 and FUNC_BY_PREFIX.get(c[:2]) != l1:
+            errs.append(f"la catégorie N2 {c} n'appartient pas à la fonction {l1}")
+    for c in l3:
+        if c not in valid_l3:
+            errs.append(f"sous-catégorie N3 inconnue : {c}")
+        elif l2 and not any(c.startswith(p + "-") for p in l2):
+            errs.append(f"la sous-catégorie N3 {c} ne se rattache à aucune catégorie N2 choisie")
+    return errs
+
+
+def fail_if_invalid_nist(nist):
+    errs = validate_nist(nist)
+    if errs:
+        print("ERREUR : classification NIST invalide :")  # en-tete repris dans le commentaire de l'issue
+        for e in errs:
+            print(f"   - {e}")
+        sys.exit(1)
+
+
 def main():
     number, mode = sys.argv[1], sys.argv[2]
     issue = fetch_issue(number)
@@ -186,22 +241,25 @@ def main():
     desc = field(body, "Description courte") or field(body, "Nouvelle description (si changement)")
     website = field(body, "Site web") or field(body, "Nouveau site web (si changement)")
     contact = field(body, "Contact (email ou page contact)") or field(body, "Nouveau contact (si changement)")
-    # Logo : priorite a l'image deposee dans le formulaire (PNG/GIF/JPG/SVG), sinon l'URL fournie.
-    upload = field(body, "Logo (glissez ou collez une image PNG, GIF, JPG, SVG)")
-    logo_url = (image_url_from(upload)
-                or field(body, "URL du logo (si pas d'upload ci-dessus)")
-                or field(body, "URL du logo")
-                or field(body, "Nouvelle URL de logo (si changement)"))
+    # Logo : un seul champ qui accepte une image deposee (PNG/GIF/JPG/SVG/WebP) OU une URL collee.
+    upload = field(body, "Logo (fichier ou URL)") or \
+        field(body, "Nouveau logo (fichier ou URL, si changement)")
+    logo_url = image_url_from(upload)
     keywords = [k.strip() for k in field(body, "Mots-cles (optionnel)").split(",") if k.strip()]
     nis2 = field(body, "Objectif NIS2 principal (optionnel)")
     detailed = field(body, "Description detaillee (optionnel)")
-    level2 = checked_codes(body, "Sous-categories NIST CSF 2.0 (optionnel, 3 maximum)")
+    # N2 (categories) : menu multi-choix (ajout) ou texte libre (modif). N3 (sous-categories) : texte libre.
+    level2 = codes_from_text(field(body, "Categories NIST CSF 2.0 - N2 (1 a 3)")) \
+        or codes_from_text(field(body, "Nouvelles categories NIST N2 (si changement)"))
+    level3 = codes_from_text(field(body, "Sous-categories NIST CSF 2.0 - N3")
+                             or field(body, "Nouvelles sous-categories NIST N3 (si changement)"))
 
     logo_file = download_logo(logo_url, slug) if logo_url else None
     contact_field = "email_contact" if contact and "@" in contact else "contact_url"
 
     if mode == "add":
-        for label_, val in (("fonction NIST", fonction), ("taille", size), ("description", desc),
+        for label_, val in (("fonction NIST", fonction), ("catégories N2", level2),
+                            ("sous-catégories N3", level3), ("taille", size), ("description", desc),
                             ("site web", website), ("logo", logo_file)):
             if not val:
                 print(f"ERREUR : champ obligatoire manquant pour un ajout : {label_}")
@@ -209,10 +267,11 @@ def main():
         entry = {
             "id": slug, "solution_name": name, "company_name": name,
             "logo_path": f"assets/logos/{logo_file}", "logo_file": logo_file, "logo_source": "submission",
-            "size": size, "nist": {"level1": fonction, "level2": level2, "level3": []},
+            "size": size, "nist": {"level1": fonction, "level2": level2, "level3": level3},
             "description": desc, "website": website, "country": "France", "is_french": True,
             "indexation": keywords,
         }
+        fail_if_invalid_nist(entry["nist"])
         if contact:
             entry[contact_field] = contact
         if nis2:
@@ -223,7 +282,7 @@ def main():
         items = load(path, [])
         items = [it for it in items if it.get("id") != slug] + [entry]
         path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"Ajout prepare : {name} ({slug})")
+        print(f"Ajout préparé : {name} ({slug})")
     else:
         # edit : retrouver l'entree existante (par nom ou slug) et modifier ses champs en place.
         path = DATA / "solutions.json"
@@ -244,12 +303,17 @@ def main():
             cur["size"] = size
         if fonction:
             cur.setdefault("nist", {})["level1"] = fonction
+        if level2:
+            cur.setdefault("nist", {})["level2"] = level2
+        if level3:
+            cur.setdefault("nist", {})["level3"] = level3
+        fail_if_invalid_nist(cur.get("nist") or {})
         if logo_file:
             cur["logo_path"] = f"assets/logos/{logo_file}"
             cur["logo_file"] = logo_file
             cur["logo_source"] = "submission"
         path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"Modification preparee : {name} ({tid})")
+        print(f"Modification préparée : {name} ({tid})")
 
     subprocess.run([sys.executable, str(ROOT / "scripts" / "build_app_data.py")], check=True)
     emit("company_name", name)

@@ -1,24 +1,36 @@
-name: Traiter une soumission (issue vers PR)
+name: Appliquer une soumission approuvee
 
-# Quand une issue de formulaire est ouverte ou etiquetee (panorama:new-entry ou panorama:edit),
-# on parse le formulaire, on prepare les changements de donnees, et on ouvre une Pull Request
-# vers main pour validation manuelle. Rien n'est publie automatiquement.
+# Flux de contribution : un visiteur ouvre une issue via un formulaire (panorama:new-entry / panorama:edit).
+# RIEN ne se fait automatiquement. Un mainteneur relit, et quand c'est bon il pose le label "approved".
+# Ce label declenche ce workflow : on parse l'issue, on ecrit la donnee dans solutions.json, on regenere
+# le site ET l'Excel, on commit sur main, puis on declenche le deploiement et la reindexation.
+#
+# Garde-fou : seuls les membres avec droit d'ecriture peuvent poser un label, donc l'approbation est
+# reservee aux mainteneurs. Le job checkout le code de confiance (main), jamais le contenu de l'issue.
 
 on:
   issues:
-    types: [opened, labeled]
+    types: [labeled]
 
 permissions:
   contents: write
-  pull-requests: write
   issues: write
+  actions: write
+
+concurrency:
+  group: submission-${{ github.event.issue.number }}
+  cancel-in-progress: false
 
 jobs:
-  process:
-    if: contains(github.event.issue.labels.*.name, 'panorama:new-entry') || contains(github.event.issue.labels.*.name, 'panorama:edit')
+  apply:
+    # Uniquement quand on AJOUTE le label "approved" a une issue de soumission.
+    if: >-
+      github.event.label.name == 'approved' &&
+      (contains(github.event.issue.labels.*.name, 'panorama:new-entry') ||
+       contains(github.event.issue.labels.*.name, 'panorama:edit'))
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v5
         with:
           ref: main
@@ -28,7 +40,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Determiner le mode
+      - name: Dependances
+        run: pip install openpyxl
+
+      - name: Determiner le mode (ajout ou modification)
         id: mode
         run: |
           if [ "${{ contains(github.event.issue.labels.*.name, 'panorama:edit') }}" = "true" ]; then
@@ -37,37 +52,67 @@ jobs:
             echo "value=add" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Parser le formulaire et preparer les changements
+      - name: Appliquer la soumission puis regenerer site + Excel
         id: parse
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          # On passe les valeurs par l'environnement (jamais interpolees dans la ligne de commande)
+          # Valeurs passees par l'environnement (jamais interpolees dans la ligne de commande)
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           MODE: ${{ steps.mode.outputs.value }}
-        run: python3 .github/scripts/parse_submission.py "$ISSUE_NUMBER" "$MODE"
+        run: |
+          set -o pipefail
+          python3 .github/scripts/parse_submission.py "$ISSUE_NUMBER" "$MODE" 2>&1 | tee /tmp/apply.log
+          python3 scripts/build_app_data.py
+          python3 scripts/build_master_xlsx.py
 
-      - name: Ouvrir la Pull Request
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
-        with:
-          base: main
-          branch: submission/issue-${{ github.event.issue.number }}
-          commit-message: "Soumission #${{ github.event.issue.number }} : ${{ steps.parse.outputs.company_name }}"
-          title: "[Soumission #${{ github.event.issue.number }}] ${{ steps.parse.outputs.company_name }}"
-          body: |
-            Soumission automatique a valider, issue de #${{ github.event.issue.number }} (mode : ${{ steps.mode.outputs.value }}).
+      - name: En cas d'echec, commenter l'issue et retirer approved
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ERR=$(tail -n 25 /tmp/apply.log 2>/dev/null)
+          [ -z "$ERR" ] && ERR="Le traitement a échoué (voir les logs de l'action)."
+          {
+            echo "## La soumission n'a pas pu être appliquée"
+            echo
+            echo "**Erreur :**"
+            echo '```'
+            echo "$ERR"
+            echo '```'
+            echo
+            echo "**Comment corriger :**"
+            echo "1. En haut du **premier message** de cette issue (la description), cliquez sur le menu **...** puis **Edit**, et corrigez les champs concernés par l'erreur ci-dessus (par exemple un code NIST inexistant, ou une catégorie N2 qui ne correspond pas à la fonction choisie)."
+            echo "2. Une fois corrigé, un **mainteneur du dépôt** remettra le label approved pour relancer le traitement (seuls les mainteneurs peuvent poser ce label)."
+            echo
+            echo "Rappel : le N2 doit appartenir à la fonction N1 (par exemple fonction Protéger : codes PR.xx), et le N3 à une N2 choisie (par exemple PR.DS : PR.DS-01). Un code N3 valide mais rattaché à la mauvaise N2 est aussi refusé."
+          } > /tmp/comment.md
+          gh issue comment "${{ github.event.issue.number }}" --repo "${{ github.repository }}" --body-file /tmp/comment.md
+          gh issue edit "${{ github.event.issue.number }}" --repo "${{ github.repository }}" --remove-label approved || true
 
-            Verifier le logo, la classification NIST, la taille et la description avant de fusionner.
-            La fusion sur main declenche le redeploiement du panorama.
+      - name: Commit sur main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ assets/logos/
+          if git diff --cached --quiet; then
+            echo "Aucun changement a committer."
+          else
+            git commit -m "Soumission #${{ github.event.issue.number }} : ${{ steps.parse.outputs.company_name }} [approved]"
+            git push
+          fi
 
-            Closes #${{ github.event.issue.number }}
-          labels: |
-            soumission
-            ${{ steps.mode.outputs.value == 'edit' && 'panorama:edit' || 'panorama:new-entry' }}
+      - name: Declencher deploiement + reindexation
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run "Deploy GitHub Pages" --ref main || true
+          gh workflow run "Reindex Typesense" --ref main || true
 
-      - name: Commenter l'issue
+      - name: Commenter et fermer l'issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh issue comment "${{ github.event.issue.number }}" --repo "${{ github.repository }}" \
-            --body "Merci pour la soumission. Une Pull Request a ete preparee pour validation par un mainteneur. Elle ne sera publiee qu'apres fusion."
+            --body "Soumission approuvée et appliquée. Le panorama va se redéployer automatiquement. Merci pour la contribution."
+          gh issue close "${{ github.event.issue.number }}" --repo "${{ github.repository }}" || true
