@@ -95,22 +95,25 @@ body:
   - type: textarea
     id: description_detaillee
     attributes:
-      label: Description détaillée (optionnel)
+      label: Description détaillée
       description: Description plus complète (produits, cibles, différenciateurs)
+    validations:
+      required: true
 
   - type: input
     id: mots_cles
     attributes:
-      label: Mots-clés (optionnel)
+      label: Mots-clés
       description: Mots-clés séparés par des virgules, utilisés pour la recherche
       placeholder: "EDR, XDR, détection, SOC"
+    validations:
+      required: true
 
   - type: dropdown
     id: objectif_nis2
     attributes:
-      label: Objectif NIS2 principal (optionnel)
+      label: Objectif NIS2 principal
       options:
-        - (Aucun)
         - Recensement des SI
         - Mise en œuvre d'un cadre de gouvernance
         - Maîtrise de l'écosystème
@@ -122,6 +125,8 @@ body:
         - Identification et réaction aux incidents de sécurité
         - Continuité et reprise d'activité
         - Mise en œuvre d'une approche par les risques
+    validations:
+      required: true
 
   - type: input
     id: website
@@ -136,6 +141,8 @@ body:
     attributes:
       label: Contact (email ou page contact)
       placeholder: "contact@exemple.fr"
+    validations:
+      required: true
 
   - type: textarea
     id: logo_upload
@@ -143,6 +150,8 @@ body:
       label: Logo (fichier ou URL)
       description: Glissez/collez une image (PNG, GIF, JPG, SVG, WebP) que GitHub héberge tout seul, OU collez l'URL publique directe du logo. L'un ou l'autre suffit.
       placeholder: "Glissez l'image ici, collez-la (Ctrl/Cmd + V), ou collez une URL https://exemple.fr/logo.svg"
+    validations:
+      required: true
 
   - type: checkboxes
     id: agreement

@@ -299,9 +299,12 @@ def main():
     upload = field(body, "Logo (fichier ou URL)") or \
         field(body, "Nouveau logo (fichier ou URL, si changement)")
     logo_url = image_url_from(upload)
-    keywords = [k.strip() for k in field(body, "Mots-cles (optionnel)").split(",") if k.strip()]
-    nis2 = field(body, "Objectif NIS2 principal (optionnel)")
-    detailed = field(body, "Description detaillee (optionnel)")
+    # Libelles ajout = sans "(optionnel)" (tout est obligatoire a l'ajout) ; on tente aussi la variante
+    # modif. field() est insensible aux accents, donc "Mots-cles" retrouve l'entete "Mots-clés".
+    keywords = [k.strip() for k in (field(body, "Mots-cles")
+                                    or field(body, "Nouveaux mots-cles (si changement)")).split(",") if k.strip()]
+    nis2 = field(body, "Objectif NIS2 principal") or field(body, "Nouvel objectif NIS2 (si changement)")
+    detailed = field(body, "Description detaillee") or field(body, "Nouvelle description detaillee (si changement)")
     # N2 (categories) : menu multi-choix (ajout) ou texte libre (modif). N3 (sous-categories) : texte libre.
     level2 = codes_from_text(field(body, "Categories NIST CSF 2.0 - N2 (1 a 3)")) \
         or codes_from_text(field(body, "Nouvelles categories NIST N2 (si changement)"))
@@ -312,9 +315,12 @@ def main():
     contact_field = "email_contact" if contact and "@" in contact else "contact_url"
 
     if mode == "add":
+        # A l'ajout, TOUT est obligatoire (cote formulaire ET cote serveur, au cas ou un champ serait vide).
         for label_, val in (("fonction NIST", fonction), ("catégories N2", level2),
                             ("sous-catégories N3", level3), ("taille", size), ("description", desc),
-                            ("site web", website), ("logo", logo_file)):
+                            ("description détaillée", detailed), ("mots-clés", keywords),
+                            ("objectif NIS2", nis2), ("site web", website), ("contact", contact),
+                            ("logo", logo_file)):
             if not val:
                 print(f"ERREUR : champ obligatoire manquant pour un ajout : {label_}")
                 sys.exit(1)
