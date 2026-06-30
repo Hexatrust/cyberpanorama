@@ -91,6 +91,11 @@ jobs:
           gh issue edit "${{ github.event.issue.number }}" --repo "${{ github.repository }}" --remove-label approved || true
 
       - name: Commit sur main
+        env:
+          # Valeurs (dont le nom, controle par l'auteur de l'issue) passees par l'environnement et jamais
+          # interpolees dans le script : une variable shell entre guillemets n'est pas re-parsee.
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          COMPANY_NAME: ${{ steps.parse.outputs.company_name }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -98,7 +103,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "Aucun changement a committer."
           else
-            git commit -m "Soumission #${{ github.event.issue.number }} : ${{ steps.parse.outputs.company_name }} [approved]"
+            git commit -m "Soumission #${ISSUE_NUMBER} : ${COMPANY_NAME} [approved]"
             git push
           fi
 

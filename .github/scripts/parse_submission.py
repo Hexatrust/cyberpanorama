@@ -20,6 +20,7 @@ import sys
 import unicodedata
 import urllib.error
 import urllib.request
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -142,6 +143,55 @@ IMG_EXT = {"image/png": "png", "image/jpeg": "jpg", "image/gif": "gif",
            "image/svg+xml": "svg", "image/webp": "webp"}
 
 
+# Elements et attributs qui rendent un SVG "actif" (executent du JS, chargent du distant, ouvrent un
+# vecteur XXE). Un logo n'en a jamais besoin : on les retire systematiquement.
+_SVG_BAD_TAGS = {"script", "foreignobject", "iframe", "object", "embed",
+                 "animate", "animatetransform", "animatemotion", "set", "handler", "use"}
+_SVG_HREF_ATTRS = {"href", "{http://www.w3.org/1999/xlink}href", "src", "xlink:href"}
+
+
+def sanitize_svg(data):
+    """Neutralise un SVG potentiellement piege : refuse DOCTYPE/ENTITY (XXE, billion-laughs), retire
+    les balises actives (script, foreignObject, use externe...), les gestionnaires on* et les URI
+    javascript:/data:text-html. Renvoie le SVG nettoye en bytes. Leve ValueError si illisible/dangereux.
+
+    On rend le SVG inoffensif AU LIEU de juste verifier : un controle ("est-ce une image ?") ne supprime
+    pas un payload contenu dans un SVG par ailleurs valide. Le fichier ecrit dans le depot est donc une
+    version desinfectee, pas l'original."""
+    text = data.decode("utf-8", "ignore")
+    if re.search(r"<!doctype|<!entity", text, re.I):
+        raise ValueError("SVG refusé : déclaration DOCTYPE/ENTITY (risque XXE) interdite dans un logo.")
+    try:
+        root = ET.fromstring(text)
+    except ET.ParseError as e:
+        raise ValueError(f"SVG illisible : {e}")
+    parents = {child: parent for parent in root.iter() for child in parent}
+    for el in list(root.iter()):
+        local = el.tag.split("}")[-1].lower()
+        # <use href="http..."> peut tirer un fragment distant : on ne garde que les <use> internes (#id).
+        if local == "use":
+            ref = next((el.attrib[a] for a in el.attrib if a.split("}")[-1].lower() == "href"), "")
+            if ref.strip().startswith("#"):
+                continue
+        if local in _SVG_BAD_TAGS:
+            p = parents.get(el)
+            if p is not None:
+                p.remove(el)
+            continue
+        for attr in list(el.attrib):
+            an = attr.split("}")[-1].lower()
+            val = el.attrib[attr]
+            flat = re.sub(r"\s+", "", val).lower()
+            if an.startswith("on"):                                   # onload, onclick, onbegin...
+                del el.attrib[attr]
+            elif an in {a.split("}")[-1].lower() for a in _SVG_HREF_ATTRS} or an.endswith("href"):
+                if flat.startswith(("javascript:", "data:text/html", "data:image/svg")):
+                    del el.attrib[attr]
+            elif an == "style" and ("javascript:" in flat or "expression(" in flat or "url(" in flat):
+                del el.attrib[attr]
+    return ET.tostring(root, encoding="utf-8")
+
+
 def download_logo(url, slug):
     ensure_public_url(url)                         # anti-SSRF avant toute requete
     headers = {"User-Agent": UA}
@@ -149,7 +199,10 @@ def download_logo(url, slug):
     # joint le token QUE pour les hotes GitHub (jamais vers un hote arbitraire).
     token = os.environ.get("GITHUB_TOKEN", "")
     host = (urlparse(url).hostname or "").lower()
-    if token and (host.endswith("githubusercontent.com") or host == "github.com"):
+    # Limite de domaine STRICTE (un point) : sinon "evilgithubusercontent.com" passerait le endswith
+    # et le token du runner fuirait vers le serveur de l'attaquant.
+    if token and (host == "github.com" or host == "githubusercontent.com"
+                  or host.endswith(".githubusercontent.com")):
         headers["Authorization"] = f"token {token}"
     opener = urllib.request.build_opener(_SafeRedirect)   # verification TLS par defaut (active)
     req = urllib.request.Request(url, headers=headers)
@@ -165,6 +218,7 @@ def download_logo(url, slug):
         ext = tail if tail in ("png", "jpg", "jpeg", "gif", "svg", "webp") else "png"
     if is_svg:
         ext = "svg"
+        data = sanitize_svg(data)                  # desinfection AVANT ecriture dans le depot
     LOGOS.mkdir(parents=True, exist_ok=True)
     name = f"{slug}.{ext}"
     (LOGOS / name).write_bytes(data)
@@ -280,7 +334,11 @@ def main():
             entry["detailed_description"] = detailed
         path = DATA / "solutions.json"
         items = load(path, [])
-        items = [it for it in items if it.get("id") != slug] + [entry]
+        # Un ajout ne doit JAMAIS ecraser un acteur existant (collision de slug = usurpation possible).
+        if any(it.get("id") == slug for it in items):
+            print(f"ERREUR : un acteur avec l'id '{slug}' existe deja. Utilisez le formulaire de MODIFICATION.")
+            sys.exit(1)
+        items = items + [entry]
         path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Ajout préparé : {name} ({slug})")
     else:

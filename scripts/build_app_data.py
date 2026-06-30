@@ -103,7 +103,9 @@ def write_seo(solutions, root):
                                            ", ".join(s["nist"].get("level3") or [])] if c)
             meta = " · ".join(p for p in [SIZE_FR_SEO.get(s.get("size", ""), ""), fn, codes] if p)
             web = (s.get("website") or "").strip()
-            link = f'<p><a href="{esc(web)}" rel="noopener nofollow">{esc(web)}</a></p>' if web else ""
+            # On n'autorise que http(s) : une URL javascript:/data: en donnee ne doit pas devenir un lien.
+            web_ok = web.lower().startswith(("http://", "https://"))
+            link = f'<p><a href="{esc(web)}" rel="noopener noreferrer nofollow">{esc(web)}</a></p>' if web_ok else ""
             rows.append(f'<article><h3>{esc(s["solution_name"])}</h3>'
                         f'<p class="meta">{esc(meta)}</p>'
                         f'<p>{esc(s.get("description") or "")}</p>{link}</article>')
@@ -120,6 +122,9 @@ def write_seo(solutions, root):
     jsonld = json.dumps({"@context": "https://schema.org", "@type": "ItemList",
                          "name": "Acteurs de la cybersecurite francaise (CyberPanorama)",
                          "numberOfItems": total, "itemListElement": items}, ensure_ascii=False)
+    # json.dumps n'echappe pas "</script>" : une description malveillante pourrait fermer le <script>
+    # ld+json et injecter du HTML. On echappe < > & (et les separateurs de ligne JS) en \uXXXX (JSON valide).
+    jsonld = jsonld.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
 
     intro = (f"Panorama des {total} acteurs de la cybersecurite francaise et europeenne, classes selon le "
              "referentiel NIST CSF 2.0 (Gouverner, Identifier, Proteger, Detecter, Repondre, Recuperer). "
