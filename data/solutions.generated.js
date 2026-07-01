@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-07-01T12:08:49+00:00",
+  "generated_at": "2026-07-01T12:07:59+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29059,18 +29059,17 @@ window.CYBERPANORAMA_DATA = {
       "logo_path": "assets/logos/zz-test-hexatrust-a-supprimer.svg",
       "logo_file": "zz-test-hexatrust-a-supprimer.svg",
       "logo_source": "submission",
-      "size": "small",
+      "size": "medium",
       "nist": {
         "level1": "Protéger",
         "level2": [
           "PR.DS"
         ],
         "level3": [
-          "PR.DS-01",
-          "PR.DS-02"
+          "PR.DS-01"
         ]
       },
-      "description": "Description modifiée sur Hexatrust via le formulaire de modification.",
+      "description": "Entrée de test sur Hexatrust, sera supprimée juste après vérification.",
       "detailed_description": "Description détaillée de test contenant le mot hexawitness pour vérifier l'indexation.",
       "website": "https://zz-test-hexatrust.example",
       "email_contact": "contact@zz-test-hexatrust.example",
