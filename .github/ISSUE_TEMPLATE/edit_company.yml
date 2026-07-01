@@ -67,11 +67,19 @@ body:
       description: Glissez/collez une image (PNG, GIF, JPG, SVG, WebP) que GitHub héberge, OU collez l'URL publique directe du logo. Laissez vide pour ne pas changer le logo.
       placeholder: "Glissez l'image ici, collez-la (Ctrl/Cmd + V), ou collez une URL https://exemple.fr/logo.svg"
 
+  - type: checkboxes
+    id: supprimer
+    attributes:
+      label: Suppression
+      description: À cocher UNIQUEMENT pour demander le retrait complet de cette entreprise du panorama. Si coché, les autres champs sont ignorés.
+      options:
+        - label: Supprimer définitivement cette entreprise du panorama
+
   - type: textarea
     id: raison
     attributes:
       label: Raison de la modification
-      description: Expliquez brièvement (rebrand, rachat, erreur, mise à jour)
+      description: Expliquez brièvement (rebrand, rachat, erreur, mise à jour, suppression)
     validations:
       required: true
 

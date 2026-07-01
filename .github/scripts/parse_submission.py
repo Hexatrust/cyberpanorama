@@ -348,7 +348,8 @@ def main():
         path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Ajout préparé : {name} ({slug})")
     else:
-        # edit : retrouver l'entree existante (par nom ou slug) et modifier ses champs en place.
+        # edit ou SUPPRESSION : retrouver l'entree existante (par nom ou slug).
+        want_delete = "[x]" in field(body, "Suppression").lower()
         path = DATA / "solutions.json"
         items = load(path, [])
         cur = next((s for s in items
@@ -357,6 +358,14 @@ def main():
             print(f"ERREUR : entreprise '{name}' introuvable dans le panorama")
             sys.exit(1)
         tid = cur.get("id")
+        if want_delete:
+            # Suppression demandee : on retire l'entree. Les autres champs du formulaire sont ignores.
+            items = [s for s in items if s.get("id") != tid]
+            path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(f"Suppression préparée : {name} ({tid})")
+            emit("company_name", name)
+            emit("slug", tid)
+            return
         if desc:
             cur["description"] = desc
         if website:
