@@ -28576,36 +28576,5 @@
       "wifi",
       "vpn mobile"
     ]
-  },
-  {
-    "id": "zz-test-hexatrust-a-supprimer",
-    "solution_name": "ZZ Test Hexatrust (à supprimer)",
-    "company_name": "ZZ Test Hexatrust (à supprimer)",
-    "logo_path": "assets/logos/zz-test-hexatrust-a-supprimer.svg",
-    "logo_file": "zz-test-hexatrust-a-supprimer.svg",
-    "logo_source": "submission",
-    "size": "medium",
-    "nist": {
-      "level1": "Protéger",
-      "level2": [
-        "PR.DS",
-        "PR.AA"
-      ],
-      "level3": [
-        "PR.DS-01",
-        "PR.AA-01"
-      ]
-    },
-    "description": "Entrée de test sur Hexatrust, sera supprimée juste après vérification.",
-    "website": "https://zz-test-hexatrust.example",
-    "country": "France",
-    "is_french": true,
-    "indexation": [
-      "test",
-      "chiffrement"
-    ],
-    "email_contact": "contact@zz-test-hexatrust.example",
-    "nis2_objective": "Gestion des identités et des accès aux SI",
-    "detailed_description": "Description détaillée de test contenant le mot hexawitness pour vérifier l'indexation."
   }
 ]

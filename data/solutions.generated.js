@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-07-01T12:07:59+00:00",
+  "generated_at": "2026-06-30T21:41:41+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -481,7 +481,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "6cure conçoit des solutions de protection contre les attaques par déni de service distribué, déployables sur site, en cloud ou en mode hybride. Le catalogue couvre la défense DDoS, la sécurité des services DNS et un volet expertise avec le service DDoS Assessment qui audite la résilience des infrastructures. La société, constituée en SAS à Hérouville-Saint-Clair, vise les opérateurs et acteurs Internet exposés aux attaques volumétriques.",
-      "detailed_description": "",
       "website": "https://www.6cure.com",
       "email_contact": "contact@6cure.com",
       "contact_url": "https://www.6cure.com/contact/",
@@ -588,7 +587,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "AAIS édite une plateforme SaaS de sensibilisation à la cybersécurité basée à Lyon, axée sur le facteur humain. Elle propose des simulations de phishing, vishing et smishing, des modules sur les deepfakes, ainsi que des escape games et challenges CTF, complétés par de la surveillance des fuites de données et le suivi de noms de domaine frauduleux. Parmi les clients cités figurent Rothschild, Generali, Alptis Assurances et des collectivités françaises.",
-      "detailed_description": "",
       "website": "https://www.aais.ai",
       "email_contact": "contact@aais.ai",
       "contact_url": "https://www.aais.ai/contact",
@@ -696,7 +694,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Adacis est une société française de cybersécurité qui réalise des audits, de l'analyse de risques, de la gestion de crise et de la formation. Son logiciel Agrios sert au pilotage des risques opérationnels et stratégiques, au suivi des mesures de sécurité et à la visualisation des écarts de conformité face aux référentiels, en s'interfaçant avec son outil d'analyse de risques Arimes. La société édite aussi Basileak pour l'investigation OSINT et Medusa.",
-      "detailed_description": "",
       "website": "https://www.adacis.net/solutions/agrios/",
       "email_contact": "",
       "contact_url": "https://www.adacis.net/contact/",
@@ -797,7 +794,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Advanced Track & Trace développe des technologies d'authentification et de traçabilité sécurisée pour lutter contre la contrefaçon. Son offre inclut le sticker unitaire Titanium, la solution d'authentification Seal Vector, la technologie Sealgn@ture intégrée aux billets de banque et le logiciel de gestion IDPL, avec un module Nutrilabel pour la conformité des vins et spiritueux. La société, installée à Rueil-Malmaison, sert le luxe, les cosmétiques, les vins et les marchés gouvernementaux dont la Banque de France.",
-      "detailed_description": "",
       "website": "https://advancedtrackandtrace.com",
       "email_contact": "contact@att-fr.com",
       "contact_url": "https://advancedtrackandtrace.com/contact/",
@@ -900,7 +896,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "AGS Cloud est un hébergeur français exploitant un datacenter Tier III à Montpellier et proposant du cloud IaaS, du stockage objet S3 et de l'hébergement physique de serveurs. L'offre intègre la sauvegarde via Veeam Cloud Connect, des messageries Zimbra et Exchange, du Nextcloud, ainsi que des briques de sécurité comme EDR/XDR, Bitdefender et la protection de messagerie MailProtect Plus et MailInBlack. La société est certifiée ISO 27001 depuis fin 2024.",
-      "detailed_description": "",
       "website": "https://www.ags-cloud.fr",
       "email_contact": "contact@ags-cloud.fr",
       "contact_url": "https://www.ags-cloud.fr/contactez-nous/",
@@ -1005,7 +1000,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Akidaia propose un système de contrôle d'accès fonctionnant entièrement hors ligne, sans stockage de données utilisateur. La solution combine un lecteur matériel plug'n'play posé sur des ouvrants électrifiés, un backoffice de gestion des accréditations permanentes et temporaires, et des jetons cryptographiques sur badge ou smartphone. Basée à Nice, elle cible les sites industriels, bureaux, chantiers temporaires et zones isolées ou critiques.",
-      "detailed_description": "",
       "website": "https://akidaia.com",
       "email_contact": "contact@akidaia.com",
       "contact_url": "https://akidaia.com/contact/",
@@ -1106,7 +1100,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Aleph Networks, société par actions simplifiée implantée près de Lyon, édite une plateforme de renseignement en sources ouvertes qui indexe et surveille toutes les couches du web, y compris le dark web via une technologie propriétaire. Ses modules Aleph Search, Aleph Alert et Aleph Open Search assurent recherche, alertes en temps réel et détection de données stratégiques exposées. Elle adresse banques, assurances, industrie, services de défense, de renseignement et administrations.",
-      "detailed_description": "",
       "website": "https://www.aleph-networks.eu",
       "email_contact": "",
       "contact_url": "https://www.aleph-networks.eu/contact/",
@@ -1207,7 +1200,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "AlgoSecure exploite AlgoLightHouse, un service managé de gestion de la surface d'attaque externe (EASM). La plateforme surveille en continu les actifs exposés, détecte le shadow IT, les vulnérabilités, les fuites d'identifiants, le typosquatting et le phishing, puis des analystes offensifs qualifient et priorisent les alertes. Parmi ses références figurent Enedis, Boiron et la Protection Civile.",
-      "detailed_description": "",
       "website": "https://algolighthouse.fr/",
       "email_contact": "",
       "contact_url": "https://algolighthouse.fr/",
@@ -1316,7 +1308,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Alinto édite des solutions de messagerie professionnelle souveraine hébergées en Europe. Son catalogue comprend SOGoMail (serveur de messagerie), Cleanmail (filtrage anti-spam et passerelle de sécurité), Serenamail (envoi d'emails transactionnels) et MailCleaner (appliance antispam). L'entreprise vise les ETI, les organisations publiques, le secteur santé et les MSP.",
-      "detailed_description": "",
       "website": "https://www.alinto.com",
       "email_contact": "",
       "contact_url": "https://www.alinto.com/contact-email-provider/",
@@ -1428,7 +1419,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ALL4TEC développe Agile Risk Manager, un logiciel d'analyse de risques cyber qui guide les démarches selon la méthode EBIOS RM de l'ANSSI et la norme ISO 27005:2022. L'outil produit des rapports d'analyse préformatés et se complète d'Agile Risk Board pour agréger et piloter les données de risque. Ses clients couvrent la banque-assurance, la défense, l'industrie, le spatial, la santé et les collectivités.",
-      "detailed_description": "",
       "website": "https://www.all4tec.com/solutions/agile-risk-manager/",
       "email_contact": "contact@all4tec.net",
       "contact_url": "https://www.all4tec.com/demande-de-demo-agile-risk-manager/",
@@ -1531,7 +1521,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Anozr Way s'attaque au risque cyber d'origine humaine en mesurant l'exposition des personnes à partir des fuites de données et du dark web. AY SelfProtect évalue l'exposition individuelle et fournit un plan d'actions personnalisé via l'assistant Aura, tandis qu'AY PeopleSight donne aux RSSI et DSI une vision consolidée du risque, complétée par une API Human Risk Management. Les cibles vont des dirigeants et COMEX aux collaborateurs.",
-      "detailed_description": "",
       "website": "https://anozrway.com/fr/application-de-protection-personnelle-cyber/",
       "email_contact": "",
       "contact_url": "https://anozrway.com/fr/contact/",
@@ -1636,7 +1625,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "AntemetA est une ESN française active depuis 1995 sur l'infrastructure, le cloud et la cybersécurité. Elle propose des services managés de sauvegarde, un cloud Neostak (DCIaaS), un espace collaboratif ArcAbox, du DRaaS et un SOC mutualisé avec bastion. Ses clients sont des grands comptes comme Alten, Engie IT ou Wolters Kluwer.",
-      "detailed_description": "",
       "website": "https://www.antemeta.fr",
       "email_contact": "",
       "contact_url": "https://www.antemeta.fr/contact/",
@@ -1737,7 +1725,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "APICEM édite APICRYPT, une messagerie sécurisée pour les professionnels de santé en service depuis 1996. La plateforme chiffre les échanges, s'interface avec plus de cent logiciels métier et s'intègre à l'écosystème MSSanté, avec une application APIMAIL et une version mobile. Elle revendique environ 67 000 utilisateurs actifs, des établissements de santé, des EHPAD et des laboratoires, et est certifiée HDS et ISO 27001.",
-      "detailed_description": "",
       "website": "https://www.apicrypt.org",
       "email_contact": "contact@apicrypt.org",
       "contact_url": "https://www.apicrypt.org/contact",
@@ -1832,7 +1819,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Apitech, fondée en 1991, assemble des plateformes de communication souveraines à partir de briques open source: visioconférence Jitsi, messagerie instantanée Element, partage de documents Nextcloud et webmail Roundcube, avec un assistant IA souverain. Les données sont hébergées en France sous certifications SecNumCloud et ISO 27001, en SaaS, cloud privé ou on premises. La clientèle comprend des ministères, des collectivités comme la Métropole de Lyon et des OIV.",
-      "detailed_description": "",
       "website": "https://www.apitech.fr",
       "email_contact": "contact@apitech.fr",
       "contact_url": "https://www.apitech.fr",
@@ -1937,7 +1923,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ARC Data Shield conçoit et assemble des passerelles réseau matérielles destinées à bloquer les attaques protocolaires, dont les ransomwares, au moyen d'une architecture de rupture brevetée fondée sur une électronique dédiée. Les appliances s'intègrent entre les systèmes IT et les environnements industriels OT et Industrie 4.0 pour protéger les actifs critiques des services essentiels. La société assemble ses équipements dans ses locaux du Grand Ouest et revendique un produit conçu en France.",
-      "detailed_description": "",
       "website": "https://www.arc-data-shield.fr",
       "email_contact": "",
       "contact_url": "https://www.arc-data-shield.fr/contact/",
@@ -2041,7 +2026,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Arcad Software édite des outils DevSecOps et de modernisation applicative, avec un fort héritage sur la plateforme IBM i. Son catalogue comprend ARCAD pour le DevSecOps et la modernisation, DROPS pour l'orchestration et le release management des déploiements, DOT pour l'anonymisation et l'échantillonnage de données, ainsi que l'assistant d'analyse DISCOVER. La société revendique plus de 480 clients dans 75 pays, parmi lesquels Orange, ING Bank, HSBC, Geodis et l'URSSAF.",
-      "detailed_description": "",
       "website": "https://www.arcadsoftware.fr",
       "email_contact": "info@arcadsoftware.com",
       "contact_url": "https://www.arcadsoftware.fr/a-propos/contact/",
@@ -2145,7 +2129,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Armony System est une société d'ingénierie en informatique industrielle, automatisme et supervision, basée à Olivet près d'Orléans avec un bureau à Paris. Sa solution CyFENCE est une DMZ industrielle qui regroupe les services de sécurité protégeant un système OT et étend les protections IT vers l'OT, déclinée en offre Wall avec packs personnalisables et offre Box prête à l'emploi, avec une version redondante pour la haute disponibilité. La société propose aussi l'outil CyPRES de détection d'intrusion et de surveillance dynamique des réseaux industriels.",
-      "detailed_description": "",
       "website": "https://www.armony.fr",
       "email_contact": "",
       "contact_url": "https://www.armony.fr/contacter",
@@ -2243,7 +2226,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Ars Nova Systems, éditeur nantais, développe TinyMDM, une plateforme cloud de gestion de flotte d'appareils mobiles Android (MDM/EMM). L'outil pilote l'installation et le déploiement d'applications, le mode kiosque, le verrouillage et le chiffrement à distance, le filtrage web, la géolocalisation, la prise en main à distance et la configuration Wi-Fi, VPN et APN, selon des modes Fully Managed, WPCO et BYOD. Elle s'adresse aux administrations, à l'hôtellerie, au transport, à l'éducation et aux grandes entreprises.",
-      "detailed_description": "",
       "website": "https://www.tinymdm.fr",
       "email_contact": "contact@tinymdm.net",
       "contact_url": "https://www.tinymdm.fr/contact/",
@@ -2345,7 +2327,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Arsen propose une plateforme de sensibilisation des collaborateurs aux attaques d'ingénierie sociale. Elle combine des formations et des campagnes de simulation de phishing par email, de vishing par appel vocal généré par IA et de smishing par SMS, avec un suivi des menaces et des alertes. Établie à Paris, elle vise les services financiers, l'assurance, le retail, les centres d'appels et le secteur crypto, et compte parmi ses clients KPMG, Beazley, Gameloft, Betclic et Krys Group.",
-      "detailed_description": "",
       "website": "https://arsen.co",
       "email_contact": "contact@arsen.co",
       "contact_url": "https://arsen.co/en/legal-notice",
@@ -2452,7 +2433,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Arx One édite Arx One Backup, une solution de sauvegarde et de restauration de données proposée en mode centralisé sur site, en sauvegarde externalisée sur cloud souverain français et en sauvegarde locale On Box. Elle prend en charge Windows, macOS, Linux, les NAS Synology et QNAP, SQL Server, Proxmox, Microsoft 365, Hyper-V et HFSQL. Basée à Nantes avec un bureau à Lyon, certifiée ISO 27001 et HDS, elle adresse les entreprises, collectivités, professionnels de santé, TPE/PME, éditeurs et intégrateurs.",
-      "detailed_description": "",
       "website": "https://www.arxone.com",
       "email_contact": "contact2026@arx.one",
       "contact_url": "https://www.arxone.com/contact/",
@@ -2554,7 +2534,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Astran s'adresse aux grandes organisations pour maintenir leurs activités critiques lors d'une défaillance des systèmes informatiques principaux. Sa plateforme AlwaysReady identifie les activités vitales comme les paiements, la chaîne logistique et la conformité, conçoit des processus exécutables indépendamment de l'IT, synchronise les données critiques stockées à part et permet une activation guidée en quelques minutes en cas de crise. Le point d'entrée fréquent est la trésorerie, et la société cite Eiffage, Elior Group, Sanofi et Vinci parmi ses références.",
-      "detailed_description": "",
       "website": "https://www.astran.ai",
       "email_contact": "",
       "contact_url": "https://www.astran.ai/get-started",
@@ -2653,7 +2632,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Atempo édite des logiciels de protection et de gestion de données pour les organisations manipulant de gros volumes non structurés. Sa gamme comprend Tina pour la sauvegarde des serveurs et applications, Lina pour les postes de travail, et Miria pour la gestion et la migration de données à l'échelle du pétaoctet. L'entreprise s'adresse à la recherche, aux médias, à l'industrie, aux sciences de la vie et au secteur public.",
-      "detailed_description": "",
       "website": "https://www.atempo.com",
       "email_contact": "info@atempo.com",
       "contact_url": "https://www.atempo.com/contact-atempo/",
@@ -2770,7 +2748,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "AUCAE est un éditeur toulousain spécialisé dans la gestion des crises cyber. Ses outils Digital Crisis Response servent à coordonner la réponse pendant une crise, et Crisis Response Simulator permet de concevoir et mener des exercices d'entraînement, complétés par des services opérationnels. La société travaille avec les établissements de santé, les services financiers, la protection sociale et les collectivités territoriales.",
-      "detailed_description": "",
       "website": "https://aucae.com",
       "email_contact": "",
       "contact_url": "https://aucae.com/contact/",
@@ -2883,7 +2860,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Avanoo propose une plateforme de gouvernance et de cartographie des écosystèmes SaaS et IA. Ses modules Discover, Applications, Analytics, Supply Chain, Issues, Extensions et Engage donnent de la visibilité sur le portefeuille applicatif, les risques fournisseurs et l'usage par les collaborateurs. Elle vise des grands comptes européens, cabinets d'audit, banques et groupes industriels, avec un hébergement des données en Europe.",
-      "detailed_description": "",
       "website": "https://avanoo.ai",
       "email_contact": "support@avanoo.ai",
       "contact_url": "https://avanoo.ai/",
@@ -2991,7 +2967,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Hucency, anciennement Avant de Cliquer, est un éditeur français de cybersécurité centrée sur l'humain. Il propose des simulations multicanales d'attaques (phishing, smishing, vishing, quishing, USB dropping), des parcours de formation et de sensibilisation, ainsi que des outils de prévention des erreurs internes (bouton d'alerte phishing, chatbot, gestionnaire de mots de passe, surveillance du dark web et des noms de domaine). La cible est constituée des DSI, RSSI et équipes en entreprise.",
-      "detailed_description": "",
       "website": "https://hucency.com",
       "email_contact": "contact@hucency.com",
       "contact_url": "https://avantdecliquer.com/contact/",
@@ -3105,7 +3080,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "AxBx conçoit et commercialise des logiciels de cybersécurité pour postes de travail depuis 1999. Son catalogue regroupe l'antivirus VirusKeeper, le pare-feu WinCerber Firewall, le coffre de mots de passe SecureBox, les boucliers ScamShield et ranShield, la protection endpoint hybride AV-H5 et l'offre CyberBox pour TPE et particuliers. La société française revendique plusieurs dizaines de millions d'utilisateurs et adresse aussi grands comptes et administrations.",
-      "detailed_description": "",
       "website": "https://www.axbx.com",
       "email_contact": "service.client@axbx.com",
       "contact_url": "https://www.axbx.com/contacts.html",
@@ -3212,7 +3186,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "BeBackup édite une solution française de sauvegarde en mode SaaS avec chiffrement AES-256, versioning illimité et vérifications périodiques des données. Elle se déploie en hébergement dédié ou sur site et couvre la restauration des données. Elle cible les prestataires informatiques, les directions IT et les entreprises de toutes tailles.",
-      "detailed_description": "",
       "website": "https://www.bebackup.fr",
       "email_contact": "",
       "contact_url": "https://www.bebackup.fr/contactez-nous/",
@@ -3311,7 +3284,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Beemo Technologie propose de la sauvegarde de données hébergée et opérée en France, articulée autour d'un modèle hybride entre serveur local et datacenters distants. La gamme Beemo2Cloud (Essentiel, Premium HDS, Notaires), les offres Beemo2Beemo et BeeHive ainsi que les appliances BeeBox couvrent sauvegarde et restauration. Les clients incluent TPE-PME, grandes entreprises, prestataires IT, professionnels de santé, notaires et établissements scolaires.",
-      "detailed_description": "",
       "website": "https://www.beemotechnologie.com",
       "email_contact": "commercial@beemotechnologie.com",
       "contact_url": "https://www.beemotechnologie.com",
@@ -3416,7 +3388,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "BeYs Cloud est un opérateur d'hébergement et de cloud souverain basé à Clermont-Ferrand. Il commercialise des serveurs privés virtuels (VPS), du cloud public et des serveurs dédiés, hébergés dans son datacenter La Citadelle qui dispose d'un centre de cyberdéfense, d'un bunker et de cages de Faraday. Les offres ciblent start-ups, PME-ETI et grands comptes des secteurs défense, industrie, finance, santé et public.",
-      "detailed_description": "",
       "website": "https://www.be-ys.cloud",
       "email_contact": "contact@be-ys.cloud",
       "contact_url": "https://www.be-ys.cloud/contact",
@@ -3530,7 +3501,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "BKube édite une solution de sauvegarde automatisée pensée pour résister aux ransomwares. La gamme se décline en BKube pour PME, BKube Serveur et la Box BKube, un boitier physique qui sauvegarde localement puis duplique les données vers des serveurs en France. Le produit vise les TPE-PME sans compétences techniques et les structures soumises au RGPD.",
-      "detailed_description": "",
       "website": "https://bkube.fr",
       "email_contact": "contact@bkube.org",
       "contact_url": "https://bkube.fr/nous-contacter/",
@@ -3637,7 +3607,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Bleckwen développe une plateforme de détection de fraude en temps réel reposant sur l'apprentissage automatique pour les acteurs financiers. L'offre couvre la Fraud Detection Platform, des services de scoring managé (Managed Scoring Services) et un Investigation Assistant qui analyse particuliers et entreprises. La société, installée rue de Châteaudun à Paris, compte parmi ses clients BNP Paribas, Carrefour Banque, Stellantis FS et Mobilize Financial Services.",
-      "detailed_description": "",
       "website": "https://www.bleckwen.ai",
       "email_contact": "",
       "contact_url": "https://www.bleckwen.ai/contact",
@@ -3742,7 +3711,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Blokkus édite une solution anti-phishing par e-mail fondée sur des réseaux de confiance et une logique zero-trust. Elle analyse les domaines et les liens, redirige les liens douteux vers une page d'avertissement, gère listes noire, grise et blanche et alerte les responsables sécurité. Distribuée en SaaS, elle s'interface avec Microsoft 365, Exchange, Google Workspace, Zimbra, BlueMind et Proton, et s'adresse des grandes structures aux TPE-PME et collectivités.",
-      "detailed_description": "",
       "website": "https://www.blokkus.fr",
       "email_contact": "contact@blokkus.fr",
       "contact_url": "https://www.blokkus.fr/contact/",
@@ -3846,7 +3814,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "BlueMind édite une messagerie collaborative open source souveraine présentée comme alternative à Microsoft Exchange, Office 365 et Google Workspace. La plateforme regroupe webmail, clients mobiles, support natif Outlook et Thunderbird, une marketplace d'extensions, des API web services et le module BlueMind Digital Crisis pour communiquer en cas de cyberattaque. Basée à Labège, elle revendique plus de 500 références dont de nombreuses collectivités territoriales.",
-      "detailed_description": "",
       "website": "https://www.bluemind.net",
       "email_contact": "dpo@bluemind.net",
       "contact_url": "https://www.bluemind.net/contact-bluemind/",
@@ -3874,7 +3841,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "BlueSecure propose une plateforme de sensibilisation à la cybersécurité combinant simulations de phishing et formations. Elle déploie des campagnes multicanales (e-mail avec 250 modèles, SMS, QR code, WiFi, clé USB, appels), des contenus gamifiés, plus de 50 thématiques d'e-learning, des tableaux de bord avec le BlueSecure Risk Index et une veille DarkWeb. Parmi ses références figurent EDF, MSF et Nantes Métropole.",
-      "detailed_description": "",
       "website": "https://www.bluesecure.fr",
       "email_contact": "",
       "contact_url": "https://www.bluesecure.fr/contact/",
@@ -3979,7 +3945,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Board of Cyber édite une plateforme de notation cyber automatisée. Security Rating analyse en continu la surface d'attaque externe d'une organisation sur sept domaines (sécurité email, certificats TLS/SSL, vulnérabilités, gestion des correctifs, threat intelligence) et restitue un score de 0 à 1000. La société propose aussi Trust HQ pour la gestion du risque fournisseurs et Rating + qui combine notation et gouvernance, à destination des fonds d'investissement, grandes entreprises, banques, assurances et collectivités.",
-      "detailed_description": "",
       "website": "https://www.boardofcyber.io",
       "email_contact": "",
       "contact_url": "https://www.boardofcyber.io/contact",
@@ -4079,7 +4044,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "BonjourCyber se concentre sur la cybersécurité offensive avec des tests d'intrusion externes et internes (BonjourPentest), des audits d'applications web et mobiles, d'infrastructures et des opérations red team. L'offre BonjourPhishing entraîne les collaborateurs face aux campagnes de hameçonnage, et BonjourBackup couvre la sauvegarde des environnements Google et Microsoft 365. La société cible startups, PME et ETI et revendique l'appartenance à Hexatrust.",
-      "detailed_description": "",
       "website": "https://www.bonjourcyber.com",
       "email_contact": "",
       "contact_url": "https://www.bonjourcyber.com/contacter-bonjourcyber",
@@ -4177,7 +4141,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Brain Networks est un intégrateur réseau et cybersécurité basé à Colombes qui conçoit et déploie des infrastructures pour clients publics et privés. Son catalogue couvre l'audit réseau, WiFi et intrusion, l'intégration de SD-WAN, WAF, IPAM, SASE, ZTNA, PAM et SOC/MDR/XDR, ainsi que des services managés et de la formation. La société travaille avec des technologies Fortinet, Cisco, Aruba, EfficientIP et Forcepoint, avec une orientation OT/IoT industriel.",
-      "detailed_description": "",
       "website": "https://www.brain-networks.fr",
       "email_contact": "contact@brain-networks.fr",
       "contact_url": "https://www.brain-networks.fr/contact/",
@@ -4296,7 +4259,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Brain Security, fondée en 2022, propose une plateforme SaaS de sensibilisation à la cybersécurité fondée sur la gamification. Elle combine micro-exercices, simulations de phishing, chatbot IA et un mode compétition, avec des intégrations dans Teams, Slack et les LMS (SCORM, OpenSesame, Go1) couvrant neuf thèmes dont mots de passe, ingénierie sociale et fraude. La société commercialise aussi CyberCup Arcade, des bornes d'arcade nomades fabriquées à Paris, déployées notamment chez Andros et le Crédit Agricole.",
-      "detailed_description": "",
       "website": "https://www.brainsecurity.io",
       "email_contact": "",
       "contact_url": "https://www.brainsecurity.io/demo",
@@ -4410,7 +4372,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CartographIT, édité par la société toulousaine Nixial, est un outil de cartographie du système d'information orienté cybersécurité. Il représente visuellement réseaux, serveurs, applications et données, localise les actifs et les contacts associés, et aide à la conformité (ISO 27001, SOC2, RGPD, NIS2, DORA). La cartographie est collaborative, chaque responsable d'équipe contribuant à la collecte des informations. Le projet est cofinancé par le FEDER et la Région Occitanie.",
-      "detailed_description": "",
       "website": "https://www.cartographit.com",
       "email_contact": "contact@nixial.fr",
       "contact_url": "https://www.cartographit.com/contact",
@@ -4512,7 +4473,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CegNumCloud est un service d'infrastructure cloud (IaaS) souverain opéré par cegedim.cloud, certifié SecNumCloud v3.2. Il fournit des nœuds de calcul, du stockage SSD, de la sauvegarde immuable, de la connectivité Internet et des adresses IP publiques avec protection anti-DDoS. Le siège est à Boulogne-Billancourt et l'offre s'adresse aux organisations recherchant un hébergement qualifié en France.",
-      "detailed_description": "",
       "website": "https://cegedim.cloud/services/cegnumcloud/",
       "email_contact": "support@cegedim.cloud",
       "contact_url": "https://cegedim.cloud/contact/",
@@ -4616,7 +4576,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Certigna est un prestataire de services de confiance du groupe Tessi qui émet des certificats électroniques et propose la signature électronique, l'horodatage qualifié et des certificats SSL. Son catalogue comprend notamment Certigna ID RGS et les solutions de cachet et de signature, avec des API pour intégrer signature et horodatage. La société travaille avec des administrations (Chorus Pro, ANTAI, INPI), des entreprises et des intégrateurs.",
-      "detailed_description": "",
       "website": "https://www.certigna.com",
       "email_contact": "contact@certigna.com",
       "contact_url": "https://www.certigna.com/contactez-nous/",
@@ -4720,7 +4679,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ChapsVision édite Argonos, une plateforme de données et d'IA qui agrège et analyse de grands volumes d'informations pour le renseignement, l'investigation criminelle, l'OSINT et la gestion de crise. Le groupe réunit aussi le moteur de recherche Sinequa, la traduction SYSTRAN, l'analytique géospatiale Articque et l'analyse vidéo ACIC. Ses clients incluent des acteurs de la défense, de la sécurité publique et de grands comptes comme Airbus, BNP Paribas, Europol et TotalEnergies.",
-      "detailed_description": "",
       "website": "https://chapsvision.com",
       "email_contact": "contact@chapsvision.com",
       "contact_url": "https://www.chapsvision.com/contact-us/",
@@ -4816,7 +4774,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Chimere développe une solution d'accès distant fondée sur une architecture Zero Trust Network Access qui rend les applications et services accessibles uniquement aux utilisateurs autorisés, sans les exposer sur Internet. L'offre vise les DSI, RSSI, administrateurs réseau et cloud ainsi que les prestataires de services managés. La société, basée à Aix-en-Provence, a été rapprochée du groupe Ekinops.",
-      "detailed_description": "",
       "website": "https://chimere.eu",
       "email_contact": "contact@chimere.eu",
       "contact_url": "https://chimere.eu/fr/contact/",
@@ -4914,7 +4871,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Citalid propose une plateforme SaaS de quantification du risque cyber qui traduit les menaces en impacts financiers à partir de scénarios modélisés et d'une veille sur les acteurs malveillants. Ses modules Engine, Portfolio et TPRM couvrent l'évaluation interne, la gestion de portefeuilles d'assurance et le risque des tiers. La solution s'adresse aux RSSI, risk managers et assureurs, avec des clients comme Allianz, Capgemini et Zurich.",
-      "detailed_description": "",
       "website": "https://citalid.com",
       "email_contact": "contact@citalid.com",
       "contact_url": "https://citalid.com/contact/",
@@ -5026,7 +4982,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Clever Cloud exploite une plateforme PaaS française qui déploie et héberge des applications directement depuis Git, sans script manuel. Elle fournit des bases de données managées (PostgreSQL, MySQL, MongoDB, Redis et sa base maison Materia), le stockage objet Cellar et des services comme Keycloak, GitLab ou Metabase. Parmi ses clients figurent la MAIF, Solocal, Fairphone et Docaposte.",
-      "detailed_description": "",
       "website": "https://clever.cloud",
       "email_contact": "contact@clever-cloud.com",
       "contact_url": "https://clever.cloud/contact/",
@@ -5139,7 +5094,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cloud-IAM commercialise une offre Keycloak managé en SaaS pour la gestion des identités et des accès. Le service couvre le SSO, l'authentification multifacteur, le rattachement LDAP et Active Directory, les usages CIAM grand public (inscription, connexion sociale, passkeys) et le courtage d'identités. Basée à Rennes, la société revendique plus de 500 clients et la gestion de plus de 20 millions d'utilisateurs, avec les certifications ISO 27001, SOC 2 et SecNumCloud.",
-      "detailed_description": "",
       "website": "https://www.cloud-iam.com",
       "email_contact": "contact@cloud-iam.com",
       "contact_url": "https://www.cloud-iam.com/contact/",
@@ -5245,7 +5199,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cloud Temple est un opérateur français de cloud souverain qui propose de l'IaaS (machines virtuelles, bare metal, OpenStack), du PaaS conteneurisé avec OpenShift et Kubernetes managé, ainsi que du stockage et de la sauvegarde. Son offre de sécurité inclut un SOC souverain, un SIEM managé, un bastion, du KMS et de la protection DDoS, complétée par des services IA et data. La société est certifiée SecNumCloud et HDS et sert le secteur public, la santé, la finance et l'industrie.",
-      "detailed_description": "",
       "website": "https://www.cloud-temple.com",
       "email_contact": "contact@cloud-temple.com",
       "contact_url": "https://www.cloud-temple.com/contactez-nous/",
@@ -5352,7 +5305,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Conscio Technologies, basée à Plescop dans le Morbihan, conçoit des dispositifs de sensibilisation des collaborateurs à la cybersécurité. Son produit Sensiwave sert à monter des campagnes de sensibilisation, à lancer des simulations de phishing et à générer des scénarios d'attaque assistés par IA, avec suivi par tableaux de bord. Les clients visés relèvent de la santé, des collectivités territoriales, de l'industrie, de l'assurance et du retail.",
-      "detailed_description": "",
       "website": "https://www.conscio-technologies.com/sensiwave/",
       "email_contact": "contact@conscio-technologies.com",
       "contact_url": "https://www.conscio-technologies.com/contact/",
@@ -5451,7 +5403,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Continus.io propose une plateforme de sécurité applicative et DevSecOps qui réunit l'analyse statique du code (SAST), les tests dynamiques (DAST), l'analyse des dépendances tierces (SCA) et la sécurité de l'infrastructure-as-code (IACS). Le module Continus CLI s'intègre aux pipelines CI/CD et couvre l'analyse de dépôts Git, les API (OpenAPI, GraphQL, SOAP) et les scans Docker, Kubernetes et Terraform. La société, installée à Paris, compte parmi ses clients ECA, Malakoff Humanis et Wimi.",
-      "detailed_description": "",
       "website": "https://continus.io",
       "email_contact": "contact@continus.io",
       "contact_url": "https://continus.io/contact",
@@ -5554,7 +5505,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CoreUpdate, éditée par Galeax SAS à Paris, automatise la gestion et le déploiement des mises à jour logicielles sur les parcs informatiques sans agent. La solution gère le patch management des correctifs de sécurité, l'exécution de scripts et un catalogue d'applications tierces (Adobe Acrobat, VLC, Firefox, Chrome, 7-Zip) ainsi que les applications métiers internes. Elle couvre Windows, Windows Server et macOS en environnement local ou cloud.",
-      "detailed_description": "",
       "website": "https://coreupdate.com",
       "email_contact": "contact@coreupdate.com",
       "contact_url": "https://coreupdate.com/demonstration/",
@@ -5583,7 +5533,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cosmian développe des outils de chiffrement pour protéger les données traitées dans le cloud public. Son catalogue comprend Cosmian KMS pour la gestion centralisée des clés, Cosmian VM (machine virtuelle confidentielle vérifiable), Cosmian Enclave, la bibliothèque de recherche sur données chiffrées Findex et Covercrypt, une bibliothèque post-quantique à chiffrement par politiques d'accès. L'entreprise, immatriculée sous le SIREN 840903447 et installée au Campus Cyber à Puteaux, collabore avec Google Cloud, Azure, AWS ainsi que le CNRS, l'INRIA et l'ENS.",
-      "detailed_description": "",
       "website": "https://cosmian.com",
       "email_contact": "contact@cosmian.com",
       "contact_url": "https://cosmian.com/contact-us/",
@@ -5687,7 +5636,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CriseBox prépare et outille les organisations pour la gestion de crise cyber, en mêlant équipement physique et plateforme numérique. Le dispositif s'articule autour de six chantiers : cellules de crise, plan de continuité d'activité, annuaire de contacts, pilotage DSI et documents, communication de crise et volet réglementaire (RGPD, NIS2), avec deux formules Sprint et Don't Panic. Les clients ciblés sont des PME/ETI, collectivités territoriales, mairies et bailleurs sociaux, l'entreprise étant établie à Cannes (06400).",
-      "detailed_description": "",
       "website": "https://www.crisebox.com",
       "email_contact": "contact@crisebox.com",
       "contact_url": "https://www.crisebox.com/contactez-nous",
@@ -5800,7 +5748,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CrowdSec, société par actions simplifiée basée à Montrouge (RCS Nanterre 880 140 496), exploite une plateforme collaborative de renseignement sur les menaces alimentée par sa communauté d'utilisateurs. Elle combine le moteur open source CrowdSec Security Engine, la console de gestion, des blocklists d'adresses IP malveillantes mises à jour quotidiennement, un service de Cyber Threat Intelligence et un Live Exploit Tracker. Parmi ses références figurent le Crédit Mutuel, Le Monde et ScaleCommerce.",
-      "detailed_description": "",
       "website": "https://www.crowdsec.net",
       "email_contact": "info@crowdsec.net",
       "contact_url": "https://www.crowdsec.net/contact-crowdsec",
@@ -5912,7 +5859,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CryptoNext Security conçoit des outils de cryptographie post-quantique pour préparer la migration des systèmes face à la menace des ordinateurs quantiques. Son catalogue comprend CryptoNext Compass pour l'inventaire des actifs cryptographiques, CryptoNext Remediation (SDK), CryptoNext Captain pour la crypto-agilité et CryptoNext Toolbox d'évaluation d'impact. La société compte parmi ses références la Banque de France, Thales, MBDA, EDF et la Commission européenne.",
-      "detailed_description": "",
       "website": "https://www.cryptonext-security.com",
       "email_contact": "contact@cryptonext-security.com",
       "contact_url": "https://www.cryptonext-security.com/fr/contact/",
@@ -6023,7 +5969,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cryptr édite une plateforme d'authentification destinée aux éditeurs de logiciels B2B qui doivent répondre aux exigences d'identité de leurs clients grands comptes. Les modules couvrent le Single Sign-On (SAML, OpenID), la synchronisation d'annuaires via SCIM et LDAP (Directory Sync), des journaux d'audit compatibles SIEM et un onboarding self-service pour les administrateurs IT. Parmi ses clients figurent Sarbacane, Kelio, Saagie et MerciYanis.",
-      "detailed_description": "",
       "website": "https://www.cryptr.co",
       "email_contact": "contact@cryptr.co",
       "contact_url": "https://meetings.hubspot.com/hamid5",
@@ -6134,7 +6079,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Custocy développe une plateforme NDR de détection des menaces sur le réseau reposant sur l'intelligence artificielle. Son moteur METALEARNER exploite une analyse multi-temporelle pour repérer attaques zero-day et APT, avec intégration aux SIEM, XDR et EDR existants. La société cible notamment les collectivités territoriales, comme le Conseil départemental de la Haute-Garonne.",
-      "detailed_description": "",
       "website": "https://www.custocy.ai",
       "email_contact": "",
       "contact_url": "https://www.custocy.ai/contact/",
@@ -6242,7 +6186,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CybelAngel surveille la surface d'attaque externe et les fuites de données de ses clients, en scrutant le web ouvert et le dark web. Sa plateforme regroupe l'Attack Surface Management, la Data Breach Prevention, le Credential Intelligence, le Dark Web Monitoring et le Brand Protection, complétés par une équipe d'investigation REACT et des services de remédiation. L'entreprise sert des secteurs comme la finance, la pharmacie, le luxe et le secteur public.",
-      "detailed_description": "",
       "website": "https://cybelangel.com",
       "email_contact": "",
       "contact_url": "https://cybelangel.com/contact/",
@@ -6344,7 +6287,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CyberCAPE propose une offre de cybersécurité packagée pour les TPE et PME, organisée autour de sept volets allant de l'analyse de vulnérabilités à l'intervention en cas d'attaque. L'ensemble couvre la sauvegarde des données, les campagnes de phishing simulé, les formations à l'hygiène numérique et une assurance cyber, avec un modèle de CyberDéfense Collective et de la détection par IA. Elle s'adresse à des cabinets comptables, des avocats, des pharmacies et des PME en Nouvelle-Aquitaine.",
-      "detailed_description": "",
       "website": "https://www.cybercape.fr",
       "email_contact": "",
       "contact_url": "https://www.cybercape.fr/contact",
@@ -6440,7 +6382,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cyberium fabrique des appliances de segmentation réseau matérielle pour les infrastructures critiques. Son produit OWA (One-Way Appliance) combine des diodes optiques à une pile proxy propriétaire afin d'imposer un transfert unidirectionnel, en supportant des protocoles comme SFTP, FTP/S, HTTP/S API et UDP. Ses cibles sont la défense, le gouvernement, la production d'énergie, le nucléaire et les transports, avec des références telles que Lockheed Martin et QatarEnergy.",
-      "detailed_description": "",
       "website": "https://www.cyberium.io",
       "email_contact": "",
       "contact_url": "https://www.cyberium.io/",
@@ -6551,7 +6492,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CyberVadis exploite une plateforme d'évaluation des risques cyber des tiers et fournisseurs, basée sur la revue de preuves et une méthodologie alignée sur ISO 27001, NIST, DORA, GDPR et NIS 2. Les organisations notent et suivent leur chaîne de sous-traitance via un système de médailles et une cartographie de surface d'attaque externe, sur plus de 110 pays. Parmi ses clients figurent Sanofi, TotalEnergies, AXA et Accenture.",
-      "detailed_description": "",
       "website": "https://cybervadis.com/fr",
       "email_contact": "",
       "contact_url": "https://cybervadis.com/fr/a-propos/contact",
@@ -6659,7 +6599,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cyberwatch édite une plateforme de gestion des vulnérabilités et de contrôle de conformité pour les systèmes d'information. Ses deux modules sont Vulnerability Manager, qui découvre les actifs, scanne et priorise les vulnérabilités et pilote le déploiement de correctifs, et Compliance Manager, qui vérifie la conformité face aux référentiels de sécurité. L'éditeur travaille avec des organisations sensibles, dont les Armées françaises, et est membre d'Hexatrust.",
-      "detailed_description": "",
       "website": "https://cyberwatch.fr",
       "email_contact": "contact@cyberwatch.fr",
       "contact_url": "https://cyberwatch.fr/contact/",
@@ -6763,7 +6702,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cybi développe Scuba, une plateforme d'intelligence artificielle qui analyse les vulnérabilités, prédit les chemins d'attaque possibles et optimise la politique d'application des correctifs. L'outil priorise les remédiations et vise les équipes IT et sécurité devant répondre à des exigences comme NIS2, le RGPD ou ISO 27001. La société est basée à Villers-lès-Nancy.",
-      "detailed_description": "",
       "website": "https://www.cybi.fr",
       "email_contact": "contact@cybi.fr",
       "contact_url": "https://www.cybi.fr/contact",
@@ -6866,7 +6804,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "CyferAll protège les données au repos et en transit avec un chiffrement appliqué de façon logicielle, y compris pour le cloud, en revendiquant des principes Zero-Trust et un chiffrement résistant au quantique. Ses produits sont QRshield et QRlocker, qui assurent le contrôle souverain des données et la gestion automatisée des clés. La société est implantée à Labruguière et soutenue par France 2030 et Bpifrance.",
-      "detailed_description": "",
       "website": "https://cyferall.com",
       "email_contact": "contact@cyferall.com",
       "contact_url": "https://cyferall.com/contact/",
@@ -6965,7 +6902,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "OUTSCALE, filiale de Dassault Systèmes, exploite une infrastructure cloud souveraine qualifiée SecNumCloud pour des organisations européennes. Son catalogue inclut le cloud public et dédié, la plateforme managée OUTSCALE Kubernetes as a Service (OKS) et une offre de modèles de langage LLMaaS s'appuyant sur Mistral AI. La société cible l'administration publique, la santé, la finance et l'assurance. L'entité OUTSCALE SASU a son siège à Saint-Cloud.",
-      "detailed_description": "",
       "website": "https://fr.outscale.com",
       "email_contact": "",
       "contact_url": "https://fr.outscale.com/contactez-nous/",
@@ -7064,7 +7000,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Dastra est un logiciel de gestion de la conformité en protection des données qui structure la mise en œuvre du RGPD. La plateforme couvre le registre des traitements (ROPA), la gestion des demandes des personnes, les violations de données, les analyses d'impact (DPIA), la gestion des risques et le consentement aux cookies. Elle s'adresse aux DPO, RSSI et directions, avec des clients comme SNCF, France TV, Intersport et ONET.",
-      "detailed_description": "",
       "website": "https://dastra.eu",
       "email_contact": "",
       "contact_url": "https://dastra.eu/fr/contacts",
@@ -7170,7 +7105,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Databack récupère les données sur supports défaillants ou endommagés (disques durs, SSD, RAID, NAS, volumes chiffrés) et restaure les systèmes après une attaque par rançongiciel. La société propose aussi la migration vers bandes magnétiques et l'effacement sécurisé certifié des supports. Fondée en 2004 à La Roche-sur-Yon, elle dispose de deux laboratoires en salle blanche et sert PME, ETI, grands comptes et administrations.",
-      "detailed_description": "",
       "website": "https://www.databack.fr",
       "email_contact": "",
       "contact_url": "https://www.databack.fr/contact/",
@@ -7274,7 +7208,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "DataDome est un éditeur français de cybersécurité fondé à Paris en 2015, spécialisé dans la protection contre les bots et la fraude en ligne. Sa plateforme analyse en temps réel le trafic web, mobile et API par apprentissage automatique pour bloquer le scraping, le credential stuffing, les prises de contrôle de comptes et les attaques applicatives. Elle protège plusieurs centaines de grandes entreprises, avec des bureaux à Paris, New York et Singapour.",
-      "detailed_description": "",
       "website": "https://datadome.co",
       "email_contact": "contact@datadome.co",
       "contact_url": "https://datadome.co/company/contact/",
@@ -7378,7 +7311,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Datasure est un prestataire de services de confiance qualifié eIDAS qui édite des briques de signature, cachet et horodatage électroniques. Son catalogue comprend SecuSign API Expert pour la signature qualifiée, Click&Cert pour le cachet, Datasure TSA pour l'horodatage et Datasure Proof Vault pour l'archivage probatoire hébergé en SecNumCloud. La société vise les éditeurs de logiciels et grands comptes, avec des références comme le Louvre, HealthDataHub et Bolloré.",
-      "detailed_description": "",
       "website": "https://www.datasure.net",
       "email_contact": "contact@datasure.net",
       "contact_url": "https://www.datasure.net/nous-contacter/",
@@ -7481,7 +7413,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "DeepFrauds.ai construit une plateforme d'IA dédiée à la détection de fraude et à l'audit forensique en entreprise. Elle réunit plusieurs modules comme Document Forensics AI pour repérer les deepfakes et documents falsifiés, AI Audit Copilot et des moteurs spécialisés sur les factures, la paie, les notes de frais et les écritures comptables. Le siège est à Montpellier et la cible regroupe auditeurs, équipes finance et institutions financières.",
-      "detailed_description": "",
       "website": "https://deepfrauds.ai",
       "email_contact": "contact@deepfrauds.ai",
       "contact_url": "https://deepfrauds.ai/contact.html",
@@ -7579,7 +7510,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Diateam, société brestoise fondée en 2002, conçoit des environnements d'entraînement cyber autour de son Hybrid Cyber Range, disponible en version mobile, sur site ou en service. Elle propose aussi des formations sur scénarios réalistes et des exercices de gestion de crise cyber. Ses clients couvrent l'industrie, le maritime, l'énergie et le secteur public, avec des références comme Thales, Orange, SNCF et le ministère des Armées.",
-      "detailed_description": "",
       "website": "https://www.diateam.net",
       "email_contact": "contact@diateam.net",
       "contact_url": "https://www.diateam.net/contact/",
@@ -7679,7 +7609,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Difenso édite une solution de chiffrement de données reposant sur sa technologie propriétaire DCS (Difenso Core System), avec un volet de protection contre la menace quantique. Le chiffrement s'applique aux applications et clouds courants comme Microsoft 365, Salesforce, Google Cloud, Azure, AWS, ainsi qu'aux espaces de partage et messageries. Basée à Saint-Cloud et certifiée CSPN par l'ANSSI, elle compte parmi ses clients France Travail, Île-de-France Mobilités et Orange Business.",
-      "detailed_description": "",
       "website": "https://difenso.com",
       "email_contact": "contact@difenso.com",
       "contact_url": "https://difenso.com/contact",
@@ -7782,7 +7711,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Digitalberry est un éditeur, intégrateur et opérateur de solutions de confiance numérique installé à Issy-les-Moulineaux. Ses deux produits sont BerryCert, pour cartographier, superviser et renouveler le cycle de vie des certificats numériques, et BerryTMS, pour gérer les clés et tokens de sécurité. La société s'adresse aux RSSI, DSI et administrations publiques, avec des références comme SFR et Air Caraïbes et une présence sur les marchés UGAP et Resah.",
-      "detailed_description": "",
       "website": "https://www.digitalberry.fr",
       "email_contact": "contact@digitalberry.fr",
       "contact_url": "https://www.digitalberry.fr/contact",
@@ -7879,7 +7807,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "DMARC Expert configure et maintient l'authentification des e-mails (DMARC, SPF, DKIM) et analyse les rapports DMARC via un outil SaaS et une API d'intelligence DMARC. La société surveille les flux de messagerie et la délivrabilité avec Google Postmaster, et détecte les domaines similaires utilisés pour le phishing afin de les faire blacklister ou supprimer. Elle s'adresse aux organisations soucieuses de protéger leur domaine d'envoi contre l'usurpation.",
-      "detailed_description": "",
       "website": "https://dmarc-expert.com",
       "email_contact": "contact@dmarc-expert.com",
       "contact_url": "https://www.dmarc-expert.com/",
@@ -7995,7 +7922,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Arkhinéo, entité de Docaposte (groupe La Poste), exploite depuis 2001 un service d'archivage électronique à valeur probante. L'offre comprend le portail SaaS MyArkhineo, une Web API pour relier l'archivage aux applicatifs métiers, et MyArkhineo for Salesforce développé avec Salesforce. Plus de 7 800 entreprises l'utilisent dans l'assurance, la santé, la finance et le retail, avec des certifications NF461, HDS, ISO 27001 et eIDAS.",
-      "detailed_description": "",
       "website": "https://arkhineo.com",
       "email_contact": "",
       "contact_url": "https://arkhineo.com/contactez-nous/",
@@ -8104,7 +8030,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "DropCloud édite et héberge en France des services cloud de transfert, partage et sauvegarde de fichiers professionnels. Son catalogue réunit WeSend pour l'envoi sécurisé de fichiers volumineux, WeDrop pour le partage de documents avec gestion des droits, et NeoBe pour la sauvegarde en ligne. La société vise entreprises, collectivités et professions libérales, avec une offre adaptée aux professionnels de santé via une certification ISO 27001 HDS.",
-      "detailed_description": "",
       "website": "https://www.dropcloud.fr",
       "email_contact": "",
       "contact_url": "https://www.dropcloud.fr/contact",
@@ -8207,7 +8132,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Easylience digitalise la gestion de crise de bout en bout, de la détection à l'alerte multicanale, l'activation des équipes, le pilotage et le retour d'expérience. La plateforme intègre la gestion des alertes et incidents, la planification de la réponse opérationnelle, une continuité documentaire de secours, des exercices d'entraînement et le service d'accompagnement Easycare. Elle cible les organisations publiques, entreprises multisites et opérateurs critiques dans la santé, l'énergie, l'industrie et le transport.",
-      "detailed_description": "",
       "website": "https://www.easylience.com",
       "email_contact": "",
       "contact_url": "https://easylience.com/contact/",
@@ -8312,7 +8236,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Egerie édite une plateforme de gestion des risques et de conformité cyber qui couvre plus de 120 référentiels comme ISO 27001, NIS 2, DORA, SecNumCloud et RGPD. Les modules traitent l'analyse et la cartographie des risques, l'évaluation des tiers critiques, la quantification financière selon la méthode FAIR et le pré-mappage IA des exigences via Egerie Content. Plus de 500 organisations l'utilisent, parmi lesquelles La Banque Postale, Orange Cyberdefense, Air France et Dassault Aviation. Siège à Toulon.",
-      "detailed_description": "",
       "website": "https://www.egerie.com",
       "email_contact": "contact@egerie.eu",
       "contact_url": "https://www.egerie.com/contact/",
@@ -8417,7 +8340,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Elba, société parisienne fondée en 2022, propose une plateforme de sécurité IA et navigateur destinée aux MSSP et aux PME. Elle surveille et contrôle l'usage des outils d'IA par les salariés avec des fonctions de DLP dans les LLM, détection du Shadow AI, contrôle d'accès aux modèles, gestion des extensions de navigateur et détection des menaces internes. Parmi ses clients figurent Greenly, Welcome to the Jungle et Dalma.",
-      "detailed_description": "",
       "website": "https://elba.security",
       "email_contact": "",
       "contact_url": "https://www.elba.security/about",
@@ -8520,7 +8442,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Elysium Security, basée à Saint-Cyr-au-Mont-d'Or, développe la gamme NEMESIS avec Unified Protection pour la détection et la réponse aux incidents, Secure Log pour la centralisation et l'archivage des événements, et Open xDR pour piloter les équipements de sécurité. Elle distribue aussi Root-Me PRO, plateforme d'entraînement cyber, et opère des services de SOC, CSIRT et audits. Plus de 100 clients, administrations et PME, sont accompagnés.",
-      "detailed_description": "",
       "website": "https://www.elysium-security.com",
       "email_contact": "contact@elysium-security.com",
       "contact_url": "https://www.elysium-security.com",
@@ -8623,7 +8544,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Enovacom édite des logiciels pour la santé numérique destinés aux hôpitaux, cabinets de radiologie et professionnels de santé. Son catalogue couvre l'interopérabilité et l'échange de données via Enovacom Integration Engine, Patient Connect, Secure Messaging et Identity Manager, ainsi que l'imagerie médicale (GXD5, gamme OPTIM, DRIMbox) et la télésanté (NomadeEC). Le siège est à Marseille et la société appartient au groupe Orange Business.",
-      "detailed_description": "",
       "website": "https://www.enovacom.com",
       "email_contact": "contact@enovacom.fr",
       "contact_url": "https://www.enovacom.com/contact/",
@@ -8728,7 +8648,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Epieos est un moteur de recherche OSINT qui réalise du reverse lookup à partir d'une adresse email ou d'un numéro de téléphone pour retrouver les comptes et profils associés sur plus de 140 services en ligne. L'outil propose des modules tels que Google, Email Checker, LinkedIn, GitHub et Have I Been Pwned, et s'intègre à Maltego. La société a été fondée par le chercheur Sylvain Hajri et est basée à Paris.",
-      "detailed_description": "",
       "website": "https://epieos.com",
       "email_contact": "",
       "contact_url": "https://epieos.com/",
@@ -8829,7 +8748,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Equisign propose deux services de sécurité digitale pour les entreprises. MFT est un transfert sécurisé de fichiers volumineux accessible par navigateur ou intégré à Outlook et Exchange, tandis que Letreco gère l'envoi de courriers recommandés électroniques. Parmi ses références figurent environ cent cinquante comptes dont une vingtaine du CAC 40.",
-      "detailed_description": "",
       "website": "https://www.equisign.fr",
       "email_contact": "contact@equisign.fr",
       "contact_url": "https://www.equisign.fr/contact/",
@@ -8929,7 +8847,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "EVERTRUST SAS édite une plateforme française de PKI et de gestion du cycle de vie des certificats. Elle articule l'autorité de certification Stream pour l'émission de certificats d'entreprise et le module Horizon pour la découverte, la gouvernance et l'automatisation du parc de certificats. Ses clients relèvent d'environnements régulés tels que finance, secteur public, défense, santé, industrie et télécommunications.",
-      "detailed_description": "",
       "website": "https://evertrust.io",
       "email_contact": "contact@evertrust.io",
       "contact_url": "https://evertrust.io/contact/",
@@ -9029,7 +8946,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Eviden, filiale du groupe Atos, propose des produits de cybersécurité couvrant la gestion des identités et des accès, l'identité numérique, le chiffrement des données et la cryptographie post-quantique. La gamme IDnomic Digital Identity relève de l'identité numérique et de la PKI, pour l'émission et la gestion de certificats et d'identités d'utilisateurs, de machines et d'objets. Eviden met en avant des composants matériels et logiciels hautement certifiés et la souveraineté numérique.",
-      "detailed_description": "",
       "website": "https://eviden.com",
       "email_contact": "",
       "contact_url": "https://eviden.com/contact-us/",
@@ -9134,7 +9050,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "eXcelsior Safety intervient en sécurité industrielle et cybersécurité des environnements OT/ICS. La société propose du conseil en sécurité fonctionnelle (Functional Safety), des services de cybersécurité OT, des solutions de récupération après cyberattaque et la gestion des données industrielles. Elle travaille avec des industriels comme BASF, BP, ENI, Alstom, TotalEnergies et Saipem, et est membre d'HEXATRUST.",
-      "detailed_description": "",
       "website": "https://www.excelsiorsafety.fr/",
       "email_contact": "contact@excelsiorsafety.fr",
       "contact_url": "https://www.excelsiorsafety.fr/contact-us/",
@@ -9231,7 +9146,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "eXo Platform SAS édite une plateforme open source d'espace de travail numérique réunissant intranet, réseau social d'entreprise, hub de connaissances et portail applicatif. L'offre se décline en eXo Enterprise (cloud privé ou on-premise), eXo Hubs en SaaS et une édition OEM, avec une couche d'IA intégrée. Ses clients comptent des ministères français, des collectivités territoriales et des grandes entreprises.",
-      "detailed_description": "",
       "website": "https://www.exoplatform.com",
       "email_contact": "contact@exoplatform.com",
       "contact_url": "https://www.exoplatform.com/contact-us/",
@@ -9258,7 +9172,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Extern SN conçoit et déploie des solutions logicielles et accompagne les entreprises sur l'IA, le développement applicatif, l'hébergement (Docker, Kubernetes) et les ERP open source Odoo et Dolibarr. Son produit La Sentinelle RGPD contrôle en temps réel la conformité des données stockées. La société, issue d'Extern IT en 2017, s'adresse à des entreprises de divers secteurs.",
-      "detailed_description": "",
       "website": "https://www.extern-sn.fr",
       "email_contact": "contact@extern-sn.fr",
       "contact_url": "https://www.extern-sn.fr/contactus",
@@ -9358,7 +9271,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Eyst Technology propose une solution SaaS en marque blanche destinée aux assureurs et mutuelles pour régler instantanément sinistres et prestations santé via des cartes de paiement virtuelles compatibles Apple Pay et Google Pay. La plateforme embarque un contrôle de fraude en temps réel, un outil de scoring de risque et un mécanisme de paiement dirigé limitant les destinataires. Elle vise l'assurance santé et l'assurance IARD, avec des partenaires comme Bpifrance, Wilco et Plug and Play.",
-      "detailed_description": "",
       "website": "https://eyst.io",
       "email_contact": "contact@eyst.io",
       "contact_url": "https://eyst.io",
@@ -9469,7 +9381,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "FairTrust développe des solutions de gestion des identités et des accès articulées autour de trois modules: FairTrust Vault pour le coffre-fort de mots de passe, FairTrust SSO pour l'authentification unique avec MFA, et FairTrust IAM pour le provisioning des comptes et la gestion des droits. La société revendique vingt-cinq ans d'expérience et un alignement sur NIS2, DORA, RGPD et ISO 27001. Elle cible la santé (HospiConnect, RIE), l'administration, la finance ainsi que les TPE, PME et grands comptes.",
-      "detailed_description": "",
       "website": "https://www.fairtrust.com",
       "email_contact": "contact@fairtrust.com",
       "contact_url": "https://www.fairtrust.com/en/contactus",
@@ -9588,7 +9499,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Feel Agile est un cabinet de conseil en cybersécurité et conformité qui accompagne les certifications ISO 27001, HDS, SecNumCloud, SOC 2, TISAX et la mise en conformité RGPD, NIS2 et DORA. Il édite Oversecur, une plateforme GRC, et propose audits, tests d'intrusion, campagnes de phishing, formation et autodiagnostics ISO 27001 et NIS2. Plus de 200 entreprises sont clientes, parmi lesquelles Jamespot, SBS Interactive et Aniah.",
-      "detailed_description": "",
       "website": "https://www.feelagile.com/",
       "email_contact": "",
       "contact_url": "https://www.feelagile.com/contact",
@@ -9698,7 +9608,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Filigran édite la XTM Platform regroupant OpenCTI pour le renseignement sur la menace cyber et OpenAEV pour la validation d'exposition adversariale et la simulation d'attaques, complétés par le XTM Hub communautaire. Ses logiciels, largement open source, sont utilisés par plus de 6000 praticiens dont des organisations gouvernementales et de grandes entreprises comme Capgemini, EDF et Bouygues Telecom. La société figure au French Tech 120.",
-      "detailed_description": "",
       "website": "https://filigran.io",
       "email_contact": "contact@filigran.io",
       "contact_url": "https://filigran.io/contact/",
@@ -9803,7 +9712,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Finovox exploite une plateforme de vérification documentaire et de détection de fraude traitant plus de dix millions de documents par an. Elle combine du traitement automatisé (LAD/RAD), de la validation de conformité et une analyse de fraude par cohérence du contenu, détection d'altérations visuelles et empreinte numérique, plus un module SaaS d'investigation des dossiers. Ses clients incluent BNP Paribas, Swiss Life, Bouygues Telecom et PwC France, sur les usages KYC/AML, indemnisation et financement.",
-      "detailed_description": "",
       "website": "https://finovox.com",
       "email_contact": "contact@finovox.com",
       "contact_url": "https://finovox.com",
@@ -9910,7 +9818,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Forecomm est un éditeur français actif depuis 2007, qui développe deux produits: myMozzo pour la diffusion de magazines et catalogues numériques, et BlueFiles, lancé en 2015, pour le transfert et le partage chiffré de fichiers et de données sensibles. BlueFiles est utilisé par environ 260 entreprises pour échanger des documents confidentiels sans exposer leur contenu.",
-      "detailed_description": "",
       "website": "https://www.forecomm.net",
       "email_contact": "contact@forecomm.net",
       "contact_url": "https://www.forecomm.net/contact/",
@@ -10022,7 +9929,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "France Verif, éditée par WebVerif SAS à Montreuil, exploite une plateforme grand public qui évalue la fiabilité des boutiques en ligne et détecte les arnaques liées au e-commerce. L'outil intègre un vérificateur de sites, un annuaire inversé de numéros de téléphone et une surveillance automatique des virus, du phishing et des SMS frauduleux. La protection couvre jusqu'à quatre personnes par compte et vise les consommateurs français.",
-      "detailed_description": "",
       "website": "https://franceverif.fr",
       "email_contact": "support@franceverif.fr",
       "contact_url": "https://franceverif.fr",
@@ -10125,7 +10031,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Gatewatcher conçoit une plateforme de détection et de réponse réseau (NDR) qui surveille les flux et les actifs pour repérer les menaces. La solution réunit les capteurs Sensor et TAP, le moteur Deep Visibility et le Decision Center qui priorise les alertes et accélère le triage. Parmi ses clients figurent la Banque de France, BNP Paribas, Sanofi, EDF, le CNES, Dassault et Naval Group, dans la finance, l'industrie, la défense, la santé et le secteur public.",
-      "detailed_description": "",
       "website": "https://www.gatewatcher.com/",
       "email_contact": "",
       "contact_url": "https://www.gatewatcher.com/contactez-nous/",
@@ -10236,7 +10141,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Giskard, société basée à Paris, développe une plateforme d'évaluation et de red teaming pour les modèles d'IA et les agents LLM. Giskard Hub teste les systèmes en boîte noire via leur API et détecte hallucinations, injections de prompt, fuites de données et autres vulnérabilités avant la mise en production, avec une version open source plus limitée et la base d'incidents RealHarm. Michelin, BNP Paribas et Decathlon comptent parmi ses utilisateurs.",
-      "detailed_description": "",
       "website": "https://www.giskard.ai",
       "email_contact": "",
       "contact_url": "https://www.giskard.ai/contact",
@@ -10343,7 +10247,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "GitGuardian, dont le siège est au 54 rue de Seine à Paris, édite une plateforme de détection et de gouvernance des secrets comme les clés API et les tokens. Elle comprend les modules Internal Secrets Monitoring pour les dépôts privés, Public Secrets Monitoring pour les fuites sur GitHub public et NHI Governance pour le contrôle des identités non humaines. Elle s'adresse aux développeurs et aux équipes SecOps et IAM, avec des clients comme Euronext, BASF, Snowflake et Orange Business.",
-      "detailed_description": "",
       "website": "https://www.gitguardian.com",
       "email_contact": "support@gitguardian.com",
       "contact_url": "https://www.gitguardian.com/contact-us",
@@ -10448,7 +10351,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "GLIMPS, installée à Cesson-Sévigné en Bretagne, analyse les fichiers pour détecter les codes malveillants à l'aide de huit modèles d'IA propriétaires et de plus de vingt-cinq moteurs de détection. Sa gamme couvre GLIMPS Malware Expert, des déclinaisons pour la messagerie M365 et Gmail, un kiosque d'analyse en libre-service pour les collaborateurs et GLIMPS Fortress pour l'analyse massive et la détection rétroactive. L'ANSSI, des ministères, les Hospices Civils de Lyon et Dassault figurent parmi ses clients.",
-      "detailed_description": "",
       "website": "https://www.glimps.re/",
       "email_contact": "contact@glimps.re",
       "contact_url": "https://www.glimps.re/entreprise-glimps/contact/",
@@ -10555,7 +10457,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "GottaPhish édite une plateforme SaaS de simulation d'hameçonnage et de sensibilisation des collaborateurs. L'outil enchaîne campagnes de phishing par e-mail, modules de formation e-learning, diagnostic, exercices de Red Team et scénarios progressifs combinant e-mail, message et appel vocal généré par IA. Elle s'adresse aux entreprises de divers secteurs, parmi lesquelles le Groupe SEB, avec un hébergement en Europe conforme au RGPD.",
-      "detailed_description": "",
       "website": "https://gottaphish.com",
       "email_contact": "contact@gottaphish.com",
       "contact_url": "https://gottaphish.com/nous-contacter/",
@@ -10658,7 +10559,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Hackuity développe une plateforme de gestion des vulnérabilités qui agrège, déduplique et priorise les failles via son score propriétaire True Risk Score tenant compte du contexte métier. Le produit combine un moteur d'automatisation des tâches de remédiation, des tableaux de bord et reporting, et plus de 130 connecteurs vers les outils de sécurité existants. Hackuity vise les grandes organisations des secteurs banque, assurance, énergie, santé et secteur public, avec des sièges à Lyon et Paris.",
-      "detailed_description": "",
       "website": "https://hackuity.io",
       "email_contact": "",
       "contact_url": "https://hackuity.io/contact-us",
@@ -10769,7 +10669,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "HarfangLab conçoit un EDR souverain de détection et réponse sur les terminaux, complété d'une protection des postes (EPP) et d'outils de gestion de la surface d'attaque. Le moteur analyse les comportements des endpoints, qualifie les événements suspects et déclenche des réponses face aux menaces. La société, basée à Paris et fondée en 2018, équipe administrations et entreprises et a noué des partenariats avec Sekoia et Thales.",
-      "detailed_description": "",
       "website": "https://harfanglab.io/fr/",
       "email_contact": "",
       "contact_url": "https://harfanglab.io/contact/",
@@ -10882,7 +10781,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "HIAsecure propose une authentification forte cognitive où l'utilisateur génère lui-même un code d'accès à usage unique à partir d'une formule secrète qu'il est seul à connaître, sans transmission d'élément observable. La solution couvre deux usages MFA, l'authentification d'utilisateur et la certification de transaction, en conformité avec la DSP2 et le RGPD. Créée en 2017 par Marc Olivier et soutenue par la région Île-de-France et Bpifrance, elle cible notamment les opérations bancaires en ligne.",
-      "detailed_description": "",
       "website": "https://www.hiasecure.com",
       "email_contact": "contact@hiasecure.com",
       "contact_url": "https://hiasecure.com/a-propos/",
@@ -10982,7 +10880,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Set in Stone analyse la sécurité des smart contracts Solidity déployés sur la blockchain. La plateforme produit un scan de vulnérabilités, un rapport détaillant les failles et les correctifs, un score de sécurité partageable et une API d'intégration pour automatiser les analyses à grande échelle. Elle couvre Ethereum, Polygon, Arbitrum, Optimism, Base et d'autres chaînes, et s'adresse aux développeurs et entreprises Web3; la société est hébergée au Campus Cyber à Puteaux.",
-      "detailed_description": "",
       "website": "https://setinstone.io",
       "email_contact": "",
       "contact_url": "https://setinstone.io",
@@ -11078,7 +10975,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Hornswaggle édite un jeton d'identification numérique reposant sur la blockchain, qui permet à un utilisateur de prouver son identité sans transmettre de documents sensibles. Les cas d'usage couvrent la sécurisation de comptes en ligne, l'accès à des plateformes réglementées comme l'alcool, le CBD ou les contenus adultes, et des démarches administratives. La société est française et présente à La Réunion via le Village by CA.",
-      "detailed_description": "",
       "website": "https://hornswaggle.xyz/fr/notre-solution/",
       "email_contact": "info@hornswaggle.xyz",
       "contact_url": "https://hornswaggle.xyz/fr/contact/",
@@ -11175,7 +11071,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "IDactis est un éditeur logiciel français spécialisé dans la sécurité des accès, avec sa suite ID>Security. Le module ID>Lock contrôle l'accès aux postes de travail et ID>Pass gère les mots de passe applicatifs, avec prise en charge des cartes à puce, tokens et annuaires LDAP. Ses clients incluent des établissements de santé, le secteur bancaire (Banque de Luxembourg) et des PME via une édition dédiée.",
-      "detailed_description": "",
       "website": "https://www.idactis.com",
       "email_contact": "info@idactis.com",
       "contact_url": "https://www.idactis.com/crbst_11.html",
@@ -11276,7 +11171,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "IDECSI sécurise les données hébergées dans Microsoft 365 en combinant des fonctions de DSPM et de gouvernance des accès (DAG). La plateforme couvre 38 points de contrôle et s'accompagne des modules DETOX pour M365, MyDataSecurity, Data Volume Management et MyDataManagement. Elle s'adresse à des entreprises de 500 à 200 000 utilisateurs dans l'énergie, la finance, l'industrie, la distribution et les médias.",
-      "detailed_description": "",
       "website": "https://www.idecsi.com",
       "email_contact": "contact@idecsi.com",
       "contact_url": "https://info.idecsi.com/demo-idecsi",
@@ -11369,7 +11263,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "IDEMIA Secure Transactions est la division du groupe IDEMIA dédiée aux moyens de paiement, à la connectivité et à la cryptographie. Elle produit des cartes de paiement, des solutions d'émission, des technologies eSIM pour l'IoT et les objets connectés, ainsi que des modules matériels de sécurité (HSM) et des briques de cryptographie résistante au quantique. Ses clients sont des banques, opérateurs télécoms, transporteurs et constructeurs d'appareils.",
-      "detailed_description": "",
       "website": "https://www.idemia.com",
       "email_contact": "",
       "contact_url": "https://www.idemia.com/contact-us",
@@ -11464,7 +11357,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Ignimission édite une plateforme no-code d'orchestration et d'automatisation pour les équipes GRC, conformité et sécurité des identités. Le produit Maestro automatise la conformité réglementaire (DORA, NIS 2, ISO) et la gestion des risques tiers, tandis qu'Ignimission Identity gère le cycle de vie des identités entre PAM, IAM et IGA, et qu'Ignimission Protec étend les capacités de CyberArk. Parmi ses références figurent Accor, VINCI, SNCF, Société Générale, Crédit Agricole, Allianz et ENGIE.",
-      "detailed_description": "",
       "website": "https://ignimission.com",
       "email_contact": "contact@ignimission.com",
       "contact_url": "https://ignimission.com/ask-your-demo/",
@@ -11581,7 +11473,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "IN Groupe conçoit des solutions d'identité physiques et numériques pour les États et les entreprises. Sa plateforme eID regroupe l'enrôlement et l'identité digitale, la vérification d'identité numérique, le lecteur ID Reader compatible avec plus de 200 documents et la vérification biométrique FaceMap 3D, ainsi que l'authentification forte. Elle vise les administrations publiques, les banques et les opérateurs télécoms, en conformité avec eIDAS, PSD2 et le RGPD.",
-      "detailed_description": "",
       "website": "https://ingroupe.com/fr/produit/la-plateforme-eid/",
       "email_contact": "",
       "contact_url": "https://ingroupe.com/fr/contact/",
@@ -11686,7 +11577,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Index Éducation édite depuis quarante ans des logiciels pour les établissements scolaires. Son catalogue comprend EDT pour les emplois du temps, PRONOTE et PRONOTE Primaire pour la vie scolaire, PRONOTE Campus (ex-Hyperplanning) pour l'enseignement supérieur et l'espace numérique de travail ENEJ. L'éditeur, filiale de Docaposte depuis 2020, équipe 90 % des collèges et lycées publics en France, en Suisse et en Belgique et revendique une qualification SecNumCloud.",
-      "detailed_description": "",
       "website": "https://www.index-education.com/fr/",
       "email_contact": "",
       "contact_url": "https://www.index-education.com/fr/contacts.php",
@@ -11715,7 +11605,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "INSPEERE développe DATIS, une infrastructure de sauvegarde distribuée et immuable fonctionnant en réseau pair-à-pair sans datacenter centralisé. Les données sont chiffrées de bout en bout et fragmentées, avec immuabilité via ZFS et une architecture 3-2-1 distribuée, compatible avec les orchestrateurs Veeam, Commvault et NetBackup. Plus de cent organisations françaises l'utilisent, dont des collectivités comme Fontenay-sous-Bois et Vanves ainsi que des PME et ETI.",
-      "detailed_description": "",
       "website": "https://www.inspeere.com",
       "email_contact": "contact@inspeere.com",
       "contact_url": "https://www.inspeere.com/contact/",
@@ -11827,7 +11716,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Intuitem, société basée à Vélizy-Villacoublay, édite CISO Assistant, une plateforme GRC open source pour les équipes cybersécurité. Elle réunit la gestion des audits multi-référentiels (plus de 130 frameworks), l'évaluation des risques avec support EBIOS RM, la gestion de la conformité, le suivi des remédiations, la gestion des tiers, l'analyse d'impact métier et la quantification du risque cyber. Déployable en cloud ou on-premises, elle est utilisée par des administrations, collectivités, entreprises et universités dans plusieurs dizaines de pays.",
-      "detailed_description": "",
       "website": "https://intuitem.com/",
       "email_contact": "",
       "contact_url": "https://intuitem.com/contact",
@@ -11931,7 +11819,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "IS Decisions édite des logiciels qui sécurisent les accès aux environnements Active Directory et Windows. Son produit UserLock ajoute l'authentification multifacteur, le SSO, le contrôle des sessions et des politiques d'accès contextuelles, tandis que FileAudit surveille en temps réel les accès aux fichiers sur serveurs Windows et dans le cloud. La société vise les PME et grandes organisations cherchant à renforcer leur conformité IT.",
-      "detailed_description": "",
       "website": "https://www.isdecisions.com/fr",
       "email_contact": "",
       "contact_url": "https://www.isdecisions.com/fr/contact",
@@ -12036,7 +11923,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ISE Systems est une société de conseil et d'expertise en systèmes d'information basée à Paris (259 rue Saint-Honoré). Elle accompagne ses clients sur la mise en conformité RGPD avec DPO externalisé, la gouvernance et l'archivage de données, le big data, l'analytics et le conseil en cybersécurité incluant l'administration de SOC. Parmi ses références figurent BNP Paribas, Natixis, Mercedes et la FDJ.",
-      "detailed_description": "",
       "website": "https://ise-systems.fr/",
       "email_contact": "",
       "contact_url": "https://ise-systems.fr/contact/",
@@ -12140,7 +12026,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ITrust est une entreprise de cybersécurité installée à Labège, près de Toulouse (SIREN 493754204), active depuis près de vingt ans auprès d'environ 1300 clients. Son produit Reveelium combine SIEM, UEBA, CTI et SOAR pour analyser les comportements et détecter les menaces au sein des systèmes d'information. ITrust propose aussi le scanner de vulnérabilités IKare ainsi que des prestations de SOC, d'audit et de pentest.",
-      "detailed_description": "",
       "website": "https://www.itrust.fr/reveelium/",
       "email_contact": "contact@itrust.fr",
       "contact_url": "https://www.itrust.fr/contact/",
@@ -12245,7 +12130,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Jalios édite une suite de digital workplace souveraine, hébergée et développée en France à Le Chesnay. Sa gamme couvre Jalios Intranet, Extranet, Teamwork, Knowledge et Workplace, avec une version open source Jalios Open Suite et des fonctions d'IA intégrées. Plus de 500 clients l'utilisent, dont des ministères, collectivités, banques, hôpitaux et acteurs de la défense.",
-      "detailed_description": "",
       "website": "https://www.jalios.com",
       "email_contact": "info@jalios.com",
       "contact_url": "https://www.jalios.com/fr/a-propos/contactez-nous/",
@@ -12273,7 +12157,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Jamespot développe depuis 2005 une plateforme collaborative française, hébergée en France et certifiée ISO 27001, SecNumCloud et HDS. Ses modules incluent Open Agora (réseau social d'entreprise), Fast Intranet, Teamwork et Safebrain, une brique d'agents d'IA souverains. La solution s'adresse à plus de 350 organisations publiques, privées et associatives de plus de 50 salariés, dans la santé, l'industrie et le secteur public.",
-      "detailed_description": "",
       "website": "https://www.jamespot.com",
       "email_contact": "contact@jamespot.com",
       "contact_url": "https://jamespot.com/demonstration/",
@@ -12302,7 +12185,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "June-Factory propose une plateforme SaaS de pilotage des conformités et des compétences. Auditool sert à planifier des audits, assigner des évaluations et collecter des preuves sur des référentiels comme NIS2, DORA et ISO 27001, tandis que Phosforea gère la formation et la sensibilisation à la cybersécurité avec des simulations de phishing. Elle cible les RSSI, DPO, DSI et équipes de contrôle interne, notamment en fintech, assurtech, industrie et défense.",
-      "detailed_description": "",
       "website": "https://june-factory.com/",
       "email_contact": "contact@june-factory.com",
       "contact_url": "https://june-factory.com/contact",
@@ -12416,7 +12298,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "KeeeX conçoit des solutions de traçabilité et de preuve numérique en injectant des métadonnées de confiance (intégrité, source, horodatage) directement dans les fichiers, avec ancrage sur sa blockchain hybride. Sa gamme comprend KeeeX Fusion, Collect & Prove, KaaaS pour la signature et l'horodatage, KeeeX Stories, TraaaX conforme MLETR et KeeeX Verifier. Elle est utilisée dans la finance, l'assurance, la supply-chain et le juridique par des acteurs comme Société Générale, Orange, SNCF et Thales.",
-      "detailed_description": "",
       "website": "https://keeex.me",
       "email_contact": "contact@keeex.me",
       "contact_url": "https://keeex.me/contact/",
@@ -12531,7 +12412,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Keopass conçoit une clé d'authentification biométrique universelle, La Clé KeoPass, qui génère des mots de passe forts à partir de l'empreinte digitale et se connecte en Bluetooth ou USB aux ordinateurs, smartphones et serrures connectées. Le dispositif embarque un capteur biométrique et du chiffrement AES, sans logiciel ni pilote à installer. Il vise les usages SSO, Active Directory, VPN et accès métiers dans la santé, la finance, l'industrie et l'administration.",
-      "detailed_description": "",
       "website": "https://www.keopass.com/index_fr.html",
       "email_contact": "contact@keopass.com",
       "contact_url": "https://www.keopass.com/contact_fr.html",
@@ -12644,7 +12524,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Kerys Software édite une solution de virtualisation qui isole des environnements de travail cloisonnés pour les organisations à fortes exigences de sécurité. Le catalogue comprend des postes dédiés Administration Workstations, Developer Workstations et Maintenance Workstations, qui segmentent le système d'information tout en préservant le confort des utilisateurs. La société, basée à Palaiseau, compte parmi ses références Orange, ADP, Vinci et le CEA dans l'industrie, l'aéronautique et la banque.",
-      "detailed_description": "",
       "website": "https://kerys.software",
       "email_contact": "",
       "contact_url": "https://kerys.software/contact",
@@ -12753,7 +12632,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Kiwi Backup propose de la sauvegarde de données en mode cloud souverain et certifié pour les professionnels de l'informatique et les entreprises. L'offre repose sur KiwiCloud (sauvegarde SaaS certifiée ISO 27001), KiwiSanté (certifiée HDS pour les données de santé) et KiwiPlatform (sauvegarde on-premise), avec prise en charge de Windows, macOS, Linux, NAS, Microsoft 365, Google Workspace et Hyper-V. Les données sont chiffrées en AES 256 bits et hébergées en France, à destination des revendeurs, collectivités, professionnels de santé et cabinets.",
-      "detailed_description": "",
       "website": "https://www.kiwi-backup.com",
       "email_contact": "",
       "contact_url": "https://www.kiwibackup.fr/contact/",
@@ -12860,7 +12738,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Kleer, société bretonne fondée en 2022 à Dinard, édite une plateforme web et mobile qui digitalise l'entrée en relation avec clients, fournisseurs et partenaires, de l'enregistrement aux questionnaires KYC jusqu'aux vérifications continues. L'outil cible la mise en conformité LCB-FT et SAPIN II pour les professionnels assujettis, en garantissant un hébergement et un cadre juridique français. Le site était en maintenance lors de la visite, les informations sont confirmées par les sources publiques (Wavestone, MyFrenchStartup).",
-      "detailed_description": "",
       "website": "https://kleer.ai/",
       "email_contact": "",
       "contact_url": "https://kleer.tech/",
@@ -12962,7 +12839,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "LayerOps exploite une plateforme de Container-as-a-Service multi-cloud et hybride qui orchestre des conteneurs Docker depuis une console unifiée, avec support d'AWS, GCP, Azure, OVH et de serveurs bare-metal. La plateforme gère l'autoscaling, le déploiement GPU pour modèles IA, les certificats SSL, load balancers, VPN sécurisé, le monitoring et la sauvegarde, et s'intègre en CI/CD via API et fichiers YAML. Elle s'adresse à des équipes techniques comme Daily Solution, GA Smart Building ou Val Software.",
-      "detailed_description": "",
       "website": "https://www.layerops.io/",
       "email_contact": "",
       "contact_url": "https://www.layerops.io/",
@@ -13069,7 +12945,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Ledger fabrique des portefeuilles matériels pour cryptomonnaies et édite l'application qui gère les actifs numériques. La gamme comprend les signers Ledger Stax, Ledger Flex, Ledger Nano Gen5 et Nano Classics, ainsi que Ledger Wallet pour acheter, échanger et staker, Ledger Card pour dépenser et Ledger Enterprise pour les institutions. Le siège est à Paris et l'entreprise revendique plus de 8 millions de signers vendus auprès de particuliers et d'acteurs institutionnels.",
-      "detailed_description": "",
       "website": "https://www.ledger.com/fr",
       "email_contact": "",
       "contact_url": "https://support.ledger.com/fr/",
@@ -13186,7 +13061,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Legapass, startup créée en 2021, gère un coffre-fort numérique chiffré et hors-ligne destiné à transmettre le patrimoine numérique d'une personne après son décès, via un tiers de confiance. Le coffre sécurise cryptomonnaies, photos, comptes en ligne, codes d'accès et autres actifs dématérialisés, avec un chiffrement asymétrique développé avec une équipe du CNRS. La société propose aussi une brique d'identification patrimoniale et de conformité LCB-FT pour notaires, avocats et experts-comptables, et est labellisée par le Conseil Supérieur du Notariat.",
-      "detailed_description": "",
       "website": "https://legapass.com",
       "email_contact": "",
       "contact_url": "https://legapass.com/contactez-nous/",
@@ -13294,7 +13168,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Leviia est un opérateur cloud français qui exploite ses propres datacenters en France et s'appuie sur du code open source. Sa suite Leviia Next regroupe stockage et partage de fichiers, édition collaborative, chat et visioconférence, tandis que Leviia Storag3 fournit du stockage objet compatible S3 pour les sauvegardes externalisées. Parmi ses références figurent la Région Île-de-France, Free, le CHU de Brest et le Château de Versailles.",
-      "detailed_description": "",
       "website": "https://www.leviia.com",
       "email_contact": "support@leviia.com",
       "contact_url": "https://www.leviia.com/contact/",
@@ -13400,7 +13273,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Goodflag (anciennement Lex Persona) est un prestataire de services de confiance qualifié spécialisé dans la signature électronique et le cachetage électronique. La plateforme couvre les trois niveaux de signature eIDAS (simple, avancée, qualifiée) et propose le cachetage de documents, le cachet 2D-Doc, l'horodatage et une API d'intégration, en SaaS ou hybride avec hébergement des données en France. La solution s'adresse aux secteurs banque, finance, santé, secteur public, distribution, industrie et énergie.",
-      "detailed_description": "",
       "website": "https://goodflag.com",
       "email_contact": "infos@goodflag.com",
       "contact_url": "https://goodflag.com/contact",
@@ -13505,7 +13377,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Linphone est une suite de communications temps réel développée depuis 2001 par la société grenobloise Belledonne Communications. Elle comprend le softphone Linphone (VoIP, messagerie et visioconférence), le serveur SIP Flexisip et le SDK liblinphone, avec des modules de chiffrement ZRTP et post-quantique. Elle cible opérateurs télécom, intégrateurs, développeurs et fabricants d'interphones IP.",
-      "detailed_description": "",
       "website": "https://www.linphone.org",
       "email_contact": "contact@belledonne-communications.com",
       "contact_url": "https://www.linphone.org/contact/",
@@ -13615,7 +13486,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "LockSelf édite une suite de cybersécurité pour protéger les données professionnelles, certifiée CSPN par l'ANSSI et hébergée en France chez Scaleway et Outscale. Elle réunit LockPass pour la gestion centralisée des mots de passe, LockTransfer pour le transfert sécurisé de fichiers et LockFiles pour l'archivage de documents sensibles, le tout piloté depuis un tableau de bord. La société, basée à Levallois-Perret, vise banques, santé, secteur public, industrie et ESN.",
-      "detailed_description": "",
       "website": "https://www.lockself.com",
       "email_contact": "contact@lockself.com",
       "contact_url": "https://www.lockself.com/demande-demo",
@@ -13719,7 +13589,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Mailinblack édite des outils de cybersécurité orientés vers le risque humain. Sa messagerie Protect filtre spam, malwares, phishing et ransomwares, et l'éditeur propose aussi le gestionnaire de mots de passe Sikker, les simulations d'attaques Cyber Coach et la plateforme de formation Cyber Academy, le tout réuni dans l'offre U-Cyber 360°. L'entreprise marseillaise revendique plus de 24 000 clients parmi les entreprises, établissements de santé et administrations.",
-      "detailed_description": "",
       "website": "https://www.mailinblack.com",
       "email_contact": "contact@mailinblack.com",
       "contact_url": "https://www.mailinblack.com/contactez-nous/",
@@ -13827,7 +13696,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Mailo, SAS de droit français, exploite un service de messagerie et d'espace en ligne présenté comme alternative éthique respectueuse de la vie privée, avec webmail, agenda, stockage cloud et carnet d'adresses hébergés sur des serveurs en France. L'offre se décline en versions Mailo Junior, Mailo Pro, Mailo Edu, Mailo Collectivités et Mailo Secure Cloud. Elle vise particuliers, familles, écoles et organisations, l'éditeur indiquant ne pas lire ni revendre les messages.",
-      "detailed_description": "",
       "website": "https://www.mailo.com/fr/",
       "email_contact": "contact@mailo.com",
       "contact_url": "https://www.mailo.com/mailo/fr/nous-contacter.php",
@@ -13857,7 +13725,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Make IT Safe propose une plateforme française de gouvernance, gestion des risques et conformité destinée aux RSSI et DPO. Ses modules couvrent le tableau de bord de pilotage, l'évaluation et l'audit interne, l'évaluation des tiers, l'analyse de risque dans les projets, le pilotage RGPD et la conformité DORA, avec prise en charge des référentiels ISO 27001, NIS 2, NIST CSF, l'hygiène ANSSI et SecNumCloud. Elle revendique plus de 150 clients dont Crédit Agricole, EDF, Thales, CNES et Enedis, et un hébergement français certifié.",
-      "detailed_description": "",
       "website": "https://www.makeitsafe.fr",
       "email_contact": "",
       "contact_url": "https://www.makeitsafe.fr/demande-demo/",
@@ -13971,7 +13838,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "MaPreuve.com, filiale du groupe Dhimyotis, tiers de confiance, fournit un service en ligne de protection juridique des créations et de certification de documents numériques. Le service génère une preuve d'antériorité et d'intégrité sur tout fichier via horodatage certifié et signature électronique qualifiée, en conservant la confidentialité du document. Il s'adresse aux entreprises souhaitant protéger leur propriété intellectuelle ainsi qu'aux créateurs, inventeurs et artistes.",
-      "detailed_description": "",
       "website": "https://www.mapreuve.com",
       "email_contact": "contact@mapreuve.com",
       "contact_url": "https://www.mapreuve.com/fr/contact.php",
@@ -14070,7 +13936,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Memority édite une plateforme SaaS française de gestion des identités et des accès. L'offre se compose de MY-Identity pour le cycle de vie des identités et l'automatisation des droits, MY-Access pour l'authentification, le SSO et les contrôles adaptatifs au risque, et MY-Keys pour la gestion centralisée des facteurs d'authentification multifacteur. Parmi ses références figurent Stellantis avec 1,5 million d'identités, Valeo, Safran, Eiffage et Solvay, dans l'automobile, l'énergie, le retail et le secteur public.",
-      "detailed_description": "",
       "website": "https://www.memority.eu/",
       "email_contact": "contact@memority.com",
       "contact_url": "https://www.memority.eu/fr/contact",
@@ -14176,7 +14041,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Merox, marque de la société montpelliéraine Devensys, exploite une plateforme de sécurité DNS et DMARC contre l'usurpation de domaine, le phishing et les attaques BEC. Elle réunit l'analyse de rapports DMARC RUA et RUF, un score de sécurité DNS, la surveillance et l'historique DNS, le suivi des listes noires, un validateur de syntaxe, la prise en charge de MTA-STS, DANE, DNSSEC et BIMI, ainsi qu'une API. Le DNS Checker est proposé en outil gratuit.",
-      "detailed_description": "",
       "website": "https://www.merox.io",
       "email_contact": "contact@merox.io",
       "contact_url": "https://www.merox.io/contact/",
@@ -14277,7 +14141,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Mindflow édite une plateforme d'hyperautomatisation no-code destinée aux équipes SecOps, ITOps et CloudOps ainsi qu'aux MSSP. Elle combine un moteur d'automatisation sans code, des agents IA (AI Agents) et des espaces collaboratifs (AI Rooms), avec un connecteur sécurisé Relay Agent et un large catalogue d'intégrations pour orchestrer le traitement des incidents. La société est immatriculée à Paris.",
-      "detailed_description": "",
       "website": "https://www.mindflow.io",
       "email_contact": "",
       "contact_url": "https://www.mindflow.io/contact-us",
@@ -14377,7 +14240,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Moabi Solutions exploite une plateforme cloud d'analyse de sécurité logicielle qui évalue applications, firmwares et systèmes d'exploitation sans accès au code source. Son moteur d'exécution symbolique mesure la dette technique, la cryptographie, la conformité, la défense en profondeur et les vulnérabilités, et produit des rapports exécutifs, techniques et de conformité. Les cibles couvrent l'IoT, l'embarqué industriel, l'automobile, le cloud et la 5G.",
-      "detailed_description": "",
       "website": "https://moabi-solutions.com/fr/",
       "email_contact": "",
       "contact_url": "https://moabi-solutions.com/fr/",
@@ -14482,7 +14344,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "MokN développe une technologie de déception contre le vol d'identifiants. Son produit Baits déploie de faux portails d'accès (VPN, webmail) qui imitent l'environnement de l'entreprise et piègent les attaquants utilisant des identifiants compromis, tandis que Lantern gère la surface d'attaque externe. La société, basée à Paris et fondée en 2024, vise les RSSI et organisations de toutes tailles, jusqu'aux grands comptes.",
-      "detailed_description": "",
       "website": "https://www.mokn.io",
       "email_contact": "contact@mokn.io",
       "contact_url": "https://www.mokn.io/contact",
@@ -14596,7 +14457,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Mr Suricate propose une plateforme de tests automatisés no-code pour sites web, applications mobiles et API. Elle couvre les tests fonctionnels, de non-régression, de performance et marketing, et surveille les parcours utilisateurs pour détecter les anomalies. Parmi ses clients figurent Toyota, Monoprix, Picard et Intersport. La société se présente comme 100% française.",
-      "detailed_description": "",
       "website": "https://www.mrsuricate.com",
       "email_contact": "",
       "contact_url": "https://www.mrsuricate.com/contact/",
@@ -14708,7 +14568,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Nameshield est un bureau d'enregistrement de noms de domaine accrédité ICANN, spécialisé dans la sécurisation des actifs numériques. Son offre comprend Bastion DNS, DNS Premium, le Registry Lock, des certificats SSL/TLS, la gestion DMARC ainsi que la surveillance de domaines et la lutte contre les fake shops. La société, certifiée ISO 27001 et membre d'Hexatrust, compte des clients comme BNP Paribas, Schneider Electric et le Centre Pompidou.",
-      "detailed_description": "",
       "website": "https://www.nameshield.com",
       "email_contact": "",
       "contact_url": "https://www.nameshield.com/contact-nameshield/",
@@ -14820,7 +14679,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Nefture édite une plateforme de surveillance des risques en finance décentralisée (DeFi) à destination des gestionnaires d'actifs on-chain, hedge funds et market makers. Ses modules incluent un Portfolio Tracker multi-chaînes, des Risk Alerts (dépeg, liquidation, vulnérabilités de protocoles), des outils LP & Farming et de la Performance Analytics. La société est basée à Paris.",
-      "detailed_description": "",
       "website": "https://nefture.com",
       "email_contact": "",
       "contact_url": "https://app.nefture.com",
@@ -14933,7 +14791,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Neowave conçoit et fabrique à Gardanne des dispositifs d'authentification forte et de signature électronique. Le catalogue comprend les clés et cartes FIDO2 Winkeo et Badgeo, des supports QSCD certifiés eIDAS pour la signature qualifiée, des combinés hybrides FIDO2 plus OTP ou QSCD, et les lecteurs de cartes à puce Linkeo et Holdeo. Les clients sont des administrations et des entreprises soumises à des exigences de contrôle d'accès et de signature réglementée.",
-      "detailed_description": "",
       "website": "https://neowave.fr/",
       "email_contact": "contact@neowave.fr",
       "contact_url": "https://neowave.fr/fr/contact/",
@@ -15043,7 +14900,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "NetExplorer, éditeur basé à Toulouse, propose une plateforme de stockage et de partage de fichiers hébergée en France. L'offre réunit NetExplorer Share pour l'envoi sécurisé de documents, NetExplorer Workspace pour la coédition collaborative, la DataRoom pour les documents confidentiels, ainsi que les options Sign, Private Cloud, Vault sur bande LTO et hébergement HDS. La société annonce plus de 1 800 clients dans la santé, le juridique, l'immobilier, la banque et le secteur public.",
-      "detailed_description": "",
       "website": "https://www.netexplorer.fr",
       "email_contact": "contact@netexplorer.fr",
       "contact_url": "https://www.netexplorer.fr/contact/",
@@ -15153,7 +15009,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Netiful, implantée dans les Landes, développe des outils de cybersécurité de surveillance et de filtrage. Le boîtier NetifulBot filtre l'accès Internet dans les établissements scolaires, tandis que le Pack 360 associe la plateforme CRP de veille sur la surface d'exposition externe et SEAUROND pour la détection de fuites de données sur le web, le deep web et le dark web. La clientèle vise les entreprises, les collectivités et les structures publiques.",
-      "detailed_description": "",
       "website": "https://www.netiful.com/",
       "email_contact": "contact@netiful.com",
       "contact_url": "https://www.netiful.com/contact/",
@@ -15257,7 +15112,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Nexpublica édite la plateforme de gestion des identités et des accès Ilex IAM, articulée autour de quatre modules : Ilex Identity Management pour le cycle de vie des comptes, Ilex Access Management pour l'authentification forte, le MFA, le SSO et la fédération, Ilex Customer IAM pour les citoyens et usagers, et Ilex Credential Management System pour la gestion des cartes et jetons. Basée à Clichy, la société revendique plus de 4 000 organismes publics et 1 200 entreprises comme Keolis, Natixis ou Leroy Merlin.",
-      "detailed_description": "",
       "website": "https://www.nexpublica.com/",
       "email_contact": "",
       "contact_url": "https://www.nexpublica.com/contactez-nous/",
@@ -15373,7 +15227,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Nijta, issue de l'Inria Startup Studio et installée à Lille, édite une technologie d'anonymisation de la voix. Son produit Voice Harbor s'exécute directement sur l'appareil pour retirer les caractéristiques biométriques identifiables tout en conservant le contenu, avec un argument de conformité au RGPD et à l'AI Act. Les usages couvrent les agences de collecte de données, les services médicaux d'urgence, les médias et des organismes gouvernementaux comme le Secrétariat d'État suisse aux migrations.",
-      "detailed_description": "",
       "website": "https://nijta.com",
       "email_contact": "contact@nijta.com",
       "contact_url": "https://www.nijta.com/contact-us",
@@ -15481,7 +15334,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Normation, société parisienne immatriculée au RCS de Paris sous le numéro 519 451 686, édite Rudder, une plateforme d'automatisation de la sécurité des infrastructures hybrides. Rudder couvre trois domaines : la gestion de configuration de sécurité, la gestion des correctifs et des vulnérabilités avec évaluation des CVE, et la conformité aux référentiels CIS, NIST et ISO 27001. Parmi les références figurent BMW, l'Afnic et Free Pro.",
-      "detailed_description": "",
       "website": "https://www.rudder.io/",
       "email_contact": "contact@rudder.io",
       "contact_url": "https://www.rudder.io/contact/",
@@ -15588,7 +15440,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Novalys, éditeur fondé en 1998 et établi à Boulogne-Billancourt, développe Visual Guard, une brique de sécurité applicative pour les équipes de développement. Le produit gère le contrôle d'accès aux données sensibles, l'administration des utilisateurs et des rôles, l'authentification multifacteur, l'audit et la traçabilité des opérations, pour des applications .NET, Java, PHP et JavaScript. Les clients cités relèvent de la banque, de l'assurance, du pharmaceutique et de l'industrie, parmi lesquels BNP Paribas, Roche et ArcelorMittal.",
-      "detailed_description": "",
       "website": "https://www.visual-guard.com",
       "email_contact": "sales@novalys.net",
       "contact_url": "https://www.visual-guard.com/EN/dotnet-security-company/Visual-Guard-Contact.html",
@@ -15692,7 +15543,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Numspot opère un cloud public souverain français proposant de l'IaaS, du PaaS avec services managés, ainsi que des briques Data et IA souveraine et une marketplace. L'offre vise le secteur public, la santé, la finance, l'assurance et les opérateurs critiques (OSE/OIV), avec une qualification SecNumCloud en cours et un agrément HDS. La société est détenue par la Banque des Territoires, Docaposte, Dassault Systèmes et Bouygues Telecom.",
-      "detailed_description": "",
       "website": "https://numspot.com/",
       "email_contact": "contact@numspot.com",
       "contact_url": "https://numspot.com/contact",
@@ -15793,7 +15643,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "OGO Security édite une plateforme WAAP (Web Application and API Protection) qui filtre et protège les sites et API exposés. Les modules incluent Adaptive Protection avec analyse comportementale par IA, Insights pour la visualisation des événements de sécurité, Trust pour la conformité RGPD/NIS2/HDS, et un CDN mondial intégré. Fondée en 2018 en France, elle revendique des références comme la Ville de Paris, Thales, Orange et Santé Publique France.",
-      "detailed_description": "",
       "website": "https://www.ogosecurity.com/",
       "email_contact": "contact@ogosecurity.com",
       "contact_url": "https://www.ogosecurity.com/essayez-ogo/",
@@ -15890,7 +15739,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Olfeo conçoit des passerelles de sécurité web. Son offre comprend Olfeo SSE, une passerelle cloud Security Service Edge regroupant SWG, CASB, DLP, filtrage DNS et déchiffrement SSL/TLS, Olfeo On-Premise pour le déploiement local, et une base de données d'URL en marque blanche couvrant 22 millions de domaines. Filiale du groupe Ekinops, la société sert hôpitaux, collectivités, établissements éducatifs et OIV.",
-      "detailed_description": "",
       "website": "https://www.olfeo.com",
       "email_contact": "",
       "contact_url": "https://www.olfeo.com/demande-de-demo/",
@@ -15987,7 +15835,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Olvid édite une messagerie chiffrée de bout en bout pour iOS, Android, macOS et Windows. L'application fonctionne sans annuaire centralisé ni numéro de téléphone et ne collecte aucune donnée personnelle, avec messages, groupes, partage de fichiers et synchronisation multi-appareils. Elle dispose d'une certification CSPN de l'ANSSI et s'adresse au grand public comme aux entreprises. Le siège est à Paris.",
-      "detailed_description": "",
       "website": "https://www.olvid.io/fr/",
       "email_contact": "contact@olvid.io",
       "contact_url": "https://www.olvid.io/contact/fr",
@@ -16099,7 +15946,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ONYPHE exploite un moteur de recherche cyber qui scanne en continu l'Internet et le dark web. Ses modules couvrent la découverte et la gestion de surface d'attaque (Attack Surface Discovery et Management) ainsi que le renseignement sur les menaces (Cyber Threat Intelligence), accessibles via une API REST. La plateforme collecte des milliards de bannières et d'entrées DNS par mois et compte parmi ses clients La Poste, EDF, Crédit Agricole et le CERT Santé.",
-      "detailed_description": "",
       "website": "https://www.onyphe.io/",
       "email_contact": "contact@onyphe.io",
       "contact_url": "https://www.onyphe.io/contact",
@@ -16212,7 +16058,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Oodrive propose une suite collaborative sécurisée qui regroupe Oodrive Work pour le partage et la co-édition, Oodrive Sign pour la signature électronique, Oodrive Meet pour les réunions de gouvernance et Oodrive Save pour la sauvegarde cloud. L'hébergement est en France et qualifié SecNumCloud par l'ANSSI, avec des certifications ISO 27001 et HDS. La clientèle couvre la défense, l'énergie, la finance et le secteur public, dont le Ministère des Armées, EDF et Airbus.",
-      "detailed_description": "",
       "website": "https://www.oodrive.com/fr/",
       "email_contact": "",
       "contact_url": "https://www.oodrive.com/fr/contact/",
@@ -16323,7 +16168,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "OpenCVE est une plateforme de suivi des vulnérabilités CVE éditée par Amber Security, déclinée en version communautaire open source auto-hébergée et en version Cloud SaaS. L'outil indexe jusqu'à 350 000 CVE issus de MITRE, NVD, RedHat et CISA, et envoie des notifications par email, Slack ou webhook avec des résumés générés par IA. Il s'adresse aux équipes de sécurité, des indépendants aux grands comptes comme Thales, Equans ou GMV.",
-      "detailed_description": "",
       "website": "https://www.opencve.io",
       "email_contact": "support@opencve.io",
       "contact_url": "https://www.opencve.io/contact",
@@ -16431,7 +16275,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Open Sezam édite des logiciels de cybersécurité centrés sur l'identité et le contrôle d'accès zéro trust. Sa gamme comprend AuthSezam pour l'authentification multifacteur sans mot de passe, SmartSezam pour la détection comportementale continue des risques, et SmartSezam H pour la gestion des attaques informationnelles et réputationnelles. L'éditeur vise les organisations multi-règlementées comme la finance, la défense et la santé.",
-      "detailed_description": "",
       "website": "https://opensezam.com",
       "email_contact": "contact.web@opensezam.com",
       "contact_url": "https://opensezam.com/contact/",
@@ -16536,7 +16379,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Orange Cyberdefense est la filiale cybersécurité du groupe Orange, opérant comme MSSP avec un réseau de CyberSOC répartis dans plusieurs pays. L'entité assure la détection et la réponse managées (MDR) en combinant supervision SIEM, endpoint et réseau, ainsi que de la threat intelligence via sa plateforme World Watch. Elle propose aussi des tests d'intrusion, de la réponse à incident (forensic) et de la sécurité OT.",
-      "detailed_description": "",
       "website": "https://www.orangecyberdefense.com",
       "email_contact": "info@orangecyberdefense.com",
       "contact_url": "https://www.orangecyberdefense.com/global/contact",
@@ -16642,7 +16484,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ORSEC Technologies, société basée à Rennes, conçoit des sondes de surveillance réseau passives fondées sur la technologie DPI (Deep Packet Inspection). Sa sonde NMS enregistre l'ensemble du trafic de la couche 2 à 7 sans être détectable, avec une brique de renseignement sur le trafic chiffré combinant machine learning et deep learning. Le développement est entièrement français et cible les opérateurs d'importance vitale, hôpitaux et administrations.",
-      "detailed_description": "",
       "website": "https://orsec.net",
       "email_contact": "contact@orsec.tech",
       "contact_url": "https://orsec.net/fr/entreprise.php",
@@ -16747,7 +16588,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "OverSOC propose OverView, une plateforme SaaS qui agrège les données issues d'outils IT et cyber comme les EDR, CMDB, MDM, scanners de vulnérabilités et Active Directory via plus de soixante connecteurs. Elle construit un inventaire unifié avec déduplication et des indicateurs de conformité alignés sur NIS2, ISO 27001, DORA et l'ANSSI, restitués dans des tableaux de bord par niveau. Les clients sont des organisations IT de taille moyenne à grande, des MSP et des RSSI à temps partagé.",
-      "detailed_description": "",
       "website": "https://www.oversoc.com",
       "email_contact": "",
       "contact_url": "https://www.oversoc.com/en/contact-us",
@@ -16855,7 +16695,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "OVHcloud exploite une infrastructure cloud répartie sur 46 datacenters et propose du Public Cloud (instances, stockage objet, Kubernetes, bases managées), du Private Cloud VMware et Nutanix, ainsi que des serveurs dédiés et VPS. L'offre intègre des briques de sécurité comme l'IAM et le KMS, et des services web d'hébergement, domaines et messagerie. Elle s'adresse aux PME, agences, startups et grands comptes tels que Société Générale ou Louis Vuitton.",
-      "detailed_description": "",
       "website": "https://www.ovhcloud.com/fr/",
       "email_contact": "",
       "contact_url": "https://www.ovhcloud.com/fr/contact/",
@@ -16971,7 +16810,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Oxibox est une start-up française spécialisée dans la sauvegarde sécurisée et la protection des données contre les rançongiciels. Elle commercialise des appliances matérielles, une sauvegarde Cloud, une offre Data Protection et une sauvegarde dédiée à Microsoft 365, couvrant les environnements physiques, virtuels et Bare Metal avec restauration instantanée. Les clients sont le secteur public et les collectivités, les PME et ETI, ainsi que les prestataires informatiques.",
-      "detailed_description": "",
       "website": "https://www.oxibox.com",
       "email_contact": "contact@oxibox.com",
       "contact_url": "https://oxibox.com/fr/contactez-nous/",
@@ -17076,7 +16914,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "P4S conçoit et fabrique en France des équipements réseau de cybersécurité sur matériel dédié, sans logiciel. Son catalogue comprend le chiffreur-pare-feu SF-106-2, le contrôleur réseau SF-106-8 et la sonde temps réel TAP-106-8, pour le chiffrement et le filtrage du trafic. La société s'adresse à l'industrie, au médical et aux administrations, avec un positionnement souverain.",
-      "detailed_description": "",
       "website": "https://www.p4s-archi.com",
       "email_contact": "contact@p4s-archi.com",
       "contact_url": "https://www.p4s-archi.com/contact-us",
@@ -17181,7 +17018,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Parcoor, basée à Lyon, édite des briques logicielles embarquées pour les objets connectés. Deux usages sont mis en avant: la maintenance prédictive par détection d'anomalies matérielles, et la détection de menaces et malwares en temps réel via du machine learning embarqué (TinyML) adapté aux appareils à faibles ressources. L'entreprise vise les fabricants d'équipements connectés et cite des collaborations industrielles avec Renault, Thales et Orange.",
-      "detailed_description": "",
       "website": "https://parcoor.com",
       "email_contact": "contact@parcoor.com",
       "contact_url": "https://parcoor.com",
@@ -17284,7 +17120,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Parsec propose un logiciel de chiffrement et de partage de fichiers fondé sur des principes Zero Trust et Zero Knowledge, avec un cœur réécrit en Rust. Le produit assure le stockage chiffré par blocs redondants, la collaboration sécurisée, la protection contre les fuites de données et une défense anti-ransomware. La solution dispose d'une certification CSPN et s'adresse à l'administration, à la finance, à la santé, à l'industrie et aux intégrateurs.",
-      "detailed_description": "",
       "website": "https://parsec.cloud",
       "email_contact": "contact@parsec.cloud",
       "contact_url": "https://parsec.cloud/contact/",
@@ -17387,7 +17222,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Patrowl, éditeur parisien, exploite une plateforme de gestion de la surface d'attaque externe (EASM) couplée à du test d'intrusion automatisé en boîte noire validé par des experts. Elle cartographie en continu les actifs exposés, repère le shadow IT, suit les CVE et intègre du renseignement sur les menaces. Les destinataires sont les RSSI, SOC et CERT, dans la finance, la santé, la tech, le secteur public, les télécoms et le luxe.",
-      "detailed_description": "",
       "website": "https://patrowl.io",
       "email_contact": "getsupport@patrowl.io",
       "contact_url": "https://patrowl.io/en/contact",
@@ -17492,7 +17326,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Phinasoft édite une plateforme SaaS de pilotage des risques et de la conformité cyber. Ses modules couvrent les analyses de risques et homologations, la gestion des risques tiers, les campagnes de conformité, le RGPD avec PIA/AIPD et l'intégration de référentiels de sécurité, avec une assistance par IA et le label EBIOS RM de l'ANSSI. Elle vise les organisations publiques et le secteur santé, via les centrales UGAP, CAIH et Resah.",
-      "detailed_description": "",
       "website": "https://phinasoft.com",
       "email_contact": "contact@phinasoft.com",
       "contact_url": "https://phinasoft.com/fr/mentions-legales/",
@@ -17600,7 +17433,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Portyq travaille sur la cybersécurité face à la menace quantique, avec un siège réparti entre Bordeaux et Limoges. La société présente deux axes: la cryptographie post-quantique (PQC) et la distribution quantique de clés (QKD). Les noms de produits commerciaux et les secteurs clients précis ne sont pas détaillés sur le site.",
-      "detailed_description": "",
       "website": "https://portyq.com",
       "email_contact": "contact@portyq.com",
       "contact_url": "https://portyq.com/contact/",
@@ -17704,7 +17536,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Pradeo édite des solutions de sécurité pour les terminaux et applications mobiles. Sa suite comprend Mobile Threat Defense pour la détection et la réponse sur Android et iOS, un app store privé sécurisé pour les déploiements BYOD, et Mobile Threat Intelligence pour l'audit automatisé des applications. Les clients viennent de la santé, de l'énergie, du transport, du secteur public et de l'assurance.",
-      "detailed_description": "",
       "website": "https://pradeo.com/fr/",
       "email_contact": "contact@pradeo.com",
       "contact_url": "https://pradeo.com/fr/contactez-nous/",
@@ -17808,7 +17639,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Pragmable est un éditeur de logiciels de cybersécurité cloud basé à Puteaux, qui combine produits propriétaires et développements sur mesure. Son produit Whocan, en bêta privée, est un moteur d'autorisation pour fournisseurs cloud doté d'un langage de requête (RQL) pour évaluer les chaînes de décision d'accès. Un second produit du même domaine, l'autorisation, est en préparation. La cible regroupe banques privées, opérateurs télécoms, réseaux de santé et acteurs de la défense.",
-      "detailed_description": "",
       "website": "https://www.pragmable.com",
       "email_contact": "hello@pragmable.com",
       "contact_url": "https://www.pragmable.com",
@@ -17906,7 +17736,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Predicta Lab, installée près de Toulouse, applique l'intelligence artificielle à l'OSINT et à la gestion du risque numérique. Sa plateforme regroupe Predicta Search, qui reconstitue l'empreinte numérique d'une personne à partir d'un email ou d'un téléphone, Predicta Graph, qui visualise et corrèle les données pour révéler des réseaux et liens cachés, et Predicta Score, qui note le niveau d'exposition d'une organisation. L'outil surveille de multiples sources ouvertes pour alerter ses clients sur les menaces qui les concernent.",
-      "detailed_description": "",
       "website": "https://predictalab.fr",
       "email_contact": "contact@predictalab.com",
       "contact_url": "https://predictalab.fr",
@@ -18006,7 +17835,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "PresentID conçoit des technologies de vérification d'identité à distance fondées sur la biométrie. Son SDK et ses API réunissent la détection dynamique de vivacité du visage (liveness), la biométrie vocale, l'OCR de pièces d'identité et le suivi du regard, pour iOS, Android et web. La technologie distingue une personne réelle d'un masque, d'une photo ou d'un deepfake lors de l'enrôlement et de l'authentification.",
-      "detailed_description": "",
       "website": "https://presentid.com",
       "email_contact": "contact@presentid.com",
       "contact_url": "https://presentid.com/Home/Contact",
@@ -18115,7 +17943,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Preventeo développe depuis 2005 une plateforme SaaS de gestion des conformités, des risques et des processus métier. Elle se compose de modules dédiés comme Organisateo, Maturiteo pour les audits, Reglementeo et Conformiteo pour la veille réglementaire, Inspecteo pour les contrôles périodiques et Rexteo pour la gestion des incidents. Plus de 300 clients l'utilisent, dont Vinci Energies, GRDF, Veolia, Airbus et Schneider Electric, sur des domaines allant de la santé-sécurité à la cybersécurité.",
-      "detailed_description": "",
       "website": "https://www.preventeo.com",
       "email_contact": "infocom@preventeo.com",
       "contact_url": "https://www.preventeo.com/fr/contact/",
@@ -18225,7 +18052,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "PRIM'X édite des logiciels de chiffrement pour protéger la confidentialité des données des organisations publiques et privées. Sa gamme couvre ZoneCentral pour le chiffrement de fichiers et dossiers, Cryhod pour le chiffrement intégral de disque des postes, Zed! pour les conteneurs chiffrés d'échange de documents, ZedMail pour la messagerie sous Outlook et Orizon pour Microsoft 365. Plusieurs produits sont qualifiés par l'ANSSI et certifiés Critères Communs EAL3+, et visent notamment les OIV.",
-      "detailed_description": "",
       "website": "https://www.primx.eu/fr/",
       "email_contact": "business@primx.eu",
       "contact_url": "https://www.primx.eu/fr/a-propos-primx/nous-contacter/",
@@ -18329,7 +18155,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Private Discuss édite une plateforme souveraine de communication et de collaboration chiffrée à destination des gouvernements, ministères et entreprises sensibles comme EDF ou Framatome. L'offre regroupe messagerie instantanée, appels audio et visioconférences HD, partage de fichiers jusqu'à 20 Go, transcription de réunions, détection de deepfakes et une version White Label avec API. La société est basée à Limonest près de Lyon et dispose de bureaux à Paris, Aix-en-Provence, Grenoble, Madrid, Genève, Casablanca, Milan et Francfort.",
-      "detailed_description": "",
       "website": "https://private-discuss.com",
       "email_contact": "contact@private-discuss.com",
       "contact_url": "https://private-discuss.com/en/contact-us",
@@ -18427,7 +18252,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ProvenRun, fondée en 2009, conçoit des briques logicielles de confiance et sécurisées par conception pour les systèmes embarqués critiques. Son catalogue comprend ProvenCore, un système d'exploitation certifié Common Criteria EAL7, ProvenCore-M pour microcontrôleurs, le module ProvenHSM, les applications ProvenApps et l'appliance ProvenBox. Les secteurs visés sont l'automobile, l'aérospatiale et défense, les télécoms, le cloud et l'IoT, avec des implantations en France, aux États-Unis et en Allemagne.",
-      "detailed_description": "",
       "website": "https://provenrun.com/",
       "email_contact": "contact@provenrun.com",
       "contact_url": "https://provenrun.com/contact/",
@@ -18517,7 +18341,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Purplemet exploite une plateforme de gestion de la surface d'attaque web qui découvre les actifs numériques exposés et suit leurs vulnérabilités en continu. Les briques proposées incluent le Web Application Security Analyzer, le Domain Security Assessment et une plateforme de Web Attack Surface Management avec intégration CI/CD. Éditée par une SAS immatriculée au RCS de Paris (878 345 875) au 49 rue de Ponthieu, elle compte parmi ses clients Elior, Sodexo et ODDO BHF.",
-      "detailed_description": "",
       "website": "https://purplemet.com",
       "email_contact": "",
       "contact_url": "https://purplemet.com/contact",
@@ -18615,7 +18438,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Pydio développe une plateforme de partage et de gestion de contenu d'entreprise auto-hébergée, positionnée comme alternative souveraine aux solutions SaaS. Le produit central Pydio Cells gère le partage documentaire et la collaboration, complété par le moteur d'automatisation sans code Cells Flows et l'offre Wire Drive. Éditée par Wire France SAS, elle équipe la défense, la santé, la finance et l'enseignement, avec des références comme Crédit Agricole, Seagate, Nikon et l'université de Cambridge.",
-      "detailed_description": "",
       "website": "https://pydio.com",
       "email_contact": "contact@pydio.com",
       "contact_url": "https://www.pydio.com/en/contact-us",
@@ -18712,7 +18534,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Qevlar AI, fondée en 2023 à Paris, propose une plateforme de SOC autonome reposant sur de l'IA agentique qui mène les investigations d'alertes et corrèle ces dernières en incidents complets. Ses fonctions couvrent l'investigation et la réponse, le threat hunting continu, la priorisation des vulnérabilités et plus de cinquante intégrations dont Splunk, Microsoft Sentinel et CrowdStrike. La société travaille avec des grands comptes et MSSP tels que Mercedes-Benz, Sodexo, Orange Cyberdefense et Atos.",
-      "detailed_description": "",
       "website": "https://www.qevlar.com",
       "email_contact": "",
       "contact_url": "https://www.qevlar.com",
@@ -18828,7 +18649,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Qontrol, exploité par la SAS Articule basée 231 rue Saint-Honoré à Paris (SIREN 843409954), édite une plateforme SaaS de pilotage de la conformité et des risques cyber pour les consultants externalisés et vCISO. L'outil comprend le cockpit multi-clients Qontrol Pilot, un Diagnostic Conformité couvrant plus de quinze référentiels (ISO 27001, NIS2, DORA), un Diagnostic des Usages conversationnel et un module avant-vente. Il cible les cabinets GRC, MSP et MSSP ainsi que les PME, ETI et collectivités, avec un hébergement chez OVH en France.",
-      "detailed_description": "",
       "website": "https://qontrol.io",
       "email_contact": "contact@qontrol.io",
       "contact_url": "https://qontrol.io/mentions-legales",
@@ -18938,7 +18758,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Ravel Technologies développe une technologie de chiffrement entièrement homomorphe baptisée RHE (Ravel Homomorphic Encryption), qui autorise le traitement de données sensibles tout en les gardant chiffrées de bout en bout. La société, fondée à Paris, vise la protection des données personnelles et des informations critiques pour des cas d'usage où les données ne doivent jamais être déchiffrées.",
-      "detailed_description": "",
       "website": "https://www.raveltech.io/",
       "email_contact": "contact@raveltech.io",
       "contact_url": "https://www.raveltech.io/",
@@ -19040,7 +18859,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "reBop est une plateforme cloud de gestion du cycle de vie des certificats numériques SSL/TLS et x509. Elle surveille en temps réel les certificats, envoie des alertes d'expiration et de révocation, analyse la conformité x509, scanne les sous-domaines et suit les CT Logs et les CRL. Une version reBop Enterprise permet un déploiement on-premise. Parmi les clients figurent Atos, Berty et Fonty.",
-      "detailed_description": "",
       "website": "https://www.rebop.io",
       "email_contact": "sales@rebop.io",
       "contact_url": "https://www.rebop.io/who-we-are/",
@@ -19139,7 +18957,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Reciproc-IT édite Oligo Risk Manager, un logiciel d'analyse de risques labellisé par l'ANSSI qui couvre l'ensemble des fonctionnalités de la méthode EBIOS Risk Manager. La société accompagne aussi les organisations sur la sécurité des systèmes d'information avec de la formation et du conseil. Sa clientèle affichée comprend Carrefour, Agirc-Arrco, Assurant ainsi que des PME et ETI.",
-      "detailed_description": "",
       "website": "https://reciproc-it.com",
       "email_contact": "contact@reciproc-it.com",
       "contact_url": "https://reciproc-it.com/contact/",
@@ -19237,7 +19054,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Reemo propose une plateforme d'accès à distance sans agent fondée sur une approche Zero Trust Network Access et un protocole de streaming haute performance. Son catalogue comprend Reemo Desktop, Reemo Workspaces, Reemo Containers et Reemo Thin Client, avec des usages bureau à distance, VDI/DaaS, isolation de navigateur et sécurisation des accès tiers. Les secteurs ciblés incluent les médias, l'ingénierie, l'éducation et le secteur public et militaire.",
-      "detailed_description": "",
       "website": "https://reemo.io/fr/",
       "email_contact": "contact@reemo.io",
       "contact_url": "https://reemo.io/fr/contact/",
@@ -19341,7 +19157,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ResoSafe et Box2Cloud sont des solutions de dématérialisation et de partage de fichiers du groupe ROS DIGITAL, prestataire français de transformation numérique créé en 2001. L'éditeur intervient aussi sur l'impression, la GED, l'informatique et réseau, la téléphonie et le cloud, pour une base de plus de 10 000 clients de la TPE à la multinationale. Les secteurs servis vont de l'automobile à l'industrie pharmaceutique et à la distribution.",
-      "detailed_description": "",
       "website": "https://www.rosdigital.fr/",
       "email_contact": "",
       "contact_url": "https://www.rosdigital.fr/fr/contacts-fr/",
@@ -19439,7 +19254,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Reversense, basée à Toulouse, édite des outils d'analyse de sécurité et d'ingénierie inverse pour applications mobiles et binaires embarqués. Son produit Dexcalibur automatise l'instrumentation et l'analyse binaire multi-plateforme, et son module Privacy Assessment évalue la conformité d'applications Android et iOS face à des référentiels comme le RGPD, le CRA ou PCI. La cible regroupe évaluateurs de sécurité, CERT, SOC et forces de l'ordre.",
-      "detailed_description": "",
       "website": "https://reversense.com",
       "email_contact": "",
       "contact_url": "https://www.reversense.com/en/contact-us",
@@ -19552,7 +19366,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Riot édite une plateforme SaaS de gestion du risque humain en cybersécurité, basée à Paris. Ses modules incluent Sensibilisation pour la formation, Simulation pour l'entraînement au phishing, Studio pour créer des parcours, ainsi que Sonar, Inbox et Slash côté détection et support des employés. La plateforme s'adresse aux entreprises de toutes tailles voulant former leurs collaborateurs aux bons réflexes.",
-      "detailed_description": "",
       "website": "https://tryriot.com/fr",
       "email_contact": "contact@tryriot.com",
       "contact_url": "https://tryriot.com/fr",
@@ -19660,7 +19473,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Risk Hunter propose un système GRC (gouvernance, risques, conformité) qui s'appuie sur l'IA pour structurer l'analyse des risques et produire des décisions auditables. La plateforme repose sur quatre moteurs nommés ODYSSY pour la détection d'expositions, Risk Hunter Core pour les audits et contrôles, QANTIX pour l'arbitrage et YOKAY pour l'automatisation des plans d'action. Elle vise les ETI et grandes organisations soumises à NIS2, DORA ou ISO 27001 dans l'assurance, l'industrie, la santé et le transport.",
-      "detailed_description": "",
       "website": "https://riskhunter.io",
       "email_contact": "contact@riskhunter.io",
       "contact_url": "https://riskhunter.io",
@@ -19772,7 +19584,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Rubycat est un éditeur français qui développe PROVE IT, un bastion d'administration certifié par l'ANSSI pour contrôler et tracer les accès privilégiés au système d'information. L'outil centralise les connexions via un portail unique, enregistre les sessions et permet d'auditer les interventions externes. Hôpitaux, collectivités, administrations, universités et entreprises industrielles ou logistiques l'utilisent notamment pour répondre à des exigences comme NIS 2.",
-      "detailed_description": "",
       "website": "https://www.rubycat.eu/",
       "email_contact": "contact@rubycat.eu",
       "contact_url": "https://www.rubycat.eu/contact",
@@ -19880,7 +19691,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Safeo, basée à Saint-Germain-en-Laye, fournit des services d'externalisation informatique depuis ses data centers Tier 3+ en France. Son catalogue couvre l'infrastructure cloud, la sauvegarde externalisée Safeo Backup avec PRA-PCA, la connectivité (téléphonie IP, VPN/MPLS) et des connexions multi-cloud vers AWS, Azure, Google, IBM et Oracle. L'offre Safeo e-Santé cible spécifiquement les acteurs du secteur de la santé.",
-      "detailed_description": "",
       "website": "https://www.safeo.fr/",
       "email_contact": "contact@safeo.fr",
       "contact_url": "https://www.safeo.fr/nous-contacter/",
@@ -19988,7 +19798,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Sarus Technologies, établie au 128 rue La Boétie à Paris, développe une couche de confidentialité pour l'analytique et l'intelligence artificielle qui permet de traiter des données sensibles sans y accéder directement. Sa technologie repose sur la confidentialité différentielle, la génération de données synthétiques et la réécriture de requêtes (Query Rewriting), avec un module Sarus LLM pour l'usage et le fine-tuning de modèles, et un data cleanroom pour la collaboration multi-parties. Les équipes data, sécurité et DPO de la finance, la santé, le marketing et le secteur public en sont les utilisateurs visés.",
-      "detailed_description": "",
       "website": "https://sarus.tech",
       "email_contact": "contact@sarus.tech",
       "contact_url": "https://sarus.tech/contact",
@@ -20099,7 +19908,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Scalair est un MSSP français installé à Hem (Nord) qui opère des data centers certifiés ISO 27001 et HDS en France. Ses services couvrent la protection des infrastructures, du réseau via SASE, des sauvegardes souveraines (dont Office 365), de la messagerie anti-phishing, des postes avec EPP/EDR et des comptes à privilèges via une approche PAM zero-trust, ainsi qu'une plateforme d'IA souveraine. L'offre s'adapte aux start-ups, PME, ETI comme aux grands groupes.",
-      "detailed_description": "",
       "website": "https://www.scalair.fr/",
       "email_contact": "contact@scalair.fr",
       "contact_url": "https://scalair.fr/contact/",
@@ -20211,7 +20019,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Scality édite des logiciels de stockage objet compatibles S3. Sa gamme comprend RING, pour le stockage fichiers et objets à grande échelle, ARTESCA, préintégré aux solutions de sauvegarde, et ADI (Autonomous Data Infrastructure) pour les volumes du pétaoctet à l'exaoctet. L'éditeur met en avant l'immuabilité via S3 Object Lock et le modèle CORE5 contre les rançongiciels, avec des clients comme EDF, Orange, Bloomberg et Comcast.",
-      "detailed_description": "",
       "website": "https://www.scality.com/fr/",
       "email_contact": "contact@scality.com",
       "contact_url": "https://www.scality.com/fr/contact/",
@@ -20324,7 +20131,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Scovery exploite une plateforme de notation cyber qui mesure en continu l'exposition au risque d'une organisation sur Internet. Elle propose trois modules: Cyberscore Management pour cartographier la surface d'attaque et identifier les vulnérabilités, Portfolio Management pour évaluer fournisseurs et partenaires, et Industry Benchmarking pour comparer les postures. Elle s'adresse aux investisseurs, aux grandes entreprises et aux assureurs, et cite BNP Paribas et CAPZA parmi ses références.",
-      "detailed_description": "",
       "website": "https://scovery.com",
       "email_contact": "",
       "contact_url": "https://scovery.com/contact/",
@@ -20429,7 +20235,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Seald fournit un SDK de chiffrement de bout en bout que les développeurs intègrent dans leurs applications web et mobiles pour chiffrer les données localement. Le kit gère les droits d'accès, la révocation de destinataires, un mécanisme de récupération 2-man-rule et une Sig-Chain contre les attaques de l'homme du milieu. La société, désormais filiale d'OVHcloud, vise les secteurs santé, juridique et assurance et compte Framatome et Stellantis parmi ses clients.",
-      "detailed_description": "",
       "website": "https://www.seald.io",
       "email_contact": "contact@seald.io",
       "contact_url": "https://www.seald.io",
@@ -20529,7 +20334,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "SecDojo opère une plateforme de formation et d'entraînement en cybersécurité fondée sur l'apprentissage par le jeu. Elle réunit plusieurs briques: Cyber Learn pour les cours, Cyber Lab pour les environnements pratiques, Cyber Events pour les CTF et hackathons, Cyber Awareness pour la sensibilisation et Cyber Hiring pour le recrutement. Les parcours couvrent les profils SOC Analyst, Pentester ou Security Architect et s'alignent sur MITRE ATT&CK et NIST NICE, avec des bureaux à Guyancourt et Casablanca.",
-      "detailed_description": "",
       "website": "https://sec-dojo.com",
       "email_contact": "contact@sec-dojo.com",
       "contact_url": "https://www.sec-dojo.com",
@@ -20630,7 +20434,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "SeckIOT conçoit des logiciels de cybersécurité pour les systèmes industriels et l'OT. SeckIOT Explore cartographie les réseaux et inventorie les équipements de façon progressive et nomade, tandis que SeckIOT Citadelle assure la détection de menaces en temps réel et la supervision des infrastructures OT. La société cible l'industrie, le bâtiment, l'énergie, l'eau et les transports, et travaille avec des intégrateurs comme Equans Digital, Sopra Steria et Serma.",
-      "detailed_description": "",
       "website": "https://seckiot.fr",
       "email_contact": "",
       "contact_url": "https://seckiot.fr/contact/",
@@ -20736,7 +20539,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Seclab développe des solutions de cybersécurité pour les environnements OT et les infrastructures critiques, regroupées dans la plateforme Seclab Xcore. Seclab Xchange isole physiquement les réseaux via une technologie brevetée d'Electronic AirGap, Seclab Xport filtre les transferts de fichiers via les ports USB et Seclab Xplore assure découverte et détection. Son siège est à Pérols et ses clients incluent Thales, EDF, SNCF et TotalEnergies.",
-      "detailed_description": "",
       "website": "https://www.seclab-security.com",
       "email_contact": "contact@seclab-security.com",
       "contact_url": "https://www.seclab-security.com/contact/",
@@ -20839,7 +20641,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Securas Technologies combine cybersécurité et sécurité des procédés industriels. La société propose des prestations de tests d'intrusion, de sécurité managée et d'intervention post-incident, ainsi qu'un pare-feu applicatif web appelé CyberShield. Elle dispose de bureaux à Plaisir en France et à Sfax en Tunisie et met en avant un support 24/7.",
-      "detailed_description": "",
       "website": "https://securas.fr",
       "email_contact": "",
       "contact_url": "https://securas.fr/contact/",
@@ -20937,7 +20738,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Secure-IC conçoit des technologies de sécurité pour les systèmes embarqués et les puces électroniques. Son catalogue comprend la plateforme Securyzr (iSSP, neo Core, Integrated Secure Element, modules de cryptographie post-quantique) et les outils d'évaluation Laboryzr (Virtualyzr, Analyzr, Catalyzr). Les marchés visés incluent l'automobile, la défense et l'espace, l'industrie 4.0, les infrastructures critiques et les semi-conducteurs.",
-      "detailed_description": "",
       "website": "https://www.secure-ic.com",
       "email_contact": "contact@secure-ic.com",
       "contact_url": "https://www.secure-ic.com/contact-us/",
@@ -21052,7 +20852,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Secuserve édite des services SaaS de filtrage de messagerie hébergés en France, autour de son produit e-securemail. La solution combine quatre moteurs antivirus et plusieurs technologies antispam, avec des modules comme e-securemail for M365, PhishingCoach, ProtectLink et l'intégration GLIMPS Malware Detect. Sa clientèle regroupe administrations, collectivités et entreprises françaises (SNCF, Intersport, Leclerc).",
-      "detailed_description": "",
       "website": "https://e-securemail.com",
       "email_contact": "contact@secuserve.com",
       "contact_url": "https://e-securemail.com/contact",
@@ -21169,7 +20968,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "SeedFence développe une plateforme de détection des cyberattaques pour les appareils embarqués, baptisée XDR Platform for IoTs, qui surveille terminaux Android, objets connectés et environnements OT. La société propose également une ROM Android durcie (Hardened Android ROM) et s'appuie sur des moteurs d'IA légère couplés à des règles. Elle cible les activités critiques, le secteur public, l'aérospatiale, le maritime et la défense navale.",
-      "detailed_description": "",
       "website": "https://www.seedfence.io",
       "email_contact": "contact@seedfence.fr",
       "contact_url": "https://www.seedfence.io/contact",
@@ -21275,7 +21073,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Seela exploite une plateforme de formation en cybersécurité 100% en ligne, avec des parcours certifiants couvrant l'ethical hacking, le DevSecOps, l'analyse SOC ou le rôle de RSSI. L'offre s'articule autour des modules CyberTraining, des challenges BattleH4ck et d'un CyberRange d'entraînement. Organisme certifié Qualiopi, Seela compte parmi ses partenaires La Poste, Airbus, Deloitte et Cisco.",
-      "detailed_description": "",
       "website": "https://seela.io",
       "email_contact": "information@seela.io",
       "contact_url": "https://seela.io/contact/",
@@ -21381,7 +21178,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "SEKOIA.IO édite une plateforme de détection et de réponse aux menaces en mode SaaS. Son offre réunit Sekoia Defend (XDR), Sekoia Intelligence (renseignement sur les menaces) et la Sekoia SOC Platform combinant SIEM nouvelle génération, SOAR et CTI, avec plus de 300 intégrations et un catalogue de règles de détection. Elle s'adresse aux équipes SOC, MSSP et RSSI, avec des références comme VINCI, EDF, SNCF et la NCI Agency de l'OTAN.",
-      "detailed_description": "",
       "website": "https://sekoia.io",
       "email_contact": "",
       "contact_url": "https://www.sekoia.io/en/contact/",
@@ -21487,7 +21283,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Sekost réalise des audits de cybersécurité à distance pour les PME, en partant d'un nom de domaine ou d'une adresse IP pour cartographier l'exposition et détecter les vulnérabilités sans rien installer. Ses offres se nomment Flash Cyber (mémo rapide gratuit), Diagnostic Cyber (cartographie complète avec note de maturité et recommandations priorisées) et Check-up Cyber (surveillance continue avec historique des scans). La société vise les PME, TPE, collectivités territoriales, experts-comptables et prestataires IT.",
-      "detailed_description": "",
       "website": "https://sekost.fr",
       "email_contact": "contact@sekost.fr",
       "contact_url": "https://sekost.fr/contact/",
@@ -21590,7 +21385,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Sekrata se positionne sur la gestion et la sécurisation des identités numériques. Ses solutions comprennent SEKRATA Authenticate, qui valide une action sensible via un appel téléphonique, et SEKRATA IAM/SSO bâti sur la plateforme open source Keycloak pour centraliser les accès applicatifs. L'entreprise accompagne les organisations dans la modernisation de leur architecture d'authentification et de gestion des accès.",
-      "detailed_description": "",
       "website": "https://www.sekrata.com",
       "email_contact": "contact@sekrata.com",
       "contact_url": "https://www.sekrata.com/contact.html",
@@ -21702,7 +21496,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Serenicity conçoit des solutions matérielles et logicielles de cybersécurité pour TPE, PME, collectivités et le secteur santé. Sa sonde Detoxio analyse les flux réseau et bloque les menaces à partir de la base Serenicity Cerbère, tandis que la plateforme Control assure la supervision avec cartographies interactives et la Cybermétéo. L'éditeur a signé des conventions avec la Police Judiciaire et le Commandement Cyber de la Gendarmerie.",
-      "detailed_description": "",
       "website": "https://www.serenicity.fr",
       "email_contact": "contact@serenicity.fr",
       "contact_url": "https://www.serenicity.fr/contact",
@@ -21813,7 +21606,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Sesame IT édite des solutions de détection et réponse réseau (NDR) destinées aux OIV, opérateurs critiques et grandes entreprises. Son produit Jizô NDR, qualifié par l'ANSSI, combine moteurs de signatures, analyse de malwares et algorithmes d'IA pour repérer les menaces sur les réseaux IT et OT; l'offre comprend aussi Hoshi pour la threat intelligence et Loki pour le déploiement de leurres. La société a été fondée en 2017 et développe ses produits en France.",
-      "detailed_description": "",
       "website": "https://sesame-it.com/fr-fr",
       "email_contact": "",
       "contact_url": "https://sesame-it.com/fr-fr/contact",
@@ -21924,7 +21716,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Shadline propose Plan B Numérique, une plateforme souveraine de gestion de crise cyber et de continuité d'activité hébergée en France (HDS). Elle réunit communication sécurisée, visioconférence, stockage résilient et transfert de données pour faire tourner les cellules de crise en mode dégradé et reconstruire le système d'information après un incident. Les clients visés sont les établissements de soin, les collectivités et les PME et ETI industrielles soumises à NIS2 et DORA.",
-      "detailed_description": "",
       "website": "https://www.shadline.fr",
       "email_contact": "support@shadline.com",
       "contact_url": "https://www.shadline.fr/index.php/nous-contacter/",
@@ -22029,7 +21820,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "ShareID est une plateforme de confiance numérique conforme à eIDAS 2.0 qui vérifie l'identité et fournit l'authentification forte. Ses modules Doc IDV (contrôle d'authenticité de documents avec NFC), Liveness IDV (détection du vivant), EUDIW Attestations et MFA 3.0 servent des acteurs comme Crédit Agricole, la Gendarmerie Nationale et Euro Information. La société, immatriculée à Nanterre, opère depuis Neuilly-sur-Seine avec des bureaux à Casablanca et San Francisco.",
-      "detailed_description": "",
       "website": "https://shareid.ai",
       "email_contact": "contact@shareid.ai",
       "contact_url": "https://www.shareid.ai/contact-shareid",
@@ -22135,7 +21925,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Shindan édite un outil de diagnostic de sécurité mobile qui repère compromissions et vulnérabilités sur smartphones et tablettes sans accéder aux données personnelles. Il se décline en Shindan Desktop (on-premise), Shindan Mobile (application iOS) et Shindan SaaS pour superviser une flotte d'appareils. La cible regroupe dirigeants et VIP, collaborateurs en déplacement, organisations critiques comme l'énergie et équipes de réponse à incident et CERT.",
-      "detailed_description": "",
       "website": "https://shindan.io",
       "email_contact": "",
       "contact_url": "https://shindan.io/contact",
@@ -22239,7 +22028,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Situation, basée à Vannes, propose une plateforme de cartographie automatisée des systèmes d'information pour préparer la conformité NIS2 et suivre les recommandations de l'ANSSI. Un agent autonome collecte les données sur six couches techniques et les restitue selon les six perspectives ANSSI (physique, logique, applicatif, métier, admin, écosystème), avec analyse des flux réseau, audit de pare-feu et diagnostic de maturité NIS2. La cible vise les entités françaises assujetties à NIS2 et celles soumises à ISO 27001.",
-      "detailed_description": "",
       "website": "https://www.situation.sh",
       "email_contact": "contact@situation.sh",
       "contact_url": "https://www.situation.sh/contact",
@@ -22343,7 +22131,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Skyld sécurise les modèles d'intelligence artificielle embarqués contre le vol et la rétro-ingénierie. Son offre comprend AI Protection pour protéger les modèles déployés sur appareil, AI Licensing pour en gérer la distribution et AdverScan pour tester leur résistance aux attaques adverses. La société, basée à Rennes, vise les acteurs qui déploient de l'IA sur mobile, IoT ou véhicules autonomes.",
-      "detailed_description": "",
       "website": "https://www.skyld.io",
       "email_contact": "contact@skyld.io",
       "contact_url": "https://www.skyld.io/contact",
@@ -22448,7 +22235,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Skypher édite une plateforme qui automatise les réponses aux questionnaires de sécurité grâce à l'IA, avec un Questionnaire Automation Tool et un Trust Center pour partager sa posture de sécurité et ses rapports SOC2. L'outil s'adresse aux équipes commerciales, sales engineering et sécurité, avec des clients comme Adobe, Deel ou CMA CGM. La société est immatriculée au RCS Paris (SIREN 853243327) et dispose aussi d'une entité aux États-Unis.",
-      "detailed_description": "",
       "website": "https://www.skypher.co",
       "email_contact": "contact@skypher.co",
       "contact_url": "https://www.skypher.co/contact-us",
@@ -22557,7 +22343,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Smart Global Governance propose une plateforme SaaS de gouvernance, risques et conformité couvrant plus de 200 normes. Elle se décline en modules tels qu'Audit, Contrôle Interne, Enterprise Risk Management, Data & Privacy pour le RGPD, Third Party Risk Management et Smart Whistleblowing, complétés par l'assistant IA Optivalue.ai. Le siège se situe à Valbonne (06560).",
-      "detailed_description": "",
       "website": "https://smartglobalgovernance.com",
       "email_contact": "contact@smartglobalgovernance.com",
       "contact_url": "https://smartglobalgovernance.com/fr/contact/page-de-contact",
@@ -22666,7 +22451,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Snowpack a conçu une technologie de réseau privé invisible baptisée VIPN qui fragmente et anonymise les communications pour masquer utilisateurs, services et infrastructures. Le catalogue regroupe Invisible Access pour la navigation anonyme, Invisible Services, Invisible Infra et des SDK/API Invisible by Snowpack. La société par actions simplifiée a son siège à Orsay (RCS Evry 900 526 716) et travaille avec le CEA et Bpifrance.",
-      "detailed_description": "",
       "website": "https://snowpack.eu",
       "email_contact": "contact@snowpack.eu",
       "contact_url": "https://snowpack.eu/contact/",
@@ -22769,7 +22553,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Stormshield, filiale du groupe Airbus, édite une gamme de produits de cybersécurité dont les pare-feux Stormshield Network Security, la protection des postes Stormshield Endpoint Security, le chiffrement Stormshield Data Security et une offre XDR. La société adresse aussi les environnements industriels OT et cible la défense, les administrations, l'énergie, la santé et les opérateurs critiques. Le site français renvoie ses mentions légales et un service commercial joignable au +33 9 69 32 96 29.",
-      "detailed_description": "",
       "website": "https://www.stormshield.com/fr/",
       "email_contact": "",
       "contact_url": "https://www.stormshield.com/fr/contact/",
@@ -22879,7 +22662,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "StrangeBee développe TheHive, une plateforme collaborative de gestion des cas de réponse à incident, disponible en on-premise, en SaaS et en images cloud AWS/Azure, accompagnée du moteur d'analyse et d'automatisation Cortex. L'outil revendique plus de 3500 analystes en SOC, CERT, CSIRT et MSSP dans plus de 50 pays et compte plus de 300 intégrations. La société StrangeBee SAS est basée à Paris.",
-      "detailed_description": "",
       "website": "https://strangebee.com",
       "email_contact": "contact@strangebee.com",
       "contact_url": "https://strangebee.com/contact-strangebee/",
@@ -22979,7 +22761,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Corrium, édité par Straton IT, automatise l'audit et le contrôle technique continu des infrastructures informatiques des TPE et PME, qu'elles soient administrées en local ou à distance. La plateforme analyse les configurations via sa base de connaissance Stratopédia et son IA, contrôle la sécurité des postes et évalue l'obsolescence avec le module Diaggy. Elle vise les PME, collectivités locales et le secteur de la santé, depuis La Madeleine (59110).",
-      "detailed_description": "",
       "website": "https://www.corrium.com",
       "email_contact": "info@corrium.com",
       "contact_url": "https://www.corrium.com/demande-de-presentation-corrium/",
@@ -23080,7 +22861,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Suzan édite une plateforme de gouvernance, conformité et gestion des risques pensée autour de l'IA, présentée comme un \"Compliance OS\". L'outil automatise le suivi réglementaire et l'analyse de risque pour de grandes organisations, Airbus figurant parmi les références affichées. La société est hébergée à Station F à Paris.",
-      "detailed_description": "",
       "website": "https://suzan.ai",
       "email_contact": "",
       "contact_url": "https://suzan.ai",
@@ -23176,7 +22956,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "SYLink Technologie, basée à Clermont-Ferrand, regroupe plusieurs briques cyber sur une même plateforme: le boîtier SYLink Box (pare-feu et IDS/IPS), SYLink EDR, SYLink Audit & Pentest, SYLink Learn pour la formation et des modules de veille fuites de données (SYLink Leaks/Darkweb). Une supervision SOC 24/7 est assurée par des équipes françaises. Les cibles vont des TPE aux administrations et au secteur Défense.",
-      "detailed_description": "",
       "website": "https://sylink.fr",
       "email_contact": "contact@sylink.fr",
       "contact_url": "https://sylink.fr/contact",
@@ -23290,7 +23069,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Symbiotic Security travaille sur la sécurité du code généré par les assistants IA. Ses deux produits, Symbiotic Code et Symbiotic Flow, intègrent des garde-fous au moment de la génération puis des contrôles tout au long du cycle de développement (protection dans l'IDE, scan des pull requests et de la CI/CD, remédiation automatique). L'offre s'adresse aux RSSI et équipes AppSec, notamment dans la finance et la tech, et la société est établie à Brooklyn, New York.",
-      "detailed_description": "",
       "website": "https://www.symbioticsec.ai",
       "email_contact": "contact@symbioticsec.ai",
       "contact_url": "https://www.symbioticsec.ai/contact",
@@ -23390,7 +23168,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Syspertec est un éditeur de logiciels français installé à Saint-Cloud, actif sur deux domaines. Côté mainframe, il propose Virtel Web Suite pour moderniser et sécuriser l'accès aux systèmes IBM z Systems, ainsi que la distribution des solutions SDS de chiffrement et sécurité réseau z/OS. Côté RegTech, son outil Synapse gère le KYC et le scoring de risque crédit pour banques et assurances.",
-      "detailed_description": "",
       "website": "https://www.syspertec.fr",
       "email_contact": "info@syspertec.com",
       "contact_url": "https://www.syspertec.com/contact.html",
@@ -23482,7 +23259,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Systancia, éditeur basé à Sausheim (Haut-Rhin), construit une plateforme Zero Trust autour de cyberelements.io. On y trouve cyberelements Gate pour l'accès distant, cyberelements Cleanroom pour la gestion des comptes à privilèges (PAM), cyberelements Identity pour la gestion des identités et cyberelements Access pour l'authentification unique. Les cas d'usage couvrent le télétravail, l'accès des prestataires et la surveillance des accès, pour la santé, le secteur public et les entreprises.",
-      "detailed_description": "",
       "website": "https://www.systancia.com",
       "email_contact": "contact@systancia.com",
       "contact_url": "https://www.systancia.com/demande-de-contact/",
@@ -23586,7 +23362,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "TEHTRIS, éditeur français installé à Pessac, développe la TEHTRIS XDR AI Platform qui réunit EDR OPTIMUS, MTD pour le mobile, SIEM, NTA, honeypots, SOAR et la threat intelligence, avec le moteur IA CYBERIA et la réponse Zero Trust ZTR. La société propose aussi un service MDR CyberSphere et une academy de formation. Ses clients incluent industrie, infrastructures critiques, administrations, santé, banques et transports.",
-      "detailed_description": "",
       "website": "https://tehtris.com/fr/",
       "email_contact": "business@tehtris.com",
       "contact_url": "https://tehtris.com/fr/contact/",
@@ -23691,7 +23466,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Tenacy, éditeur lyonnais, propose une plateforme SaaS de pilotage de la cybersécurité (GRC) destinée aux organisations multi-entités. Elle centralise la gouvernance et la gestion de plus de cinquante référentiels (ISO 27001, DORA, NIS 2, SOC 2, HIPAA), automatise les workflows et produit des tableaux de bord et rapports, avec plus de vingt connecteurs natifs vers des outils comme CrowdStrike, SentinelOne ou Rapid7. Parmi ses clients figurent Thales, EDF et Leroy Merlin.",
-      "detailed_description": "",
       "website": "https://www.tenacy.io",
       "email_contact": "contact@tenacy.io",
       "contact_url": "https://www.tenacy.io/contact",
@@ -23790,7 +23564,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "TenderCrunch est une plateforme SaaS qui automatise la rédaction des réponses aux appels d'offres à l'aide d'agents d'intelligence artificielle. L'outil analyse les dossiers de consultation, extrait les critères, complète les questionnaires (RFP, RFI, DDQ) et rédige les mémoires techniques au format Word ou PDF. Les données sont hébergées en France sur une infrastructure SecNumCloud, et l'éditeur vise le BTP, le numérique, la logistique, la santé et l'énergie.",
-      "detailed_description": "",
       "website": "https://tendercrunch.com",
       "email_contact": "hello@tendercrunch.com",
       "contact_url": "https://tendercrunch.com/contact",
@@ -23889,7 +23662,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Texplained, SARL française, est spécialisée dans la rétro-ingénierie et l'extraction de données des circuits intégrés. Elle édite ChipJuice, un logiciel d'analyse automatisée de puces reposant sur une technologie brevetée, dispense des formations au hardware hacking (préparation d'échantillons, micro-probing) et réalise des prestations d'analyse de composants depuis son laboratoire Le Lab. Les usages couvrent la validation de chaîne d'approvisionnement, la recherche de portes dérobées matérielles et l'investigation de contrefaçons.",
-      "detailed_description": "",
       "website": "https://texplained.com",
       "email_contact": "contact@texplained.com",
       "contact_url": "https://texplained.com/contact/",
@@ -23998,7 +23770,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Le Luna HSM de Thales est un module matériel de sécurité dédié à la protection des clés cryptographiques sur tout leur cycle de vie. Décliné en versions réseau, PCIe et USB, il assure le stockage sécurisé des clés, le chiffrement, le déchiffrement, l'authentification et la signature électronique. Il s'adresse aux services financiers et paiements, infrastructures critiques et organismes publics soumis à des exigences de conformité comme PCI DSS, RGPD ou eIDAS.",
-      "detailed_description": "",
       "website": "https://cpl.thalesgroup.com/fr/encryption/hardware-security-modules",
       "email_contact": "",
       "contact_url": "https://cpl.thalesgroup.com/fr/encryption/contact-us",
@@ -24114,7 +23885,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "TheGreenBow édite depuis 1998 des logiciels de cybersécurité centrés sur le VPN, avec plus de deux millions d'utilisateurs. Sa gamme Endpoint Secure Connection regroupe des clients VPN IPsec pour Windows, Linux, macOS et Android, complétée par la console serveur Bowrealis pour la gestion des licences. Les solutions ciblent les opérateurs d'importance vitale, les entités essentielles et les administrations, avec des références comme le Ministère de l'Intérieur, Dassault Aviation et l'INSEP.",
-      "detailed_description": "",
       "website": "https://www.thegreenbow.com",
       "email_contact": "",
       "contact_url": "https://www.thegreenbow.com/fr/contact/",
@@ -24228,7 +23998,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Thidesoft est l'entité d'édition logicielle du groupe Potech, qui développe des outils de cyberdéfense. Son produit Darkivore assure la veille sur les menaces (cyber threat intelligence) avec surveillance du dark web, des réseaux sociaux et de l'empreinte numérique, tandis que Tacivoar est une plateforme SIEM++ dotée de capacités SOAR pour la surveillance et la réponse. Le groupe sert des organisations exposées à des risques cyber à travers ses bureaux internationaux.",
-      "detailed_description": "",
       "website": "https://potech.global/",
       "email_contact": "info@potech.global",
       "contact_url": "https://potech.global/contact-us",
@@ -24336,7 +24105,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Timeref propose un coffre-fort numérique et des data rooms pour stocker et partager des documents sensibles. La solution est certifiée AFNOR NF 203 CCFN et chiffre, versionne, indexe, horodate et appose un filigrane dynamique sur chaque document, avec authentification de pièce. Les données sont hébergées en France et la plateforme s'utilise notamment pour la levée de fonds et l'archivage probatoire d'entreprise.",
-      "detailed_description": "",
       "website": "https://timeref.net",
       "email_contact": "contact@timeref.net",
       "contact_url": "https://timeref.net/contact/",
@@ -24445,7 +24213,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Tixeo est un éditeur français de visioconférence sécurisée pour environnements sensibles, en mode cloud comme on-premise. Ses offres TixeoCloud, TixeoServer et TixeoPrivateCloud (hébergement qualifié SecNumCloud) intègrent chiffrement de bout en bout, messagerie chiffrée, partage de fichiers et salles de réunion virtuelles. La technologie est certifiée CSPN par l'ANSSI depuis 2017 et adressée à la défense, l'industrie, le juridique, la finance et les administrations.",
-      "detailed_description": "",
       "website": "https://www.tixeo.com",
       "email_contact": "",
       "contact_url": "https://www.tixeo.com/contact/",
@@ -24557,7 +24324,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Tranquil IT édite WAPT, un outil de déploiement de logiciels et de gestion de parc pour Windows, Linux et macOS, et intègre Samba-AD pour gérer annuaire et accès réseau. La société travaille avec l'enseignement et la recherche, le secteur médical, des entités publiques et l'industrie. Fondée en 2002, elle est installée à Saint-Sébastien-sur-Loire en Loire-Atlantique.",
-      "detailed_description": "",
       "website": "https://www.tranquil.it",
       "email_contact": "",
       "contact_url": "https://www.tranquil.it/contact/",
@@ -24667,7 +24433,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Trapster déploie des leurres de cybersécurité, faux serveurs SSH, RDP, SMB, MSSQL et LDAP ainsi que des honeytokens, pour repérer les intrusions sur un réseau. Les alertes remontent via un dashboard et des canaux comme email, Slack, Teams ou webhook, avec des intégrations Sekoia, Splunk et Syslog. Le produit est porté par Ballpoint, hébergé en France chez OVHcloud, et s'adresse aux équipes SOC.",
-      "detailed_description": "",
       "website": "https://trapster.cloud",
       "email_contact": "contact@trapster.cloud",
       "contact_url": "https://trapster.cloud/fr/contact",
@@ -24779,7 +24544,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "TRAX Solutions est une agence parisienne de conformité numérique qui accompagne les organisations sur la gestion des risques liés à la sécurité de l'information et à la protection des données. Elle édite vSUITE, une plateforme d'évaluation et de gestion des risques, et propose des prestations d'audit, de formation, de conseil et d'externalisation. Ses missions visent notamment les certifications ISO 27001 et l'hébergement de données de santé HDS.",
-      "detailed_description": "",
       "website": "https://www.trax.solutions",
       "email_contact": "contact@trax.solutions",
       "contact_url": "https://www.trax.solutions/contact/",
@@ -24885,7 +24649,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Treebal propose une messagerie sécurisée pour les échanges internes, avec une application personnelle gratuite et une version Treebal Pro dotée d'un cockpit d'administration pour les organisations. L'éditeur met en avant le chiffrement, l'hébergement européen et un faible impact environnemental, et compte parmi ses clients Vinci Construction, France Travail, Sopra Steria et TDF. La cible inclut entreprises, collectivités, CSE, écoles et hôpitaux. L'entité est une entreprise à mission basée en France.",
-      "detailed_description": "",
       "website": "https://www.treebal.green",
       "email_contact": "",
       "contact_url": "https://www.treebal.green",
@@ -24987,7 +24750,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Trout Software développe une approche Zero Trust sans agent pour les réseaux locaux IT, OT et IoT, déployée on-premise et sans modification de l'infrastructure. Sa gamme Access Gate (One, Enterprise, Inside) couvre la visibilité réseau, la micro-segmentation et le contrôle d'accès basé sur l'identité, avec proxy et fonctions d'audit. La société, Trout Software SAS, vise la défense, l'industrie, les transports et les opérateurs d'énergie et d'eau, et est implantée à Lyon.",
-      "detailed_description": "",
       "website": "https://trout.software",
       "email_contact": "",
       "contact_url": "https://trout.software/contact",
@@ -25091,7 +24853,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "TrustInSoft applique les méthodes formelles et l'interprétation abstraite à l'analyse de code source pour détecter erreurs mémoire, défauts d'exécution et failles de sécurité. Son produit TrustInSoft Analyzer cible le C, le C++ et Rust, complété par des services de vérification formelle et d'analyse de code Rust. Fondée en 2013 par d'anciens chercheurs du CEA, la société a ses bureaux à Paris et compte parmi ses clients Dassault Aviation, Mitsubishi et l'IRSN.",
-      "detailed_description": "",
       "website": "https://www.trust-in-soft.com",
       "email_contact": "contact@trust-in-soft.com",
       "contact_url": "https://www.trust-in-soft.com/contact-us",
@@ -25197,7 +24958,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Trustpair édite une plateforme SaaS de prévention de la fraude au virement qui valide et surveille les coordonnées bancaires des fournisseurs dans les processus achats et paiements. Ses modules couvrent l'onboarding fournisseur, le monitoring continu des bases de données et la sécurisation des paiements, avec des connecteurs vers SAP, Coupa, Ivalua, Oracle ERP Cloud et Kyriba. Société française (SAS immatriculée à Paris, SIREN 832940670), elle dispose d'un bureau commercial à New York et sert de grands comptes comme Danone, Nestlé et Sanofi.",
-      "detailed_description": "",
       "website": "https://trustpair.com",
       "email_contact": "contact@trustpair.com",
       "contact_url": "https://trustpair.com",
@@ -25301,7 +25061,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "TSplus édite des logiciels d'accès à distance pour serveurs Windows, avec les produits Remote Access (portail d'applications web et bureau distant), Remote Support (assistance et partage d'écran), Advanced Security (durcissement et protection des serveurs RDP) et Server Monitoring. L'éditeur revendique plus de 500 000 entreprises clientes, des PME aux grands comptes. La société met en avant un développement réalisé en France et en Europe.",
-      "detailed_description": "",
       "website": "https://tsplus.net",
       "email_contact": "sales@tsplus.net",
       "contact_url": "https://tsplus.net/contact/",
@@ -25405,7 +25164,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Tyrex conçoit des stations blanches de décontamination des supports amovibles, notamment les clés USB, pour empêcher l'introduction de menaces via les périphériques externes. Sa gamme K-REX (Console, Totem, Satellite, Mobile) analyse les médias entrants, D-REX sécurise les données sortantes, et des agents Workstation Protect contrôlent les postes. L'entreprise vise la défense, la santé, l'industrie et le secteur public, et est membre d'Hexatrust et du GICAT.",
-      "detailed_description": "",
       "website": "https://www.tyrex-cyber.com",
       "email_contact": "contact@tyrex-cyber.com",
       "contact_url": "https://tyrex-cyber.com/contact-2/",
@@ -25522,7 +25280,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Ubika, anciennement DenyAll puis Rohde & Schwarz Cybersecurity, développe une technologie de protection des applications web et des API (WAAP). Son offre comprend Ubika WAAP Gateway et Cloud Protector, qui filtrent le trafic et bloquent les attaques applicatives. La société, basée à Meudon avec un centre de R&D à Montpellier, adresse les secteurs comme la santé et les grands comptes.",
-      "detailed_description": "",
       "website": "https://www.ubikasec.com",
       "email_contact": "info@ubikasec.com",
       "contact_url": "https://www.ubikasec.com/en/legal-mentions/",
@@ -25636,7 +25393,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Ugloo, startup française installée à Bobigny, propose une sauvegarde de données dite indestructible qui fragmente et chiffre les fichiers avant de les disperser sur les capacités de stockage inutilisées des PC d'une organisation. L'algorithme breveté combine redondance et répartition pour reconstruire les données même en cas de perte d'une partie des postes. L'approche évite l'investissement dans des datacenters tout en gardant la gouvernance des données en interne.",
-      "detailed_description": "",
       "website": "https://www.ugloo.fr",
       "email_contact": "",
       "contact_url": "https://www.ugloo.fr/pages/contact.html",
@@ -25745,7 +25501,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "UncovAI, startup niçoise créée début 2024, édite une plateforme de détection de contenus générés par intelligence artificielle, couvrant texte, image, audio et vidéo via son AI Content Detector. Sa méthode repose sur des hypothèses mathématiques plutôt que sur des modèles d'apprentissage profond gourmands en ressources, pour des vérifications d'authenticité rapides. Elle vise entreprises, médias et acteurs publics confrontés à la fraude et à la désinformation, et figure au radar cybersécurité 2025 de Wavestone et Bpifrance.",
-      "detailed_description": "",
       "website": "https://uncovai.com/",
       "email_contact": "",
       "contact_url": "https://uncovai.com/contact/",
@@ -25852,7 +25607,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Uncovery exploite une plateforme d'External Attack Surface Management (EASM) qui découvre, évalue et surveille les actifs exposés sur Internet. Les modules Discovery & Management cartographient les actifs, Risk Assessment identifie et priorise les vulnérabilités, et Monitoring & Integration suit l'exposition et s'intègre aux flux de travail des équipes sécurité. L'éditeur est une SAS immatriculée au RCS de Nanterre, basée à La Garenne-Colombes.",
-      "detailed_description": "",
       "website": "https://www.uncovery.io",
       "email_contact": "contact@uncovery.io",
       "contact_url": "https://www.uncovery.io/company/contact",
@@ -25958,7 +25712,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "V6Protect, éditeur SaaS basé au Bouscat près de Bordeaux, sécurise les applications web et les API exposées sur Internet. Sa plateforme combine un module WAAP (pare-feu applicatif et protection d'API avec analyse contextuelle par IA) et un module EASM de détection de vulnérabilités, complétés par des services CTEM, PtaaS et MSSP. L'offre cible les organisations de toutes tailles cherchant à se conformer à NIS 2, DORA, ISO 27001 et HDS.",
-      "detailed_description": "",
       "website": "https://www.v6protect.fr",
       "email_contact": "hello@v6protect.fr",
       "contact_url": "https://www.v6protect.fr/contact-v6protect/",
@@ -26068,7 +25821,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Valmido conçoit la Valmido Card, une carte d'authentification sans mot de passe au standard FIDO2 avec capteur d'empreinte digitale intégré et connexion par BLE ou NFC. Un écran embarqué affiche les actions à approuver et la cryptographie repose sur des clés publiques. La cible est constituée d'entreprises cherchant à supprimer le phishing et la réutilisation de mots de passe.",
-      "detailed_description": "",
       "website": "https://www.valmido.com",
       "email_contact": "contact@valmido.com",
       "contact_url": "https://www.valmido.com/contact/",
@@ -26176,7 +25928,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Vaultys développe une gamme d'identité numérique souveraine et de gestion des accès. On y trouve VaultysID pour une identité décentralisée en pair-à-pair, SmartLink comme IAM et SSO, VaultysBox pour le partage de fichiers sensibles, ainsi que VaultysID-Q pour une authentification hybride post-quantique. L'entreprise s'adresse aux entreprises, collectivités territoriales et éditeurs de logiciels.",
-      "detailed_description": "",
       "website": "https://vaultys.com",
       "email_contact": "contact@vaultys.com",
       "contact_url": "https://vaultys.com/contact",
@@ -26293,7 +26044,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Vigilan Solutions, basée à Bordeaux, assure la sécurité des systèmes d'information à partir de briques open source et d'une surveillance quotidienne par ses experts. La société exploite l'EDR Nucleon pour la détection et la réponse aux menaces, propose des clés USB chiffrées et un échange sécurisé, et opère un SOC avec support 24h/24. Elle réalise aussi des audits de sécurité et est membre du CLUSIR Aquitaine.",
-      "detailed_description": "",
       "website": "https://www.vigilansolutions.fr",
       "email_contact": "contact@vigilansolutions.com",
       "contact_url": "https://www.vigilansolutions.fr",
@@ -26403,7 +26153,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "VirtualBrowser propose une isolation de navigation à distance (Remote Browser Isolation) qui exécute les accès internet sur un serveur distant et ne renvoie qu'un flux de pixels à l'utilisateur via sa technologie Fast Pixel Rendering. La solution contrôle finement le copier-coller, les téléchargements et l'impression, supporte Teams, Zoom et Webex, et se déploie en SaaS ou on-premise. Elle est certifiée CSPN par l'ANSSI et compte parmi ses clients Thales, la CNIL, Framatome et Safran.",
-      "detailed_description": "",
       "website": "https://www.virtualbrowser.com",
       "email_contact": "contact@virtualbrowser.com",
       "contact_url": "https://www.virtualbrowser.com/contact",
@@ -26511,7 +26260,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "WALLIX édite des solutions de gestion des identités et des accès dont son produit phare de gestion des accès à privilèges (Bastion / WALLIX PAM). Le portefeuille comprend aussi WALLIX IDaaS, la gouvernance WALLIX IAG, la plateforme Zero Trust WALLIX ONE, WALLIX Remote Access et le coffre WALLIX Enterprise Vault. Les clients couvrent la finance, la santé, les infrastructures critiques, l'éducation et le secteur public.",
-      "detailed_description": "",
       "website": "https://www.wallix.com",
       "email_contact": "info@wallix.com",
       "contact_url": "https://www.wallix.com/company/contact/",
@@ -26619,7 +26367,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "WaToo marque de façon invisible documents et données sensibles pour retrouver l'origine d'une fuite interne. La société commercialise un marquage sur poste client et un serveur de marquage, technologie issue de l'IMT Atlantique et couverte par deux brevets. Elle vise les organisations exposées à la divulgation de données confidentielles par des collaborateurs, partenaires ou sous-traitants.",
-      "detailed_description": "",
       "website": "https://watoo.tech",
       "email_contact": "contact@watoo.tech",
       "contact_url": "https://watoo.tech/contact-2/",
@@ -26724,7 +26471,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Whaller édite une plateforme modulaire de collaboration et de communication sécurisée pouvant servir d'intranet, de réseau social interne ou d'espace documentaire. Son offre Whaller DONJON est qualifiée SecNumCloud par l'ANSSI, et la gamme comprend Whaller RESILIENCE pour la continuité et la communication d'urgence ainsi que Whaller ARENA. Plus de 20 000 organisations l'utilisent, dont la Gendarmerie nationale, le CEA et des acteurs publics.",
-      "detailed_description": "",
       "website": "https://www.whaller.com",
       "email_contact": "contact@whaller.com",
       "contact_url": "https://www.whaller.com/fr/contact",
@@ -26825,7 +26571,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Whispeak travaille sur la sécurité de la voix avec deux briques: une authentification biométrique vocale sans mot de passe intégrant la détection du vivant, et un moteur de détection de deepfakes vocaux capable de repérer des voix synthétiques sur appels en direct ou enregistrements. La société, basée à Lille et certifiée ISO 27001, adresse les centres d'appels, la banque-assurance, la défense et les médias.",
-      "detailed_description": "",
       "website": "https://whispeak.io",
       "email_contact": "contact@whispeak.io",
       "contact_url": "https://whispeak.io/contact/",
@@ -26929,7 +26674,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Wimi propose une suite collaborative SaaS hébergée en France réunissant gestion de projet, partage de fichiers et communication. Elle regroupe des modules comme Workboard, Drive, Chat chiffré, Tâches et Gantt, AirTime pour la visioconférence, Sign pour la signature électronique et Filigrane. La plateforme est qualifiée SecNumCloud SaaS par l'ANSSI et compte parmi ses utilisateurs des ministères, des collectivités et des acteurs de la santé.",
-      "detailed_description": "",
       "website": "https://www.wimi-teamwork.com",
       "email_contact": "sales@wimi.pro",
       "contact_url": "https://www.wimi-teamwork.com/fr/contact",
@@ -27040,7 +26784,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Woleet fournit des services de certification numérique adossés à la blockchain. Son catalogue comprend Woleet Sign pour la signature électronique, l'horodatage et le cachet numérique pour prouver l'intégrité des documents, le tout exposé via une API et une CLI. La société parisienne référence des clients comme EDF, Kering, SNCF et Danone ainsi que des notaires.",
-      "detailed_description": "",
       "website": "https://www.woleet.io",
       "email_contact": "contact@woleet.com",
       "contact_url": "https://www.woleet.io/contacts.html",
@@ -27143,7 +26886,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Worldline est un prestataire de services de paiement dont le siège se trouve à Paris La Défense, couvrant terminaux, passerelles, acquisition et émission pour commerçants et institutions financières. L'entrée correspond à son offre Cloud Services Secured IaaS, une infrastructure cloud sécurisée adossée à son métier de traitement de transactions. Les secteurs servis incluent le commerce, la mobilité, le voyage et les institutions financières.",
-      "detailed_description": "",
       "website": "https://worldline.com",
       "email_contact": "",
       "contact_url": "https://worldline.com/en/home/main-navigation/git/contact",
@@ -27249,7 +26991,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Worteks est une société française d'expertise et d'édition en logiciels libres intervenant en audit, conseil, formation et infogérance. Elle édite plusieurs produits maison: W'ise, W'Sweet, W'IDaaS pour la gestion d'identités et W'Opla, et propose un hébergement souverain W'aaS. Elle contribue à des communautés open source comme oVirt et Proxmox et intervient pour des clients de tous secteurs.",
-      "detailed_description": "",
       "website": "https://www.worteks.com",
       "email_contact": "info@worteks.com",
       "contact_url": "https://www.worteks.com/mentionsLegales/",
@@ -27356,7 +27097,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Wybot Cybersécurité (groupe Sysun) intervient depuis 2006 sur la prévention, la protection et la détection des risques cyber. Son offre repose sur la sonde Wybot de détection des menaces, un service de cyberdéfense managée, des prestations de réponse aux incidents et des audits de sécurité. La société vise les entreprises, les professions réglementées comme les notaires, les collectivités locales et les administrations.",
-      "detailed_description": "",
       "website": "https://www.wybot-cybersecurite.com/",
       "email_contact": "",
       "contact_url": "https://www.wybot-cybersecurite.com/contactez-nous/",
@@ -27459,7 +27199,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Wysam SAS, basée à La Rochelle, propose une solution de partage sécurisé de documents et d'informations sensibles. L'outil génère des liens chiffrés de bout en bout, ajoute une authentification par code SMS à usage unique, des pages de réception dédiées et un historique de traçabilité des envois et consultations. Les usages visés couvrent les RH, le juridique, la finance et les ESN, pour indépendants, TPE, PME et grandes entreprises.",
-      "detailed_description": "",
       "website": "https://www.wysam.fr/",
       "email_contact": "contact@wysam.fr",
       "contact_url": "https://www.wysam.fr/contact/",
@@ -27562,7 +27301,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "YesWeHack, dont le siège est au 14 rue Charles-V à Paris, exploite une plateforme de sécurité offensive et de gestion des expositions. Elle réunit des programmes de Bug Bounty avec sa communauté de chercheurs, du Continuous Pentesting, de l'Autonomous Pentest, une gestion des politiques de divulgation de vulnérabilités (VDP), du Pentest Management et de l'Attack Surface Management. Sa clientèle va des PME aux grands comptes comme L'Oréal ou TeamViewer, avec des référentiels SOC2, ISO 27001, DORA et NIS2.",
-      "detailed_description": "",
       "website": "https://www.yeswehack.com",
       "email_contact": "",
       "contact_url": "https://www.yeswehack.com/contact",
@@ -27666,7 +27404,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Malva.RE, édité par la société française Yneos, est une plateforme d'analyse statique de malwares sans exécution. Elle propose le décompilateur VBA haute fidélité vbaDna avec détection du VBA Stomping et du VBA Purging, une dissection structurelle rapide de fichiers, l'extraction de configurations et d'IOCs, la décompilation AutoIt et une intégration avec MalwareBazaar. Elle s'adresse aux analystes en cybersécurité et aux équipes de threat intelligence.",
-      "detailed_description": "",
       "website": "https://malva.re",
       "email_contact": "contact@yneos.fr",
       "contact_url": "https://malva.re/contact/",
@@ -27776,7 +27513,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Yogosha, basée au 37 rue des Mathurins à Paris, opère une plateforme de tests de sécurité offensive s'appuyant sur une communauté de plus de 1100 chercheurs. Elle propose du Pentest as a Service, des programmes de Bug Bounty continus, un Vulnerability Disclosure Program et des Special Operations comme le red teaming ou la threat intelligence. Ses clients incluent des banques et administrations tels que BNP Paribas, Bouygues Telecom et le Ministère des Armées.",
-      "detailed_description": "",
       "website": "https://www.yogosha.com",
       "email_contact": "",
       "contact_url": "https://yogosha.com/contact/",
@@ -27884,7 +27620,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Yousign est un prestataire européen de confiance numérique fondé en France. Son offre couvre la signature électronique simple, avancée et qualifiée, le cachet électronique, des services de vérification d'identité, d'entreprises, de comptes bancaires et de documents, ainsi qu'une API d'intégration avec Salesforce, HubSpot ou Zapier. Plus de 30 000 entreprises européennes, des RH à l'immobilier et la banque, utilisent la plateforme.",
-      "detailed_description": "",
       "website": "https://yousign.com/fr-fr",
       "email_contact": "",
       "contact_url": "https://yousign.com/fr-fr/contact",
@@ -27913,7 +27648,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Youzer édite une plateforme SaaS de gouvernance des identités et des accès qui automatise le cycle de vie des utilisateurs, l'onboarding et l'offboarding des collaborateurs et les revues d'habilitations. La solution se connecte à plus de 200 applications comme Microsoft 365, Active Directory, Salesforce ou Google Workspace pour centraliser les données d'identité dispersées. Elle vise les DSI et responsables IT d'organisations de toutes tailles, avec un hébergement en France et une conformité RGPD.",
-      "detailed_description": "",
       "website": "https://www.youzer.net",
       "email_contact": "contact@youzer.net",
       "contact_url": "https://www.youzer.net/demo-outil-iam",
@@ -28020,7 +27754,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Zama développe des outils de chiffrement entièrement homomorphe (FHE) qui maintiennent la confidentialité des données tout en gardant leur vérifiabilité, principalement pour des applications blockchain. Son catalogue comprend FHEVM, une machine virtuelle Ethereum compatible FHE, la bibliothèque Rust TFHE-rs, le framework Concrete et son extension Concrete ML, ainsi que le Threshold FHE. Les cas d'usage couverts vont de la finance décentralisée confidentielle aux paiements privés et à la tokenisation d'actifs.",
-      "detailed_description": "",
       "website": "https://www.zama.org",
       "email_contact": "hello@zama.ai",
       "contact_url": "https://www.zama.org/contact",
@@ -28118,7 +27851,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Ziwit, fondée en 2011 et installée à Montpellier, réalise des audits manuels, des tests d'intrusion et des formations en cybersécurité. Elle commercialise plusieurs produits sous sa marque: HTTPCS pour la sécurité des applications web, TrustSign comme autorité de certification SSL, CloudFilt contre les robots malveillants, ainsi que Ziwit Academy pour la formation. Sa clientèle compte plus de 9 200 entreprises de la PME à la grande entreprise, dont Sanofi, Lagardère et Air Caraïbes.",
-      "detailed_description": "",
       "website": "https://www.ziwit.com",
       "email_contact": "contact@ziwit.com",
       "contact_url": "https://www.ziwit.com/fr/contactez-nous",
@@ -28221,7 +27953,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "TrustBuilder propose une plateforme de gestion des accès combinant authentification multifacteur adaptative et gestion d'identité client. L'offre s'articule autour de TB Access Manager pour le contrôle d'accès et de TB Authentication Manager pour l'authentification sans mot de passe, avec des modules comme TB FIDO, TB Transaction Signing et TB Windows Logon. Issue de la société française inWebo Technologies, elle adresse notamment les services financiers et l'industrie.",
-      "detailed_description": "",
       "website": "https://www.trustbuilder.com",
       "email_contact": "contact@trustbuilder.com",
       "contact_url": "https://www.trustbuilder.com/en/contact/",
@@ -28319,7 +28050,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cyber-Detect, installée sur le campus ARTEM à Nancy, développe des outils de détection de variants 0-day et de caractérisation de malwares qui contournent les antivirus classiques. Sa suite GORILLE comprend GORILLE Server pour lever un doute sur un fichier, GORILLE Expert pour la réponse à incident, GORILLE Patrol pour traquer les menaces dormantes et GORILLE On-Demand pour des rapports d'analyse. Parmi ses références figurent Airbus, Thales, EDF et l'Assurance Maladie.",
-      "detailed_description": "",
       "website": "https://www.cyber-detect.com",
       "email_contact": "",
       "contact_url": "https://cyber-detect.com/contact/",
@@ -28419,7 +28149,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Ercom, filiale du groupe Thales spécialisée depuis près de 40 ans dans la sécurité de la mobilité, sécurise les communications, les données et les terminaux. Son portefeuille comprend Citadel pour la messagerie et la visioconférence chiffrées, Cryptobox pour le partage de fichiers sécurisé et Cryptosmart pour la protection des mobiles et un VPN de niveau gouvernemental. Ses produits s'adressent aux entreprises et institutions publiques ayant des besoins élevés de confidentialité.",
-      "detailed_description": "",
       "website": "https://www.ercom.com",
       "email_contact": "contact@ercom.fr",
       "contact_url": "https://cds.thalesgroup.com/en/ercom",
@@ -28530,7 +28259,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Suricate est un prestataire français de patch management pour environnements IT et OT, qui prend en charge le déploiement des correctifs de sécurité Microsoft, Linux, des applications tierces (jusqu'à 2500 logiciels), du BIOS, des pilotes et des montées de version d'OS. Le service est supervisé 24/7 par une équipe basée en France, avec gestion multi-sites et prise en charge des machines déconnectées. Parmi ses clients figurent le groupe LISI, Piaggio et le Conseil National des Barreaux.",
-      "detailed_description": "",
       "website": "https://www.suricate.pm/",
       "email_contact": "contact@suricate.pm",
       "contact_url": "https://www.suricate.pm/mentions-legales",
@@ -28641,7 +28369,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Nucleon Security édite Nucleon Smart Endpoint, une plateforme EDR fondée sur une approche Zero Trust et l'intelligence artificielle pour la détection, la réponse et la remédiation sur les postes de travail et serveurs. La solution bloque les attaques, prévient les fuites de données et gère les vulnérabilités, avec une couverture MITRE ATT&CK, du threat hunting et du renseignement sur les menaces. Créée en 2016 et basée à Paris, elle est référencée au catalogue numérique de l'État et sur la marketplace OVHcloud.",
-      "detailed_description": "",
       "website": "https://nucleon-security.com",
       "email_contact": "contact@nucleon-security.com",
       "contact_url": "https://nucleon-security.com/fr/contact",
@@ -28754,7 +28481,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Erium conçoit des solutions de validation de la sécurité et de sensibilisation pour mesurer l'efficacité des défenses des organisations. Sa plateforme BlackNoise réalise de la simulation d'attaques (Breach and Attack Simulation) sur le cloud, les réseaux et les endpoints, tandis que son offre Cyber Investigation porte sur la formation et l'entraînement des collaborateurs. La société, basée à Paris, compte parmi ses clients des grands comptes du CAC 40 comme BPCE, TotalEnergies, Carrefour et la Macif.",
-      "detailed_description": "",
       "website": "https://www.erium.fr",
       "email_contact": "contact@erium.fr",
       "contact_url": "https://www.erium.fr/contact/",
@@ -28860,7 +28586,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "Cogiceo est un cabinet de conseil en cybersécurité spécialisé dans l'audit et les tests d'intrusion : pentest, audit d'architecture, de code source, de configuration, audits wifi, applications mobiles et systèmes industriels. La société édite aussi deux outils propriétaires, Sec4AD pour l'analyse automatique d'annuaires Active Directory et Explorer pour la détection de points d'entrée exposés. Basée à Paris et qualifiée PASSI RGS et LPM par l'ANSSI, elle accompagne grands comptes et PME.",
-      "detailed_description": "",
       "website": "https://www.cogiceo.com/",
       "email_contact": "contact@cogiceo.com",
       "contact_url": "https://www.cogiceo.com#map",
@@ -28965,7 +28690,6 @@ window.CYBERPANORAMA_DATA = {
         ]
       },
       "description": "PushManager est une solution de gestion de mobilité d'entreprise (EMM) éditée par ITS Ibelem à Nantes. Elle déploie et configure à distance les applications et paramètres de sécurité sur les flottes de smartphones et tablettes Android, ChromeOS, iOS et iPadOS, avec catalogue d'applications, gestion des groupes, inventaire, reporting et actions de verrouillage ou de localisation. Le produit cible administrations, collectivités territoriales et PME, et est référencé à l'UGAP.",
-      "detailed_description": "",
       "website": "https://www.pushmanager.com",
       "email_contact": "support@pushmanager.com",
       "contact_url": "https://www.pushmanager.com/nous-contacter/",
@@ -29051,39 +28775,9 @@ window.CYBERPANORAMA_DATA = {
         "wifi",
         "vpn mobile"
       ]
-    },
-    {
-      "id": "zz-test-hexatrust-a-supprimer",
-      "solution_name": "ZZ Test Hexatrust (à supprimer)",
-      "company_name": "ZZ Test Hexatrust (à supprimer)",
-      "logo_path": "assets/logos/zz-test-hexatrust-a-supprimer.svg",
-      "logo_file": "zz-test-hexatrust-a-supprimer.svg",
-      "logo_source": "submission",
-      "size": "medium",
-      "nist": {
-        "level1": "Protéger",
-        "level2": [
-          "PR.DS"
-        ],
-        "level3": [
-          "PR.DS-01"
-        ]
-      },
-      "description": "Entrée de test sur Hexatrust, sera supprimée juste après vérification.",
-      "detailed_description": "Description détaillée de test contenant le mot hexawitness pour vérifier l'indexation.",
-      "website": "https://zz-test-hexatrust.example",
-      "email_contact": "contact@zz-test-hexatrust.example",
-      "contact_url": "",
-      "country": "France",
-      "is_french": true,
-      "nis2_objective": "Gestion des identités et des accès aux SI",
-      "indexation": [
-        "test",
-        "chiffrement"
-      ]
     }
   ],
   "quality_summary": {
-    "total": 277
+    "total": 276
   }
 };
