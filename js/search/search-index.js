@@ -45,13 +45,20 @@
     const l2 = data.level2_catalog || {};
     const l3 = data.level3_catalog || {};
     docs = (data.solutions || []).map((s) => {
-      const parts = [s.solution_name || "", s.company_name || "", s.nist?.level1 || ""]
+      // Mots du NOM (solution + entreprise) : ils sont prioritaires a la recherche.
+      const nameParts = [s.solution_name || "", s.company_name || ""];
+      // Mots de CONTENU : fonction, mots-cles d'indexation, libelles NIST et description detaillee.
+      // Indexes mais non prioritaires (cf. idsFor) : une recherche qui matche un nom n'y descend pas.
+      const contentParts = [s.nist?.level1 || ""]
         .concat(s.indexation || [])
         .concat((s.nist?.level2 || []).map((c) => l2[c]?.label || ""))
-        .concat((s.nist?.level3 || []).map((c) => l3[c] || ""));
-      const words = new Set();
-      parts.forEach((p) => tokenize(p).forEach((w) => words.add(w)));
-      return { id: s.id, words };
+        .concat((s.nist?.level3 || []).map((c) => l3[c] || ""))
+        .concat([s.detailed_description || ""]);
+      const nameWords = new Set();
+      nameParts.forEach((p) => tokenize(p).forEach((w) => nameWords.add(w)));
+      const words = new Set(nameWords);   // le nom fait aussi partie du contenu global
+      contentParts.forEach((p) => tokenize(p).forEach((w) => words.add(w)));
+      return { id: s.id, nameWords, words };
     });
     synonymLookup = buildSynonymLookup(data.search_synonyms);
     cacheQuery = null;
@@ -114,12 +121,24 @@
     if (!q || !docs.length) return null;
     if (q === cacheQuery) return cacheIds;
     const variants = variantsFor(q);
-    const ids = new Set();
-    docs.forEach((d) => {
+    const matches = (wordsSet) => {
       for (const v of variants) {
-        if (v.every((qw) => wordMatches(qw, d.words))) { ids.add(d.id); break; }
+        if (v.every((qw) => wordMatches(qw, wordsSet))) return true;
       }
-    });
+      return false;
+    };
+    // Priorite au nom : si la requete matche des NOMS de solutions, on ne renvoie que ceux-la.
+    // Ainsi "thales" remonte la fiche Thales, pas toutes les fiches qui citent Thales en client.
+    // Sans aucun match de nom, on elargit au contenu (mots-cles, NIST, description detaillee).
+    const nameIds = new Set();
+    docs.forEach((d) => { if (matches(d.nameWords)) nameIds.add(d.id); });
+    let ids;
+    if (nameIds.size) {
+      ids = nameIds;
+    } else {
+      ids = new Set();
+      docs.forEach((d) => { if (matches(d.words)) ids.add(d.id); });
+    }
     cacheQuery = q;
     cacheIds = ids;
     return ids;

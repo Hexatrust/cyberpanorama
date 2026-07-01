@@ -232,6 +232,7 @@ def main():
                      "level2": [l2] if l2 else [],
                      "level3": l3},
             "description": m.get("description", ""),
+            "detailed_description": m.get("detailed_description", ""),
             "website": m.get("website", ""),
             "email_contact": m.get("email_contact", ""),
             "contact_url": m.get("contact_url", ""),

@@ -4,6 +4,7 @@
     { "name": "solution_name", "type": "string" },
     { "name": "company_name", "type": "string" },
     { "name": "description", "type": "string", "optional": true },
+    { "name": "detailed_description", "type": "string", "optional": true },
     { "name": "indexation", "type": "string[]", "optional": true },
     { "name": "nis2_objective", "type": "string", "optional": true },
     { "name": "nist_l1", "type": "string", "facet": true, "optional": true },
