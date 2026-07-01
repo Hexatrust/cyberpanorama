@@ -28844,32 +28844,5 @@
       "wifi",
       "vpn mobile"
     ]
-  },
-  {
-    "id": "test-entreprise-hexatrust",
-    "solution_name": "[TEST] Entreprise Hexatrust",
-    "company_name": "[TEST] Entreprise Hexatrust",
-    "logo_path": "assets/logos/test-entreprise-hexatrust.svg",
-    "logo_file": "test-entreprise-hexatrust.svg",
-    "logo_source": "submission",
-    "size": "small",
-    "nist": {
-      "level1": "Protéger",
-      "level2": [
-        "PR.DS"
-      ],
-      "level3": [
-        "PR.DS-01",
-        "PR.DS-02"
-      ]
-    },
-    "description": "Description courte modifiée sur Hexatrust.",
-    "website": "### Nouveau contact (si changement)",
-    "country": "France",
-    "is_french": true,
-    "indexation": [],
-    "email_contact": "contact@test-hexatrust-final.example",
-    "nis2_objective": "Maîtrise des SI",
-    "detailed_description": "Contenu de test avec le mot hxfinalwitness pour valider l'indexation par le moteur de recherche."
   }
 ]
