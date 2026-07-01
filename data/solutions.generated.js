@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-07-01T14:38:11+00:00",
+  "generated_at": "2026-07-01T14:39:05+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29059,19 +29059,20 @@ window.CYBERPANORAMA_DATA = {
       "logo_path": "assets/logos/test-entreprise-hexatrust.svg",
       "logo_file": "test-entreprise-hexatrust.svg",
       "logo_source": "submission",
-      "size": "medium",
+      "size": "small",
       "nist": {
         "level1": "Protéger",
         "level2": [
           "PR.DS"
         ],
         "level3": [
-          "PR.DS-01"
+          "PR.DS-01",
+          "PR.DS-02"
         ]
       },
-      "description": "Entreprise de test Hexatrust, sera supprimée après vérification.",
+      "description": "Description courte modifiée sur Hexatrust.",
       "detailed_description": "Contenu de test avec le mot hxfinalwitness pour valider l'indexation par le moteur de recherche.",
-      "website": "https://test-hexatrust-final.example",
+      "website": "### Nouveau contact (si changement)",
       "email_contact": "contact@test-hexatrust-final.example",
       "contact_url": "",
       "country": "France",

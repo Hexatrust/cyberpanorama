@@ -28852,20 +28852,19 @@
     "logo_path": "assets/logos/test-entreprise-hexatrust.svg",
     "logo_file": "test-entreprise-hexatrust.svg",
     "logo_source": "submission",
-    "size": "medium",
+    "size": "small",
     "nist": {
       "level1": "Protéger",
       "level2": [
-        "PR.DS",
-        "DE.CM"
+        "PR.DS"
       ],
       "level3": [
         "PR.DS-01",
-        "DE.CM-01"
+        "PR.DS-02"
       ]
     },
-    "description": "Entreprise de test Hexatrust, sera supprimée après vérification.",
-    "website": "https://test-hexatrust-final.example",
+    "description": "Description courte modifiée sur Hexatrust.",
+    "website": "### Nouveau contact (si changement)",
     "country": "France",
     "is_french": true,
     "indexation": [],
