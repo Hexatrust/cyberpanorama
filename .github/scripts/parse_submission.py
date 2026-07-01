@@ -360,6 +360,9 @@ def main():
         tid = cur.get("id")
         if want_delete:
             # Suppression demandee : on retire l'entree. Les autres champs du formulaire sont ignores.
+            lf = cur.get("logo_file")
+            if lf and (LOGOS / lf).exists():
+                (LOGOS / lf).unlink()                 # on retire aussi le fichier logo (pas d'orphelin)
             items = [s for s in items if s.get("id") != tid]
             path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             print(f"Suppression préparée : {name} ({tid})")
