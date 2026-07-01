@@ -96,7 +96,7 @@ CLASSIF_FIX = {}  # migre dans solutions.json / size_review.json
 # Colonnes de la feuille Solutions. Elles correspondent 1:1 aux champs du site ; toutes font
 # l'aller-retour Excel <-> JSON (cf. xlsx_to_json.py). "Indexation" = mots-cles de recherche.
 HEADERS = [
-    "Entreprise", "Type d'entreprise", "Description", "Indexation",
+    "Entreprise", "Type d'entreprise", "Description", "Description longue", "Indexation",
     "NIST 1 (Fonction)", "NIST 2 (Catégorie)", "NIST 3 (Sous-catégories)",
     "Objectif NIS2", "Site web", "Contact", "Logo",
     # Cle technique : sert au sens inverse (Excel -> JSON via xlsx_to_json.py). NE PAS modifier.
@@ -155,6 +155,7 @@ def build_row(sol, labels):
         "Entreprise": sol.get("solution_name", ""),
         "Type d'entreprise": SIZE_FR.get(sol.get("size", ""), sol.get("size", "")),
         "Description": sol.get("description", ""),
+        "Description longue": sol.get("detailed_description", ""),
         "Indexation": indexation,
         "NIST 1 (Fonction)": fr_l1(labels, nist.get("level1")),
         "NIST 2 (Catégorie)": code_label(labels.get("level2", {}), l2) if l2 else "",
@@ -178,12 +179,13 @@ HEAD_FONT = Font(bold=True, color="FFFFFF", size=11)
 WRAP_TOP = Alignment(wrap_text=True, vertical="top")
 TOP = Alignment(vertical="top")
 WIDTHS = {
-    "Entreprise": 28, "Type d'entreprise": 22, "Description": 60, "Indexation": 70,
+    "Entreprise": 28, "Type d'entreprise": 22, "Description": 60, "Description longue": 80,
+    "Indexation": 70,
     "NIST 1 (Fonction)": 18, "NIST 2 (Catégorie)": 34, "NIST 3 (Sous-catégories)": 50,
     "Objectif NIS2": 30, "Site web": 34, "Contact": 34, "Pays": 8, "Français": 9,
     "Vérifié": 9, "Logo": 22, "ID": 30,
 }
-WRAP_COLS = {"Description", "Indexation",
+WRAP_COLS = {"Description", "Description longue", "Indexation",
              "NIST 2 (Catégorie)", "NIST 3 (Sous-catégories)", "Objectif NIS2"}
 
 

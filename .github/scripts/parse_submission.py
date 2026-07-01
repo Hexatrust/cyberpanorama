@@ -248,20 +248,18 @@ FUNC_BY_PREFIX = {"GV": "Gouverner", "ID": "Identifier", "PR": "Protéger",
 
 def validate_nist(nist):
     """Verifie la classification finale : les codes N2/N3 existent dans le referentiel
-    (data/nist_labels_fr.json), le N2 appartient bien a la fonction N1, et le N3 a une N2 choisie.
+    (data/nist_labels_fr.json) et le N3 se rattache a une N2 choisie. On n'exige PAS que le N2
+    appartienne a la fonction N1 : un acteur peut porter des capacites d'autres fonctions.
     Retourne la liste des erreurs (vide = OK)."""
     labels = load(DATA / "nist_labels_fr.json", {})
     valid_l2 = set(labels.get("level2", {}))
     valid_l3 = set(labels.get("level3", {}))
-    l1 = nist.get("level1") or ""
     l2 = nist.get("level2") or []
     l3 = nist.get("level3") or []
     errs = []
     for c in l2:
         if c not in valid_l2:
             errs.append(f"catégorie N2 inconnue : {c}")
-        elif l1 and FUNC_BY_PREFIX.get(c[:2]) != l1:
-            errs.append(f"la catégorie N2 {c} n'appartient pas à la fonction {l1}")
     for c in l3:
         if c not in valid_l3:
             errs.append(f"sous-catégorie N3 inconnue : {c}")
@@ -303,11 +301,9 @@ def main():
         field(body, "Nouveau logo (fichier ou URL, si changement)")
     logo_url = image_url_from(upload)
     # Libelles ajout = sans "(optionnel)" (tout est obligatoire a l'ajout) ; on tente aussi la variante
-    # modif. field() est insensible aux accents, donc "Mots-cles" retrouve l'entete "Mots-clés".
-    keywords = [k.strip() for k in (field(body, "Mots-cles")
-                                    or field(body, "Nouveaux mots-cles (si changement)")).split(",") if k.strip()]
     nis2 = field(body, "Objectif NIS2 principal") or field(body, "Nouvel objectif NIS2 (si changement)")
-    detailed = field(body, "Description detaillee") or field(body, "Nouvelle description detaillee (si changement)")
+    # Description longue : affichee nulle part, elle sert au moteur de recherche (indexation du contenu).
+    detailed = field(body, "Description longue") or field(body, "Nouvelle description longue (si changement)")
     # N2 (categories) : menu multi-choix (ajout) ou texte libre (modif). N3 (sous-categories) : texte libre.
     level2 = codes_from_text(field(body, "Categories NIST CSF 2.0 - N2 (1 a 3)")) \
         or codes_from_text(field(body, "Nouvelles categories NIST N2 (si changement)"))
@@ -320,8 +316,8 @@ def main():
     if mode == "add":
         # A l'ajout, TOUT est obligatoire (cote formulaire ET cote serveur, au cas ou un champ serait vide).
         for label_, val in (("fonction NIST", fonction), ("catégories N2", level2),
-                            ("sous-catégories N3", level3), ("taille", size), ("description", desc),
-                            ("description détaillée", detailed), ("mots-clés", keywords),
+                            ("sous-catégories N3", level3), ("taille", size), ("description courte", desc),
+                            ("description longue", detailed),
                             ("objectif NIS2", nis2), ("site web", website), ("contact", contact),
                             ("logo", logo_file)):
             if not val:
@@ -332,7 +328,8 @@ def main():
             "logo_path": f"assets/logos/{logo_file}", "logo_file": logo_file, "logo_source": "submission",
             "size": size, "nist": {"level1": fonction, "level2": level2, "level3": level3},
             "description": desc, "website": website, "country": "France", "is_french": True,
-            "indexation": keywords,
+            # Plus de champ mots-cles : la recherche s'appuie sur la description longue (indexation).
+            "indexation": [],
         }
         fail_if_invalid_nist(entry["nist"])
         if contact:
