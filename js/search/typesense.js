@@ -17,25 +17,26 @@
     // .github/workflows/deploy-pages.yml). Vide -> on retombe sur la recherche client-side.
     host: (window.CP_RUNTIME && window.CP_RUNTIME.typesenseHost) || "",
     collection: "solutions",
-    // On NE cherche PAS dans `description` : sinon une requete comme "thales" remonte toutes les fiches
-    // qui citent Thales comme client/partenaire. La recherche porte sur le nom, l'entreprise et les
-    // mots-cles d'indexation (faits pour ca).
-    queryBy: "solution_name,company_name,indexation,nis2_objective",
-    queryByWeights: "6,5,3,1",
+    // Recherche a deux niveaux (comme l'index client). Niveau 1 : le NOM seul. S'il matche, on ne
+    // renvoie que ces fiches (une recherche "thales" remonte Thales, pas toutes les fiches qui la
+    // citent en client). Niveau 2, seulement si aucun nom ne matche : on elargit au contenu, y compris
+    // la description detaillee, avec un poids faible pour limiter le bruit.
+    nameQueryBy: "solution_name,company_name",
+    nameQueryByWeights: "6,5",
+    contentQueryBy: "solution_name,company_name,indexation,nis2_objective,detailed_description",
+    contentQueryByWeights: "6,5,3,2,1",
   };
 
-  async function search(query) {
-    const q = (query || "").trim();
-    if (!q) return null;
-    if (!config.host) return null;          // pas d'host configure -> repli client-side
+  // Une passe de recherche (paginee) sur un jeu de champs donne. Renvoie un Set d'ids.
+  async function runQuery(q, queryBy, weights) {
     const ids = new Set();
     let page = 1;
     let found = Infinity;
     while (ids.size < found && page <= 3) {
       const params = new URLSearchParams({
         q,
-        query_by: config.queryBy,
-        query_by_weights: config.queryByWeights,
+        query_by: queryBy,
+        query_by_weights: weights,
         num_typos: "1",
         prefix: "true",
         per_page: "250",
@@ -52,6 +53,17 @@
       page += 1;
     }
     return ids;
+  }
+
+  async function search(query) {
+    const q = (query || "").trim();
+    if (!q) return null;
+    if (!config.host) return null;          // pas d'host configure -> repli client-side
+    // Niveau 1 : le nom. S'il matche, on ne renvoie que ces fiches.
+    const nameIds = await runQuery(q, config.nameQueryBy, config.nameQueryByWeights);
+    if (nameIds.size) return nameIds;
+    // Niveau 2 : elargissement au contenu (mots-cles, NIS2, description detaillee).
+    return runQuery(q, config.contentQueryBy, config.contentQueryByWeights);
   }
 
   async function health() {

@@ -26,6 +26,7 @@ def main():
                 "solution_name": s.get("solution_name", "") or "",
                 "company_name": s.get("company_name", "") or "",
                 "description": s.get("description", "") or "",
+                "detailed_description": s.get("detailed_description", "") or "",
                 "indexation": s.get("indexation", []) or [],
                 "nis2_objective": s.get("nis2_objective", "") or "",
                 "nist_l1": nist.get("level1", "") or "",

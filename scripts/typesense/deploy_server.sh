@@ -95,6 +95,33 @@ ensure_collection() {
   fi
 }
 
+reconcile_schema() {
+  # La collection existe : son schema n'a PAS ete recree. On ajoute (sans coupure, via PATCH) les
+  # champs presents dans schema.json mais absents en base (ex : detailed_description). L'import qui suit
+  # (upsert) remplira ensuite ces champs pour tous les documents. Deps : curl/grep/sed uniquement.
+  local live want name line defs=""
+  live=$(curl -fsS "${TS_URL}/collections/solutions" -H "X-TYPESENSE-API-KEY: ${TS_KEY}" | tr -d ' ')
+  want=$(grep -o '"name"[[:space:]]*:[[:space:]]*"[^"]*"' "${SCHEMA_FILE}" | sed -E 's/.*"([^"]+)"$/\1/')
+  while IFS= read -r name; do
+    [ -z "${name}" ] && continue
+    if ! printf '%s' "${live}" | grep -q "\"name\":\"${name}\""; then
+      line=$(grep "\"name\"[[:space:]]*:[[:space:]]*\"${name}\"" "${SCHEMA_FILE}" | head -1 \
+             | sed -E 's/^[[:space:]]*//; s/,[[:space:]]*$//')
+      defs="${defs:+${defs},}${line}"
+    fi
+  done <<EOF
+${want}
+EOF
+  if [ -n "${defs}" ]; then
+    echo "Schema : ajout de champ(s) manquant(s) sans coupure (PATCH)."
+    curl -fsS -X PATCH "${TS_URL}/collections/solutions" \
+      -H "X-TYPESENSE-API-KEY: ${TS_KEY}" -H 'Content-Type: application/json' \
+      --data "{\"fields\":[${defs}]}" >/dev/null && echo "Schema mis a jour."
+  else
+    echo "Schema deja a jour (aucun champ a ajouter)."
+  fi
+}
+
 import_docs() {
   echo "Import (upsert) des documents."
   local resp="/tmp/ts_import_resp.txt"
@@ -119,5 +146,6 @@ else
 fi
 wait_health
 ensure_collection
+reconcile_schema
 import_docs
 echo "OK : Typesense est a jour."
