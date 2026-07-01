@@ -100,17 +100,20 @@ def image_url_from(text):
     dans le formulaire, heberge par GitHub), pieces jointes GitHub, ou URL d'image nue."""
     if not text:
         return ""
+    m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', text, re.I)        # <img src="url"> (image collee/glissee)
+    if m:
+        return m.group(1)
     m = re.search(r"!\[[^\]]*\]\((https?://[^)\s]+)\)", text)            # ![alt](url) (drag & drop)
     if m:
         return m.group(1)
     m = re.search(r"https?://(?:user-images\.githubusercontent\.com|github\.com/user-attachments)/\S+", text)
     if m:
-        return m.group(0).rstrip(").,")
+        return m.group(0).rstrip('".,)\'<>')
     m = re.search(r"https?://\S+\.(?:png|gif|jpe?g|svg|webp)", text, re.I)  # URL d'image nue
     if m:
-        return m.group(0)
+        return m.group(0).rstrip('".,)\'<>')
     m = re.search(r"https?://\S+", text)  # toute URL en dernier recours (download_logo valide que c'est bien une image)
-    return m.group(0).rstrip(").,") if m else ""
+    return m.group(0).rstrip('".,)\'<>') if m else ""
 
 
 def ensure_public_url(url):
