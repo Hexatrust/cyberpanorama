@@ -28584,19 +28584,18 @@
     "logo_path": "assets/logos/zz-test-hexatrust-a-supprimer.svg",
     "logo_file": "zz-test-hexatrust-a-supprimer.svg",
     "logo_source": "submission",
-    "size": "medium",
+    "size": "small",
     "nist": {
       "level1": "Protéger",
       "level2": [
-        "PR.DS",
-        "PR.AA"
+        "PR.DS"
       ],
       "level3": [
         "PR.DS-01",
-        "PR.AA-01"
+        "PR.DS-02"
       ]
     },
-    "description": "Entrée de test sur Hexatrust, sera supprimée juste après vérification.",
+    "description": "Description modifiée sur Hexatrust via le formulaire de modification.",
     "website": "https://zz-test-hexatrust.example",
     "country": "France",
     "is_french": true,
