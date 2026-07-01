@@ -195,24 +195,15 @@ body:
     id: description
     attributes:
       label: Description courte
-      description: "Une à deux phrases (objectif et fonctionnalités principales). C'est le texte AFFICHÉ sur la fiche du panorama."
+      description: "Une à deux phrases (objectif et fonctionnalités principales). Sera affichée sur la fiche de la solution."
     validations:
       required: true
 
   - type: textarea
     id: description_detaillee
     attributes:
-      label: Description détaillée
-      description: "Description plus complète (produits, cibles, différenciateurs). Non affichée sur la fiche : elle sert au MOTEUR DE RECHERCHE (indexation), pour rendre l'acteur trouvable par son contenu."
-    validations:
-      required: true
-
-  - type: input
-    id: mots_cles
-    attributes:
-      label: Mots-clés
-      description: Mots-clés séparés par des virgules, utilisés pour la recherche
-      placeholder: "EDR, XDR, détection, SOC"
+      label: Description longue
+      description: "Description complète (produits, cibles, différenciateurs, technologies, cas d'usage). Non affichée : elle sera utilisée pour le moteur de recherche. Mettez-y tous les termes utiles pour rendre l'acteur trouvable (plus besoin de mots-clés séparés)."
     validations:
       required: true
 

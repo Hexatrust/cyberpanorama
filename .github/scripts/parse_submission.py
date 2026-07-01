@@ -100,17 +100,20 @@ def image_url_from(text):
     dans le formulaire, heberge par GitHub), pieces jointes GitHub, ou URL d'image nue."""
     if not text:
         return ""
+    m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', text, re.I)        # <img src="url"> (image collee/glissee)
+    if m:
+        return m.group(1)
     m = re.search(r"!\[[^\]]*\]\((https?://[^)\s]+)\)", text)            # ![alt](url) (drag & drop)
     if m:
         return m.group(1)
     m = re.search(r"https?://(?:user-images\.githubusercontent\.com|github\.com/user-attachments)/\S+", text)
     if m:
-        return m.group(0).rstrip(").,")
+        return m.group(0).rstrip('".,)\'<>')
     m = re.search(r"https?://\S+\.(?:png|gif|jpe?g|svg|webp)", text, re.I)  # URL d'image nue
     if m:
-        return m.group(0)
+        return m.group(0).rstrip('".,)\'<>')
     m = re.search(r"https?://\S+", text)  # toute URL en dernier recours (download_logo valide que c'est bien une image)
-    return m.group(0).rstrip(").,") if m else ""
+    return m.group(0).rstrip('".,)\'<>') if m else ""
 
 
 def ensure_public_url(url):
@@ -245,20 +248,18 @@ FUNC_BY_PREFIX = {"GV": "Gouverner", "ID": "Identifier", "PR": "Protéger",
 
 def validate_nist(nist):
     """Verifie la classification finale : les codes N2/N3 existent dans le referentiel
-    (data/nist_labels_fr.json), le N2 appartient bien a la fonction N1, et le N3 a une N2 choisie.
+    (data/nist_labels_fr.json) et le N3 se rattache a une N2 choisie. On n'exige PAS que le N2
+    appartienne a la fonction N1 : un acteur peut porter des capacites d'autres fonctions.
     Retourne la liste des erreurs (vide = OK)."""
     labels = load(DATA / "nist_labels_fr.json", {})
     valid_l2 = set(labels.get("level2", {}))
     valid_l3 = set(labels.get("level3", {}))
-    l1 = nist.get("level1") or ""
     l2 = nist.get("level2") or []
     l3 = nist.get("level3") or []
     errs = []
     for c in l2:
         if c not in valid_l2:
             errs.append(f"catégorie N2 inconnue : {c}")
-        elif l1 and FUNC_BY_PREFIX.get(c[:2]) != l1:
-            errs.append(f"la catégorie N2 {c} n'appartient pas à la fonction {l1}")
     for c in l3:
         if c not in valid_l3:
             errs.append(f"sous-catégorie N3 inconnue : {c}")
@@ -300,11 +301,9 @@ def main():
         field(body, "Nouveau logo (fichier ou URL, si changement)")
     logo_url = image_url_from(upload)
     # Libelles ajout = sans "(optionnel)" (tout est obligatoire a l'ajout) ; on tente aussi la variante
-    # modif. field() est insensible aux accents, donc "Mots-cles" retrouve l'entete "Mots-clés".
-    keywords = [k.strip() for k in (field(body, "Mots-cles")
-                                    or field(body, "Nouveaux mots-cles (si changement)")).split(",") if k.strip()]
     nis2 = field(body, "Objectif NIS2 principal") or field(body, "Nouvel objectif NIS2 (si changement)")
-    detailed = field(body, "Description detaillee") or field(body, "Nouvelle description detaillee (si changement)")
+    # Description longue : affichee nulle part, elle sert au moteur de recherche (indexation du contenu).
+    detailed = field(body, "Description longue") or field(body, "Nouvelle description longue (si changement)")
     # N2 (categories) : menu multi-choix (ajout) ou texte libre (modif). N3 (sous-categories) : texte libre.
     level2 = codes_from_text(field(body, "Categories NIST CSF 2.0 - N2 (1 a 3)")) \
         or codes_from_text(field(body, "Nouvelles categories NIST N2 (si changement)"))
@@ -317,8 +316,8 @@ def main():
     if mode == "add":
         # A l'ajout, TOUT est obligatoire (cote formulaire ET cote serveur, au cas ou un champ serait vide).
         for label_, val in (("fonction NIST", fonction), ("catégories N2", level2),
-                            ("sous-catégories N3", level3), ("taille", size), ("description", desc),
-                            ("description détaillée", detailed), ("mots-clés", keywords),
+                            ("sous-catégories N3", level3), ("taille", size), ("description courte", desc),
+                            ("description longue", detailed),
                             ("objectif NIS2", nis2), ("site web", website), ("contact", contact),
                             ("logo", logo_file)):
             if not val:
@@ -329,7 +328,8 @@ def main():
             "logo_path": f"assets/logos/{logo_file}", "logo_file": logo_file, "logo_source": "submission",
             "size": size, "nist": {"level1": fonction, "level2": level2, "level3": level3},
             "description": desc, "website": website, "country": "France", "is_french": True,
-            "indexation": keywords,
+            # Plus de champ mots-cles : la recherche s'appuie sur la description longue (indexation).
+            "indexation": [],
         }
         fail_if_invalid_nist(entry["nist"])
         if contact:
@@ -348,7 +348,8 @@ def main():
         path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Ajout préparé : {name} ({slug})")
     else:
-        # edit : retrouver l'entree existante (par nom ou slug) et modifier ses champs en place.
+        # edit ou SUPPRESSION : retrouver l'entree existante (par nom ou slug).
+        want_delete = "[x]" in field(body, "Suppression").lower()
         path = DATA / "solutions.json"
         items = load(path, [])
         cur = next((s for s in items
@@ -357,6 +358,17 @@ def main():
             print(f"ERREUR : entreprise '{name}' introuvable dans le panorama")
             sys.exit(1)
         tid = cur.get("id")
+        if want_delete:
+            # Suppression demandee : on retire l'entree. Les autres champs du formulaire sont ignores.
+            lf = cur.get("logo_file")
+            if lf and (LOGOS / lf).exists():
+                (LOGOS / lf).unlink()                 # on retire aussi le fichier logo (pas d'orphelin)
+            items = [s for s in items if s.get("id") != tid]
+            path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            print(f"Suppression préparée : {name} ({tid})")
+            emit("company_name", name)
+            emit("slug", tid)
+            return
         if desc:
             cur["description"] = desc
         if website:

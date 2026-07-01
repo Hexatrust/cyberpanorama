@@ -120,10 +120,13 @@ def main():
             v["solution_name"] = name
             v["company_name"] = name
 
-        # Description
+        # Description (courte affichee) + detaillee (moteur de recherche)
         desc = clean(col("Description"))
         if desc:
             v["description"] = desc
+        ddesc = clean(col("Description longue"))
+        if ddesc:
+            v["detailed_description"] = ddesc
 
         # Site / contact / NIS2
         web = clean(col("Site web"))

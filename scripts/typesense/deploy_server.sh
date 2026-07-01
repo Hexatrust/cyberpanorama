@@ -122,6 +122,26 @@ EOF
   fi
 }
 
+sync_deletions() {
+  # L'import est additif (upsert) : il n'enleve rien. Ici on retire de Typesense les documents dont
+  # l'id n'est PLUS present dans l'import (entreprise supprimee du panorama), pour que la recherche
+  # reste synchrone avec les donnees. Deps : curl/grep/sed/comm uniquement.
+  # ids voulus : l'id est la 1re cle de chaque ligne JSONL (build_import.py), on l'ancre en debut de ligne.
+  local want have todelete n=0
+  want=$(grep -oE '^\{"id": ?"[^"]+"' "${IMPORT_FILE}" | sed -E 's/.*"([^"]+)"$/\1/' | sort -u)
+  have=$(curl -fsS "${TS_URL}/collections/solutions/documents/export?include_fields=id" \
+    -H "X-TYPESENSE-API-KEY: ${TS_KEY}" 2>/dev/null | grep -oE '"id":"[^"]+"' | sed -E 's/.*"([^"]+)"$/\1/' | sort -u)
+  todelete=$(comm -23 <(printf '%s\n' "${have}") <(printf '%s\n' "${want}"))
+  for id in ${todelete}; do
+    [ -z "${id}" ] && continue
+    if curl -fsS -X DELETE "${TS_URL}/collections/solutions/documents/${id}" \
+        -H "X-TYPESENSE-API-KEY: ${TS_KEY}" >/dev/null 2>&1; then
+      n=$((n + 1))
+    fi
+  done
+  echo "Synchro suppressions : ${n} document(s) retire(s) de Typesense (absents de l'import)."
+}
+
 import_docs() {
   echo "Import (upsert) des documents."
   local resp="/tmp/ts_import_resp.txt"
@@ -148,4 +168,5 @@ wait_health
 ensure_collection
 reconcile_schema
 import_docs
+sync_deletions
 echo "OK : Typesense est a jour."
