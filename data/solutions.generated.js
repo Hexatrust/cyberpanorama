@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-07-01T14:32:58+00:00",
+  "generated_at": "2026-07-01T14:38:11+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29051,9 +29051,36 @@ window.CYBERPANORAMA_DATA = {
         "wifi",
         "vpn mobile"
       ]
+    },
+    {
+      "id": "test-entreprise-hexatrust",
+      "solution_name": "[TEST] Entreprise Hexatrust",
+      "company_name": "[TEST] Entreprise Hexatrust",
+      "logo_path": "assets/logos/test-entreprise-hexatrust.svg",
+      "logo_file": "test-entreprise-hexatrust.svg",
+      "logo_source": "submission",
+      "size": "medium",
+      "nist": {
+        "level1": "Protéger",
+        "level2": [
+          "PR.DS"
+        ],
+        "level3": [
+          "PR.DS-01"
+        ]
+      },
+      "description": "Entreprise de test Hexatrust, sera supprimée après vérification.",
+      "detailed_description": "Contenu de test avec le mot hxfinalwitness pour valider l'indexation par le moteur de recherche.",
+      "website": "https://test-hexatrust-final.example",
+      "email_contact": "contact@test-hexatrust-final.example",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Maîtrise des SI",
+      "indexation": []
     }
   ],
   "quality_summary": {
-    "total": 276
+    "total": 277
   }
 };
