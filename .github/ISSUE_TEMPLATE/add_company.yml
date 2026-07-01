@@ -195,7 +195,7 @@ body:
     id: description
     attributes:
       label: Description courte
-      description: Une à deux phrases (objectif et fonctionnalités principales)
+      description: "Une à deux phrases (objectif et fonctionnalités principales). C'est le texte AFFICHÉ sur la fiche du panorama."
     validations:
       required: true
 
@@ -203,7 +203,7 @@ body:
     id: description_detaillee
     attributes:
       label: Description détaillée
-      description: Description plus complète (produits, cibles, différenciateurs)
+      description: "Description plus complète (produits, cibles, différenciateurs). Non affichée sur la fiche : elle sert au MOTEUR DE RECHERCHE (indexation), pour rendre l'acteur trouvable par son contenu."
     validations:
       required: true
 
