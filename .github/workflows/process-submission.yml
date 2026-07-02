@@ -82,10 +82,10 @@ jobs:
             echo '```'
             echo
             echo "**Comment corriger :**"
-            echo "1. En haut du **premier message** de cette issue (la description), cliquez sur le menu **...** puis **Edit**, et corrigez les champs concernés par l'erreur ci-dessus (par exemple un code NIST inexistant, ou une catégorie N2 qui ne correspond pas à la fonction choisie)."
+            echo "1. En haut du **premier message** de cette issue (la description), cliquez sur le menu **...** puis **Edit**, et corrigez les champs concernés par l'erreur ci-dessus (par exemple un code NIST inexistant, une sous-catégorie N3 mal rattachée, un logo qui n'est pas une image, ou un champ obligatoire vide)."
             echo "2. Une fois corrigé, un **mainteneur du dépôt** remettra le label approved pour relancer le traitement (seuls les mainteneurs peuvent poser ce label)."
             echo
-            echo "Rappel : le N2 doit appartenir à la fonction N1 (par exemple fonction Protéger : codes PR.xx), et le N3 à une N2 choisie (par exemple PR.DS : PR.DS-01). Un code N3 valide mais rattaché à la mauvaise N2 est aussi refusé."
+            echo "Rappel NIST : les codes N2/N3 doivent exister dans le référentiel, chaque N3 doit se rattacher à une N2 choisie (par exemple PR.DS : PR.DS-01), et il y a au maximum 3 catégories N2. En revanche un N2/N3 peut relever d'une autre fonction que le N1 (c'est autorisé)."
           } > /tmp/comment.md
           gh issue comment "${{ github.event.issue.number }}" --repo "${{ github.repository }}" --body-file /tmp/comment.md
           gh issue edit "${{ github.event.issue.number }}" --repo "${{ github.repository }}" --remove-label approved || true

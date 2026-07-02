@@ -61,16 +61,74 @@ def fetch_issue(number):
         return json.load(r)
 
 
+# Libelles de section CONNUS (formulaires add + edit), sans accents ni casse. Un '### <titre>' n'est
+# traite comme separateur de section QUE si son titre est dans cet ensemble. Ainsi un '###' present
+# dans la VALEUR d'un champ (titre markdown dans une description, ou injection type '### Logo ...')
+# ne casse pas le parsing et ne peut pas detourner un autre champ.
+KNOWN_SECTION_LABELS = {
+    "nom de l'entreprise ou de la solution",
+    "nom exact de l'entreprise ou de la solution a modifier",
+    "fonction nist csf 2.0 principale",
+    "nouvelle fonction nist (si changement)",
+    "categories nist csf 2.0 - n2 (1 a 3)",
+    "nouvelles categories nist n2 (si changement)",
+    "sous-categories nist csf 2.0 - n3",
+    "nouvelles sous-categories nist n3 (si changement)",
+    "taille de l'entreprise",
+    "nouvelle taille (si changement)",
+    "description courte",
+    "nouvelle description (si changement)",
+    "description longue",
+    "objectif nis2 principal",
+    "site web",
+    "nouveau site web (si changement)",
+    "contact (email ou page contact)",
+    "nouveau contact (si changement)",
+    "logo (fichier ou url)",
+    "nouveau logo (fichier ou url, si changement)",
+    "suppression",
+    "raison de la modification",
+    "engagement",
+}
+
+
 def field(body, label):
-    """Valeur sous un titre de section '### <label>'. Le titre est compare SANS accents ni casse
-    (les libelles du formulaire peuvent en avoir), mais la valeur est renvoyee telle quelle (accents
-    preserves). Ainsi on peut accentuer les libelles du formulaire sans toucher a ce script."""
+    """Valeur sous un titre de section '### <label>'. Le titre est compare SANS accents ni casse.
+    Seuls les '### <libelle connu>' (KNOWN_SECTION_LABELS) delimitent les sections : un '###' quelconque
+    dans la valeur d'un champ reste dans la valeur (pas de troncature, pas de detournement de champ)."""
     target = strip_accents(label).strip().lower()
-    for m in re.finditer(r"###[ \t]*([^\n]+?)[ \t]*\n+(.*?)(?=\n###|\Z)", body, re.DOTALL):
-        if strip_accents(m.group(1)).strip().lower() == target:
-            val = m.group(2).strip()
-            return "" if strip_accents(val).lower() in EMPTY else val
-    return ""
+    cur, buf, found = None, [], None
+    for line in body.splitlines():
+        m = re.match(r"###[ \t]*(.+?)[ \t]*$", line)
+        head = strip_accents(m.group(1)).strip().lower() if m else None
+        if head is not None and head in KNOWN_SECTION_LABELS:
+            if cur == target and found is None:
+                found = "\n".join(buf).strip()
+            cur, buf = head, []
+        elif cur is not None:
+            buf.append(line)
+    if cur == target and found is None:
+        found = "\n".join(buf).strip()
+    if found is None:
+        return ""
+    return "" if strip_accents(found).lower() in EMPTY else found
+
+
+def reject_duplicate_sections(body):
+    """Un formulaire GitHub produit chaque section une seule fois. Si un libelle CONNU apparait en
+    double, c'est qu'un champ (ex. une description) contient un faux '### <libelle>' pour detourner un
+    autre champ : on refuse (le vrai champ serait sinon ambigu)."""
+    seen = {}
+    for line in body.splitlines():
+        m = re.match(r"###[ \t]*(.+?)[ \t]*$", line)
+        if not m:
+            continue
+        h = strip_accents(m.group(1)).strip().lower()
+        if h in KNOWN_SECTION_LABELS:
+            seen[h] = seen.get(h, 0) + 1
+    dups = sorted(h for h, n in seen.items() if n > 1)
+    if dups:
+        raise ValueError("section(s) de formulaire en double (possible injection) : " + ", ".join(dups))
 
 
 def checked_codes(body, label, limit=3):
@@ -90,8 +148,8 @@ def codes_from_text(text, limit=12):
     out = []
     for tok in re.split(r"[,;\s]+", text.strip()):
         c = tok.strip().upper()
-        if re.fullmatch(r"[A-Z]{2}\.[A-Z]{2}(?:-\d{2})?", c):
-            out.append(c)
+        if re.fullmatch(r"[A-Z]{2}\.[A-Z]{2}(?:-\d{2})?", c) and c not in out:
+            out.append(c)                              # dedup : pas de code en double
     return out[:limit]
 
 
@@ -155,8 +213,13 @@ IMG_EXT = {"image/png": "png", "image/jpeg": "jpg", "image/gif": "gif",
 # Elements et attributs qui rendent un SVG "actif" (executent du JS, chargent du distant, ouvrent un
 # vecteur XXE). Un logo n'en a jamais besoin : on les retire systematiquement.
 _SVG_BAD_TAGS = {"script", "foreignobject", "iframe", "object", "embed",
-                 "animate", "animatetransform", "animatemotion", "set", "handler", "use"}
+                 "animate", "animatetransform", "animatemotion", "set", "handler"}
 _SVG_HREF_ATTRS = {"href", "{http://www.w3.org/1999/xlink}href", "src", "xlink:href"}
+# <use> et <image> chargent une ressource : on ne garde qu'une reference INTERNE (#id) ou une image
+# raster embarquee (data:image/png...). Tout ce qui est http externe, ou data:image/svg (SVG imbrique
+# potentiellement piege), fait retirer l'element.
+_SVG_SAFE_REF_DATA = ("data:image/png", "data:image/jpeg", "data:image/jpg",
+                      "data:image/gif", "data:image/webp")
 
 
 def sanitize_svg(data):
@@ -175,18 +238,31 @@ def sanitize_svg(data):
     except ET.ParseError as e:
         raise ValueError(f"SVG illisible : {e}")
     parents = {child: parent for parent in root.iter() for child in parent}
+
+    def drop(el):
+        p = parents.get(el)
+        if p is not None:
+            p.remove(el)
+
     for el in list(root.iter()):
         local = el.tag.split("}")[-1].lower()
-        # <use href="http..."> peut tirer un fragment distant : on ne garde que les <use> internes (#id).
-        if local == "use":
-            ref = next((el.attrib[a] for a in el.attrib if a.split("}")[-1].lower() == "href"), "")
-            if ref.strip().startswith("#"):
+        # <use>/<image> : uniquement une reference interne (#id) ou une image raster embarquee.
+        # Sinon (http externe, data:image/svg imbrique) on retire l'element : pas de ressource distante.
+        if local in ("use", "image"):
+            ref = next((el.attrib[a] for a in el.attrib if a.split("}")[-1].lower().endswith("href")), "").strip().lower()
+            if ref and not ref.startswith("#") and not ref.startswith(_SVG_SAFE_REF_DATA):
+                drop(el)
                 continue
         if local in _SVG_BAD_TAGS:
-            p = parents.get(el)
-            if p is not None:
-                p.remove(el)
+            drop(el)
             continue
+        # <style> : CSS interne. On neutralise l'import distant, expression() (IE) et url() externe,
+        # tout en gardant les url(#id) internes (degrades, filtres) legitimes.
+        if local == "style" and el.text:
+            css = re.sub(r"@import[^;]*;?", "", el.text, flags=re.I)
+            css = re.sub(r"expression\s*\(", "blocked(", css, flags=re.I)
+            css = re.sub(r"url\(\s*['\"]?\s*(?:https?:|ftp:|//)[^)]*\)", "url(#)", css, flags=re.I)
+            el.text = css
         for attr in list(el.attrib):
             an = attr.split("}")[-1].lower()
             val = el.attrib[attr]
@@ -216,7 +292,11 @@ def download_logo(url, slug):
     opener = urllib.request.build_opener(_SafeRedirect)   # verification TLS par defaut (active)
     req = urllib.request.Request(url, headers=headers)
     with opener.open(req, timeout=30) as r:
-        data = r.read(4_000_000)
+        # On lit 1 octet de plus que la limite : si on l'atteint, l'image depasse 4 Mo -> on refuse
+        # au lieu de la tronquer silencieusement (fichier corrompu).
+        data = r.read(4_000_001)
+        if len(data) > 4_000_000:
+            raise ValueError("logo trop lourd (maximum 4 Mo). Fournissez une image plus légère.")
         ctype = r.headers.get("Content-Type", "").split(";")[0].strip().lower()
     is_svg = data[:300].lstrip().lower().startswith(b"<svg") or b"<svg" in data[:300]
     ext = IMG_EXT.get(ctype)
@@ -263,6 +343,8 @@ def validate_nist(nist):
     l2 = nist.get("level2") or []
     l3 = nist.get("level3") or []
     errs = []
+    if len(l2) > 3:
+        errs.append(f"maximum 3 catégories N2 (vous en avez indiqué {len(l2)})")
     for c in l2:
         if c not in valid_l2:
             errs.append(f"catégorie N2 inconnue : {c}")
@@ -287,6 +369,7 @@ def main():
     number, mode = sys.argv[1], sys.argv[2]
     issue = fetch_issue(number)
     body = issue.get("body") or ""
+    reject_duplicate_sections(body)          # refuse une section de formulaire en double (injection)
 
     name = field(body, "Nom de l'entreprise ou de la solution") or \
         field(body, "Nom exact de l'entreprise ou de la solution a modifier")
@@ -403,4 +486,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Les erreurs attendues (logo non-image, SVG piege, SSRF, URL invalide...) sont levees en ValueError.
+    # On les affiche proprement ("ERREUR : ...") au lieu d'un traceback Python illisible dans le commentaire.
+    try:
+        main()
+    except ValueError as exc:
+        print(f"ERREUR : {exc}")
+        sys.exit(1)
