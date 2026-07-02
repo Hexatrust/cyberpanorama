@@ -213,8 +213,13 @@ IMG_EXT = {"image/png": "png", "image/jpeg": "jpg", "image/gif": "gif",
 # Elements et attributs qui rendent un SVG "actif" (executent du JS, chargent du distant, ouvrent un
 # vecteur XXE). Un logo n'en a jamais besoin : on les retire systematiquement.
 _SVG_BAD_TAGS = {"script", "foreignobject", "iframe", "object", "embed",
-                 "animate", "animatetransform", "animatemotion", "set", "handler", "use"}
+                 "animate", "animatetransform", "animatemotion", "set", "handler"}
 _SVG_HREF_ATTRS = {"href", "{http://www.w3.org/1999/xlink}href", "src", "xlink:href"}
+# <use> et <image> chargent une ressource : on ne garde qu'une reference INTERNE (#id) ou une image
+# raster embarquee (data:image/png...). Tout ce qui est http externe, ou data:image/svg (SVG imbrique
+# potentiellement piege), fait retirer l'element.
+_SVG_SAFE_REF_DATA = ("data:image/png", "data:image/jpeg", "data:image/jpg",
+                      "data:image/gif", "data:image/webp")
 
 
 def sanitize_svg(data):
@@ -233,18 +238,31 @@ def sanitize_svg(data):
     except ET.ParseError as e:
         raise ValueError(f"SVG illisible : {e}")
     parents = {child: parent for parent in root.iter() for child in parent}
+
+    def drop(el):
+        p = parents.get(el)
+        if p is not None:
+            p.remove(el)
+
     for el in list(root.iter()):
         local = el.tag.split("}")[-1].lower()
-        # <use href="http..."> peut tirer un fragment distant : on ne garde que les <use> internes (#id).
-        if local == "use":
-            ref = next((el.attrib[a] for a in el.attrib if a.split("}")[-1].lower() == "href"), "")
-            if ref.strip().startswith("#"):
+        # <use>/<image> : uniquement une reference interne (#id) ou une image raster embarquee.
+        # Sinon (http externe, data:image/svg imbrique) on retire l'element : pas de ressource distante.
+        if local in ("use", "image"):
+            ref = next((el.attrib[a] for a in el.attrib if a.split("}")[-1].lower().endswith("href")), "").strip().lower()
+            if ref and not ref.startswith("#") and not ref.startswith(_SVG_SAFE_REF_DATA):
+                drop(el)
                 continue
         if local in _SVG_BAD_TAGS:
-            p = parents.get(el)
-            if p is not None:
-                p.remove(el)
+            drop(el)
             continue
+        # <style> : CSS interne. On neutralise l'import distant, expression() (IE) et url() externe,
+        # tout en gardant les url(#id) internes (degrades, filtres) legitimes.
+        if local == "style" and el.text:
+            css = re.sub(r"@import[^;]*;?", "", el.text, flags=re.I)
+            css = re.sub(r"expression\s*\(", "blocked(", css, flags=re.I)
+            css = re.sub(r"url\(\s*['\"]?\s*(?:https?:|ftp:|//)[^)]*\)", "url(#)", css, flags=re.I)
+            el.text = css
         for attr in list(el.attrib):
             an = attr.split("}")[-1].lower()
             val = el.attrib[attr]
