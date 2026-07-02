@@ -142,16 +142,16 @@ def main():
         if nis2:
             v["nis2_objective"] = nis2
 
-        # NIST
+        # NIST : N2 et N3 peuvent contenir plusieurs codes (une ligne par code dans l'Excel).
         l1 = parse_name_after(col("NIST 1 (Fonction)"))
-        l2 = parse_code(col("NIST 2 (Catégorie)"))
+        l2 = parse_l3(col("NIST 2 (Catégorie)"))
         l3 = parse_l3(col("NIST 3 (Sous-catégories)"))
         if l1 or l2 or l3:
             nist = dict(v.get("nist") or {})
             if l1:
                 nist["level1"] = l1
             if l2:
-                nist["level2"] = [l2]
+                nist["level2"] = l2
             if l3:
                 nist["level3"] = l3
             v["nist"] = nist

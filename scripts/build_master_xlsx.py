@@ -145,9 +145,9 @@ def primary_l2(level2, level3):
 
 def build_row(sol, labels):
     nist = sol.get("nist") or {}
-    l2 = primary_l2(nist.get("level2"), nist.get("level3"))
-    # N3 : uniquement les sous-catégories rattachées à la catégorie N2 retenue.
-    l3 = [c for c in (nist.get("level3") or []) if not l2 or c.startswith(l2 + "-")]
+    # Toutes les catégories N2 (jusqu'à 3) et tous les N3 : l'aller-retour Excel les préserve.
+    l2_list = [c for c in (nist.get("level2") or []) if c]
+    l3 = [c for c in (nist.get("level3") or []) if c]
     contact = (sol.get("email_contact") or "").strip() or (sol.get("contact_url") or "").strip()
     # Indexation = les mots-cles de recherche (champ `indexation`). Editable et reinjecte tel quel.
     indexation = ", ".join(t.strip() for t in (sol.get("indexation") or []) if t and t.strip())
@@ -158,7 +158,7 @@ def build_row(sol, labels):
         "Description longue": sol.get("detailed_description", ""),
         "Indexation": indexation,
         "NIST 1 (Fonction)": fr_l1(labels, nist.get("level1")),
-        "NIST 2 (Catégorie)": code_label(labels.get("level2", {}), l2) if l2 else "",
+        "NIST 2 (Catégorie)": "\n".join(code_label(labels.get("level2", {}), c) for c in l2_list),
         "NIST 3 (Sous-catégories)": "\n".join(code_label(labels.get("level3", {}), c) for c in l3),
         "Objectif NIS2": sol.get("nis2_objective") or "",
         "Site web": sol.get("website", ""),
