@@ -72,8 +72,21 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy1.outputs.page_url || steps.deploy2.outputs.page_url }}
     steps:
-      - name: Deployer sur Pages
-        id: deployment
+      # GitHub Pages echoue parfois de facon transitoire ("Deployment failed, try again later").
+      # 1re tentative en continue-on-error : si elle plante, on attend puis on retente une fois. Le job
+      # ne devient rouge que si les DEUX tentatives echouent.
+      - name: Deployer sur Pages (tentative 1)
+        id: deploy1
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Pause avant nouvelle tentative
+        if: steps.deploy1.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deployer sur Pages (tentative 2)
+        if: steps.deploy1.outcome == 'failure'
+        id: deploy2
         uses: actions/deploy-pages@v5
