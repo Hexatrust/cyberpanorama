@@ -14347,7 +14347,7 @@
     "logo_path": "assets/logos/NAMESHIELD_01.png",
     "logo_file": "NAMESHIELD_01.png",
     "logo_source": "name_match",
-    "size": "medium",
+    "size": "large",
     "nist": {
       "level1": "Protéger",
       "level2": [
