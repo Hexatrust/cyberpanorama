@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-07-02T05:05:03+00:00",
+  "generated_at": "2026-07-02T05:05:57+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29053,35 +29053,6 @@ window.CYBERPANORAMA_DATA = {
       ]
     },
     {
-      "id": "tacit",
-      "solution_name": "Tacit",
-      "company_name": "Tacit",
-      "logo_path": "assets/logos/tacit.png",
-      "logo_file": "tacit.png",
-      "logo_source": "submission",
-      "size": "small",
-      "nist": {
-        "level1": "Gouverner",
-        "level2": [
-          "GV.SC"
-        ],
-        "level3": [
-          "GV.SC-01",
-          "GV.SC-02",
-          "GV.SC-03"
-        ]
-      },
-      "description": "Tacit est une plateforme SaaS de gestion de la sécurité produit pour les éditeurs logiciels. Tacit donne aux équipes sécurité des outils de preuve pour contrôler, trier avec contexte, coordonner les équipes, et démontrer leur posture sécuritaire à quiconque le demande, sur l'ensemble de leurs logiciels, durant tout leur cycle de vie produit.",
-      "detailed_description": "Tacit est une plateforme SaaS de gestion de la sécurité produit pour les éditeurs logiciels. Tacit donne aux équipes sécurité des outils de preuve pour contrôler, trier avec contexte, coordonner les équipes, et démontrer leur posture sécuritaire à quiconque le demande, sur l'ensemble de leurs logiciels, durant tout leur cycle de vie produit.",
-      "website": "https://tacit.now/",
-      "email_contact": "support@tacit.now",
-      "contact_url": "",
-      "country": "France",
-      "is_french": true,
-      "nis2_objective": "Maîtrise des SI",
-      "indexation": []
-    },
-    {
       "id": "tacit-trois-n2",
       "solution_name": "Tacit Trois N2",
       "company_name": "Tacit Trois N2",
@@ -29114,6 +29085,6 @@ window.CYBERPANORAMA_DATA = {
     }
   ],
   "quality_summary": {
-    "total": 278
+    "total": 277
   }
 };
