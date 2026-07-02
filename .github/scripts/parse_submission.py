@@ -405,4 +405,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Les erreurs attendues (logo non-image, SVG piege, SSRF, URL invalide...) sont levees en ValueError.
+    # On les affiche proprement ("ERREUR : ...") au lieu d'un traceback Python illisible dans le commentaire.
+    try:
+        main()
+    except ValueError as exc:
+        print(f"ERREUR : {exc}")
+        sys.exit(1)
