@@ -28844,5 +28844,32 @@
       "wifi",
       "vpn mobile"
     ]
+  },
+  {
+    "id": "tacit",
+    "solution_name": "Tacit",
+    "company_name": "Tacit",
+    "logo_path": "assets/logos/tacit.png",
+    "logo_file": "tacit.png",
+    "logo_source": "submission",
+    "size": "small",
+    "nist": {
+      "level1": "Gouverner",
+      "level2": [
+        "GV.SC",
+        "ID.AM"
+      ],
+      "level3": [
+        "GV.SC-01"
+      ]
+    },
+    "description": "Tacit est une plateforme SaaS de gestion de la sécurité produit pour les éditeurs logiciels. Tacit donne aux équipes sécurité des outils de preuve pour contrôler, trier avec contexte, coordonner les équipes, et démontrer leur posture sécuritaire à quiconque le demande, sur l'ensemble de leurs logiciels, durant tout leur cycle de vie produit.",
+    "website": "https://tacit.now/",
+    "country": "France",
+    "is_french": true,
+    "indexation": [],
+    "email_contact": "support@tacit.now",
+    "nis2_objective": "Maîtrise des SI",
+    "detailed_description": "Tacit est une plateforme SaaS de gestion de la sécurité produit pour les éditeurs logiciels. Tacit donne aux équipes sécurité des outils de preuve pour contrôler, trier avec contexte, coordonner les équipes, et démontrer leur posture sécuritaire à quiconque le demande, sur l'ensemble de leurs logiciels, durant tout leur cycle de vie produit."
   }
 ]
