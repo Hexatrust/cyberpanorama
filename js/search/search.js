@@ -70,6 +70,11 @@
       if (clear) clear.hidden = !value;
       // Garde les deux barres de recherche synchronisees.
       inputs.forEach((field) => { if (field.value !== value) field.value = value; });
+      // Des qu'on recherche, on ouvre le panneau Solutions (a droite) pour voir la liste des resultats
+      // a cote du panorama. On ne l'ouvre qu'une fois (s'il est deja ouvert on n'y touche pas).
+      if (value && namespace.drawer && elements.drawer && elements.drawer.hidden) {
+        namespace.drawer.openList(context);
+      }
       if (timer) clearTimeout(timer);
       if (immediate) runSearch(value);
       else timer = setTimeout(() => runSearch(value), 120);
