@@ -218,8 +218,10 @@ def main():
             l1f, l2f, l3f = CLASSIF_FIX[sid]
             m["nist"] = {"level1": l1f, "level2": [l2f], "level3": list(l3f)}
         nist = m.get("nist") or {}
-        l2 = primary_l2(nist.get("level2"), nist.get("level3"))
-        l3 = [c for c in (nist.get("level3") or []) if not l2 or c.startswith(l2 + "-")]
+        # On garde TOUTES les catégories N2 (jusqu'à 3) et TOUS les N3 : l'app sait afficher/filtrer
+        # plusieurs N2. (Avant, primary_l2 n'en gardait qu'une, ce qui perdait les autres.)
+        l2_all = [c for c in (nist.get("level2") or []) if c]
+        l3_all = [c for c in (nist.get("level3") or []) if c]
         solutions.append({
             "id": sid,
             "solution_name": m.get("solution_name", ""),
@@ -229,8 +231,8 @@ def main():
             "logo_source": m.get("logo_source", ""),
             "size": m.get("size", "medium"),
             "nist": {"level1": nist.get("level1", ""),
-                     "level2": [l2] if l2 else [],
-                     "level3": l3},
+                     "level2": l2_all,
+                     "level3": l3_all},
             "description": m.get("description", ""),
             "detailed_description": m.get("detailed_description", ""),
             "website": m.get("website", ""),
