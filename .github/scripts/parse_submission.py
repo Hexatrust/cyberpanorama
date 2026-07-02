@@ -128,7 +128,11 @@ def reject_duplicate_sections(body):
             seen[h] = seen.get(h, 0) + 1
     dups = sorted(h for h, n in seen.items() if n > 1)
     if dups:
-        raise ValueError("section(s) de formulaire en double (possible injection) : " + ", ".join(dups))
+        raise ValueError(
+            "un de vos textes contient une ligne qui commence par « ### » suivie d'un intitulé de "
+            "champ du formulaire (" + ", ".join(dups) + "), ce qui empêche de lire correctement la "
+            "soumission. Retirez le « ### » au début de cette ligne dans votre description, puis "
+            "relancez.")
 
 
 def checked_codes(body, label, limit=3):
@@ -277,6 +281,20 @@ def sanitize_svg(data):
     return ET.tostring(root, encoding="utf-8")
 
 
+def _image_ext_from_magic(data):
+    """Type d'image d'apres la signature d'octets (independant du Content-Type de l'hebergeur, souvent
+    generique). Renvoie png/jpg/gif/webp, ou None si la signature n'est pas reconnue."""
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return "png"
+    if data[:3] == b"\xff\xd8\xff":
+        return "jpg"
+    if data[:6] in (b"GIF87a", b"GIF89a"):
+        return "gif"
+    if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return "webp"
+    return None
+
+
 def download_logo(url, slug):
     ensure_public_url(url)                         # anti-SSRF avant toute requete
     headers = {"User-Agent": UA}
@@ -299,14 +317,21 @@ def download_logo(url, slug):
             raise ValueError("logo trop lourd (maximum 4 Mo). Fournissez une image plus légère.")
         ctype = r.headers.get("Content-Type", "").split(";")[0].strip().lower()
     is_svg = data[:300].lstrip().lower().startswith(b"<svg") or b"<svg" in data[:300]
-    ext = IMG_EXT.get(ctype)
-    if not ext and not (is_svg or ctype.startswith("image/")):
-        raise ValueError(f"contenu non-image refusé (Content-Type={ctype!r}) pour {url!r}")
-    if not ext:
-        tail = url.lower().split("?")[0].rsplit(".", 1)[-1]
-        ext = tail if tail in ("png", "jpg", "jpeg", "gif", "svg", "webp") else "png"
+    magic = _image_ext_from_magic(data)            # type reel d'apres les octets (fiable)
+    # On accepte des qu'un indice dit "image" : Content-Type image connu, signature d'octets, ou SVG.
+    # Beaucoup d'hebergeurs servent une image avec un Content-Type generique (octet-stream, vide...) :
+    # on ne veut PAS rejeter un vrai logo pour ca. On refuse seulement si rien n'indique une image.
+    ext = IMG_EXT.get(ctype) or magic
+    if not ext and not is_svg and not ctype.startswith("image/"):
+        raise ValueError("le logo fourni n'est pas une image reconnue (formats acceptés : PNG, JPG, GIF, SVG, WebP).")
     if is_svg:
         ext = "svg"
+    elif not ext:                                  # Content-Type 'image/...' sans sous-type connu
+        tail = url.lower().split("?")[0].rsplit(".", 1)[-1]
+        ext = tail if tail in ("png", "jpg", "jpeg", "gif", "webp") else "png"
+    if ext == "jpeg":
+        ext = "jpg"
+    if is_svg:
         data = sanitize_svg(data)                  # desinfection AVANT ecriture dans le depot
     LOGOS.mkdir(parents=True, exist_ok=True)
     name = f"{slug}.{ext}"
