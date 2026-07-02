@@ -274,7 +274,11 @@ def download_logo(url, slug):
     opener = urllib.request.build_opener(_SafeRedirect)   # verification TLS par defaut (active)
     req = urllib.request.Request(url, headers=headers)
     with opener.open(req, timeout=30) as r:
-        data = r.read(4_000_000)
+        # On lit 1 octet de plus que la limite : si on l'atteint, l'image depasse 4 Mo -> on refuse
+        # au lieu de la tronquer silencieusement (fichier corrompu).
+        data = r.read(4_000_001)
+        if len(data) > 4_000_000:
+            raise ValueError("logo trop lourd (maximum 4 Mo). Fournissez une image plus légère.")
         ctype = r.headers.get("Content-Type", "").split(";")[0].strip().lower()
     is_svg = data[:300].lstrip().lower().startswith(b"<svg") or b"<svg" in data[:300]
     ext = IMG_EXT.get(ctype)
