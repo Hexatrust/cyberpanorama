@@ -136,10 +136,16 @@ def ensure_public_url(url):
 
 class _SafeRedirect(urllib.request.HTTPRedirectHandler):
     """Revalide chaque redirection (les CDN GitHub redirigent vers S3) pour qu'on ne soit pas
-    renvoye vers une cible interne apres coup."""
+    renvoye vers une cible interne apres coup. Et retire l'en-tete Authorization sur la redirection :
+    GitHub redirige les images (user-attachments) vers une URL signee (jwt en query) qui REFUSE un
+    'Authorization: token' en plus -> HTTP 400. On ne renvoie donc jamais le token sur une redirection."""
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         ensure_public_url(newurl)
-        return super().redirect_request(req, fp, code, msg, headers, newurl)
+        new = super().redirect_request(req, fp, code, msg, headers, newurl)
+        if new is not None:
+            for k in [h for h in list(new.headers) if h.lower() == "authorization"]:
+                del new.headers[k]
+        return new
 
 
 IMG_EXT = {"image/png": "png", "image/jpeg": "jpg", "image/gif": "gif",
