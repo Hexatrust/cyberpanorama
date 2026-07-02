@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-07-02T17:21:57+00:00",
+  "generated_at": "2026-07-02T20:44:14+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -14696,7 +14696,7 @@ window.CYBERPANORAMA_DATA = {
       "logo_path": "assets/logos/NAMESHIELD_01.png",
       "logo_file": "NAMESHIELD_01.png",
       "logo_source": "name_match",
-      "size": "medium",
+      "size": "large",
       "nist": {
         "level1": "Protéger",
         "level2": [

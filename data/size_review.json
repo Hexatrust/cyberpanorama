@@ -2905,7 +2905,7 @@
   },
   "nameshield": {
     "bucket": "PME",
-    "size_code": "medium",
+    "size_code": "large",
     "justification": "Le registre officiel (recherche-entreprises.api.gouv.fr) classe NAMESHIELD (SIREN 399140961, créée en 1994, siège à Paris 75002) en catégorie INSEE PME, avec une tranche d'effectif d'environ 22 salariés au siège et 50 à 99 au niveau groupe (données 2022). Le dernier chiffre d'affaires public est d'environ 4,96 M EUR et l'entreprise n'a réalisé aucune levée de fonds. Ces critères (effectif < 250, CA entre 2 et 50 M EUR, catégorie INSEE PME) placent l'acteur dans le bucket PME et non dans une taille supérieure.",
     "siren": "399140961",
     "categorie_insee": "PME",
