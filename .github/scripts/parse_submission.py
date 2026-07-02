@@ -68,6 +68,7 @@ def fetch_issue(number):
 KNOWN_SECTION_LABELS = {
     "nom de l'entreprise ou de la solution",
     "nom exact de l'entreprise ou de la solution a modifier",
+    "nouveau nom (si changement)",
     "fonction nist csf 2.0 principale",
     "nouvelle fonction nist (si changement)",
     "categories nist csf 2.0 - n2 (1 a 3)",
@@ -416,6 +417,7 @@ def main():
         print("ERREUR : nom d'entreprise introuvable dans le formulaire")
         sys.exit(1)
     slug = slugify(name)
+    new_name = field(body, "Nouveau nom (si changement)")   # renommage (mode edit uniquement)
 
     fonction = FONCTION_MAP.get(strip_accents(field(body, "Fonction NIST CSF 2.0 principale")
                                               or field(body, "Nouvelle fonction NIST (si changement)")).lower())
@@ -498,6 +500,9 @@ def main():
             emit("company_name", name)
             emit("slug", tid)
             return
+        if new_name:                                   # renommage : on change le nom affiche, pas l'id
+            cur["solution_name"] = new_name
+            cur["company_name"] = new_name
         if desc:
             cur["description"] = desc
         if website:
