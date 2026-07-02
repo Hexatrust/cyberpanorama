@@ -61,16 +61,74 @@ def fetch_issue(number):
         return json.load(r)
 
 
+# Libelles de section CONNUS (formulaires add + edit), sans accents ni casse. Un '### <titre>' n'est
+# traite comme separateur de section QUE si son titre est dans cet ensemble. Ainsi un '###' present
+# dans la VALEUR d'un champ (titre markdown dans une description, ou injection type '### Logo ...')
+# ne casse pas le parsing et ne peut pas detourner un autre champ.
+KNOWN_SECTION_LABELS = {
+    "nom de l'entreprise ou de la solution",
+    "nom exact de l'entreprise ou de la solution a modifier",
+    "fonction nist csf 2.0 principale",
+    "nouvelle fonction nist (si changement)",
+    "categories nist csf 2.0 - n2 (1 a 3)",
+    "nouvelles categories nist n2 (si changement)",
+    "sous-categories nist csf 2.0 - n3",
+    "nouvelles sous-categories nist n3 (si changement)",
+    "taille de l'entreprise",
+    "nouvelle taille (si changement)",
+    "description courte",
+    "nouvelle description (si changement)",
+    "description longue",
+    "objectif nis2 principal",
+    "site web",
+    "nouveau site web (si changement)",
+    "contact (email ou page contact)",
+    "nouveau contact (si changement)",
+    "logo (fichier ou url)",
+    "nouveau logo (fichier ou url, si changement)",
+    "suppression",
+    "raison de la modification",
+    "engagement",
+}
+
+
 def field(body, label):
-    """Valeur sous un titre de section '### <label>'. Le titre est compare SANS accents ni casse
-    (les libelles du formulaire peuvent en avoir), mais la valeur est renvoyee telle quelle (accents
-    preserves). Ainsi on peut accentuer les libelles du formulaire sans toucher a ce script."""
+    """Valeur sous un titre de section '### <label>'. Le titre est compare SANS accents ni casse.
+    Seuls les '### <libelle connu>' (KNOWN_SECTION_LABELS) delimitent les sections : un '###' quelconque
+    dans la valeur d'un champ reste dans la valeur (pas de troncature, pas de detournement de champ)."""
     target = strip_accents(label).strip().lower()
-    for m in re.finditer(r"###[ \t]*([^\n]+?)[ \t]*\n+(.*?)(?=\n###|\Z)", body, re.DOTALL):
-        if strip_accents(m.group(1)).strip().lower() == target:
-            val = m.group(2).strip()
-            return "" if strip_accents(val).lower() in EMPTY else val
-    return ""
+    cur, buf, found = None, [], None
+    for line in body.splitlines():
+        m = re.match(r"###[ \t]*(.+?)[ \t]*$", line)
+        head = strip_accents(m.group(1)).strip().lower() if m else None
+        if head is not None and head in KNOWN_SECTION_LABELS:
+            if cur == target and found is None:
+                found = "\n".join(buf).strip()
+            cur, buf = head, []
+        elif cur is not None:
+            buf.append(line)
+    if cur == target and found is None:
+        found = "\n".join(buf).strip()
+    if found is None:
+        return ""
+    return "" if strip_accents(found).lower() in EMPTY else found
+
+
+def reject_duplicate_sections(body):
+    """Un formulaire GitHub produit chaque section une seule fois. Si un libelle CONNU apparait en
+    double, c'est qu'un champ (ex. une description) contient un faux '### <libelle>' pour detourner un
+    autre champ : on refuse (le vrai champ serait sinon ambigu)."""
+    seen = {}
+    for line in body.splitlines():
+        m = re.match(r"###[ \t]*(.+?)[ \t]*$", line)
+        if not m:
+            continue
+        h = strip_accents(m.group(1)).strip().lower()
+        if h in KNOWN_SECTION_LABELS:
+            seen[h] = seen.get(h, 0) + 1
+    dups = sorted(h for h, n in seen.items() if n > 1)
+    if dups:
+        raise ValueError("section(s) de formulaire en double (possible injection) : " + ", ".join(dups))
 
 
 def checked_codes(body, label, limit=3):
@@ -289,6 +347,7 @@ def main():
     number, mode = sys.argv[1], sys.argv[2]
     issue = fetch_issue(number)
     body = issue.get("body") or ""
+    reject_duplicate_sections(body)          # refuse une section de formulaire en double (injection)
 
     name = field(body, "Nom de l'entreprise ou de la solution") or \
         field(body, "Nom exact de l'entreprise ou de la solution a modifier")
