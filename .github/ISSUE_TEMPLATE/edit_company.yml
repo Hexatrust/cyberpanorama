@@ -15,9 +15,17 @@ body:
     id: company_name
     attributes:
       label: Nom exact de l'entreprise ou de la solution à modifier
+      description: Sert à retrouver l'entrée. Ne renomme pas (pour renommer, utilisez le champ suivant).
       placeholder: "Ex : CyberCompany"
     validations:
       required: true
+
+  - type: input
+    id: nouveau_nom
+    attributes:
+      label: Nouveau nom (si changement)
+      description: Renseignez uniquement si vous voulez changer le nom affiché de l'entreprise.
+      placeholder: "Ex : CyberCompany (nouveau nom)"
 
   - type: dropdown
     id: fonction_nist

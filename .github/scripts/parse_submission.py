@@ -68,6 +68,7 @@ def fetch_issue(number):
 KNOWN_SECTION_LABELS = {
     "nom de l'entreprise ou de la solution",
     "nom exact de l'entreprise ou de la solution a modifier",
+    "nouveau nom (si changement)",
     "fonction nist csf 2.0 principale",
     "nouvelle fonction nist (si changement)",
     "categories nist csf 2.0 - n2 (1 a 3)",
@@ -343,6 +344,20 @@ def load(path, default):
     return json.load(path.open(encoding="utf-8")) if path.exists() else default
 
 
+def update_size_review(sid, size_code):
+    """Ecrit la taille dans data/size_review.json. IMPORTANT : c'est CE fichier que build_app_data
+    applique en priorite (devant solutions.json). Sans ca, un changement de taille via le formulaire
+    n'apparait pas sur le site (l'ancienne taille de size_review gagne au build)."""
+    if not size_code:
+        return
+    path = DATA / "size_review.json"
+    sr = load(path, {})
+    entry = dict(sr.get(sid) or {})
+    entry["size_code"] = size_code
+    sr[sid] = entry
+    path.write_text(json.dumps(sr, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def emit(key, value):
     out = os.environ.get("GITHUB_OUTPUT")
     if out:
@@ -402,6 +417,7 @@ def main():
         print("ERREUR : nom d'entreprise introuvable dans le formulaire")
         sys.exit(1)
     slug = slugify(name)
+    new_name = field(body, "Nouveau nom (si changement)")   # renommage (mode edit uniquement)
 
     fonction = FONCTION_MAP.get(strip_accents(field(body, "Fonction NIST CSF 2.0 principale")
                                               or field(body, "Nouvelle fonction NIST (si changement)")).lower())
@@ -460,6 +476,7 @@ def main():
             sys.exit(1)
         items = items + [entry]
         path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        update_size_review(slug, size)                 # la taille doit aussi aller dans size_review.json
         print(f"Ajout préparé : {name} ({slug})")
     else:
         # edit ou SUPPRESSION : retrouver l'entree existante (par nom ou slug).
@@ -483,6 +500,9 @@ def main():
             emit("company_name", name)
             emit("slug", tid)
             return
+        if new_name:                                   # renommage : on change le nom affiche, pas l'id
+            cur["solution_name"] = new_name
+            cur["company_name"] = new_name
         if desc:
             cur["description"] = desc
         if website:
@@ -491,6 +511,7 @@ def main():
             cur[contact_field] = contact
         if size:
             cur["size"] = size
+            update_size_review(tid, size)              # sinon build_app_data garde l'ancienne taille
         if fonction:
             cur.setdefault("nist", {})["level1"] = fonction
         if level2:
