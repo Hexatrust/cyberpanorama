@@ -90,8 +90,8 @@ def codes_from_text(text, limit=12):
     out = []
     for tok in re.split(r"[,;\s]+", text.strip()):
         c = tok.strip().upper()
-        if re.fullmatch(r"[A-Z]{2}\.[A-Z]{2}(?:-\d{2})?", c):
-            out.append(c)
+        if re.fullmatch(r"[A-Z]{2}\.[A-Z]{2}(?:-\d{2})?", c) and c not in out:
+            out.append(c)                              # dedup : pas de code en double
     return out[:limit]
 
 
@@ -263,6 +263,8 @@ def validate_nist(nist):
     l2 = nist.get("level2") or []
     l3 = nist.get("level3") or []
     errs = []
+    if len(l2) > 3:
+        errs.append(f"maximum 3 catégories N2 (vous en avez indiqué {len(l2)})")
     for c in l2:
         if c not in valid_l2:
             errs.append(f"catégorie N2 inconnue : {c}")
