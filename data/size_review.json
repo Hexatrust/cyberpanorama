@@ -3034,5 +3034,8 @@
     "revenue_eur": "68200",
     "funding_total_eur": "",
     "confidence": "Élevée"
+  },
+  "appaloosa": {
+    "size_code": "small"
   }
 }

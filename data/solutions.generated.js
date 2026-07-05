@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-07-02T20:44:14+00:00",
+  "generated_at": "2026-07-05T19:31:39+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29079,9 +29079,38 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Maîtrise des SI",
       "indexation": []
+    },
+    {
+      "id": "appaloosa",
+      "solution_name": "Appaloosa",
+      "company_name": "Appaloosa",
+      "logo_path": "assets/logos/appaloosa.svg",
+      "logo_file": "appaloosa.svg",
+      "logo_source": "submission",
+      "size": "small",
+      "nist": {
+        "level1": "Protéger",
+        "level2": [
+          "PR.PS"
+        ],
+        "level3": [
+          "PR.PS-01",
+          "PR.PS-02",
+          "PR.PS-05"
+        ]
+      },
+      "description": "Appaloosa est une solution française hébergée sur un cloud SecNumCloud de Mobile Device Management (MDM/EMM) et de Mobile Application Management (MAM) pour iOS, Android, Windows et Mac. Elle permet aux entreprises de déployer, configurer et sécuriser leur flotte mobile en quelques minutes, sans toucher aux appareils.",
+      "detailed_description": "Appaloosa simplifie la gestion de la mobilité d’entreprise. Notre plateforme SaaS permet aux équipes IT de piloter l’ensemble de leur flotte Apple, Android & Windows depuis une console unique et intuitive.\nGrâce au zero-touch enrollment, les appareils sont préconfigurés dès leur mise en service : applications, Wi-Fi, messagerie et politiques de sécurité se déploient automatiquement. Notre Enterprise App Store intégré centralise la distribution des applications métier publiques, privées ou web avec mise à jour silencieuse à grande échelle.\nAppaloosa couvre les scénarios corporate-owned, BYOD et kiosk, et s’intègre avec votre suite de productivité et votre annuaire. Hébergée chez Outscale (qualifié SecNumCloud), la solution est opérationnelle en moins d’une journée.",
+      "website": "https://www.appaloosa.io",
+      "email_contact": "sales@appaloosa.io",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Maîtrise de l'écosystème",
+      "indexation": []
     }
   ],
   "quality_summary": {
-    "total": 277
+    "total": 278
   }
 };
