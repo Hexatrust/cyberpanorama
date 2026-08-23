@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-08-23T17:46:36+00:00",
+  "generated_at": "2026-08-23T17:46:51+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -22651,9 +22651,9 @@ window.CYBERPANORAMA_DATA = {
       "id": "snowpack",
       "solution_name": "Snowpack",
       "company_name": "Snowpack",
-      "logo_path": "assets/logos/Snowpack_01.png",
-      "logo_file": "Snowpack_01.png",
-      "logo_source": "name_match",
+      "logo_path": "assets/logos/snowpack.png",
+      "logo_file": "snowpack.png",
+      "logo_source": "submission",
       "size": "small",
       "nist": {
         "level1": "Protéger",
@@ -22665,7 +22665,7 @@ window.CYBERPANORAMA_DATA = {
           "PR.DS-01"
         ]
       },
-      "description": "Snowpack a conçu une technologie de réseau privé invisible baptisée VIPN qui fragmente et anonymise les communications pour masquer utilisateurs, services et infrastructures. Le catalogue regroupe Invisible Access pour la navigation anonyme, Invisible Services, Invisible Infra et des SDK/API Invisible by Snowpack. La société par actions simplifiée a son siège à Orsay (RCS Evry 900 526 716) et travaille avec le CEA et Bpifrance.",
+      "description": "**Fournisseur de connectivité furtive, sécurisée et résiliente.** \nGrâce à notre technologie brevetée VIPN (_Virtual & Invisible Private Network_), réduisez et protégez votre surface d’attaque externe en ne faisant confiance à personne: rendez **invisibles** vos assets numériques sensibles exposés sur Internet et protégez vos utilisateurs, services et infrastructures des cyberattaques.",
       "detailed_description": "Snowpack edite une technologie brevetee de connectivite furtive baptisee VIPN (Virtual & Invisible Private Network), qui rend invisibles les utilisateurs, services et infrastructures sur Internet selon le principe \"si les hackers ne vous voient pas, ils ne peuvent pas vous pirater\". Le trafic est fragmente en \"flocons\" (snowflakes) melanges a des milliards de paquets leurres, avec une architecture Zero Trust ou Snowpack lui-meme ne peut acceder aux donnees et sans tiers de confiance. La plateforme s'appuie sur plus de 40 serveurs repartis dans 14 pays et 6 operateurs cloud, supportant plus de 300 Mb/s par utilisateur. Quatre solutions sont proposees : Invisible Access (navigation privee, offres FreeSnow, OneSnow, RedSnow, DarkSnow), Invisible Services (rendre invisibles des services web sensibles), Invisible Infra (masquage de l'infrastructure et des endpoints), et Invisible by Snowpack (SDK et API pour developpeurs). Cibles : teletravail et mobilite, reduction de la surface d'attaque externe et cloud, OSINT/OpSec pour investigations, partage anonymise de renseignement sur les menaces, systemes industriels, et cyber-assurabilite des TPE/PME.",
       "website": "https://snowpack.eu",
       "email_contact": "contact@snowpack.eu",
