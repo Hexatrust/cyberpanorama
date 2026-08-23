@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-07-05T19:31:39+00:00",
+  "generated_at": "2026-08-23T17:45:59+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29108,9 +29108,41 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Maîtrise de l'écosystème",
       "indexation": []
+    },
+    {
+      "id": "nuabee",
+      "solution_name": "Nuabee",
+      "company_name": "Nuabee",
+      "logo_path": "assets/logos/nuabee.png",
+      "logo_file": "nuabee.png",
+      "logo_source": "submission",
+      "size": "medium",
+      "nist": {
+        "level1": "Récupérer",
+        "level2": [
+          "RC.RP",
+          "RS.MA"
+        ],
+        "level3": [
+          "RC.RP-01",
+          "RC.RP-02",
+          "RC.RP-03",
+          "RC.RP-05",
+          "RC.RP-06"
+        ]
+      },
+      "description": "**Nuabee** est un éditeur français de solution de **[Plan de Reprise d'Activité](https://nuabee.fr/protection-pra-cloud/)** dans un Cloud public OpenStack. Il offre un _service managé de PRA_ incluant 3 classes de protection par serveur : backup étanche, backup avec tests automatique de redémarrage, PRA avec test semestriel.",
+      "detailed_description": "Nuabee est un spécialiste français de la cyber-résilience, du PRA Cloud managé, du Disaster Recovery as a Service (DRaaS) et de la sauvegarde externalisée sécurisée pour les entreprises, ETI, collectivités et organisations multisites.\nSes solutions couvrent la protection, la réplication, la restauration et le redémarrage des serveurs, machines virtuelles ou physiques, applications critiques et données, avec des objectifs de reprise RTO/RPO contractualisés.\nL’offre associe sauvegarde chiffrée, stockage immuable, Object Lock, isolation Air Gap, environnements Cloud de secours, supervision quotidienne et console de pilotage du Plan de Reprise d’Activité.\nNuabee se différencie par une approche entièrement managée, des tests réguliers de restauration et de PRA, la modélisation du système d’information, l’automatisation des scénarios de reprise et l’accompagnement en situation de crise cyber.\nLes principaux cas d’usage sont la reprise après ransomware, cyberattaque, panne matérielle, sinistre informatique, indisponibilité d’un datacenter, corruption de données ou interruption d’activité.\nLa solution contribue aux fonctions Protect, Respond et Recover du NIST CSF 2.0 et répond aux besoins de continuité d’activité, résilience opérationnelle, conformité, souveraineté des données et sécurisation des sauvegardes.",
+      "website": "https://nuabee.fr/",
+      "email_contact": "sales@nuabee.fr",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Recensement des SI",
+      "indexation": []
     }
   ],
   "quality_summary": {
-    "total": 278
+    "total": 279
   }
 };

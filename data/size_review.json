@@ -3037,5 +3037,8 @@
   },
   "appaloosa": {
     "size_code": "small"
+  },
+  "nuabee": {
+    "size_code": "medium"
   }
 }
