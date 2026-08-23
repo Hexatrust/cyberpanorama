@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-08-23T17:45:59+00:00",
+  "generated_at": "2026-08-23T17:46:36+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29140,9 +29140,38 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Recensement des SI",
       "indexation": []
+    },
+    {
+      "id": "cybee",
+      "solution_name": "Cybee",
+      "company_name": "Cybee",
+      "logo_path": "assets/logos/cybee.png",
+      "logo_file": "cybee.png",
+      "logo_source": "submission",
+      "size": "small",
+      "nist": {
+        "level1": "Protéger",
+        "level2": [
+          "PR.DS",
+          "PR.IR"
+        ],
+        "level3": [
+          "PR.DS-01",
+          "PR.DS-11"
+        ]
+      },
+      "description": "**Cybee** est une plateforme européenne de sauvegarde Cloud cyber-résiliente qui protège les données et les systèmes grâce au chiffrement à la source, à l’immutabilité et à l’orchestration centralisée des politiques de sauvegarde. Elle est basée sur le moteur open source Restic.",
+      "detailed_description": "Cybee est une plateforme européenne de sauvegarde Cloud cyber-résiliente destinée aux entreprises, ETI, collectivités, prestataires IT, infogéreurs et fournisseurs de services managés souhaitant sécuriser leurs données et systèmes critiques.\nElle couvre la sauvegarde de fichiers, de serveurs Windows et Linux, de machines virtuelles et d’images système, ainsi que la restauration granulaire, planifiée ou bare-metal après une panne, une erreur humaine, une corruption de données ou une cyberattaque.\nLa solution associe chiffrement à la source, contrôle d’intégrité cryptographique, stockage objet S3, sauvegardes immuables avec Object Lock, snapshots Restic, gestion des rétentions et séparation des clés et des environnements.\nCybee se différencie par son orchestration centralisée, sa console de supervision, sa CMDB intégrée, la découverte automatique des actifs, la planification des politiques de protection et la traçabilité complète des opérations.\nSes mécanismes d’authentification forte, de contrôle d’accès granulaire, de vérification des sauvegardes et de restauration rapide renforcent la protection contre les ransomwares et la résilience du système d’information.\nLes principaux cas d’usage sont la sauvegarde externalisée, la protection des données sensibles, la reprise après cyberattaque, la continuité d’activité, la modernisation d’architectures de backup et le déploiement d’une offre Backup as a Service souveraine. Elle s'appuie sur le moteur de sauvegarde open source Restic.",
+      "website": "https://cybee.fr/",
+      "email_contact": "",
+      "contact_url": "https://cybee.fr/contact/",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Recensement des SI",
+      "indexation": []
     }
   ],
   "quality_summary": {
-    "total": 279
+    "total": 280
   }
 };

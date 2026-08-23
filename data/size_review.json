@@ -3040,5 +3040,8 @@
   },
   "nuabee": {
     "size_code": "medium"
+  },
+  "cybee": {
+    "size_code": "small"
   }
 }
