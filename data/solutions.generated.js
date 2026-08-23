@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-08-23T17:46:51+00:00",
+  "generated_at": "2026-08-23T17:47:50+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29169,9 +29169,44 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Recensement des SI",
       "indexation": []
+    },
+    {
+      "id": "cyberlib",
+      "solution_name": "Cyberlib",
+      "company_name": "Cyberlib",
+      "logo_path": "assets/logos/cyberlib.png",
+      "logo_file": "cyberlib.png",
+      "logo_source": "submission",
+      "size": "small",
+      "nist": {
+        "level1": "Répondre",
+        "level2": [
+          "PR.IR",
+          "RS.MI",
+          "GV.OV"
+        ],
+        "level3": [
+          "GV.OV-03",
+          "PR.IR-03",
+          "PR.IR-01",
+          "PR.IR-04",
+          "PR.IR-02",
+          "RS.MI-01",
+          "RS.MI-02"
+        ]
+      },
+      "description": "Cyberlib est une plateforme SaaS / On-Premise permet de gérer le durcissement de configuration (Hardening) des systèmes durablement et à l'échelle d'un système d'information d'entreprise. Elle permet de gérer tout le cycle de vie du Hardening d'un système (audit - déploiement - supervision continue) pour réduire efficacement la surface d'attaque et colmater les brèches en réponse à des incidents de sécurité.",
+      "detailed_description": "Cyberlib est une plateforme SaaS B2B de cybersécurité spécialisée dans le durcissement natif des endpoints (hardening), avec une approche réactive et préventive visant à réduire la surface d'attaque en appliquant des politiques de durcissement cohérentes et auditées avant/après la survenue des incidents. Éditée et opérée par la société Cyberlib, la solution est 100 % française (conception, hébergement, maintenance) et hébergée en cloud de confiance qualifié SecNumCloud 3.2. Elle se compose d'une application Web (console d'administration centralisée) et d'un connecteur \"agentless\" avec solution tierce compatible disposant d'agents installés sur les endpoints du SI (Intune, JAMF, XDR type HarfanfLab/Crowstrike...) et/ou d'un agent logiciel léger à installer sur les postes et serveurs à durcir, disponible en mode SaaS mutualisé, en instance dédiée ou en déploiement On-Premise / souverain chez le client pour les environnements les plus sensibles, cloisonnés, air-gapped ou soumis à des contraintes de localisation de données. Le cœur de l'offre repose sur la gestion bout en bout du durcissement de configuration : paramétrage et déploiement sans script de plus de 1600 politiques de sécurité natives du système d'exploitation, création de référentiels de sécurité en mode no-code, création de groupes de postes et automatisation du déploiement des règles de durcissement sur l'ensemble des endpoints concernés (logique similaire aux GPO), le tout utilisable avec ou sans Active Directory. Mots-clés associés : hardening, durcissement, configuration hardening, security baseline, benchmark de sécurité, gestion de configuration, posture management, endpoint hardening, server hardening, OS hardening, no-code, sans script, agent léger, console web, GPO, Active Directory, MDM, Intune, PowerShell, Windows, macOS, Linux. \n\nSur le plan fonctionnel, Cyberlib couvre l'inventaire et la visualisation du niveau de durcissement du parc, la définition de référentiels et de politiques, le déploiement automatisé, le contrôle continu de la dérive de configuration, la remédiation et le reporting de conformité. La solution assure la maîtrise des endpoints et des serveurs, y compris le shadow IT hors Active Directory, les postes et machines projet et les systèmes industriels, pour une gouvernance complète : visualisation, durcissement et pilotage centralisé ; elle protège les terminaux même hors réseau, en mobilité ou en shadow IT, sans surcharge pour les équipes internes. L'agent se déploie de façon automatisée via une commande de type PowerShell, à travers l'AD ou le MDM existant, avec une gestion dynamique de charge pour des milliers d'agents et une architecture multi-zone redondée en actif-actif. Cyberlib s'intègre aux environnements existants et se positionne en amont des outils de type EDR, XDR et SIEM, en améliorant l'hygiène de sécurité et la résistance des postes ; elle s'adresse aux MSP et MSSP comme aux organisations souhaitant industrialiser le hardening sans alourdir l'exploitation. Mots-clés associés : réduction de la surface d'attaque, attack surface reduction, Zero Trust, moindre privilège, durcissement automatisé, remédiation continue, dérive de configuration, drift, shadow IT, OT/ICS, parc hétérogène, EDR, XDR, SIEM, MSP, MSSP, infogérance, ESN, cabinets de conseil, industrie, logistique, services, chiffrement, sauvegarde anti-ransomware, rançongiciel, sensibilisation, RGPD. \n\nCyberlib adresse les organisations mid-Market et Grand groupe : PME, ETI, grands comptes, groupes multi-filiales et collectivités — avec une logique d'industrialisation de la gestion de surface d'attaque et/ou de la conformité réglementaire. La plateforme apporte un alignement CIS, NIST, ISO 27001 et RGPD, des tableaux de bord centralisés et des rapports exportables pour les audits internes et externes, ainsi qu'une interface intuitive de suivi du niveau de durcissement, un support à la gestion des effets de bord en cas d'anomalie critique, un accompagnement personnalisé (paramétrage sur-mesure, intégration au SI, assistance premium) et des ateliers avec des consultants seniors. Elle répond aux exigences de RGPD, NIS2, ISO 27001, ANSSI, PCI-DSS et HIPAA. Côté souveraineté et confiance : solution souveraine opérée et hébergée en France, dans des infrastructures ISO 27001 et HDS et SecNumCloud / Cloud de confiance. La solution est reconnue par l'écosystème : Lauréat Innov'Up de la Région Île-de-France et Bpifrance, Trophée Cybernight et Trophée de l'innovation du Cybershow Paris catégorie Start-up. Mots-clés associés : cybersécurité souveraine, French Tech, made in France, Cloud de confiance, hébergement France, ISO 27001, HDS, ANSSI, CIS Benchmarks, NIST CSF, NIS2, DORA, RGPD, PCI-DSS, HIPAA, SOX, conformité, audit, preuve de conformité, gouvernance, gestion des risques, résilience cyber, continuité d'activité, licence par poste, abonnement, SaaS, On-Premise, hybride. Cyberlib est également disponible sur les marchés publics (UGAP, CANUT, CAIH, ...)",
+      "website": "https://cyberlib.io",
+      "email_contact": "contact@cyberlib.io",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Sécurisation de l'architecture des SI",
+      "indexation": []
     }
   ],
   "quality_summary": {
-    "total": 280
+    "total": 281
   }
 };
