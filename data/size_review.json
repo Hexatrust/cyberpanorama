@@ -3046,5 +3046,8 @@
   },
   "cyberlib": {
     "size_code": "small"
+  },
+  "cheops-technology": {
+    "size_code": "large"
   }
 }

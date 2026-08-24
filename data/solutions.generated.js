@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-08-23T17:47:50+00:00",
+  "generated_at": "2026-08-24T07:31:04+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29204,9 +29204,43 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Sécurisation de l'architecture des SI",
       "indexation": []
+    },
+    {
+      "id": "cheops-technology",
+      "solution_name": "CHEOPS TECHNOLOGY",
+      "company_name": "CHEOPS TECHNOLOGY",
+      "logo_path": "assets/logos/cheops-technology.png",
+      "logo_file": "cheops-technology.png",
+      "logo_source": "submission",
+      "size": "large",
+      "nist": {
+        "level1": "Détecter",
+        "level2": [
+          "DE.CM",
+          "RS.AN",
+          "RS.MA"
+        ],
+        "level3": [
+          "DE.CM-06",
+          "DE.CM-01",
+          "RS.AN-03",
+          "RS.AN-06",
+          "DE.CM-03",
+          "RS.AN-08"
+        ]
+      },
+      "description": "CHEOPS TECHNOLOGY, expert en infrastructures informatiques sécurisées depuis 1998 en France et en Suisse, opère via sa division Cyberdéfense la solution CyberPatriot® : détection et réponse managée (SOC/MDR) 24/7 depuis la France et la Suisse, avec 2 SOC, 2 CSIRT et 1 CERT certifié ISO 27001/27035 membre du FIRST.\nCyberPatriot® repose sur un socle open source et intègre nativement une IA privée, hébergée et opérée en interne, aucune donnée client ne sort de la plateforme, garantissant souveraineté, transparence et réversibilité, en approche multi-éditeurs.",
+      "detailed_description": "CHEOPS TECHNOLOGY est un groupe français expert en infrastructures informatiques sécurisées depuis 1998, l'un des leaders du Cloud Computing et de la Cybersécurité en France et en Suisse : 750 collaborateurs, plus de 2 000 clients, 14 agences et 8 datacenters souverains. Ses quatre métiers : Cloud & Services Managés (cloud privé, public, hybride, hébergement souverain, infogérance, SLA et réversibilité), Cyberdéfense, Infrastructure (serveurs, stockage, sauvegarde, réseau) et Modernisation Technologique (cloud native, Factory Applicative, Factory IA).\n\nSa division CHEOPS CYBERDÉFENSE, une soixantaine d'experts certifiés (OSCP, GIAC, CISSP, CEH, etc.), opère CyberPatriot®, sa solution de SOC managé / MDR capitalisant sur plus de 10 ans d'expérience en supervision de sécurité : détection et réponse 24/7, threat intelligence, avec 2 SOC, 2 CSIRT et 1 CERT certifié ISO 27001/27035 membre du FIRST, plus de 10 milliards d'événements analysés par jour. CyberPatriot® combine expertise offensive et défensive, processus conformes aux normes internationales (ISO 27001, ISO 27035, NIST SP 800-61) et technologies fondées sur les modèles « SOC as Code » et « Detection as Code ». Multi-éditeurs et adapté aux environnements on-premise, cloud privé ou public, il garantit un hébergement des données selon les exigences de souveraineté du client, en France ou en Suisse. En cas d'incident majeur, les équipes SOC, CSIRT et CERT interviennent de manière coordonnée, jusqu'à la gestion de crise.\n\nServices : audit de sécurité, test d'intrusion (pentest), red team, évaluation de maturité, OSINT, fuite de données, phishing et sensibilisation, gestion des vulnérabilités, sécurité managée EDR, XDR, SIEM, SOAR, WAF, PAM, ZTNA, réponse à incident, forensic, gestion de crise ransomware, et GRC : PSSI, analyse de risques, RSSI as a Service, conformité ISO 27001, NIS2, DORA, RGPD, NIST CSF. Portail client SOC Gold : cockpit temps réel multi-éditeurs (alertes, investigations, maturité, veille CVE/PSIRT).\n\nStack technologique : la plateforme de détection et de réponse CyberPatriot® est construite sur un socle de solutions open source éprouvées et maîtrisées par nos équipes. Elastic (SIEM/détection), MISP (partage de renseignement sur la menace), IRIS (réponse à incident), garantissant transparence, auditabilité, réversibilité et indépendance technologique, dans une logique « SOC as Code » et « Detection as Code » (Caldera, Atomic Redteam, Mythic C2, RTA). Ce socle s'appuie sur des solutions souveraines françaises et européennes (Wallix, Stormshield, Check Point, WithSecure) et s'interface avec les principales technologies EDR/XDR du marché opérées chez nos clients (CrowdStrike, SentinelOne, HarfangLab, Trend Micro, Microsoft Defender), dans une approche multi-éditeurs sans dépendance à un fournisseur unique.\n\nCertifications groupe : ISO 27001, ISO 20000-1, HDS v2, ISAE 3402 Type 2, hébergement souverain en France et en Suisse.\n\nCibles : ETI, PME, grands comptes, secteur public, santé, industrie, banque-assurance, en France et en Suisse.",
+      "website": "https://www.cheops-technology.com/",
+      "email_contact": "contact@cheops.fr",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Identification et réaction aux incidents de sécurité",
+      "indexation": []
     }
   ],
   "quality_summary": {
-    "total": 281
+    "total": 282
   }
 };
