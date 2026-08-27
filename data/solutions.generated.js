@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-08-24T07:31:04+00:00",
+  "generated_at": "2026-08-27T12:37:15+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29238,9 +29238,39 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Identification et réaction aux incidents de sécurité",
       "indexation": []
+    },
+    {
+      "id": "secmate",
+      "solution_name": "SecMate",
+      "company_name": "SecMate",
+      "logo_path": "assets/logos/secmate.svg",
+      "logo_file": "secmate.svg",
+      "logo_source": "submission",
+      "size": "small",
+      "nist": {
+        "level1": "Identifier",
+        "level2": [
+          "ID.RA",
+          "PR.PS"
+        ],
+        "level3": [
+          "ID.RA-01",
+          "ID.RA-04",
+          "ID.RA-05"
+        ]
+      },
+      "description": "SecMate aide les fabricants de produits critiques à savoir si leur logiciel peut être livré en toute sécurité. La plateforme identifie les vulnérabilités réellement exploitables et transforme les alertes existantes en décisions claires.",
+      "detailed_description": "SecMate est une plateforme de décision pour la sécurité des produits. Elle aide les fabricants à déterminer si une version peut être livrée en toute sécurité.\n\nSon moteur propriétaire rassemble le code source, les dépendances, la documentation, la configuration, le modèle de menaces et les résultats des outils existants. Il recherche les vulnérabilités inconnues et les failles métier, puis évalue leur exploitabilité et leur impact dans le contexte réel du produit.\n\nSecMate transforme ainsi un grand nombre de signaux techniques en quelques risques concrets. À chaque version, la plateforme fournit une décision claire : corriger, accepter ou bloquer. Cette décision peut être intégrée à la chaîne de développement comme contrôle avant livraison.\n\nSecMate s’adresse aux fabricants de produits numériques, en particulier dans les environnements critiques ou réglementés. La plateforme accompagne leurs démarches de sécurité produit, de conformité et de mise sur le marché. Les principaux cas d’usage sont la découverte et la validation de vulnérabilités, l’analyse des chemins d’attaque, la modélisation des menaces, la priorisation des corrections et la décision de livraison. Le moteur de SecMate a déjà découvert plus de 100 vulnérabilités inconnues dans des logiciels embarqués et critiques.\n\nSecMate est disponible sous forme de service hébergé, dans un réseau privé, sur l’infrastructure du client ou dans un environnement isolé.",
+      "website": "https://secmate.dev",
+      "email_contact": "contact@secmate.dev",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Mise en œuvre d'une approche par les risques",
+      "indexation": []
     }
   ],
   "quality_summary": {
-    "total": 282
+    "total": 283
   }
 };

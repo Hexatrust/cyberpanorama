@@ -29025,5 +29025,34 @@
     "email_contact": "contact@cheops.fr",
     "nis2_objective": "Identification et réaction aux incidents de sécurité",
     "detailed_description": "CHEOPS TECHNOLOGY est un groupe français expert en infrastructures informatiques sécurisées depuis 1998, l'un des leaders du Cloud Computing et de la Cybersécurité en France et en Suisse : 750 collaborateurs, plus de 2 000 clients, 14 agences et 8 datacenters souverains. Ses quatre métiers : Cloud & Services Managés (cloud privé, public, hybride, hébergement souverain, infogérance, SLA et réversibilité), Cyberdéfense, Infrastructure (serveurs, stockage, sauvegarde, réseau) et Modernisation Technologique (cloud native, Factory Applicative, Factory IA).\n\nSa division CHEOPS CYBERDÉFENSE, une soixantaine d'experts certifiés (OSCP, GIAC, CISSP, CEH, etc.), opère CyberPatriot®, sa solution de SOC managé / MDR capitalisant sur plus de 10 ans d'expérience en supervision de sécurité : détection et réponse 24/7, threat intelligence, avec 2 SOC, 2 CSIRT et 1 CERT certifié ISO 27001/27035 membre du FIRST, plus de 10 milliards d'événements analysés par jour. CyberPatriot® combine expertise offensive et défensive, processus conformes aux normes internationales (ISO 27001, ISO 27035, NIST SP 800-61) et technologies fondées sur les modèles « SOC as Code » et « Detection as Code ». Multi-éditeurs et adapté aux environnements on-premise, cloud privé ou public, il garantit un hébergement des données selon les exigences de souveraineté du client, en France ou en Suisse. En cas d'incident majeur, les équipes SOC, CSIRT et CERT interviennent de manière coordonnée, jusqu'à la gestion de crise.\n\nServices : audit de sécurité, test d'intrusion (pentest), red team, évaluation de maturité, OSINT, fuite de données, phishing et sensibilisation, gestion des vulnérabilités, sécurité managée EDR, XDR, SIEM, SOAR, WAF, PAM, ZTNA, réponse à incident, forensic, gestion de crise ransomware, et GRC : PSSI, analyse de risques, RSSI as a Service, conformité ISO 27001, NIS2, DORA, RGPD, NIST CSF. Portail client SOC Gold : cockpit temps réel multi-éditeurs (alertes, investigations, maturité, veille CVE/PSIRT).\n\nStack technologique : la plateforme de détection et de réponse CyberPatriot® est construite sur un socle de solutions open source éprouvées et maîtrisées par nos équipes. Elastic (SIEM/détection), MISP (partage de renseignement sur la menace), IRIS (réponse à incident), garantissant transparence, auditabilité, réversibilité et indépendance technologique, dans une logique « SOC as Code » et « Detection as Code » (Caldera, Atomic Redteam, Mythic C2, RTA). Ce socle s'appuie sur des solutions souveraines françaises et européennes (Wallix, Stormshield, Check Point, WithSecure) et s'interface avec les principales technologies EDR/XDR du marché opérées chez nos clients (CrowdStrike, SentinelOne, HarfangLab, Trend Micro, Microsoft Defender), dans une approche multi-éditeurs sans dépendance à un fournisseur unique.\n\nCertifications groupe : ISO 27001, ISO 20000-1, HDS v2, ISAE 3402 Type 2, hébergement souverain en France et en Suisse.\n\nCibles : ETI, PME, grands comptes, secteur public, santé, industrie, banque-assurance, en France et en Suisse."
+  },
+  {
+    "id": "secmate",
+    "solution_name": "SecMate",
+    "company_name": "SecMate",
+    "logo_path": "assets/logos/secmate.svg",
+    "logo_file": "secmate.svg",
+    "logo_source": "submission",
+    "size": "small",
+    "nist": {
+      "level1": "Identifier",
+      "level2": [
+        "ID.RA",
+        "PR.PS"
+      ],
+      "level3": [
+        "ID.RA-01",
+        "ID.RA-04",
+        "ID.RA-05"
+      ]
+    },
+    "description": "SecMate aide les fabricants de produits critiques à savoir si leur logiciel peut être livré en toute sécurité. La plateforme identifie les vulnérabilités réellement exploitables et transforme les alertes existantes en décisions claires.",
+    "website": "https://secmate.dev",
+    "country": "France",
+    "is_french": true,
+    "indexation": [],
+    "email_contact": "contact@secmate.dev",
+    "nis2_objective": "Mise en œuvre d'une approche par les risques",
+    "detailed_description": "SecMate est une plateforme de décision pour la sécurité des produits. Elle aide les fabricants à déterminer si une version peut être livrée en toute sécurité.\n\nSon moteur propriétaire rassemble le code source, les dépendances, la documentation, la configuration, le modèle de menaces et les résultats des outils existants. Il recherche les vulnérabilités inconnues et les failles métier, puis évalue leur exploitabilité et leur impact dans le contexte réel du produit.\n\nSecMate transforme ainsi un grand nombre de signaux techniques en quelques risques concrets. À chaque version, la plateforme fournit une décision claire : corriger, accepter ou bloquer. Cette décision peut être intégrée à la chaîne de développement comme contrôle avant livraison.\n\nSecMate s’adresse aux fabricants de produits numériques, en particulier dans les environnements critiques ou réglementés. La plateforme accompagne leurs démarches de sécurité produit, de conformité et de mise sur le marché. Les principaux cas d’usage sont la découverte et la validation de vulnérabilités, l’analyse des chemins d’attaque, la modélisation des menaces, la priorisation des corrections et la décision de livraison. Le moteur de SecMate a déjà découvert plus de 100 vulnérabilités inconnues dans des logiciels embarqués et critiques.\n\nSecMate est disponible sous forme de service hébergé, dans un réseau privé, sur l’infrastructure du client ou dans un environnement isolé."
   }
 ]

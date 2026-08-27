@@ -3049,5 +3049,8 @@
   },
   "cheops-technology": {
     "size_code": "large"
+  },
+  "secmate": {
+    "size_code": "small"
   }
 }
