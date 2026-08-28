@@ -13346,9 +13346,9 @@
     "id": "mailinblack-protect",
     "solution_name": "Mailinblack (Protect)",
     "company_name": "Mailinblack (Protect)",
-    "logo_path": "assets/logos/Mailinblack (Protect)_svg.svg",
-    "logo_file": "Mailinblack (Protect)_svg.svg",
-    "logo_source": "website_svg",
+    "logo_path": "assets/logos/Mailinblack (Protect)_01.png",
+    "logo_file": "Mailinblack (Protect)_01.png",
+    "logo_source": "excel",
     "size": "large",
     "nist": {
       "level1": "Protéger",
