@@ -450,11 +450,16 @@ def main():
     website = field(body, "Site web") or field(body, "Nouveau site web (si changement)")
     contact = field(body, "Contact (email ou page contact)") or field(body, "Nouveau contact (si changement)")
     # Tags HexaTrust pilotes par des LABELS GitHub (poses par un mainteneur, comme approved), pas par le
-    # formulaire : label "hexatrust" -> membre (page /hexatrust) ; label "hors-france" -> siege hors de
-    # France (masque du panorama general). ADD-only : poser le label ajoute a la liste ; retrait manuel.
+    # formulaire. Deux labels, exclusifs dans l'usage :
+    #   "hexatrust-et-general" -> membre HexaTrust affiche sur /hexatrust ET sur le panorama general
+    #   "hexatrust-seulement"  -> affiche UNIQUEMENT sur /hexatrust, masque du panorama general
+    # Le second ajoute donc l'entreprise aux DEUX listes : membres, plus la liste des masques du general.
+    # ADD-only : poser le label ajoute a la liste ; le retrait se fait a la main dans le .txt.
     issue_labels = {(lab.get("name") or "").strip().lower() for lab in (issue.get("labels") or [])}
-    membre_hexatrust = "hexatrust" in issue_labels
-    siege_hors_france = "hors-france" in issue_labels
+    hexatrust_et_general = "hexatrust-et-general" in issue_labels
+    hexatrust_seulement = "hexatrust-seulement" in issue_labels
+    membre_hexatrust = hexatrust_et_general or hexatrust_seulement   # les deux = membre HexaTrust
+    siege_hors_france = hexatrust_seulement                          # seul ce label masque du general
     # Logo : un seul champ qui accepte une image deposee (PNG/GIF/JPG/SVG/WebP) OU une URL collee.
     upload = field(body, "Logo (fichier ou URL)") or \
         field(body, "Nouveau logo (fichier ou URL, si changement)")
@@ -535,7 +540,7 @@ def main():
             emit("company_name", name)
             emit("slug", tid)
             return
-        if membre_hexatrust:                           # tags HexaTrust (add-only : cocher = ajouter)
+        if membre_hexatrust:                           # tags HexaTrust (add-only : poser = ajouter)
             update_txt_list("solutions_hexatrust.txt", tid, True)
         if siege_hors_france:
             update_txt_list("solutions_sieges_hors_france.txt", tid, True)
