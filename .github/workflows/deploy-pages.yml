@@ -47,7 +47,7 @@ jobs:
       - name: Assembler le site (fichiers necessaires UNIQUEMENT)
         run: |
           rm -rf _site && mkdir -p _site/data
-          cp index.html sw.js _site/
+          cp index.html hexatrust.html sw.js _site/
           cp -r css js assets _site/
           cp data/solutions.generated.js _site/data/
           cp directory.html llms.txt sitemap.xml robots.txt _site/   # SEO + agents (page texte, llms.txt, sitemap)

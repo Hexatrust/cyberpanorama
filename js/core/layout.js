@@ -87,7 +87,11 @@
   }
 
   function chipSize(size, fit) {
-    const s = logos.baseChip * (sizeScale[size] || 1) * fit;
+    // Option "logos a taille egale" (filtre Affichage, page /hexatrust) : on neutralise le facteur
+    // taille d'entreprise -> tous les logos partagent le meme gabarit dans un secteur (l'ajustement
+    // fit par secteur reste applique). Par defaut la taille d'entreprise s'applique, ici comme ailleurs.
+    const scale = namespace.config.uniformChipSize ? 1 : (sizeScale[size] || 1);
+    const s = logos.baseChip * scale * fit;
     return logos.maxChip ? Math.min(logos.maxChip, s) : s;     // plafond : pas de logo geant
   }
 

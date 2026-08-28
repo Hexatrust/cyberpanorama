@@ -1,0 +1,4 @@
+# Entreprises a MASQUER du panorama general CESIN x HexaTrust (siege social hors de France) :
+# un id (slug) par ligne. Elles restent visibles sur /hexatrust et conservees dans l'Excel.
+# Lignes vides et '#' (commentaires) ignorees. Vide par defaut (rien masque).
+# Mise a jour possible via le tag 'Siege social hors de France' des formulaires (GitHub Actions).
