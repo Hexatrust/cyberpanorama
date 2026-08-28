@@ -358,6 +358,29 @@ def update_size_review(sid, size_code):
     path.write_text(json.dumps(sr, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def update_txt_list(filename, sid, present):
+    """Fichier liste texte data/<filename> : un id (slug) par ligne, commentaires '#' conserves.
+    present=True -> ajoute sid (idempotent) ; present=False -> retire sid (utilise a la suppression).
+    Cote formulaire, on n'appelle qu'avec present=True (add-only : cocher ajoute, decocher ne retire
+    rien pour eviter tout retrait accidentel ; le retrait manuel se fait en editant le fichier)."""
+    if not sid:
+        return
+    path = DATA / filename
+
+    def code(ln):
+        return ln.split("#", 1)[0].strip()
+
+    lines = path.read_text(encoding="utf-8").splitlines() if path.exists() else []
+    has = any(code(ln) == sid for ln in lines)
+    if present and not has:
+        lines.append(sid)
+    elif not present and has:
+        lines = [ln for ln in lines if code(ln) != sid]
+    else:
+        return
+    path.write_text("\n".join(lines).rstrip("\n") + "\n", encoding="utf-8")
+
+
 def emit(key, value):
     out = os.environ.get("GITHUB_OUTPUT")
     if out:
@@ -426,6 +449,12 @@ def main():
     desc = field(body, "Description courte") or field(body, "Nouvelle description (si changement)")
     website = field(body, "Site web") or field(body, "Nouveau site web (si changement)")
     contact = field(body, "Contact (email ou page contact)") or field(body, "Nouveau contact (si changement)")
+    # Tags HexaTrust pilotes par des LABELS GitHub (poses par un mainteneur, comme approved), pas par le
+    # formulaire : label "hexatrust" -> membre (page /hexatrust) ; label "hors-france" -> siege hors de
+    # France (masque du panorama general). ADD-only : poser le label ajoute a la liste ; retrait manuel.
+    issue_labels = {(lab.get("name") or "").strip().lower() for lab in (issue.get("labels") or [])}
+    membre_hexatrust = "hexatrust" in issue_labels
+    siege_hors_france = "hors-france" in issue_labels
     # Logo : un seul champ qui accepte une image deposee (PNG/GIF/JPG/SVG/WebP) OU une URL collee.
     upload = field(body, "Logo (fichier ou URL)") or \
         field(body, "Nouveau logo (fichier ou URL, si changement)")
@@ -477,6 +506,10 @@ def main():
         items = items + [entry]
         path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         update_size_review(slug, size)                 # la taille doit aussi aller dans size_review.json
+        if membre_hexatrust:
+            update_txt_list("solutions_hexatrust.txt", slug, True)
+        if siege_hors_france:
+            update_txt_list("solutions_sieges_hors_france.txt", slug, True)
         print(f"Ajout préparé : {name} ({slug})")
     else:
         # edit ou SUPPRESSION : retrouver l'entree existante (par nom ou slug).
@@ -496,10 +529,16 @@ def main():
                 (LOGOS / lf).unlink()                 # on retire aussi le fichier logo (pas d'orphelin)
             items = [s for s in items if s.get("id") != tid]
             path.write_text(json.dumps(items, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            update_txt_list("solutions_hexatrust.txt", tid, False)          # nettoyage des listes
+            update_txt_list("solutions_sieges_hors_france.txt", tid, False)
             print(f"Suppression préparée : {name} ({tid})")
             emit("company_name", name)
             emit("slug", tid)
             return
+        if membre_hexatrust:                           # tags HexaTrust (add-only : cocher = ajouter)
+            update_txt_list("solutions_hexatrust.txt", tid, True)
+        if siege_hors_france:
+            update_txt_list("solutions_sieges_hors_france.txt", tid, True)
         if new_name:                                   # renommage : on change le nom affiche, pas l'id
             cur["solution_name"] = new_name
             cur["company_name"] = new_name

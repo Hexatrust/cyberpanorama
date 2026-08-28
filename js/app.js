@@ -44,7 +44,21 @@
   }
   sessionStorage.removeItem("cp_boot_retry");
 
-  const data = window.CYBERPANORAMA_DATA;
+  // Mode de page : "hexatrust" (page /hexatrust) sinon panorama general. Un seul filtrage ici suffit :
+  // tous les composants lisent data.solutions, donc le dataset filtre se propage partout.
+  //   /hexatrust        -> uniquement les membres HexaTrust (is_hexatrust), y compris sieges hors France
+  //   panorama general  -> tout SAUF les sieges hors France (hq_outside_france)
+  const mode = window.CP_MODE === "hexatrust" ? "hexatrust" : "main";
+  const rawData = window.CYBERPANORAMA_DATA;
+  const data = Object.assign({}, rawData, {
+    solutions: (rawData.solutions || []).filter((s) =>
+      mode === "hexatrust" ? s.is_hexatrust : !s.hq_outside_france),
+  });
+  // Drapeau de page lu par la geometrie (logos uniformes) et le branding (HexaTrust seul, pas de CESIN).
+  namespace.config.hexatrustPage = (mode === "hexatrust");
+  // Gabarit des logos : par defaut la taille d'entreprise s'applique sur les DEUX pages. Sur
+  // /hexatrust, le filtre "Affichage" peut la neutraliser (tous les logos a la meme taille).
+  namespace.config.uniformChipSize = false;
   const { level1Order } = namespace.config;
 
   const elements = {
@@ -86,6 +100,8 @@
     modalFunction: document.getElementById("modalFunction"),
     modalSize: document.getElementById("modalSize"),
     sizeFilters: document.getElementById("sizeFilters"),
+    displayGroup: document.getElementById("displayGroup"),
+    displayFilters: document.getElementById("displayFilters"),
     modalBody: document.getElementById("modalBody"),
   };
 
@@ -94,6 +110,7 @@
     activeLevel2: new Set(),
     activeLevel3: new Set(),
     activeSizes: new Set(), // tailles d'entreprise selectionnees (vide = toutes)
+    uniformSize: false, // /hexatrust : tous les logos au meme gabarit (option d'affichage)
     search: "",
     searchNormalized: "",
     searchIds: null, // Set d'IDs renvoyes par Typesense (null = pas de recherche / repli)
@@ -174,6 +191,8 @@
   }
 
   function render() {
+    // Option d'affichage lue par la geometrie (chipSize) avant tout calcul de placement.
+    namespace.config.uniformChipSize = state.uniformSize;
     const visible = filteredSolutions();
     const counts = sectorCounts(visible);
     const allActive = state.activeLevel1.size === level1Order.length;
@@ -213,6 +232,7 @@
     state.activeLevel2.clear();
     state.activeLevel3.clear();
     state.activeSizes.clear();
+    state.uniformSize = false;
     state.search = "";
     state.searchNormalized = "";
     state.searchIds = null;
@@ -221,6 +241,7 @@
     namespace.filters.renderFunctionFilters(context);
     namespace.filters.renderLevelFilters(context);
     namespace.filters.renderSizeFilters(context);
+    namespace.filters.renderDisplayFilters(context);
     render();
     if (namespace.zoom && namespace.zoom.fitToScreen)
       namespace.zoom.fitToScreen(context);
@@ -246,6 +267,7 @@
     namespace.filters.renderFunctionFilters(context);
     namespace.filters.renderLevelFilters(context);
     namespace.filters.renderSizeFilters(context);
+    namespace.filters.renderDisplayFilters(context);
     namespace.search.bind(context);
     namespace.zoom.bind(context);
     namespace.drawer.bind(context);

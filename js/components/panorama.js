@@ -214,8 +214,10 @@
       img.setAttribute("preserveAspectRatio", "xMidYMid meet");
       layer.appendChild(img);
     };
-    add("assets/hexatrust-logo.png", 420, 104, cy - 28);
-    add("assets/cesin-logo.svg", 260, 128, cy + 96);
+    // Page /hexatrust : SEUL le logo HexaTrust (pas de CESIN), recentre puisqu'il est seul.
+    const soloHexatrust = namespace.config.hexatrustPage;
+    add("assets/hexatrust-logo.png", 420, 104, soloHexatrust ? cy + 8 : cy - 28);
+    if (!soloHexatrust) add("assets/cesin-logo.svg", 260, 128, cy + 96);
   }
 
   function renderPanoramaBase(svg, onSectorToggle, onReset) {

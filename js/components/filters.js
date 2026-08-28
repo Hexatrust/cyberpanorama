@@ -196,9 +196,44 @@
     elements.sizeFilters.replaceChildren(fragment);
   }
 
+  // Affichage (page /hexatrust uniquement) : case unique pour ramener tous les logos au meme
+  // gabarit. Ce n'est pas un filtre de contenu (aucune solution n'est masquee), donc pas de
+  // comptage dans le badge ; la section reste cachee sur le panorama general.
+  function renderDisplayFilters(context) {
+    const { elements, render, state } = context;
+    if (!elements.displayGroup || !elements.displayFilters) return;
+    if (!namespace.config.hexatrustPage) {
+      elements.displayGroup.hidden = true;
+      return;
+    }
+    elements.displayGroup.hidden = false;
+
+    const label = document.createElement("label");
+    label.className = "check-row";
+    label.setAttribute("for", "displayUniformSize");
+
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.id = "displayUniformSize";
+    input.checked = state.uniformSize;
+    input.addEventListener("change", () => {
+      state.uniformSize = input.checked;
+      render();
+    });
+
+    const text = document.createElement("span");
+    text.textContent = "Logos à la même taille";
+    text.title =
+      "Ignorer la taille d'entreprise : tous les logos sont affichés au même gabarit";
+
+    label.append(input, text);
+    elements.displayFilters.replaceChildren(label);
+  }
+
   namespace.filters = {
     renderFunctionFilters,
     renderLevelFilters,
     renderSizeFilters,
+    renderDisplayFilters,
   };
 })(window.CP);

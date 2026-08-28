@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import html
 import json
+import re
+import unicodedata
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -59,6 +61,25 @@ COLORS = {
 }
 CODES = {"Gouverner": "GV", "Identifier": "ID", "Protéger": "PR",
          "Détecter": "DE", "Répondre": "RS", "Récupérer": "RC"}
+
+
+def _slug(value):
+    """Meme normalisation que parse_submission.slugify : sans accents, minuscules, non-alphanum -> '-'."""
+    value = "".join(c for c in unicodedata.normalize("NFD", value or "") if unicodedata.category(c) != "Mn").lower()
+    return re.sub(r"[^a-z0-9]+", "-", value).strip("-")
+
+
+def load_id_list(path):
+    """Lit un fichier 'un id (slug) par ligne' : ignore les lignes vides et les commentaires (#, y compris
+    en fin de ligne). Renvoie un set d'ids normalises (slug). Fichier absent -> set vide."""
+    if not path.exists():
+        return set()
+    out = set()
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.split("#", 1)[0].strip()
+        if line:
+            out.add(_slug(line))
+    return out
 
 
 def primary_l2(level2, level3):
@@ -181,6 +202,25 @@ def write_seo(solutions, root):
     print(f"écrit SEO : directory.html ({total}), llms.txt, sitemap.xml, robots.txt")
 
 
+def write_hexatrust_page(root):
+    """Genere hexatrust.html a partir d'index.html (SOURCE UNIQUE, pas de duplication) : meme app, mais
+    en mode 'hexatrust' (page /hexatrust). On injecte window.CP_MODE avant js/app.js et on adapte le
+    titre et la description. Aucune bascule entre les deux pages : chacune s'atteint par son URL."""
+    src = (root / "index.html").read_text(encoding="utf-8")
+    out = src
+    # Mode page : script inline (non defer) -> s'execute avant js/app.js (defer), qui lit window.CP_MODE.
+    out = out.replace(
+        '<script src="js/app.js" defer></script>',
+        '<script>window.CP_MODE = "hexatrust";</script>\n    <script src="js/app.js" defer></script>',
+    )
+    out = out.replace("<title>CyberPanorama Hexatrust / CESIN</title>",
+                      "<title>Panorama HexaTrust — CyberPanorama</title>")
+    out = re.sub(r'name="description"\s+content="[^"]*"',
+                 'name="description" content="Les solutions de cybersecurite editees par les membres '
+                 'd\'HexaTrust, classees par fonction NIST CSF 2.0."', out)
+    (root / "hexatrust.html").write_text(out, encoding="utf-8")
+
+
 def main():
     # solutions.json = donnee finale (un seul fichier, deja fusionne, exclus retires).
     base = json.load((DATA / "solutions.json").open(encoding="utf-8"))
@@ -189,6 +229,12 @@ def main():
     # Re-verification taille (revue IA 2026-06 : registre INSEE + CA + levees). SIZE_FIX (client) reste prioritaire.
     _sr = DATA / "size_review.json"
     SIZE_REVIEW = json.load(_sr.open(encoding="utf-8")) if _sr.exists() else {}
+
+    # Deux listes texte versionnees pilotent la page /hexatrust et l'exclusion du panorama general.
+    # is_hexatrust : membres HexaTrust (affiches sur /hexatrust). hq_outside_france : sieges hors de
+    # France (masques du panorama general CESIN x HexaTrust, mais conserves sur /hexatrust et dans l'Excel).
+    hexatrust_ids = load_id_list(DATA / "solutions_hexatrust.txt")
+    hors_france_ids = load_id_list(DATA / "solutions_sieges_hors_france.txt")
 
     level1_catalog = {name: {"code": CODES[name], "label": name, "color": COLORS[name]}
                       for name in CODES}
@@ -242,6 +288,8 @@ def main():
             "is_french": bool(m.get("is_french")),
             "nis2_objective": m.get("nis2_objective", ""),
             "indexation": combined_index(m),
+            "is_hexatrust": _slug(sid) in hexatrust_ids,
+            "hq_outside_france": _slug(sid) in hors_france_ids,
         })
 
     syn_path = DATA / "search_synonyms.json"
@@ -262,6 +310,8 @@ def main():
     print(f"écrit {OUT.name} : {len(solutions)} solutions | {svg} logos SVG")
 
     write_seo(solutions, DATA.parent)  # directory.html, llms.txt, sitemap.xml, robots.txt a la racine
+    write_hexatrust_page(DATA.parent)  # hexatrust.html (page /hexatrust) genere depuis index.html
+    print("écrit hexatrust.html (page /hexatrust)")
 
 
 if __name__ == "__main__":
