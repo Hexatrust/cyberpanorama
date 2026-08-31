@@ -29054,5 +29054,35 @@
     "email_contact": "contact@secmate.dev",
     "nis2_objective": "Mise en œuvre d'une approche par les risques",
     "detailed_description": "SecMate est une plateforme de décision pour la sécurité des produits. Elle aide les fabricants à déterminer si une version peut être livrée en toute sécurité.\n\nSon moteur propriétaire rassemble le code source, les dépendances, la documentation, la configuration, le modèle de menaces et les résultats des outils existants. Il recherche les vulnérabilités inconnues et les failles métier, puis évalue leur exploitabilité et leur impact dans le contexte réel du produit.\n\nSecMate transforme ainsi un grand nombre de signaux techniques en quelques risques concrets. À chaque version, la plateforme fournit une décision claire : corriger, accepter ou bloquer. Cette décision peut être intégrée à la chaîne de développement comme contrôle avant livraison.\n\nSecMate s’adresse aux fabricants de produits numériques, en particulier dans les environnements critiques ou réglementés. La plateforme accompagne leurs démarches de sécurité produit, de conformité et de mise sur le marché. Les principaux cas d’usage sont la découverte et la validation de vulnérabilités, l’analyse des chemins d’attaque, la modélisation des menaces, la priorisation des corrections et la décision de livraison. Le moteur de SecMate a déjà découvert plus de 100 vulnérabilités inconnues dans des logiciels embarqués et critiques.\n\nSecMate est disponible sous forme de service hébergé, dans un réseau privé, sur l’infrastructure du client ou dans un environnement isolé."
+  },
+  {
+    "id": "f24",
+    "solution_name": "F24",
+    "company_name": "F24",
+    "logo_path": "assets/logos/f24.png",
+    "logo_file": "f24.png",
+    "logo_source": "submission",
+    "size": "very_large",
+    "nist": {
+      "level1": "Répondre",
+      "level2": [
+        "RS.MA",
+        "RC.CO",
+        "GV.RM"
+      ],
+      "level3": [
+        "RS.MA-01",
+        "RC.CO-03",
+        "RC.CO-04"
+      ]
+    },
+    "description": "F24 propose une suite de résilience de bout en bout.\nSolution en mode SaaS, F24 garanti un environnement sécurisé, hautement disponible et répond à vos besoins de communication d'urgence, de mobilisation de cellule de crise de gestion d'incident, intégrant une main courante, un Chat, une visioconférence, une solution de GRC, BIA et la possibilité de générer vos Retex. \nF24 propose une version d'exercice afin de tester vos plans d'actions.",
+    "website": "https://f24.com/fr/produits/solutions-notification-urgence-gestion-de-crise/",
+    "country": "France",
+    "is_french": true,
+    "indexation": [],
+    "email_contact": "Arnaud.sraka@f24.com",
+    "nis2_objective": "Continuité et reprise d'activité",
+    "detailed_description": "Nos solutions couvrent l'ensemble de la chaîne de la résilience organisationnelle, depuis la Threat Intelligence, la GRC (Gouvernance, Risques et Conformité) et les Business Impact Analyses (BIA), jusqu'à l'alerte fonctionnelle ou l'alerte de masse et la mobilisation des équipes de crise. Elles permettent également de piloter la gestion de crise et des événements, d'assurer une main courante automatisée, de capitaliser sur les retours d'expérience (RETEX) et de gérer efficacement les communications internes et externes tout au long de l'incident.\nLe groupe F24 compte 5500 clients à travers le monde dont 30% des acteurs du CAC40."
   }
 ]

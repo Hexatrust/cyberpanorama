@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-08-28T10:09:20+00:00",
+  "generated_at": "2026-08-31T11:26:40+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -676,7 +676,7 @@ window.CYBERPANORAMA_DATA = {
         "credential theft",
         "tableau de bord rssi"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -781,7 +781,7 @@ window.CYBERPANORAMA_DATA = {
         "maturite cyber",
         "indicateurs"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -992,7 +992,7 @@ window.CYBERPANORAMA_DATA = {
         "nom de domaine",
         "ssl"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -1095,7 +1095,7 @@ window.CYBERPANORAMA_DATA = {
         "fabricant materiel",
         "iot securise"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -1310,7 +1310,7 @@ window.CYBERPANORAMA_DATA = {
         "prevention",
         "audit externe"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -1422,7 +1422,7 @@ window.CYBERPANORAMA_DATA = {
         "dsi",
         "rssi"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -1529,7 +1529,7 @@ window.CYBERPANORAMA_DATA = {
         "on premise",
         "cybersecurite industrielle"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -1635,7 +1635,7 @@ window.CYBERPANORAMA_DATA = {
         "collectivites",
         "secteur public"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -1739,7 +1739,7 @@ window.CYBERPANORAMA_DATA = {
         "dsi",
         "rssi"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -1835,7 +1835,7 @@ window.CYBERPANORAMA_DATA = {
         "conformite",
         "cnil"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -1943,7 +1943,7 @@ window.CYBERPANORAMA_DATA = {
         "chiffrement",
         "confidentialite"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -2254,7 +2254,7 @@ window.CYBERPANORAMA_DATA = {
         "defense en profondeur",
         "segmentation cellule"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -2359,7 +2359,7 @@ window.CYBERPANORAMA_DATA = {
         "applications managees",
         "geofencing"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -2571,7 +2571,7 @@ window.CYBERPANORAMA_DATA = {
         "planification sauvegarde",
         "archivage"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -2672,7 +2672,7 @@ window.CYBERPANORAMA_DATA = {
         "gestion de crise",
         "plan de reprise"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -2791,7 +2791,7 @@ window.CYBERPANORAMA_DATA = {
         "cyber recovery",
         "coffre fort numerique"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -2906,7 +2906,7 @@ window.CYBERPANORAMA_DATA = {
         "gestion des urgences",
         "cellule decisionnelle"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -3241,7 +3241,7 @@ window.CYBERPANORAMA_DATA = {
         "protection malware",
         "threat protection"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -3448,7 +3448,7 @@ window.CYBERPANORAMA_DATA = {
         "continuite de service",
         "resilience"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -3565,7 +3565,7 @@ window.CYBERPANORAMA_DATA = {
         "cloud de confiance",
         "mutualise"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -3674,7 +3674,7 @@ window.CYBERPANORAMA_DATA = {
         "hybride",
         "supervision sauvegarde"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -3888,7 +3888,7 @@ window.CYBERPANORAMA_DATA = {
         "protection collaborateurs",
         "sensibilisation"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -4024,7 +4024,7 @@ window.CYBERPANORAMA_DATA = {
         "resilience humaine",
         "reduction du risque"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -4126,7 +4126,7 @@ window.CYBERPANORAMA_DATA = {
         "benchmark",
         "tableau de bord"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -4348,7 +4348,7 @@ window.CYBERPANORAMA_DATA = {
         "hybride",
         "appliance"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -4672,7 +4672,7 @@ window.CYBERPANORAMA_DATA = {
         "cloud hybride",
         "isolation"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -4779,7 +4779,7 @@ window.CYBERPANORAMA_DATA = {
         "trust service",
         "webtrust"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -4877,7 +4877,7 @@ window.CYBERPANORAMA_DATA = {
         "cyber",
         "gouvernement"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -5091,7 +5091,7 @@ window.CYBERPANORAMA_DATA = {
         "france",
         "paris"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -5660,7 +5660,7 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Gestion des risques",
       "indexation": [],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -5766,7 +5766,7 @@ window.CYBERPANORAMA_DATA = {
         "api",
         "paris"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -5881,7 +5881,7 @@ window.CYBERPANORAMA_DATA = {
         "crisis box",
         "gestion crise cyber"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -5996,7 +5996,7 @@ window.CYBERPANORAMA_DATA = {
         "saas hybride",
         "ddos protection"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -6107,7 +6107,7 @@ window.CYBERPANORAMA_DATA = {
         "conformite anssi",
         "chiffrement asymetrique"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -6331,7 +6331,7 @@ window.CYBERPANORAMA_DATA = {
         "occitanie",
         "french tech"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -6435,7 +6435,7 @@ window.CYBERPANORAMA_DATA = {
         "cloud",
         "monitoring continu"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -6862,7 +6862,7 @@ window.CYBERPANORAMA_DATA = {
         "cyberwach",
         "cyberwatsh"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -7067,7 +7067,7 @@ window.CYBERPANORAMA_DATA = {
         "qr shield",
         "qr-shield"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -7276,7 +7276,7 @@ window.CYBERPANORAMA_DATA = {
         "dasta",
         "datsra"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -7383,7 +7383,7 @@ window.CYBERPANORAMA_DATA = {
         "secteur public",
         "laboratoire salle blanche"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -7490,7 +7490,7 @@ window.CYBERPANORAMA_DATA = {
         "protection ddos applicative",
         "cyber fraude"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -7797,7 +7797,7 @@ window.CYBERPANORAMA_DATA = {
         "incident handling",
         "preparation crise"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -8333,7 +8333,7 @@ window.CYBERPANORAMA_DATA = {
         "dpo",
         "rssi"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -8440,7 +8440,7 @@ window.CYBERPANORAMA_DATA = {
         "dpo",
         "nis2"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -8653,7 +8653,7 @@ window.CYBERPANORAMA_DATA = {
         "rgpd",
         "controle outils ia"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -8758,7 +8758,7 @@ window.CYBERPANORAMA_DATA = {
         "dsi",
         "soc analyst"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -8866,7 +8866,7 @@ window.CYBERPANORAMA_DATA = {
         "saas",
         "on premise"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -9070,7 +9070,7 @@ window.CYBERPANORAMA_DATA = {
         "b2b",
         "data room"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -9172,7 +9172,7 @@ window.CYBERPANORAMA_DATA = {
         "on premise",
         "internet des objets"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -9409,7 +9409,7 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "",
       "indexation": [],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -9621,7 +9621,7 @@ window.CYBERPANORAMA_DATA = {
         "lutte anti fraude",
         "payout"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -9963,7 +9963,7 @@ window.CYBERPANORAMA_DATA = {
         "veille menace",
         "on premise"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -10071,7 +10071,7 @@ window.CYBERPANORAMA_DATA = {
         "document analysis",
         "detection automatique"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -10186,7 +10186,7 @@ window.CYBERPANORAMA_DATA = {
         "large files",
         "wetransfer securise"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -10289,7 +10289,7 @@ window.CYBERPANORAMA_DATA = {
         "securite particuliers",
         "protection achats"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -10403,7 +10403,7 @@ window.CYBERPANORAMA_DATA = {
         "appliance",
         "on premise"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -10513,7 +10513,7 @@ window.CYBERPANORAMA_DATA = {
         "rssi",
         "data scientist"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -10620,7 +10620,7 @@ window.CYBERPANORAMA_DATA = {
         "editeur francais",
         "fuites sur internet"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -10946,7 +10946,7 @@ window.CYBERPANORAMA_DATA = {
         "rssi",
         "equipes securite"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -11164,7 +11164,7 @@ window.CYBERPANORAMA_DATA = {
         "second facteur",
         "generateur de code"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -11360,7 +11360,7 @@ window.CYBERPANORAMA_DATA = {
         "gestion des identites",
         "iam"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -11463,7 +11463,7 @@ window.CYBERPANORAMA_DATA = {
         "controle d acces logique",
         "empreinte digitale"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -11559,7 +11559,7 @@ window.CYBERPANORAMA_DATA = {
         "prevention fuite de donnees",
         "gestion des identites"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -11655,7 +11655,7 @@ window.CYBERPANORAMA_DATA = {
         "on premise",
         "cloud hsm"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -11773,7 +11773,7 @@ window.CYBERPANORAMA_DATA = {
         "audit interne",
         "controle interne"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -11882,7 +11882,7 @@ window.CYBERPANORAMA_DATA = {
         "defense",
         "fraude documentaire"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -11912,7 +11912,7 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "",
       "indexation": [],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -12025,7 +12025,7 @@ window.CYBERPANORAMA_DATA = {
         "on premise",
         "appliance"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -12131,7 +12131,7 @@ window.CYBERPANORAMA_DATA = {
         "grand compte",
         "secteur public"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -12241,7 +12241,7 @@ window.CYBERPANORAMA_DATA = {
         "education",
         "finance"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -12453,7 +12453,7 @@ window.CYBERPANORAMA_DATA = {
         "rssi",
         "analyste soc"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -12630,7 +12630,7 @@ window.CYBERPANORAMA_DATA = {
         "risque fournisseur",
         "planification audit"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -12746,7 +12746,7 @@ window.CYBERPANORAMA_DATA = {
         "registre",
         "traceabilite documentaire"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -12861,7 +12861,7 @@ window.CYBERPANORAMA_DATA = {
         "dispositif materiel",
         "anti phishing"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -13082,7 +13082,7 @@ window.CYBERPANORAMA_DATA = {
         "mulhouse",
         "resilience"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -13295,7 +13295,7 @@ window.CYBERPANORAMA_DATA = {
         "france",
         "saas"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -13413,7 +13413,7 @@ window.CYBERPANORAMA_DATA = {
         "embedded security",
         "firmware securise"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -13523,7 +13523,7 @@ window.CYBERPANORAMA_DATA = {
         "2021",
         "startup francaise"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -13632,7 +13632,7 @@ window.CYBERPANORAMA_DATA = {
         "pra",
         "reversibilite"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -13739,7 +13739,7 @@ window.CYBERPANORAMA_DATA = {
         "anciennement lex persona",
         "goodflag signature"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -13850,7 +13850,7 @@ window.CYBERPANORAMA_DATA = {
         "provisioning",
         "group chat"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -13958,7 +13958,7 @@ window.CYBERPANORAMA_DATA = {
         "on premise",
         "auto heberge"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -14314,7 +14314,7 @@ window.CYBERPANORAMA_DATA = {
         "mappreuve",
         "signature numerique"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -14735,7 +14735,7 @@ window.CYBERPANORAMA_DATA = {
         "mobi",
         "analyse de risque logiciel"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -14966,7 +14966,7 @@ window.CYBERPANORAMA_DATA = {
         "api rest",
         "webhook"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -15193,7 +15193,7 @@ window.CYBERPANORAMA_DATA = {
         "web3 security",
         "blockchain security"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -15523,7 +15523,7 @@ window.CYBERPANORAMA_DATA = {
         "mssp",
         "rssi"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -15643,7 +15643,7 @@ window.CYBERPANORAMA_DATA = {
         "nexpublica",
         "nexplublica"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -15860,7 +15860,7 @@ window.CYBERPANORAMA_DATA = {
         "rssi",
         "ssi"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -15966,7 +15966,7 @@ window.CYBERPANORAMA_DATA = {
         "secret management",
         "externalisation de l authentification"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -16070,7 +16070,7 @@ window.CYBERPANORAMA_DATA = {
         "france",
         "numspot"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -16171,7 +16171,7 @@ window.CYBERPANORAMA_DATA = {
         "ogo",
         "ogo security"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -16719,7 +16719,7 @@ window.CYBERPANORAMA_DATA = {
         "open cve",
         "opencv"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -17041,7 +17041,7 @@ window.CYBERPANORAMA_DATA = {
         "orsek",
         "orsecnet"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -17152,7 +17152,7 @@ window.CYBERPANORAMA_DATA = {
         "actifs exposes",
         "centralisation donnees"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -17588,7 +17588,7 @@ window.CYBERPANORAMA_DATA = {
         "predictive",
         "maintenance"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -17801,7 +17801,7 @@ window.CYBERPANORAMA_DATA = {
         "notifications",
         "detection fuites"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -17912,7 +17912,7 @@ window.CYBERPANORAMA_DATA = {
         "logiciel saas",
         "risk register"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -18017,7 +18017,7 @@ window.CYBERPANORAMA_DATA = {
         "bibliotheque cryptographique",
         "api"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -18124,7 +18124,7 @@ window.CYBERPANORAMA_DATA = {
         "zero touch",
         "play protect"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -18326,7 +18326,7 @@ window.CYBERPANORAMA_DATA = {
         "editeur francais",
         "deeptech"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -18436,7 +18436,7 @@ window.CYBERPANORAMA_DATA = {
         "computer vision",
         "vision par ordinateur"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -18548,7 +18548,7 @@ window.CYBERPANORAMA_DATA = {
         "esg",
         "editeur francais"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -18654,7 +18654,7 @@ window.CYBERPANORAMA_DATA = {
         "editeur francais",
         "france"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -18946,7 +18946,7 @@ window.CYBERPANORAMA_DATA = {
         "editeur francais",
         "veille securite"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -19044,7 +19044,7 @@ window.CYBERPANORAMA_DATA = {
         "editeur francais",
         "api"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -19163,7 +19163,7 @@ window.CYBERPANORAMA_DATA = {
         "prioritisation",
         "vulnerability prioritization"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -19480,7 +19480,7 @@ window.CYBERPANORAMA_DATA = {
         "cryptography",
         "souverain"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -19580,7 +19580,7 @@ window.CYBERPANORAMA_DATA = {
         "france",
         "cyber risk management"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -20010,7 +20010,7 @@ window.CYBERPANORAMA_DATA = {
         "grand compte",
         "tpe"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -20124,7 +20124,7 @@ window.CYBERPANORAMA_DATA = {
         "dsi",
         "reglementation"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -20459,7 +20459,7 @@ window.CYBERPANORAMA_DATA = {
         "api",
         "secnumcloud"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -20572,7 +20572,7 @@ window.CYBERPANORAMA_DATA = {
         "ssi",
         "dora"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -20687,7 +20687,7 @@ window.CYBERPANORAMA_DATA = {
         "sec 17a4",
         "wlm storage"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -20795,7 +20795,7 @@ window.CYBERPANORAMA_DATA = {
         "risque fournisseur",
         "cotation cyber"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -20897,7 +20897,7 @@ window.CYBERPANORAMA_DATA = {
         "revocation destinataire",
         "zero knowledge"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -21313,7 +21313,7 @@ window.CYBERPANORAMA_DATA = {
         "audit intrusion",
         "conformite"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -21431,7 +21431,7 @@ window.CYBERPANORAMA_DATA = {
         "france",
         "french"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -21549,7 +21549,7 @@ window.CYBERPANORAMA_DATA = {
         "gestionnaire mail",
         "esecure mail"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -21657,7 +21657,7 @@ window.CYBERPANORAMA_DATA = {
         "oive",
         "cyberdefense embarquee"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -21764,7 +21764,7 @@ window.CYBERPANORAMA_DATA = {
         "sela",
         "seella"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -22091,7 +22091,7 @@ window.CYBERPANORAMA_DATA = {
         "identites numeriques",
         "gestion identites acces"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -22204,7 +22204,7 @@ window.CYBERPANORAMA_DATA = {
         "anomalie reseau",
         "cyberprotection pme"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -22317,7 +22317,7 @@ window.CYBERPANORAMA_DATA = {
         "sesame it editeur",
         "probe ndr"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -22533,7 +22533,7 @@ window.CYBERPANORAMA_DATA = {
         "dsp2",
         "verification age"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -22637,7 +22637,7 @@ window.CYBERPANORAMA_DATA = {
         "analyse comportementale",
         "indicateur compromission mobile"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -22745,7 +22745,7 @@ window.CYBERPANORAMA_DATA = {
         "cyber asset management",
         "caasm"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -22962,7 +22962,7 @@ window.CYBERPANORAMA_DATA = {
         "saas b2b",
         "plateforme securite"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -23393,7 +23393,7 @@ window.CYBERPANORAMA_DATA = {
         "api rest",
         "webhook"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -23495,7 +23495,7 @@ window.CYBERPANORAMA_DATA = {
         "hygiene informatique",
         "veille obsolescence"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -23709,7 +23709,7 @@ window.CYBERPANORAMA_DATA = {
         "industrie",
         "editeur francais"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -23811,7 +23811,7 @@ window.CYBERPANORAMA_DATA = {
         "agent ia",
         "detection vulnerabilites"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -23904,7 +23904,7 @@ window.CYBERPANORAMA_DATA = {
         "gouvernance",
         "reporting reglementaire"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -24117,7 +24117,7 @@ window.CYBERPANORAMA_DATA = {
         "analyste soc",
         "rssi"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -24432,7 +24432,7 @@ window.CYBERPANORAMA_DATA = {
         "explained",
         "hardware lab"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -24551,7 +24551,7 @@ window.CYBERPANORAMA_DATA = {
         "fido",
         "pki racine"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -24776,7 +24776,7 @@ window.CYBERPANORAMA_DATA = {
         "cybersurveillance",
         "empreinte digitale"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -24887,7 +24887,7 @@ window.CYBERPANORAMA_DATA = {
         "banque",
         "finance"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -25438,7 +25438,7 @@ window.CYBERPANORAMA_DATA = {
         "no metadata",
         "anti espionnage"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -25545,7 +25545,7 @@ window.CYBERPANORAMA_DATA = {
         "least privilege",
         "moindre privilege"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -25653,7 +25653,7 @@ window.CYBERPANORAMA_DATA = {
         "qualite logicielle",
         "software quality"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -25758,7 +25758,7 @@ window.CYBERPANORAMA_DATA = {
         "direction achats",
         "procurement"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -25984,7 +25984,7 @@ window.CYBERPANORAMA_DATA = {
         "posture securite",
         "grenoble"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -26211,7 +26211,7 @@ window.CYBERPANORAMA_DATA = {
         "sans datacenter",
         "archivage"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -26319,7 +26319,7 @@ window.CYBERPANORAMA_DATA = {
         "saas",
         "rssi"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -26539,7 +26539,7 @@ window.CYBERPANORAMA_DATA = {
         "exposition internet",
         "surface attaque"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -26648,7 +26648,7 @@ window.CYBERPANORAMA_DATA = {
         "controle acces",
         "zero trust"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -27208,7 +27208,7 @@ window.CYBERPANORAMA_DATA = {
         "api",
         "protection donnees"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -27417,7 +27417,7 @@ window.CYBERPANORAMA_DATA = {
         "france",
         "editeur francais"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -27634,7 +27634,7 @@ window.CYBERPANORAMA_DATA = {
         "blockchain bitcoin",
         "preuve d anteriorite"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -27957,7 +27957,7 @@ window.CYBERPANORAMA_DATA = {
         "rssi",
         "dsi"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -28061,7 +28061,7 @@ window.CYBERPANORAMA_DATA = {
         "rssi",
         "chiffrement aes"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -28168,7 +28168,7 @@ window.CYBERPANORAMA_DATA = {
         "api",
         "rssi"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -28280,7 +28280,7 @@ window.CYBERPANORAMA_DATA = {
         "emulation",
         "heuristique"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -28629,7 +28629,7 @@ window.CYBERPANORAMA_DATA = {
         "france",
         "recherche cryptographique"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -28734,7 +28734,7 @@ window.CYBERPANORAMA_DATA = {
         "alerte vulnerabilite",
         "seo securite"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -28835,7 +28835,7 @@ window.CYBERPANORAMA_DATA = {
         "france",
         "belgique"
       ],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -29049,7 +29049,7 @@ window.CYBERPANORAMA_DATA = {
         "conference chiffree",
         "appel video"
       ],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -29631,7 +29631,7 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Maîtrise des SI",
       "indexation": [],
-      "is_hexatrust": true,
+      "is_hexatrust": false,
       "hq_outside_france": false
     },
     {
@@ -29727,7 +29727,7 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Recensement des SI",
       "indexation": [],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -29764,7 +29764,7 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Sécurisation de l'architecture des SI",
       "indexation": [],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -29800,7 +29800,7 @@ window.CYBERPANORAMA_DATA = {
       "is_french": true,
       "nis2_objective": "Identification et réaction aux incidents de sécurité",
       "indexation": [],
-      "is_hexatrust": false,
+      "is_hexatrust": true,
       "hq_outside_france": false
     },
     {
@@ -29834,9 +29834,42 @@ window.CYBERPANORAMA_DATA = {
       "indexation": [],
       "is_hexatrust": false,
       "hq_outside_france": false
+    },
+    {
+      "id": "f24",
+      "solution_name": "F24",
+      "company_name": "F24",
+      "logo_path": "assets/logos/f24.png",
+      "logo_file": "f24.png",
+      "logo_source": "submission",
+      "size": "very_large",
+      "nist": {
+        "level1": "Répondre",
+        "level2": [
+          "RS.MA",
+          "RC.CO",
+          "GV.RM"
+        ],
+        "level3": [
+          "RS.MA-01",
+          "RC.CO-03",
+          "RC.CO-04"
+        ]
+      },
+      "description": "F24 propose une suite de résilience de bout en bout.\nSolution en mode SaaS, F24 garanti un environnement sécurisé, hautement disponible et répond à vos besoins de communication d'urgence, de mobilisation de cellule de crise de gestion d'incident, intégrant une main courante, un Chat, une visioconférence, une solution de GRC, BIA et la possibilité de générer vos Retex. \nF24 propose une version d'exercice afin de tester vos plans d'actions.",
+      "detailed_description": "Nos solutions couvrent l'ensemble de la chaîne de la résilience organisationnelle, depuis la Threat Intelligence, la GRC (Gouvernance, Risques et Conformité) et les Business Impact Analyses (BIA), jusqu'à l'alerte fonctionnelle ou l'alerte de masse et la mobilisation des équipes de crise. Elles permettent également de piloter la gestion de crise et des événements, d'assurer une main courante automatisée, de capitaliser sur les retours d'expérience (RETEX) et de gérer efficacement les communications internes et externes tout au long de l'incident.\nLe groupe F24 compte 5500 clients à travers le monde dont 30% des acteurs du CAC40.",
+      "website": "https://f24.com/fr/produits/solutions-notification-urgence-gestion-de-crise/",
+      "email_contact": "Arnaud.sraka@f24.com",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Continuité et reprise d'activité",
+      "indexation": [],
+      "is_hexatrust": true,
+      "hq_outside_france": true
     }
   ],
   "quality_summary": {
-    "total": 283
+    "total": 284
   }
 };

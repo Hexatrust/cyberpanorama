@@ -2,3 +2,4 @@
 # un id (slug) par ligne. Elles restent visibles sur /hexatrust et conservees dans l'Excel.
 # Lignes vides et '#' (commentaires) ignorees. Vide par defaut (rien masque).
 # Mise a jour automatique via le label GitHub 'hexatrust-seulement' pose sur l'issue (avec 'approved').
+f24

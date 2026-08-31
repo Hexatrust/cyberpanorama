@@ -3055,5 +3055,8 @@
   },
   "tacit": {
     "size_code": "small"
+  },
+  "f24": {
+    "size_code": "very_large"
   }
 }
