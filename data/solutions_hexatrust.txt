@@ -23,6 +23,7 @@ cloud-iam
 cogiceo
 conscio-technolo-sensiwave
 continus-io
+coreupdate
 cryptonext-security
 cryptr
 cybee
