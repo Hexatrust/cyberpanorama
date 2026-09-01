@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-08-31T11:26:40+00:00",
+  "generated_at": "2026-09-01T09:19:34+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29867,9 +29867,41 @@ window.CYBERPANORAMA_DATA = {
       "indexation": [],
       "is_hexatrust": true,
       "hq_outside_france": true
+    },
+    {
+      "id": "advens",
+      "solution_name": "Advens",
+      "company_name": "Advens",
+      "logo_path": "assets/logos/advens.png",
+      "logo_file": "advens.png",
+      "logo_source": "submission",
+      "size": "large",
+      "nist": {
+        "level1": "Identifier",
+        "level2": [
+          "ID.RA",
+          "DE.CM"
+        ],
+        "level3": [
+          "ID.RA-01",
+          "ID.RA-04",
+          "DE.CM-09"
+        ]
+      },
+      "description": "VulSight, édité par Advens, est une plateforme unifiée de gestion des vulnérabilités qui centralise les données issues de multiples solutions de sécurité (Qualys, Tenable, Wiz, CrowdStrike, etc.) afin d’offrir une vision consolidée de l’exposition aux risques. Grâce à des mécanismes de priorisation assistés par l’IA et à l’enrichissement des données par des référentiels tels que CISA KEV et EPSS, VulSight aide les organisations à concentrer leurs efforts de remédiation sur les vulnérabilités les plus critiques et à accélérer leur traitement.",
+      "detailed_description": "VulSight aide les organisations à reprendre le contrôle de leur exposition aux vulnérabilités en centralisant les informations provenant de leurs différents outils de sécurité au sein d’une plateforme unique. La solution offre une vision consolidée des risques, facilite leur priorisation et permet aux équipes de se concentrer sur les actions de remédiation les plus pertinentes.\n\nEn fournissant un contexte enrichi sur les vulnérabilités et leur exploitabilité, VulSight simplifie la prise de décision et améliore l’efficacité des programmes de gestion des vulnérabilités. Les organisations peuvent ainsi réduire plus rapidement leur surface d’exposition tout en optimisant les efforts de leurs équipes cyber.",
+      "website": "https://advens.com/",
+      "email_contact": "contact@advens.fr",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Maîtrise des SI",
+      "indexation": [],
+      "is_hexatrust": false,
+      "hq_outside_france": false
     }
   ],
   "quality_summary": {
-    "total": 284
+    "total": 285
   }
 };

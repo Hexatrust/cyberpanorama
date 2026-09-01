@@ -29084,5 +29084,34 @@
     "email_contact": "Arnaud.sraka@f24.com",
     "nis2_objective": "Continuité et reprise d'activité",
     "detailed_description": "Nos solutions couvrent l'ensemble de la chaîne de la résilience organisationnelle, depuis la Threat Intelligence, la GRC (Gouvernance, Risques et Conformité) et les Business Impact Analyses (BIA), jusqu'à l'alerte fonctionnelle ou l'alerte de masse et la mobilisation des équipes de crise. Elles permettent également de piloter la gestion de crise et des événements, d'assurer une main courante automatisée, de capitaliser sur les retours d'expérience (RETEX) et de gérer efficacement les communications internes et externes tout au long de l'incident.\nLe groupe F24 compte 5500 clients à travers le monde dont 30% des acteurs du CAC40."
+  },
+  {
+    "id": "advens",
+    "solution_name": "Advens",
+    "company_name": "Advens",
+    "logo_path": "assets/logos/advens.png",
+    "logo_file": "advens.png",
+    "logo_source": "submission",
+    "size": "large",
+    "nist": {
+      "level1": "Identifier",
+      "level2": [
+        "ID.RA",
+        "DE.CM"
+      ],
+      "level3": [
+        "ID.RA-01",
+        "ID.RA-04",
+        "DE.CM-09"
+      ]
+    },
+    "description": "VulSight, édité par Advens, est une plateforme unifiée de gestion des vulnérabilités qui centralise les données issues de multiples solutions de sécurité (Qualys, Tenable, Wiz, CrowdStrike, etc.) afin d’offrir une vision consolidée de l’exposition aux risques. Grâce à des mécanismes de priorisation assistés par l’IA et à l’enrichissement des données par des référentiels tels que CISA KEV et EPSS, VulSight aide les organisations à concentrer leurs efforts de remédiation sur les vulnérabilités les plus critiques et à accélérer leur traitement.",
+    "website": "https://advens.com/",
+    "country": "France",
+    "is_french": true,
+    "indexation": [],
+    "email_contact": "contact@advens.fr",
+    "nis2_objective": "Maîtrise des SI",
+    "detailed_description": "VulSight aide les organisations à reprendre le contrôle de leur exposition aux vulnérabilités en centralisant les informations provenant de leurs différents outils de sécurité au sein d’une plateforme unique. La solution offre une vision consolidée des risques, facilite leur priorisation et permet aux équipes de se concentrer sur les actions de remédiation les plus pertinentes.\n\nEn fournissant un contexte enrichi sur les vulnérabilités et leur exploitabilité, VulSight simplifie la prise de décision et améliore l’efficacité des programmes de gestion des vulnérabilités. Les organisations peuvent ainsi réduire plus rapidement leur surface d’exposition tout en optimisant les efforts de leurs équipes cyber."
   }
 ]
