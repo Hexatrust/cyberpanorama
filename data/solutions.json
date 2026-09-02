@@ -15866,9 +15866,9 @@
     "id": "oodrive",
     "solution_name": "Oodrive",
     "company_name": "Oodrive",
-    "logo_path": "assets/logos/Oodrive_svg.svg",
-    "logo_file": "Oodrive_svg.svg",
-    "logo_source": "website_svg",
+    "logo_path": "assets/logos/oodrive.png",
+    "logo_file": "oodrive.png",
+    "logo_source": "submission",
     "size": "large",
     "nist": {
       "level1": "Protéger",

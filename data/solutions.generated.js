@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-09-01T11:11:39+00:00",
+  "generated_at": "2026-09-02T17:11:32+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -16504,9 +16504,9 @@ window.CYBERPANORAMA_DATA = {
       "id": "oodrive",
       "solution_name": "Oodrive",
       "company_name": "Oodrive",
-      "logo_path": "assets/logos/Oodrive_svg.svg",
-      "logo_file": "Oodrive_svg.svg",
-      "logo_source": "website_svg",
+      "logo_path": "assets/logos/oodrive.png",
+      "logo_file": "oodrive.png",
+      "logo_source": "submission",
       "size": "large",
       "nist": {
         "level1": "Protéger",
