@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-09-02T17:11:32+00:00",
+  "generated_at": "2026-09-02T17:12:14+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -10641,7 +10641,7 @@ window.CYBERPANORAMA_DATA = {
           "DE.CM-09"
         ]
       },
-      "description": "GLIMPS, installée à Cesson-Sévigné en Bretagne, analyse les fichiers pour détecter les codes malveillants à l'aide de huit modèles d'IA propriétaires et de plus de vingt-cinq moteurs de détection. Sa gamme couvre GLIMPS Malware Expert, des déclinaisons pour la messagerie M365 et Gmail, un kiosque d'analyse en libre-service pour les collaborateurs et GLIMPS Fortress pour l'analyse massive et la détection rétroactive. L'ANSSI, des ministères, les Hospices Civils de Lyon et Dassault figurent parmi ses clients.",
+      "description": "GLIMPS est un éditeur français de cybersécurité spécialisé dans la détection et l’analyse de malwares dans les fichiers par intelligence artificielle. Première société cyber incubée par le ministère des Armées et lauréat French Tech 2030, l’entreprise protège plus d’une centaine d'organisations en Europe et en Amérique du Nord grâce à ses 8 modèles d’IA propriétaires et ses 25+ moteurs de détection. Ses solutions souveraines, hébergées en France, couvrent la protection des flux de fichiers, l’investigation des menaces, la sensibilisation des collaborateurs et l’analyse massive de fichiers. L'ANSSI, des ministères, les Hospices Civils de Lyon, Coopérative U et Dassault figurent parmi ses clients.",
       "detailed_description": "GLIMPS est une entreprise française de cybersécurité fondée en 2019 à Rennes par d'anciens experts en rétro-ingénierie issus du ministère des Armées (incubée à la Cyber Defense Factory). Elle conçoit des solutions d'analyse de code et de détection de malwares fondées sur l'intelligence artificielle et le deep learning, avec une technologie propriétaire reposant sur plusieurs modèles d'IA (Deep Learning, Machine Learning, LLM) combinés à plus de 25 moteurs de détection. Son offre GLIMPS Malware couvre la sécurité des données, des applications métiers, le DevSecOps, la sécurité réseau, les systèmes de décontamination (Sheep Dip) et des intégrations cloud (Microsoft 365, SharePoint, OneDrive, Gmail). Les produits GLIMPS Malware Expert (investigation et intégration EDR), GLIMPS Audit (automatisation de la rétro-ingénierie), GLIMPS Malware Kiosk et GLIMPS Fortress (détection rétroactive) complètent le portefeuille. La plateforme caractérise et contextualise les menaces, réduit le temps d'investigation et rend un verdict en quelques secondes. Elle vise les secteurs banque, assurance, santé, industrie et énergie, et se positionne comme une alternative souveraine européenne. Présence à Rennes et à Toronto.",
       "website": "https://www.glimps.re/",
       "email_contact": "contact@glimps.re",
