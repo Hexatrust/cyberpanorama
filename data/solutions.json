@@ -9735,13 +9735,10 @@
         "DE.CM"
       ],
       "level3": [
-        "DE.CM-01",
-        "DE.CM-02",
-        "DE.CM-06",
-        "DE.CM-09"
+        "DE.CM-01"
       ]
     },
-    "description": "Gatewatcher conçoit une plateforme de détection et de réponse réseau (NDR) qui surveille les flux et les actifs pour repérer les menaces. La solution réunit les capteurs Sensor et TAP, le moteur Deep Visibility et le Decision Center qui priorise les alertes et accélère le triage. Parmi ses clients figurent la Banque de France, BNP Paribas, Sanofi, EDF, le CNES, Dassault et Naval Group, dans la finance, l'industrie, la défense, la santé et le secteur public.",
+    "description": "Gatewatcher commercialise une plateforme de cybersécurité combinant NDR et Decision Center pour transformer les signaux de sécurité en décisions directement exploitables. Son NDR apporte une visibilité approfondie sur les flux, les actifs et les comportements réseau afin de détecter les menaces, tandis que Decision Center, fondé sur une approche d’IA agentique, corrèle les alertes issues du réseau et des autres outils du SOC pour produire des décisions contextualisées, explicables et actionnables. Gatewatcher accompagne notamment des organisations telles que la Banque de France, BNP Paribas, Sanofi, EDF, le CNES, Dassault et Naval Group dans les secteurs de la finance, de l’industrie, de la défense, de la santé et du secteur public.",
     "detailed_description": "Gatewatcher est un editeur francais specialise dans la detection et la reponse aux menaces basees sur l'analyse du trafic reseau (NDR, Network Detection and Response). Sa plateforme assure une visibilite a 360 degres des usages et des actifs du reseau, en s'appuyant sur la capture de paquets (Sensor), l'analyse comportementale et la caracterisation des menaces en temps reel. L'offre inclut le Detection Center et le Decision Center, un module pilote par intelligence artificielle qui reduit le bruit des alertes et accelere le tri et la priorisation pour les equipes SOC. La fonction Deep Visibility supervise les infrastructures dans tous types d'environnements, et des solutions TAP (acces reseau optique et cuivre) completent la collecte de donnees. Gatewatcher integre intelligence artificielle, machine learning et threat intelligence, avec une approche de souverainete europeenne et des travaux de Purple Team. La societe vise les services financiers, le secteur public et la defense, les infrastructures critiques (energie, telecoms), l'industrie, la pharmacie et l'aerospatiale. Elle est citee au Gartner Magic Quadrant 2026.",
     "website": "https://www.gatewatcher.com/",
     "email_contact": "",
