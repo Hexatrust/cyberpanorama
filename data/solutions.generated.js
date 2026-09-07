@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-09-02T17:14:19+00:00",
+  "generated_at": "2026-09-07T20:08:52+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -15986,7 +15986,7 @@ window.CYBERPANORAMA_DATA = {
           "PR.IR-04"
         ]
       },
-      "description": "Numspot opère un cloud public souverain français proposant de l'IaaS, du PaaS avec services managés, ainsi que des briques Data et IA souveraine et une marketplace. L'offre vise le secteur public, la santé, la finance, l'assurance et les opérateurs critiques (OSE/OIV), avec une qualification SecNumCloud en cours et un agrément HDS. La société est détenue par la Banque des Territoires, Docaposte, Dassault Systèmes et Bouygues Telecom.",
+      "description": "Numspot est une plateforme de services cloud souveraine, portable et réversible, qui permet aux organisations publiques et privées de déployer leurs workloads, données et applications d'IA sur l'infrastructure de leur choix, sans verrouillage. Opérée en France et portée par un actionnariat public-privé 100 % français — Banque des Territoires, Docaposte, Dassault Systèmes et Bouygues Telecom —, elle s'appuie sur des standards ouverts, des services managés open source, une console et des API communes pour garantir maîtrise technique, autonomie réglementaire et portabilité réelle entre cloud public, privé et on-premise. Numspot intègre un cadre de confiance adapté aux environnements sensibles et régulés, avec la certification HDS et la qualification SecNumCloud obtenue pour son offre IaaS.",
       "detailed_description": "Numspot est une plateforme de services cloud souverain française, détenue à 100% par la Banque des Territoires, Docaposte, Dassault Systèmes et Bouygues Telecom. Elle propose un cloud public souverain reposant sur une infrastructure IaaS (calcul, stockage, réseau), des services PaaS managés (PostgreSQL, Kubernetes), une offre Data & IA souveraine et une solution de cloud hybride, le tout piloté depuis une console unifiée. Numspot diffuse aussi une marketplace souveraine et des offres packagées : sauvegarde et restauration (partenariat Veeam), navigation et visioconférence sécurisées, hébergement de données de santé, assistant IA et SIEM. L'architecture est conçue secure by design, fondée sur des standards ouverts et de l'open source pour garantir réversibilité et indépendance multi fournisseurs. Numspot vise une qualification SecNumCloud et dispose des certifications HDS et ISO 27001, accessibles via les centrales d'achat UGAP, C.A.I.H. et RESAH. Cibles : secteur public, santé, services financiers et assurance, opérateurs critiques (OSE/OIV) soumis aux exigences de souveraineté et de conformité réglementaire européenne.",
       "website": "https://numspot.com/",
       "email_contact": "contact@numspot.com",
