@@ -6034,7 +6034,7 @@
     "detailed_description": "Cyberium conçoit des solutions de segmentation réseau unidirectionnelle (data diode) appliquées aux infrastructures critiques, sous le positionnement \"Beyond Firewall\". Son produit phare est l'OWA (One-Way Appliance), une appliance matérielle en formats 1U/2U/3U combinant un cœur optique de diode de données (isolement galvanique électro-optique, atténuation inverse supérieure à 40 dB, aucun canal de retour physique) sur les couches 1 à 3 et des connecteurs proxy logiciels reconstruisant les protocoles applicatifs sur les couches 4 à 7. Elle gère SFTP, FTP/S, HTTP/S API, MQTT, SMTP, Syslog, UDP, OPC UA, ainsi que la réplication de fichiers et de bases SQL, avec des débits de 500 Mbps à 25+ Gbps, sans perte ni corruption (CRC, FEC). Les fonctions CDS incluent double antivirus (Bitdefender, ClamAV) et Content Disarm & Reconstruction (CDR). Cyberium vise l'OT/Industrie 4.0, le nucléaire, l'énergie, le transport, les datacenters et la défense/gouvernement (transferts interdomaines). Conformité affichée: ANSSI, Common Criteria EAL7+, IEC/ISA-62443 (SL3-SL4), NIS2, NERC CIP, NATO/EU Secret.",
     "website": "https://www.cyberium.io",
     "email_contact": "",
-    "contact_url": "https://www.cyberium.io/",
+    "contact_url": "https://cyberium.io/contact/",
     "country": "FR",
     "is_french": true,
     "email_verified": null,
