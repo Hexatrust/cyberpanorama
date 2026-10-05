@@ -14675,11 +14675,11 @@
   },
   {
     "id": "netexplorer-netexplorer-share",
-    "solution_name": "NetExplorer (NetExplorer Share)",
-    "company_name": "NetExplorer (NetExplorer Share)",
-    "logo_path": "assets/logos/NetExplorer_01.png",
-    "logo_file": "NetExplorer_01.png",
-    "logo_source": "name_match",
+    "solution_name": "Voltn",
+    "company_name": "Voltn",
+    "logo_path": "assets/logos/netexplorer-netexplorer-share.png",
+    "logo_file": "netexplorer-netexplorer-share.png",
+    "logo_source": "submission",
     "size": "medium",
     "nist": {
       "level1": "Protéger",
@@ -14693,10 +14693,10 @@
         "PR.DS-11"
       ]
     },
-    "description": "NetExplorer, éditeur basé à Toulouse, propose une plateforme de stockage et de partage de fichiers hébergée en France. L'offre réunit NetExplorer Share pour l'envoi sécurisé de documents, NetExplorer Workspace pour la coédition collaborative, la DataRoom pour les documents confidentiels, ainsi que les options Sign, Private Cloud, Vault sur bande LTO et hébergement HDS. La société annonce plus de 1 800 clients dans la santé, le juridique, l'immobilier, la banque et le secteur public.",
+    "description": "Voltn (anciennement NetExplorer) est l'expert du fichier en entreprise. Stocker, partager, coéditer, signer, valider, tracer, retrouver : Voltn couvre le cycle de vie complet du fichier sans rien imposer.\nDepuis plus de quinze ans, il répond à ce besoin avec deux produits : Voltn Share pour partager avec l'extérieur, Voltn Workspace pour réunir et maîtriser les fichiers de l'entreprise.\n2 000 organisations et 300 000 utilisateurs quotidiens lui confient leurs fichiers, soit plus de 500 millions de fichiers à ce jour. L'entreprise, basée à Toulouse, héberge ces fichiers en France ou au Luxembourg. Elle est certifiée ISO 9001, ISO 27001, Hébergeur de Données de Santé (HDS) et labellisée Numérique Responsable (NR).",
     "detailed_description": "NetExplorer est un editeur francais qui propose une plateforme souveraine de partage et de gestion securisee de fichiers, hebergee sur des serveurs geres en propre dans des datacenters certifies Tier 3+ et Tier 4. Son offre s'articule autour de trois solutions : NetExplorer Share pour le partage securise de fichiers sans limite de taille ni de format, NetExplorer Workspace pour la collaboration et la co-edition en temps reel avec gestion des versions et revisions, et DataRoom NetExplorer, coffre-fort numerique pour documents confidentiels. La plateforme integre une analyse antivirus en temps reel, la detection de ransomware, la prevention des fuites de donnees, le chiffrement, le filigrane (watermarking) et la signature electronique conforme eIDAS. Elle propose des API et des connecteurs Microsoft, Google et Zapier. NetExplorer cible la sante, l'immobilier, le BTP, le juridique, l'education, le secteur public, la banque et l'assurance, la logistique et le conseil. Ses differenciateurs sont la souverainete 100% francaise (hors Cloud Act americain), plus de 15 ans d'expertise, 1 800 organisations et 300 000 utilisateurs, ainsi que de nombreuses certifications.",
-    "website": "https://www.netexplorer.fr",
-    "email_contact": "contact@netexplorer.fr",
+    "website": "https://www.voltn.eu",
+    "email_contact": "contact@voltn.eu",
     "contact_url": "https://www.netexplorer.fr/contact/",
     "country": "FR",
     "is_french": true,
