@@ -1,5 +1,5 @@
 window.CYBERPANORAMA_DATA = {
-  "generated_at": "2026-09-07T20:08:52+00:00",
+  "generated_at": "2026-10-05T10:50:32+00:00",
   "level1_catalog": {
     "Gouverner": {
       "code": "GV",
@@ -29896,9 +29896,44 @@ window.CYBERPANORAMA_DATA = {
       "indexation": [],
       "is_hexatrust": false,
       "hq_outside_france": false
+    },
+    {
+      "id": "maltese-technologies",
+      "solution_name": "Maltese Technologies",
+      "company_name": "Maltese Technologies",
+      "logo_path": "assets/logos/maltese-technologies.svg",
+      "logo_file": "maltese-technologies.svg",
+      "logo_source": "submission",
+      "size": "small",
+      "nist": {
+        "level1": "Répondre",
+        "level2": [
+          "RS.MA",
+          "PR.AT",
+          "RC.RP"
+        ],
+        "level3": [
+          "RC.RP-06",
+          "RC.RP-02",
+          "RS.MA-05",
+          "RC.RP-01",
+          "RS.MA-03"
+        ]
+      },
+      "description": "Préparez, gérez et anticipez vos crises en toute simplicité grâce à notre plateforme tout-en-un, optimisée pour la coordination, le suivi et les RetEx. Maltese Technologies développe des logiciels intuitifs pour aider les organisations à gérer les crises et garantir la continuité des activités. Membre d'Hexatrust, Maltese Technologies est certifié ISO27001 et propose un hébergement qualifié SecNumCloud.",
+      "detailed_description": "Maltese Technologies développe des logiciels intuitifs pour aider les organisations à gérer les crises et garantir la continuité des activités. Nous avons créé une solution tout-en-un et collaborative qui vous permet de gagner du temps, de collaborer efficacement même sous pression, et de garder le contrôle en toutes circonstances. Membre d'Hexatrust, Maltese Technologies est certifié ISO27001 et propose un hébergement qualifié SecNumCloud. Les autres acteurs du secteur sont easylience, F24, cristotech, chapsvision, crisebox, panicsafe, iremos.\nNotre solution permet de : Gagnez du temps sur vos rapports au décideur. Rédigez et envoyez facilement vos points de situation. Publiez les mises à jour au fil de vos événements. Conservez un journal de bord. Suivez facilement les actions critiques. Gérez efficacement le temps grâce à une vue complète. Facilitez les passations d’équipes. Visualisez l’impact d’une perte critique sur vos activités. Anticipez les missions prioritaires à relancer. Orchestrez le redémarrage en identifiant les ressources clés. Pour votre main courante, vos plans de continuité, vos bilans d’analyse d’impacts… un mur de données paramétrable pour refléter votre méthodologie de résilience. Editable en équipe et en temps réel pour que vous puissiez distribuer plusieurs rôles de secrétaire et ne plus perdre d’informations.\nNos clients: OIV administration, service public, sécurité intérieure, acteurs de l'événementiel.",
+      "website": "https://www.maltese.tech",
+      "email_contact": "contact@maltese.tech",
+      "contact_url": "",
+      "country": "France",
+      "is_french": true,
+      "nis2_objective": "Continuité et reprise d'activité",
+      "indexation": [],
+      "is_hexatrust": false,
+      "hq_outside_france": false
     }
   ],
   "quality_summary": {
-    "total": 285
+    "total": 286
   }
 };

@@ -3061,5 +3061,8 @@
   },
   "advens": {
     "size_code": "large"
+  },
+  "maltese-technologies": {
+    "size_code": "small"
   }
 }
